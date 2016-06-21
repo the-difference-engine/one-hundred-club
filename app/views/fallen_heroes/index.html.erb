@@ -1,14 +1,8 @@
 <%= @fallen_heroes.each do | fallen_hero | %>
 
   <div>
-    <h4><%= fallen_hero.rank %> 
-
-    <%= fallen_hero.first_name %> 
-
-    <%= fallen_hero.middle_name %>
-
-    <%= fallen_hero.last_name %></h4>
-
+    <h4><%= link_to "#{ fallen_hero.rank } #{ fallen_hero.first_name } #{ fallen_hero.middle_name} #{ fallen_hero.last_name }", "/fallen_heroes/#{fallen_hero.id}" %></h4>
+    
     <p>Department: <%= fallen_hero.department %></p>
 
     <p>Date Deceased: <%= fallen_hero.date_deceased %></p>
