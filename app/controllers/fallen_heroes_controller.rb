@@ -7,7 +7,7 @@ class FallenHeroesController < ApplicationController
   def update
     fallen_hero = FallenHero.find_by(id: params[:id])
 
-    if fallen_hero.update(
+    fallen_hero.update(
       rank: params[:rank],
       first_name: params[:first_name],
       middle_name: params[:middle_name],
@@ -17,9 +17,7 @@ class FallenHeroesController < ApplicationController
       description: params[:description],
       image_url: params[:image_url]
     )
-      redirect_to "/fallen_heroes/#{fallen_hero.id}"
-    else
-      render 'edit.html.erb'
-    end
+
+    redirect_to "/fallen_heroes/#{fallen_hero.id}"
   end
 end
