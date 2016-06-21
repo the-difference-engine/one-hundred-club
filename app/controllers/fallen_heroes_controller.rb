@@ -1,4 +1,7 @@
 class FallenHeroesController < ApplicationController
+  def index
+    @fallen_heroes = FallenHero.all 
+
   def edit
     @fallen_hero = FallenHero.find_by(id: params[:id])
     render 'edit.html.erb'
