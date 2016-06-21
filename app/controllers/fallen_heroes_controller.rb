@@ -1,0 +1,2 @@
+class FallenHeroesController < ApplicationController
+end
