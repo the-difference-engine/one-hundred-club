@@ -25,7 +25,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'puma'
 
+<<<<<<< HEAD
 gem 'faker', '~> 1.6.3'
+=======
+gem 'faker'
+>>>>>>> 2afa9df569863ab861995a11942f071d3dd2119e
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
