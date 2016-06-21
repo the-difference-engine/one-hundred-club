@@ -1,21 +1,23 @@
-<% @fallen_heroes.each do | fallen_hero | %>
+<%= @fallen_heroes.each do | fallen_hero | %>
 
   <div>
-  <%= fallen_hero.rank %>
+    <h4><%= fallen_hero.rank %> 
 
-  <%= fallen_hero.first_name %>
+    <%= fallen_hero.first_name %> 
 
-  <%= fallen_hero.middle_name %>
+    <%= fallen_hero.middle_name %>
 
-  <%= fallen_hero.last_name %>
+    <%= fallen_hero.last_name %></h4>
 
-  <%= fallen_hero.department %>
+    <p>Department: <%= fallen_hero.department %></p>
 
-  <%= fallen_hero.date_deceased %>
+    <p>Date Deceased: <%= fallen_hero.date_deceased %></p>
 
-  <%= fallen_hero.description %>
+    <p>Description: <%= fallen_hero.description %></p>
   </div>
 
+  <div>
   <img src="<%= fallen_hero.image_url %>" />
+  </div>
 
 <% end %>
