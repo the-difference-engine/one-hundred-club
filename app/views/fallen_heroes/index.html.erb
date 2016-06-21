@@ -1,5 +1,6 @@
 <% @fallen_heroes.each do | fallen_hero | %>
 
+  <div>
   <%= fallen_hero.rank %>
 
   <%= fallen_hero.first_name %>
@@ -13,7 +14,8 @@
   <%= fallen_hero.date_deceased %>
 
   <%= fallen_hero.description %>
+  </div>
 
-  <%= fallen_hero.image_url %>
+  <img src="<%= fallen_hero.image_url %>" />
 
 <% end %>
