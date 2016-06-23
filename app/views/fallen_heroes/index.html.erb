@@ -1,0 +1,17 @@
+<%= @fallen_heroes.each do | fallen_hero | %>
+
+  <div>
+    <h4><%= link_to "#{ fallen_hero.rank } #{ fallen_hero.first_name } #{ fallen_hero.middle_name} #{ fallen_hero.last_name }", "/fallen_heroes/#{fallen_hero.id}" %></h4>
+    
+    <p>Department: <%= fallen_hero.department %></p>
+
+    <p>Date Deceased: <%= fallen_hero.date_deceased %></p>
+
+    <p>Description: <%= fallen_hero.description %></p>
+  </div>
+
+  <div>
+  <img src="<%= fallen_hero.image_url %>" />
+  </div>
+
+<% end %>

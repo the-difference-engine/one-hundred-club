@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   get '/fallen_heroes/:id' => 'fallen_heroes#show'
+  get '/fallen_heroes/:id/edit' => 'fallen_heroes#edit'
+  patch '/fallen_heroes/:id' => 'fallen_heroes#update'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -54,4 +56,6 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  get '/fallen_heroes' => 'fallen_heroes#index'
 end
