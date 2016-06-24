@@ -8,7 +8,7 @@ class FallenHeroesController < ApplicationController
   end
 
   def create
-    @fallen_hero = FallenHero.new(
+    @fallen_hero = FallenHero.create(
       rank: params[:rank],
       first_name: params[:first_name],
       middle_name: params[:middle_name],

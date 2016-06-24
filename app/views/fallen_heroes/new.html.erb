@@ -1,17 +1,5 @@
 <h1>Add a new fallen hero</h1>
-<%= form_tag '/fallen_heroes/create', method: :post do %>
-
-  <% if @fallen_heroes.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@fallen_heroes.errors.count, "error") %> prohibited this fallen hero from being saved to the database:</h2>
-   
-      <ul>
-      <% @fallen_heroes.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= form_tag '/fallen_heroes', method: :post do %>
 
   <div class="form-group">
     <%= label_tag :rank %>
