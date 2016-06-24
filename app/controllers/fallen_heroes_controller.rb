@@ -4,6 +4,27 @@ class FallenHeroesController < ApplicationController
     @fallen_heroes = FallenHero.all 
   end
 
+  def new
+  end
+
+  def create
+    @fallen_hero = FallenHero.new(
+      rank: params[:rank],
+      first_name: params[:first_name],
+      middle_name: params[:middle_name],
+      last_name: params[:last_name],
+      date_deceased: params[:date_deceased],
+      department: params[:department],
+      description: params[:description],
+      image_url: params[:image_url]
+    )
+    if @fallen_hero.save
+      redirect_to "/fallen_heroes/#{@fallen_hero.id}"
+    else
+      render "new.html.erb"
+    end
+  end
+
   def show
     @fallen_hero = FallenHero.find(params[:id])
     render 'show.html.erb'
