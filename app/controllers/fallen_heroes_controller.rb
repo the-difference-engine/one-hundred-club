@@ -5,7 +5,7 @@ class FallenHeroesController < ApplicationController
   end
 
   def show
-    @fallen_hero = FallenHero.find(params[:id])
+    @fallen_hero = FallenHero.find_by(id: params[:id])
     render 'show.html.erb'
   end
 
