@@ -30,4 +30,14 @@ class FallenHeroesController < ApplicationController
 
     redirect_to "/fallen_heroes/#{fallen_hero.id}"
   end
+
+  def destroy
+    fallen_hero = FallenHero.find_by(id: params[:id])
+
+    if fallen_hero.destroy
+      redirect_to '/fallen_heroes'
+    else 
+      redirect_to "/fallen_heroes/#{fallen_hero.id}"
+    end
+  end
 end
