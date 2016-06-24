@@ -1,6 +1,13 @@
 class FallenHeroesController < ApplicationController
+  
   def index
     @fallen_heroes = FallenHero.all 
+  end
+
+  def show
+    @fallen_hero = FallenHero.find(params[:id])
+    render 'show.html.erb'
+  end
 
   def edit
     @fallen_hero = FallenHero.find_by(id: params[:id])
