@@ -3,6 +3,7 @@
 <h3><%= @fallen_hero.date_deceased %></h3>
 <img src="<%= @fallen_hero.image_url %>">
 <h4><%= @fallen_hero.description %></h4>
+<%= button_to "Delete Fallen Hero", "/fallen_heroes/#{@fallen_hero.id}", method: :delete %>
 
 
 
