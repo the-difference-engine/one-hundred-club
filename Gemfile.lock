@@ -173,11 +173,7 @@ PLATFORMS
 DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
-<<<<<<< HEAD
   faker (~> 1.6.3)
-=======
-  faker
->>>>>>> 2afa9df569863ab861995a11942f071d3dd2119e
   jbuilder (~> 2.0)
   jquery-rails
   pg
