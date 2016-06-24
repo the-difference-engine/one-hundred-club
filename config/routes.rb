@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   get '/fallen_heroes/:id/edit' => 'fallen_heroes#edit'
   patch '/fallen_heroes/:id' => 'fallen_heroes#update'
   delete '/fallen_heroes/:id' => 'fallen_heroes#destroy'
+  
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -58,6 +61,4 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-
-
 end
