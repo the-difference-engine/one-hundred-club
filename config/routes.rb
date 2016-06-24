@@ -8,7 +8,6 @@ Rails.application.routes.draw do
   delete '/fallen_heroes/:id' => 'fallen_heroes#destroy'
   
 
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
