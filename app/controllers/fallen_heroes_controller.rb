@@ -31,5 +31,6 @@ class FallenHeroesController < ApplicationController
       redirect_to '/fallen_heroes'
     else 
       redirect_to "/fallen_heroes/#{fallen_hero.id}"
+    end
   end
 end
