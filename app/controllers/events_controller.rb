@@ -9,6 +9,7 @@ class EventsController < ApplicationController
   end
 
   def edit
+    render 'edit.html.erb'
   end
 
   def update
