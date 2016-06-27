@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   delete '/fallen_heroes/:id' => 'fallen_heroes#destroy'
   
   get '/events' => 'events#index'
+  get '/events/new' => 'events#new'
+  post '/events' => 'events#create'
   get '/events/:id' => 'events#show'
 
   # The priority is based upon order of creation: first created -> highest priority.
