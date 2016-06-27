@@ -7,5 +7,4 @@ Rails.application.routes.draw do
   patch '/fallen_heroes/:id' => 'fallen_heroes#update'
   delete '/fallen_heroes/:id' => 'fallen_heroes#destroy'
 ################################################################
-  delete '/events/:id' => 'events#destroy'
 end
