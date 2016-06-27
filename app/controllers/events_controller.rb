@@ -7,4 +7,10 @@ class EventsController < ApplicationController
     @event = Event.find_by(id: params[:id])
     render 'show.html.erb'
   end
+
+  def edit
+  end
+
+  def update
+  end
 end
