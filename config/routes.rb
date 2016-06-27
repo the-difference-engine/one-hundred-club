@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get '/fallen_heroes/:id/edit' => 'fallen_heroes#edit'
   patch '/fallen_heroes/:id' => 'fallen_heroes#update'
   delete '/fallen_heroes/:id' => 'fallen_heroes#destroy'
-
+##########################################################
   get '/events' => 'events#index'
   get '/events/:id' => 'events#show'
 
