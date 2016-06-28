@@ -30,7 +30,7 @@
   </div>
   <div>
     <%= label_tag :state, "State: " %>
-    <%= text_field_tag :state %>
+    <%= select_tag :state, options_for_select(us_states) %>
   </div>
   <div>
     <%= label_tag :zip_code, "Zip Code: " %>
@@ -38,7 +38,7 @@
   </div>
   <div>
     <%= label_tag :country, "Country: " %>
-    <%= text_field_tag :country %>
+    <%= select_tag :country, options_for_select(countries) %>
   </div>
   <div>
     <%= label_tag :company, "Company: " %>
@@ -74,7 +74,7 @@
   </div>
   <div>
     <%= label_tag :how_they_heard, "How Did You Hear About Us? " %>
-    <%= text_field_tag :how_they_heard %>
+    <%= select_tag :how_they_heard, options_for_select(how_did_you_hear) %>
   </div>
   <div>
     <%= label_tag :if_other, "If Other: " %>

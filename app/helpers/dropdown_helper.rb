@@ -1,6 +1,7 @@
 module DropdownHelper
   def us_states
     [
+      ['(None Selected)', ''],
       ['AK', 'AK'],
       ['AL', 'AL'],
       ['AR', 'AR'],
@@ -63,6 +64,7 @@ module DropdownHelper
 
   def how_did_you_hear
     [
+      ['(None Selected)', ''],
       ['Advertising', 'Advertising'],
       ['Event Initiative', 'Event Initiative'],
       ['Newsletter/Print Media', 'Newsletter/Print Media'], 
