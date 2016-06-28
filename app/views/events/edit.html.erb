@@ -1,0 +1,26 @@
+<h1>Edit Event</h1>
+<%= form_tag "/events/#{params[:id]}", method: :patch do %>
+  <div>
+    <%= label_tag :title, "Title: "  %>
+    <%= text_field_tag :title, @event.title %>
+  </div>
+  <div>
+    <%= label_tag :datetime, "Date and Time: " %>
+    <%= datetime_select :datetime, @event.datetime %>
+  </div>
+  <div>
+    <%= label_tag :location, "Location: " %>
+    <%= text_field_tag :location, @event.location %>
+  </div>
+  <div>
+    <%= label_tag :description, "Description: " %>
+    <%= text_field_tag :description, @event.description %>
+  </div>
+  <div>
+    <%= label_tag :image, "Image URL: " %>
+    <%= text_field_tag :image, @event.image %>
+  </div>
+  <div>
+    <%= submit_tag "Submit Changes" %>
+  </div>
+<% end %>
