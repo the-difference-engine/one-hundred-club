@@ -6,7 +6,7 @@
   </div>
   <div>
     <%= label_tag :datetime, "Date and Time: " %>
-    <%= text_field_tag :datetime, @event.datetime %>
+    <%= datetime_select :datetime, @event.datetime %>
   </div>
   <div>
     <%= label_tag :location, "Location: " %>
@@ -18,7 +18,7 @@
   </div>
   <div>
     <%= label_tag :image, "Image URL: " %>
-    <%= date_field_tag :image, @event.image %>
+    <%= text_field_tag :image, @event.image %>
   </div>
   <div>
     <%= submit_tag "Submit Changes" %>
