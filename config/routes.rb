@@ -5,10 +5,11 @@ Rails.application.routes.draw do
   get '/fallen_heroes/:id' => 'fallen_heroes#show'
   get '/fallen_heroes/:id/edit' => 'fallen_heroes#edit'
   patch '/fallen_heroes/:id' => 'fallen_heroes#update'
-  delete '/fallen_heroes/:id' => 'fallen_heroes#destroy'
-  
+  delete '/fallen_heroes/:id' => 'fallen_heroes#destroy' 
+  ##########################################################
   get '/events' => 'events#index'
   get '/events/:id' => 'events#show'
+  delete '/events/:id' => 'events#destroy'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
