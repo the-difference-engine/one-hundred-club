@@ -14,5 +14,16 @@ class EventsController < ApplicationController
   end
 
   def update
+    event = Event.find_by(id: params[:id])
+
+    event.update(
+      title: params[:title],
+      datetime: params[:datetime],
+      description: params[:description],
+      image: params[:image],
+      location: params[:location]
+    )
+
+    redirect_to "/events/#{event.id}"
   end
 end
