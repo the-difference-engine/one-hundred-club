@@ -27,7 +27,6 @@ end
                      'Newsletter/Print Media',
                      'Personal Referral',
                      'Website'
-                     ].sample,
-    if_other: params[:if_other]
+                     ].sample
   )
 end
