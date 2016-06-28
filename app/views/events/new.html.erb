@@ -1,5 +1,5 @@
-<h1>Add a new fallen hero</h1>
-<%= form_tag '/fallen_heroes', method: :post do %>
+<h1>Add a new event</h1>
+<%= form_tag '/events', method: :post do %>
 
   <div class="form-group">
     <%= label_tag :image %>
@@ -15,13 +15,13 @@
   </div>  
   <div class="form-group">
     <%= label_tag :datetime %>
-    <%= text_field_tag :datetime %>
+    <%= date_field_tag :datetime %>
   </div>
   <div class="form-group">
     <%= label_tag :location %>
     <%= text_field_tag :location %>
   </div>
   <div>
-    <%= submit_tag "Add Fallen Hero", class: "btn btn-default" %>
+    <%= submit_tag "Add Event", class: "btn btn-default" %>
   </div>
 <% end %>
