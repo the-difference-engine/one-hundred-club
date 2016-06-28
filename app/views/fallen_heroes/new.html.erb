@@ -2,36 +2,24 @@
 <%= form_tag '/fallen_heroes', method: :post do %>
 
   <div class="form-group">
-    <%= label_tag :rank %>
-    <%= text_field_tag :rank %>
+    <%= label_tag :image %>
+    <%= text_field_tag :image %>
   </div>    
   <div class="form-group">
-    <%= label_tag :first_name %>
-    <%= text_field_tag :first_name %>
+    <%= label_tag :title %>
+    <%= text_field_tag :title %>
   </div>    
-  <div class="form-group">
-    <%= label_tag :middle_name %>
-    <%= text_field_tag :middle_name %>
-  </div>  
-  <div class="form-group">
-    <%= label_tag :last_name %>
-    <%= text_field_tag :last_name %>
-  </div>
-  <div class="form-group">
-    <%= label_tag :date_deceased %>
-    <%= text_field_tag :date_deceased %>
-  </div>
-  <div class="form-group">
-    <%= label_tag :department %>
-    <%= text_field_tag :department %>
-  </div>
   <div class="form-group">
     <%= label_tag :description %>
     <%= text_field_tag :description %>
-  </div> 
+  </div>  
   <div class="form-group">
-    <%= label_tag :image_url %>
-    <%= text_field_tag :image_url %>
+    <%= label_tag :datetime %>
+    <%= text_field_tag :datetime %>
+  </div>
+  <div class="form-group">
+    <%= label_tag :location %>
+    <%= text_field_tag :location %>
   </div>
   <div>
     <%= submit_tag "Add Fallen Hero", class: "btn btn-default" %>
