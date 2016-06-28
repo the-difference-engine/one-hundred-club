@@ -1,5 +1,9 @@
-  <h3><%= @event.title %></h3>
-  <h4>Date: <%= @event.datetime %></h4>
-  <h4>Location: <%= @event.location %></h4>
-  <h5><%= @event.description %></h5>
-  <img src="<%= @event.image %>" />
+  <% if @event %>
+    <h3><%= @event.title %></h3>
+    <h4>Date: <%= @event.datetime %></h4>
+    <h4>Location: <%= @event.location %></h4>
+    <h5><%= @event.description %></h5>
+    <img src="<%= @event.image %>" />
+  <% else %>
+    <h3>There are currently no events!</h3>
+  <% end %>
