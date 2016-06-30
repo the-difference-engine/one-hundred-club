@@ -1,0 +1,92 @@
+<h1>New Member Information</h1>
+<%= form_tag "/members", method: :post do %>
+  <div>
+    <%= label_tag :title, "Title: " %>
+    <%= text_field_tag :title %>
+  </div>
+  <div>
+    <%= label_tag :first_name, "First Name: " %>
+    <%= text_field_tag :first_name %>
+  </div>
+  <div>
+    <%= label_tag :middle_name, "Middle Name: " %>
+    <%= text_field_tag :middle_name %>
+  </div>
+  <div>
+    <%= label_tag :last_name, "Last Name: " %>
+    <%= text_field_tag :last_name %>
+  </div>
+  <div>
+    <%= label_tag :suffix, "Suffix: " %>
+    <%= text_field_tag :suffix %>
+  </div>
+  <div>
+    <%= label_tag :address, "Street Address: " %>
+    <%= text_field_tag :address %>
+  </div>
+  <div>
+    <%= label_tag :city, "City: " %>
+    <%= text_field_tag :city %>
+  </div>
+  <div>
+    <%= label_tag :state, "State: " %>
+    <%= select_tag :state, options_for_select(us_states) %>
+  </div>
+  <div>
+    <%= label_tag :zip_code, "Zip Code: " %>
+    <%= text_field_tag :zip_code %>
+  </div>
+  <div>
+    <%= label_tag :country, "Country: " %>
+    <%= select_tag :country, options_for_select(countries) %>
+  </div>
+  <div>
+    <%= label_tag :company, "Company: " %>
+    <%= text_field_tag :company %>
+  </div>
+  <div>
+    <%= label_tag :job_title, "Job Title: " %>
+    <%= text_field_tag :job_title %>
+  </div>
+  <div>
+    <%= label_tag :email, "E-mail: " %>
+    <%= text_field_tag :email %>
+  </div>
+  <div>
+    <%= label_tag :phone, "Phone: " %>
+    <%= text_field_tag :phone %>
+  </div>
+  <div>
+    <%= label_tag :name_on_card, "Name On Card: " %>
+    <%= text_field_tag :name_on_card %>
+  </div>
+  <div>
+    <%= label_tag :other_name_1, "Additional Name: " %>
+    <%= text_field_tag :other_name_1 %>
+  </div>
+  <div>
+    <%= label_tag :other_name_2, "Additional Name: " %>
+    <%= text_field_tag :other_name_2 %>
+  </div>
+  <div>
+    <%= label_tag :other_name_3, "Additional Name: " %>
+    <%= text_field_tag :other_name_3 %>
+  </div>
+  <div>
+    <%= label_tag :how_they_heard, "How Did You Hear About Us? " %>
+    <%= select_tag :how_they_heard, options_for_select(how_did_you_hear) %>
+  </div>
+  <div>
+    <%= label_tag :if_other, "If Other: " %>
+    <%= text_field_tag :if_other %>
+  </div>
+  <div>
+    <%= submit_tag "Submit Changes" %>
+  </div>
+<% end %>
+
+
+
+
+
+
