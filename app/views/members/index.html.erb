@@ -1,7 +1,22 @@
 <%= @members.each do |member| %>
   <%= member.title %>
-  <%= member.datetime %>
-  <%= member.location %>
-  <%= member.description %>
-  <%= member.image %>
+  <%= member.first_name %>
+  <%= member.middle_name %>
+  <%= member.last_name %>
+  <%= member.suffix %>
+  <%= member.company %>
+  <%= member.job_title %>
+  <%= member.name_on_card %>
+  <%= member.other_name_1 %>
+  <%= member.other_name_2 %>
+  <%= member.other_name_3 %>
+  <%= member.address %>
+  <%= member.city %>
+  <%= member.state %>
+  <%= member.zip_code %>
+  <%= member.country %>
+  <%= member.email %>
+  <%= member.phone %>
+  <%= member.how_they_heard %>
+  <%= member.if_other %>
 <% end %>
