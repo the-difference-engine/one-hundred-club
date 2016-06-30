@@ -1,0 +1,9 @@
+<% if @member %>
+  <h3><%= @member.title %></h3>
+  <h4>Date: <%= @member.datetime %></h4>
+  <h4>Location: <%= @member.location %></h4>
+  <h5><%= @member.description %></h5>
+  <img src="<%= @member.image %>" />
+<% else %>
+  <h3>There are currently no members.</h3>
+<% end %>
