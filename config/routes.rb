@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   root to: 'fallen_heroes#index'
   get '/fallen_heroes' => 'fallen_heroes#index'
   get '/fallen_heroes/new' => 'fallen_heroes#new'
