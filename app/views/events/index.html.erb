@@ -5,6 +5,6 @@
     <h4>Date: <%= event.datetime %></h4>
     <h4>Location: <%= event.location %></h4>
     <h5><%= event.description %></h5>
-    <img src="<%= event.image %>" />
+    <%= image_tag(event.image) %>
   </div>
 <% end %>
