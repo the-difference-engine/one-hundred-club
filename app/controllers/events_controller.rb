@@ -20,6 +20,9 @@ class EventsController < ApplicationController
       location: params[:location]
     )
     if @event.save
+      # Deliver the signup email
+      @user = User.find_by(id: 2)
+      EventNotifier.send_event_email(@user).deliver
       redirect_to "/events/#{@event.id}"
     else
       render "new.html.erb"
