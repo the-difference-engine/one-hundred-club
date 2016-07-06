@@ -4,6 +4,7 @@
     <h4>Location: <%= @event.location %></h4>
     <h5><%= @event.description %></h5>
     <img src="<%= @event.image %>" />
+    <%= button_to "Delete Event", "/events/#{@event.id}", method: :delete %>  
   <% else %>
     <h3>There are currently no events!</h3>
   <% end %>
