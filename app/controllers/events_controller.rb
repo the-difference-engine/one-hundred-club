@@ -21,8 +21,10 @@ class EventsController < ApplicationController
     )
     if @event.save
       # Deliver the signup email
-      @user = User.find_by(id: 2)
-      EventNotifier.send_event_email(@user).deliver
+      @users = User.all
+      @users.each do |user|
+        EventNotifier.send_event_email(user).deliver
+      end
       redirect_to "/events/#{@event.id}"
     else
       render "new.html.erb"
