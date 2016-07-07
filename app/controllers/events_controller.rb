@@ -23,7 +23,7 @@ class EventsController < ApplicationController
       # Deliver the event notification email
       @users = User.all
       @users.each do |user|
-        EventNotifier.send_event_email(user).deliver
+        EventNotifier.send_event_email(user).deliver_now
       end
       redirect_to "/events/#{@event.id}"
     else
