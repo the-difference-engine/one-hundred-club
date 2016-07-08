@@ -1,5 +1,5 @@
 <h1>Add a new fallen hero</h1>
-<%= form_tag '/fallen_heroes', method: :post, html: { multipart: true } do %>
+<%= form_tag '/fallen_heroes', method: :post, multipart: true do %>
   <div>
     <%= label_tag :rank, "Rank: "  %>
     <%= text_field_tag :rank %>
