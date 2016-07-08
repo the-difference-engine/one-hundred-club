@@ -1,25 +1,36 @@
 <h1>Add a new fallen hero</h1>
-<%= form_tag '/fallen_heroes', method: :post do %>
-
-  <div class="form-group">
-    <%= label_tag :image %>
-    <%= text_field_tag :image %>
-  </div>    
-  <div class="form-group">
-    <%= label_tag :title %>
-    <%= text_field_tag :title %>
-  </div>    
-  <div class="form-group">
-    <%= label_tag :description %>
-    <%= text_field_tag :description %>
-  </div>  
-  <div class="form-group">
-    <%= label_tag :datetime %>
-    <%= text_field_tag :datetime %>
+<%= form_tag '/fallen_heroes', method: :post, html: { multipart: true } do %>
+  <div>
+    <%= label_tag :rank, "Rank: "  %>
+    <%= text_field_tag :rank, @fallen_hero.rank %>
   </div>
-  <div class="form-group">
-    <%= label_tag :location %>
-    <%= text_field_tag :location %>
+  <div>
+    <%= label_tag :first_name, "First Name: " %>
+    <%= text_field_tag :first_name %>
+  </div>
+  <div>
+    <%= label_tag :middle_name, "Middle Name: " %>
+    <%= text_field_tag :middle_name %>
+  </div>
+  <div>
+    <%= label_tag :last_name, "Last Name: " %>
+    <%= text_field_tag :last_name %>
+  </div>
+  <div>
+    <%= label_tag :date_deceased, "Date Deceased: " %>
+    <%= date_field_tag :date_deceased %>
+  </div>
+  <div>
+    <%= label_tag :department, "Department: " %>
+    <%= text_field_tag :department %>
+  </div>
+  <div>
+    <%= label_tag :description, "Description: " %>
+    <%= text_field_tag :description %>
+  </div>
+  <div>
+    <%= label_tag :image_url, "Image: " %>
+    <%= file_field_tag :image_url %>
   </div>
   <div>
     <%= submit_tag "Add Fallen Hero", class: "btn btn-default" %>
