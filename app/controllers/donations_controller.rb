@@ -15,7 +15,8 @@ class DonationsController < ApplicationController
       zip_code: params[:zip_code],
       country: params[:country],
       email: params[:email],
-      phone: params[:phone]
+      phone: params[:phone],
+      amount: params[:amount]
     )
     if @donation.save
       redirect_to "/donations/#{@donation.id}"
