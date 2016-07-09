@@ -26,5 +26,6 @@ class DonationsController < ApplicationController
   end
 
   def show
+    @donation = Donation.find_by(id: params[:id])
   end
 end
