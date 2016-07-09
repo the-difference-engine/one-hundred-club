@@ -24,4 +24,7 @@ class DonationsController < ApplicationController
       render "new.html.erb"
     end
   end
+
+  def show
+  end
 end
