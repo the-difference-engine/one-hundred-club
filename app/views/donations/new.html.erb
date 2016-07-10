@@ -1,0 +1,60 @@
+<div class="container">
+  <h1>New Donation</h1>
+  <%= form_tag "/donations", method: :post do %>
+    <div>
+      <%= label_tag :title, "Title: " %>
+      <%= text_field_tag :title %>
+    </div>
+    <div>
+      <%= label_tag :first_name, "First Name: " %>
+      <%= text_field_tag :first_name %>
+    </div>
+    <div>
+      <%= label_tag :middle_name, "Middle Name: " %>
+      <%= text_field_tag :middle_name %>
+    </div>
+    <div>
+      <%= label_tag :last_name, "Last Name: " %>
+      <%= text_field_tag :last_name %>
+    </div>
+    <div>
+      <%= label_tag :suffix, "Suffix: " %>
+      <%= text_field_tag :suffix %>
+    </div>
+    <div>
+      <%= label_tag :address, "Street Address: " %>
+      <%= text_field_tag :address %>
+    </div>
+    <div>
+      <%= label_tag :city, "City: " %>
+      <%= text_field_tag :city %>
+    </div>
+    <div>
+      <%= label_tag :state, "State: " %>
+      <%= select_tag :state, options_for_select(us_states) %>
+    </div>
+    <div>
+      <%= label_tag :zip_code, "Zip Code: " %>
+      <%= text_field_tag :zip_code %>
+    </div>
+    <div>
+      <%= label_tag :country, "Country: " %>
+      <%= select_tag :country, options_for_select(countries) %>
+    </div>
+    <div>
+      <%= label_tag :email, "E-mail: " %>
+      <%= text_field_tag :email %>
+    </div>
+    <div>
+      <%= label_tag :phone, "Phone: " %>
+      <%= text_field_tag :phone %>
+    </div>
+    <div>
+      <%= label_tag :amount, "Donation Amount: $" %>
+      <%= text_field_tag :amount %>
+    </div>  
+    <div>
+      <%= submit_tag "Submit Changes" %>
+    </div>
+  <% end %>
+</div>
