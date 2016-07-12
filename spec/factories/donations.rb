@@ -2,7 +2,7 @@ FactoryGirl.define do
   factory :donation do 
     title "Mr."
     first_name "John"
-    middle_name "Robert"
+    middle_name "Alton"
     last_name "Doe"
     suffix "II"    
     address "1 Example Street"
