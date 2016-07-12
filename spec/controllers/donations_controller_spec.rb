@@ -9,10 +9,5 @@ RSpec.describe DonationsController, type: :controller do
         }.to change(Donation, :count).by(1)
       end
     end
-
-    context "with invalid attributes" do 
-      it "does not save the new donation in the database"
-      it "re-renders the :new template"
-    end
   end
 end
