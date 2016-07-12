@@ -1,7 +1,7 @@
+<%= image_tag @fallen_hero.image_url, height: "100", width: "100" %>
 <h2><%= @fallen_hero.rank + " " + @fallen_hero.first_name + " " + @fallen_hero.middle_name + " " + @fallen_hero.last_name %></h2>
 <h3><%= @fallen_hero.department %></h3>
 <h3><%= @fallen_hero.date_deceased %></h3>
-<img src="<%= @fallen_hero.image_url %>">
 <h4><%= @fallen_hero.description %></h4>
 <%= button_to "Edit Fallen Hero", "/fallen_heroes/#{@fallen_hero.id}/edit", method: :get %>
 <%= button_to "Delete Fallen Hero", "/fallen_heroes/#{@fallen_hero.id}", method: :delete %>
