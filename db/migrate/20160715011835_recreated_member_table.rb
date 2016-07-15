@@ -17,10 +17,10 @@ class RecreatedMemberTable < ActiveRecord::Migration
       t.string :city
       t.string :state
       t.string :email
-      t.integer :phone
+      t.string :phone
       t.string :how_they_heard
       t.string :if_other
-      t.integer :zip_code
+      t.string :zip_code
 
       t.timestamps null: false
     end
