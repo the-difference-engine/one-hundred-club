@@ -1,1 +1,19 @@
-edit.html.erb
+<%= form_tag '/users/:id', method: :patch do %>
+  <div>
+    <%= label_tag :user_access, "User Access: " %>
+    <%= select_tag :user_access, options_for_select (["TRUE", true], ["FALSE", false]) %>
+  </div>
+<% end %>
+
+
+
+
+
+
+<!-- <p>Blog Access: <%= @user.blog_access %></p>
+<p>Events Access: <%= @user.events_access %></p>
+<p>Fallen Hero Access: <%= @user.fallen_hero_access %></p>
+<p>Reporting Access: <%= @user.reporting_access %></p>
+<p>Member Access: <%= @user.member_access %></p>
+<p>Donation Access: <%= @user.donation_access %></p>
+ -->
