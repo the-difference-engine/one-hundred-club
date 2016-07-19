@@ -31,7 +31,7 @@
     </div>
     <div>
       <%= label_tag :state, "State: " %>
-      <%= select_tag :state, options_for_select(us_states) %>
+      <%= select_tag :state, options_for_select(us_states, @member.state) %>
     </div>
     <div>
       <%= label_tag :zip_code, "Zip Code: " %>
@@ -39,7 +39,7 @@
     </div>
     <div>
       <%= label_tag :country, "Country: " %>
-      <%= select_tag :country, options_for_select(countries) %>
+      <%= select_tag :country, options_for_select(countries, @member.country) %>
     </div>
     <div>
       <%= label_tag :company, "Company: " %>
