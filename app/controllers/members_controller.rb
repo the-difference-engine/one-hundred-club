@@ -1,7 +1,4 @@
 class MembersController < ApplicationController
-
-  before_action :has_access_to_edit_member_form!
-
   def index
     @members = Member.all
   end
@@ -47,6 +44,7 @@ class MembersController < ApplicationController
   end
 
   def edit
+    has_access_to_edit_page(params[:id])
     @member = Member.find_by(id: params[:id])
   end
 
@@ -73,5 +71,13 @@ class MembersController < ApplicationController
       phone: params[:phone]
     )
     redirect_to "/members/#{member.id}"
+  end
+
+  private
+
+  def has_access_to_edit_page(member_id)
+    unless current_user.member_id == member_id.to_i || current_user.member_access
+      redirect_to "/"
+    end
   end
 end
