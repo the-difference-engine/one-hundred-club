@@ -1,7 +1,36 @@
+<h1>Access Permissions for: <%= @user.email %></h1>
+
 <%= form_tag '/users/:id', method: :patch do %>
   <div>
     <%= label_tag :user_access, "User Access: " %>
-    <%= select_tag :user_access, options_for_select (["TRUE", true], ["FALSE", false]) %>
+    <%= select_tag :user_access, options_for_select([["YES", true], ["NO", false]], @user.user_access) %>
+  </div>
+  <div>
+    <%= label_tag :blog_access, "Blog Access: " %>
+    <%= select_tag :blog_access, options_for_select([["YES", true], ["NO", false]], @user.blog_access) %>
+  </div>
+  <div>
+    <%= label_tag :events_access, "Events Access: " %>
+    <%= select_tag :events_access, options_for_select([["YES", true], ["NO", false]], @user.events_access) %>
+  </div>
+  <div>
+    <%= label_tag :fallen_hero_access, "Fallen Hero Access: " %>
+    <%= select_tag :fallen_hero_access, options_for_select([["YES", true], ["NO", false]], @user.fallen_hero_access) %>
+  </div>
+  <div>
+    <%= label_tag :reporting_access, "Reporting Access: " %>
+    <%= select_tag :reporting_access, options_for_select([["YES", true], ["NO", false]], @user.reporting_access) %>
+  </div>
+  <div>
+    <%= label_tag :member_access, "Member Access: " %>
+    <%= select_tag :member_access, options_for_select([["YES", true], ["NO", false]], @user.member_access) %>
+  </div>
+  <div>
+    <%= label_tag :donation_access, "Doation Access: " %>
+    <%= select_tag :donation_access, options_for_select([["YES", true], ["NO", false]], @user.donation_access) %>
+  </div>
+  <div>
+    <%= submit_tag "Submit Changes" %>
   </div>
 <% end %>
 
