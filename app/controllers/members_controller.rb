@@ -1,4 +1,7 @@
 class MembersController < ApplicationController
+
+  before_action :has_access_to_edit_member_form!
+
   def index
     @members = Member.all
   end
