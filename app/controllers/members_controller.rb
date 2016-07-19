@@ -45,5 +45,6 @@ class MembersController < ApplicationController
 
   def edit
     @member = Member.find_by(id: params[:id])
+    # puts current_user.id
   end
 end
