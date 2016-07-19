@@ -42,4 +42,7 @@ class MembersController < ApplicationController
     @member = Member.find_by(id: params[:id])
     render 'show.html.erb'
   end
+
+  def edit
+  end
 end
