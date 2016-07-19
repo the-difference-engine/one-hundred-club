@@ -21,6 +21,8 @@ Rails.application.routes.draw do
   get '/members/new' => 'members#new'
   post '/members' => 'members#create'
   get '/members/:id' => 'members#show'
+  get '/members/:id/edit' => 'members#edit'
+  patch 'members/:id' => 'members#update'
   ##########################################################
   get '/donations/new' => 'donations#new'
   post '/donations' => 'donations#create'

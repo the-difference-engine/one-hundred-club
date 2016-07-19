@@ -44,5 +44,6 @@ class MembersController < ApplicationController
   end
 
   def edit
+    @member = Member.find_by(id: params[:id])
   end
 end
