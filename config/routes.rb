@@ -25,6 +25,9 @@ Rails.application.routes.draw do
   get '/donations/new' => 'donations#new'
   post '/donations' => 'donations#create'
   get 'donations/:id' => 'donations#show'
+  get '/donations/:id/edit' => 'donations#edit'
+  patch '/donations/:id' => 'donations#update'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

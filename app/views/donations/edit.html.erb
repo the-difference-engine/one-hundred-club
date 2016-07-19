@@ -1,0 +1,57 @@
+<h1>Edit Donations</h1>
+<%= form_tag "/donations/#{params[:id]}", method: :patch, multipart: true do %>
+  <div>
+    <%= label_tag :title, "Title: "  %>
+    <%= text_field_tag :title, @donation.title %>
+  </div>
+  <div>
+    <%= label_tag :first_name, "First Name: " %>
+    <%= text_field_tag :first_name, @donation.first_name %>
+  </div>
+  <div>
+    <%= label_tag :middle_name, "Middle Name: " %>
+    <%= text_field_tag :middle_name, @donation.middle_name %>
+  </div>
+  <div>
+    <%= label_tag :last_name, "Last Name: " %>
+    <%= text_field_tag :last_name, @donation.last_name %>
+  </div>
+  <div>
+    <%= label_tag :suffix, "Suffix: " %>
+    <%= text_field_tag :suffix, @donation.suffix %>
+  </div>
+  <div>
+    <%= label_tag :address, "Address: " %>
+    <%= text_field_tag :address, @donation.address %>
+  </div>
+  <div>
+    <%= label_tag :city, "City: " %>
+    <%= text_field_tag :city, @donation.city %>
+  </div>
+  <div>
+    <%= label_tag :state, "State: " %>
+    <%= text_field_tag :state %>
+  </div>
+  <div>
+    <%= label_tag :zip_code, "Zip Code: " %>
+    <%= text_field_tag :zip_code %>
+  </div>
+  <div>
+    <%= label_tag :country, "Country: " %>
+    <%= text_field_tag :country %>
+  </div>
+  <div>
+    <%= label_tag :email, "Email: " %>
+    <%= text_field_tag :email %>
+  </div>
+  <div>
+    <%= label_tag :phone, "Phone: " %>
+    <%= text_field_tag :phone %>
+  </div>
+  <div>
+    <%= label_tag :amount, "Amount: " %>
+    <%= text_field_tag :amount %>
+  </div>
+    <%= submit_tag "Submit Changes" %>
+  </div>
+<% end %>
