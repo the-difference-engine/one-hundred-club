@@ -8,4 +8,14 @@ class UsersController < ApplicationController
     @user = User.find_by(id: params[:id])
     render 'show.html.erb'
   end
+
+  def edit
+    @user = User.find_by(id: params[:id])
+    render 'edit.html.erb'
+  end
+
+  def update
+    @user = User.find_by(id: params[:id])
+    redirect_to '/users/#{@user.id}'
+  end
 end
