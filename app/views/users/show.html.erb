@@ -6,3 +6,4 @@
 <p>Reporting Access: <%= @user.reporting_access %></p>
 <p>Member Access: <%= @user.member_access %></p>
 <p>Donation Access: <%= @user.donation_access %></p>
+<%= link_to "Edit User Access", "/users/#{@user.id}/edit" %>
