@@ -96,6 +96,8 @@ ActiveRecord::Schema.define(version: 20160719013052) do
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
     t.boolean  "admin",                  default: false
+    t.boolean  "member_access",          default: false
+    t.integer  "member_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
