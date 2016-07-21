@@ -1,6 +1,6 @@
 <h1>Access Permissions for: <%= @user.email %></h1>
 
-<%= form_tag '/users/:id', method: :patch do %>
+<%= form_tag "/users/#{@user.id}", method: :patch do %>
   <div>
     <%= label_tag :user_access, "User Access: " %>
     <%= select_tag :user_access, options_for_select([["YES", true], ["NO", false]], @user.user_access) %>

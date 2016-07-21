@@ -26,7 +26,7 @@ class UsersController < ApplicationController
       donation_access: params[:donation_access],
       reporting_access: params[:user_access]
     )
-    
-    redirect_to '/users/#{@user.id}'
+
+    redirect_to "/users/#{user.id}"
   end
 end
