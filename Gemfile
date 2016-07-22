@@ -35,11 +35,6 @@ gem 'carrierwave'
 
 gem "fog-aws"
 
-<<<<<<< HEAD
-=======
-gem 'pry'
->>>>>>> 19d86bb6baf08aaaa46d80a4af5b3b98f2cfee4d
-
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
