@@ -1,4 +1,7 @@
 class BlogPostsController < ApplicationController
+  def new
+  end
+
   def create
     @blog_post = BlogPost.create(
       title: params[:title],
