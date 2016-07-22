@@ -14,4 +14,9 @@ class BlogPostsController < ApplicationController
       render "new.html.erb"
     end
   end
+
+  def show
+    @blog_post = BlogPost.find_by(id: params[:id])
+    render 'show.html.erb'
+  end
 end
