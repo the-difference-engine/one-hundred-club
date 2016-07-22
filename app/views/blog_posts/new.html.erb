@@ -1,0 +1,18 @@
+<h1>Add a new blog post.</h1>
+<%= form_tag '/blog_posts', method: :post, multipart: true do %>
+  <div>
+    <%= label_tag :title, "Title: "  %>
+    <%= text_field_tag :title %>
+  </div>
+  <div>
+    <%= label_tag :content, "Content: " %>
+    <%= text_field_tag :content %>
+  </div>
+  <div>
+    <%= label_tag :image, "Image: " %>
+    <%= text_field_tag :image %>
+  </div>
+  <div>
+    <%= submit_tag "Add Blog Post", class: "btn btn-default" %>
+  </div>
+<% end %>

@@ -35,8 +35,10 @@ Rails.application.routes.draw do
   get '/users/:id/edit' => 'users#edit'
   patch '/users/:id' => 'users#update'
   ##########################################################
-
-
+  get '/blog_posts/new' => 'blog_posts#new'
+  post '/blog_posts' => 'blog_posts#create'
+  get '/blog_posts/:id' => 'blog_posts#show'
+  ##########################################################
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
