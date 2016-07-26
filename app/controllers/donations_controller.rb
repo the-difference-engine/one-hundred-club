@@ -1,4 +1,8 @@
 class DonationsController < ApplicationController
+  def index
+    render 'index.html.erb'
+  end
+
   def new
   end
 
