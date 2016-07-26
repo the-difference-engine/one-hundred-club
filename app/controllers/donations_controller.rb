@@ -1,5 +1,6 @@
 class DonationsController < ApplicationController
   def index
+    @donations = Donation.all
     render 'index.html.erb'
   end
 
