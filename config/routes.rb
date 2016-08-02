@@ -40,6 +40,10 @@ Rails.application.routes.draw do
   post '/blog_posts' => 'blog_posts#create'
   get '/blog_posts/:id' => 'blog_posts#show'
   ##########################################################
+  namespace :api do
+    get '/events' => 'events#index'
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
