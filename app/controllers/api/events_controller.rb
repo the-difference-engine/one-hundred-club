@@ -1,6 +1,6 @@
 class Api::EventsController < ApplicationController
   def index
     @events = Event.all
-    render :json => @events
+    render 'index.json.jbuilder'
   end
 end
