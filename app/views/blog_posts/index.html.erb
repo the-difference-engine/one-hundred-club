@@ -1,0 +1,5 @@
+<% @blog_posts.each do |post| %>
+	<h1><%= post.title %></h1>
+	<h4><%= post.content %></h4>
+	<p><%= image_tag(post.image) %></p>
+<% end %>
