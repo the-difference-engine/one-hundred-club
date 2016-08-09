@@ -13,3 +13,19 @@
  *= require_tree .
  *= require_self
  */
+
+.navbar-custom {
+  background-color: transparent;
+}
+
+.navbar .navbar-nav {
+  background: transparent;
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+}
+
+.navbar .navbar-collapse {
+  background: transparent;
+  text-align: center;
+}
