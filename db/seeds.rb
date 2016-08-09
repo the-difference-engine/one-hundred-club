@@ -1,7 +1,7 @@
 50.times do
-  BlogPosts.create(
+  BlogPost.create(
     title: Faker::Name.title,
-    content: Faker::Lorem.paragraph
+    content: Faker::Lorem.paragraph,
     image: Faker::Placeholdit.image("100x100")
     )
 end
