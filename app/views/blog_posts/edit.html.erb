@@ -1,5 +1,5 @@
 <h1>Edit Blog Post</h1>
-<%= form_tag "/blog_posts/#{params[:id]}", method: :patch do %>
+<%= form_tag "/blog_posts/#{params[:id]}", method: :patch, multipart: true  do %>
   <div>
     <%= label_tag :title, "Title: "  %>
     <%= text_field_tag :title, @blog_post.title %>

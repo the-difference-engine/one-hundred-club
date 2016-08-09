@@ -23,13 +23,14 @@ class BlogPostsController < ApplicationController
 
   def edit
     @blog_post = BlogPost.find_by(id: params[:id])
+    render "edit.html.erb"
   end
 
   def update
     blog_post = BlogPost.find_by(id: params[:id])
 
-    blog_post = BlogPost.update(
-      tite: params[:title],
+    blog_post.update(
+      title: params[:title],
       content: params[:content],
       image: params[:image]
     )
