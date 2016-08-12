@@ -41,4 +41,14 @@ class BlogPostsController < ApplicationController
     flash[:success] = "Your blog post has been updated!"
     redirect_to "/blog_posts/#{blog_post.id}"
   end
+
+  def destroy
+    blog_post = BlogPost.find_by(id: params[:id])
+
+    if blog_post.destroy
+      redirect_to '/blog_posts'
+    else 
+      redirect_to "/blog_posts/#{blog_post.id}"
+    end
+  end
 end
