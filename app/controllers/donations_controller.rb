@@ -40,6 +40,7 @@ class DonationsController < ApplicationController
 
   def show
     @donation = Donation.find_by(id: params[:id])
+    @token = Braintree::ClientToken.generate
   end
 
   def edit
