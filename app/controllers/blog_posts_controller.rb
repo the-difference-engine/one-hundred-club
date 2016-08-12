@@ -1,4 +1,5 @@
 class BlogPostsController < ApplicationController
+  
   def index
     @blog_posts = BlogPost.all
   end
@@ -22,5 +23,22 @@ class BlogPostsController < ApplicationController
   def show
     @blog_post = BlogPost.find_by(id: params[:id])
     render 'show.html.erb'
+  end
+
+  def edit
+    @blog_post = BlogPost.find_by(id: params[:id])
+    render "edit.html.erb"
+  end
+
+  def update
+    blog_post = BlogPost.find_by(id: params[:id])
+
+    blog_post.update(
+      title: params[:title],
+      content: params[:content],
+      image: params[:image]
+    )
+    flash[:success] = "Your blog post has been updated!"
+    redirect_to "/blog_posts/#{blog_post.id}"
   end
 end
