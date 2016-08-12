@@ -68,4 +68,24 @@ class DonationsController < ApplicationController
 
     redirect_to "/donations/#{donation.id}"
   end
+
+  def checkout
+    nonce = params[:payment_method_nonce]
+    result = Braintree::Transaction.sale(
+      :amount => "10.00",
+      :payment_method_nonce => nonce,
+      :options => {
+        :submit_for_settlement => true
+      }
+    )
+    if result.success?
+      puts "success!: #{result.transaction.id}"
+    elsif result.transaction
+      puts "Error processing transaction:"
+      puts "  code: #{result.transaction.processor_response_code}"
+      puts "  text: #{result.transaction.processor_response_text}"
+    else
+      p result.errors
+    end
+  end
 end
