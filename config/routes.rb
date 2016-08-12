@@ -36,9 +36,13 @@ Rails.application.routes.draw do
   get '/users/:id/edit' => 'users#edit'
   patch '/users/:id' => 'users#update'
   ##########################################################
+  get '/blog_posts' => 'blog_posts#index'
   get '/blog_posts/new' => 'blog_posts#new'
   post '/blog_posts' => 'blog_posts#create'
   get '/blog_posts/:id' => 'blog_posts#show'
+  get '/blog_posts/:id/edit' => 'blog_posts#edit'
+  patch '/blog_posts/:id' => 'blog_posts#update'
+  delete '/blog_posts/:id' => 'blog_posts#destroy'
   ##########################################################
   namespace :api do
     get '/events' => 'events#index'
