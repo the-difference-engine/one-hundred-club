@@ -42,6 +42,7 @@ Rails.application.routes.draw do
   get '/blog_posts/:id' => 'blog_posts#show'
   get '/blog_posts/:id/edit' => 'blog_posts#edit'
   patch '/blog_posts/:id' => 'blog_posts#update'
+  delete '/blog_posts/:id' => 'blog_posts#destroy'
   ##########################################################
   namespace :api do
     get '/events' => 'events#index'
