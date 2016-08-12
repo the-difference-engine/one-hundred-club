@@ -1,0 +1,18 @@
+<h1>Edit Blog Post</h1>
+<%= form_tag "/blog_posts/#{params[:id]}", method: :patch, multipart: true  do %>
+  <div>
+    <%= label_tag :title, "Title: "  %>
+    <%= text_field_tag :title, @blog_post.title %>
+  </div>
+  <div>
+    <%= label_tag :content, "Content: " %>
+    <%= text_field_tag :content, @blog_post.content %>
+  </div>
+  <div>
+    <%= label_tag :image, "Image URL: " %>
+    <%= text_field_tag :image, @blog_post.image %>
+  </div>
+  <div>
+    <%= submit_tag "Submit Changes" %>
+  </div>
+<% end %>

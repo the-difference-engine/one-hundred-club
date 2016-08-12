@@ -1,5 +1,10 @@
+<div class="container">
+    <hr>
+  <div id="calendar"></div>
+</div>
+
 <h2>All Events</h2>
-<%= @events.each do |event| %>
+<% @events.each do |event| %>
   <div>
     <h3>Event: <%= event.title %></h3>
     <h4>Date: <%= event.datetime %></h4>
