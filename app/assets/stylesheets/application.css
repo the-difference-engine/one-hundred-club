@@ -13,3 +13,50 @@
  *= require_tree .
  *= require_self
  */
+
+.navbar-custom {
+  background-color: transparent;
+}
+
+.navbar .navbar-nav {
+  background: transparent;
+  font-family: "Arial Black", "Arial Bold", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 20px;
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+}
+
+.navbar .navbar-collapse {
+  background: transparent;
+  text-align: center;
+}
+.navbar-category {
+  color: #000000 !important;
+  margin-left: 12px;
+  margin-right: 12px;
+}
+
+.navbar-category:hover {
+  background-color: transparent !important;
+  color:#BF0A30 !important;
+}
+
+
+.navbar-donate {
+  background-color: transparent !important;
+  color: #BF0A30 !important;
+}
+
+.navbar-donate:hover {
+  color: #000000 !important;
+}
+
+#navbar-donate-active, #navbar-category-active  {
+  color:#C8B791 !important;
+}
+
