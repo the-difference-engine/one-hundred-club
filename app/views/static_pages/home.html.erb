@@ -1,0 +1,17 @@
+<h3>News</h3>
+<% @recent_news.each do |post| %>
+   <h5><%= post.title %></h5>
+    <p><%= post.content %></p>
+<% end %>
+
+<h3>Events</h3>
+<% @future_events.each do |event| %>
+    <h5><%= event.title %></h5>
+    <p><%= event.datetime %></p>
+<% end %> 
+
+<p>
+  The 100 Club of Chicago provides financial assistance, access to resources and moral support 
+  for the families of first responders who have lost their lives in the line of duty in Cook 
+  and Lake Counties.
+</p>
