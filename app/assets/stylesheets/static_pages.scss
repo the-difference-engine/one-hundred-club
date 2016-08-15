@@ -1,3 +1,36 @@
 // Place all the styles related to the static-pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#footer{
+	background-color: rgba(188, 155, 93, 1);
+	position: absolute;
+	height: 246px;
+	width: 100%;
+}
+
+#footer-content{
+	height: 246px;
+	width: 980px;
+	margin: 0 auto;
+	text-align: center;
+	color: white;
+	p {
+		font-size: 12px;
+		letter-spacing: 0.04em;
+	}
+}
+#navbar-1 li {
+	display: inline;
+	font-family: Arial, Helvetica, sans-serif;
+	font: normal normal normal 18px/1.4em 'open sans', sans-serif;
+	font-weight: bold;
+	span {
+		margin-right: 10px;
+	}
+}
+
+#navbar-2 li {
+
+}	
