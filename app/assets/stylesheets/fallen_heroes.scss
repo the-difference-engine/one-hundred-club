@@ -1,3 +1,24 @@
 // Place all the styles related to the fallen-heroes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.block-quote-row {
+  height: 300px;
+  vertical-align: middle;
+}
+
+.block-quote {
+  font-family: 'Libre Baskerville', serif;  
+  font-style: italic;
+  font-size: 30px;
+  text-align: center;
+  color: #605E5E;
+  line-height: 1.5;
+  font-weight: normal;
+  font-stretch: normal;
+
+}
+
+#fallen-heroes-row {
+  margin: 0 50px;
+}
