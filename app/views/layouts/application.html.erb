@@ -67,7 +67,7 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav navbar-center">
-          <li><%= link_to "Home", '#', {class: "navbar-category", id: ("navbar-category-active" if current_page?('#'))} %></li>
+          <li><%= link_to "Home", '/', {class: "navbar-category", id: ("navbar-category-active" if current_page?('/'))} %></li>
           <li><%= link_to "About", '#', {class: "navbar-category", id: ("navbar-category-active" if current_page?('#'))} %></li>
           <li><%= link_to "Heroes", '/fallen_heroes', {class: "navbar-category", id: ("navbar-category-active" if current_page?('/fallen_heroes'))} %></li>
           <li><%= link_to "Programs", '#', {class: "navbar-category", id: ("navbar-category-active" if current_page?('#'))} %></li>          

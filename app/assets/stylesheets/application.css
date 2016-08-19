@@ -87,3 +87,18 @@
   font-weight: bold;
 }
 
+.block-quote-row {
+  height: 300px;
+  vertical-align: middle;
+}
+
+.block-quote {
+  font-family: 'Libre Baskerville', serif;  
+  font-style: italic;
+  font-size: 30px;
+  text-align: center;
+  color: #605E5E;
+  line-height: 1.5;
+  font-weight: normal;
+  font-stretch: normal;
+}
