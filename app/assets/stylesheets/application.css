@@ -60,6 +60,33 @@
   color:#C8B791 !important;
 }
 
+.section-heading {
+  color: #BC9B5D;
+  height: 30px;
+}
+
+#section-heading-text {
+  text-align: right;
+}
+
+.section-heading p {
+  font-size: 1.2em;
+  margin-top: 2px;
+}
+
+#section-heading-line {
+  height: 30px;
+}
+
+#line {
+  height: 15px;
+  border-bottom: 1px solid rgba(201, 182, 145, 1);
+  width: 80%;
+}
+
+#bold-font {
+  font-weight: bold;
+}
 
 .block-quote-row {
   height: 300px;

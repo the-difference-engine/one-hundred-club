@@ -12,6 +12,15 @@
     <div class="col-sm-2"></div>  
   </div>
 
+  <div class="row section-heading">
+    <div class="col-xs-12 col-sm-4" id="section-heading-text">
+      <p id="bold-font" style="display: inline">Fallen Heroes,&nbsp;</p><p style="display: inline">2010-2016</p>
+    </div>
+    <div class="col-xs-12 col-sm-8" id="section-heading-line">
+      <div id="line"></div>
+    </div> 
+  </div> 
+
   <div id="fallen-heroes-row">
     <%= button_to "Add New Fallen Hero", "/fallen_heroes/new", method: :get %>
 
@@ -24,7 +33,7 @@
       <% end %>  
 
         <div class="col-sm-4">
-          <h4><%= fallen_hero.first_name %> <%= fallen_hero.middle_name %> <%= fallen_hero.last_name %></h4>
+          <p><%= fallen_hero.first_name %> <%= fallen_hero.middle_name %> <%= fallen_hero.last_name %></h4>
           <h5><%= fallen_hero.rank %></h5>
           <p><%= fallen_hero.department %></p>
           <p><%= fallen_hero.date_deceased %></p>
