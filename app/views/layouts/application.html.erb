@@ -75,21 +75,32 @@
 
   <div id="footer">
     <div id="footer-content">
-    <ul id="navbar-1" style="list-style-type:none">
-      <li><span>About</span></li>
-      <li><span>Programs</span></li>
-      <li><span>Events</span></li>
-      <li><span>News</span></li>
-      <li><span>Supporters</span></li>
-    </ul>
-    <ul id="navbar-2" style="list-style-type:none">
-      <li><%= link_to "Donate", "/donations/new" %></li><span>   |   </span>
-      <li><%= link_to "Join", "/members/new" %></li><span>   |   </span>
-      <li><%= link_to "Contact", "/" %></li>
-    </ul>
-    <p>©2016 by 100 Club of Chicago. All rights reserved.</p> 
-    </div>
-  </div>
+      <div id="footer-icons">
+        <ul style="list-style-type:none">
+          <li><%= link_to image_tag("facebook_white_bubble.png", :alt => "facebook logo") %></li>
+          <li><%= link_to image_tag("Instagram_white_bubble.png", :alt => "instagram logo") %></li>
+          <li><%= link_to image_tag("youtube_white_bubble.png", :alt => "youtube logo") %></li>
+        </ul>
+      </div> <!-- end "footer-icons" -->
+      <div id="navbar-1">
+        <ul style="list-style-type:none">
+          <li><%= link_to "About", "/" %></li>
+          <li><%= link_to "Programs", "/" %></li>
+          <li><%= link_to "Events", "/" %></li>
+          <li><%= link_to "News", "/" %></li>
+          <li><%= link_to "Supporters", "/" %></li>
+        </ul>
+      </div> <!-- end "navbar-1" -->
+      <div id="navbar-2">
+        <ul style="list-style-type:none">
+          <li><%= link_to "Donate", "/donations/new" %> |</li>
+          <li><%= link_to "Join", "/members/new" %> |</li>
+          <li><%= link_to "Contact", "/" %></li>
+        </ul>
+        <p>©2016 by 100 Club of Chicago. All rights reserved.</p> 
+      </div> <!-- end "navbar-2" -->
+    </div> <!-- end "footer-content" -->
+  </div> <!-- end "footer" -->
 
 </body>
 </html>
