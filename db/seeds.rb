@@ -11,7 +11,7 @@ end
 end
 
 20.times do 
-  Event.create(image: Faker::Placeholdit.image("100x100"), title: Faker::Lorem.word, description: Faker::Lorem.paragraph, datetime: Faker::Time.forward(3, :evening), location: Faker::Address.street_address)
+  Event.create(image: Faker::Placeholdit.image("100x100"), title: Faker::Lorem.word, description: Faker::Lorem.paragraph, datetime: Faker::Time.forward(30, :evening), location: Faker::Address.street_address)
 end
 
 50.times do
