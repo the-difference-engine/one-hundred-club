@@ -53,7 +53,7 @@
 }
 
 .navbar-donate:hover {
-  color: #000000 !important;
+  color: #002E5D !important;
 }
 
 #navbar-donate-active, #navbar-category-active  {
@@ -61,7 +61,7 @@
 }
 
 .section-heading {
-  color: rgba(201, 182, 145, 1);
+  color: #BC9B5D;
   height: 30px;
 }
 
@@ -81,6 +81,7 @@
 #line {
   height: 15px;
   border-bottom: 1px solid rgba(201, 182, 145, 1);
+  width: 80%;
 }
 
 #bold-font {
@@ -101,4 +102,35 @@
   line-height: 1.5;
   font-weight: normal;
   font-stretch: normal;
+}
+
+.btn-large {
+  margin: ;
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #BF0A30;
+  color: #ffffff;
+}
+
+.btn-large:hover {
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #002E5D;
+  color: #ffffff;
+}
+
+.btn-small {
+  font-family: "Open Sans", sans-serif;
+  font-size: 12px;
+  background-color: #002E5D;
+  color: #ffffff;
+}
+
+.btn-small:hover {
+  font-family: "Open Sans", sans-serif;
+  font-size: 12px;
+  background-color: #BC9B5D;
+  color: #000000;
 }
