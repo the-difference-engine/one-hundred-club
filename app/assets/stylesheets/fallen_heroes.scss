@@ -2,12 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#fallen-heroes-blurb-row {
+.block-quote-row {
   height: 300px;
   vertical-align: middle;
 }
 
-#fallen-heroes-blurb {
+.block-quote {
   font-family: 'Libre Baskerville', serif;  
   font-style: italic;
   font-size: 30px;
