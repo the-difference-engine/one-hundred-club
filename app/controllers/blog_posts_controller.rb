@@ -1,4 +1,5 @@
 class BlogPostsController < ApplicationController
+  before_action :authenticate_blog_admin!, except: [:index, :show]
   
   def index
     @blog_posts = BlogPost.all
@@ -26,9 +27,7 @@ class BlogPostsController < ApplicationController
   end
 
   def edit
-    has_access_to_edit_page(params[:id], current_user)
-    @blog_post = BlogPost.find_by(id: params[:id])
-    # render "edit.html.erb"
+      @blog_post = BlogPost.find_by(id: params[:id])
   end
 
   def update
@@ -44,7 +43,6 @@ class BlogPostsController < ApplicationController
   end
 
   def destroy
-    has_access_to_edit_page(params[:id])
 
     blog_post = BlogPost.find_by(id: params[:id])
 
@@ -57,10 +55,9 @@ class BlogPostsController < ApplicationController
 
 private
 
-  def has_access_to_edit_page(member_id, current_user)
-      if current_user || current_user.member_id == member_id.to_i || current_user.blog_access
-        # puts "GIBBERISH" + current_user.member_id.to_s
-        redirect_to "/"
+  def authenticate_blog_admin!
+      unless current_user && current_user.blog_access
+        redirect_to '/'
       end
   end
 end
