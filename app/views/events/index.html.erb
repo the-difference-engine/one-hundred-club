@@ -2,19 +2,42 @@
 </div>
 <!-- </div> -->
 
-
 <!-- <div class="container"> -->
-    <hr>
-  <div id="calendar"></div>
+  <div class="row block-quote-row">
+  <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+      <h3 class="block-quote">
+        The 100 Club of Chicago provides financial assistance, access to resources and moral support 
+        for the families of first responders who have lost their lives in the line of duty in Cook 
+        and Lake Counties.
+      </h3>
+    </div>
+    <div class="col-sm-2"></div>
+  </div>
 <!-- </div> -->
 
-<h2>All Events</h2>
+
+<div class="container">
+    <hr>
+  <div id="calendar"></div>
+</div>
+
+<div class="container">
 <% @events.each do |event| %>
-  <div>
-    <h3>Event: <%= event.title %></h3>
-    <h4>Date: <%= event.datetime %></h4>
-    <h4>Location: <%= event.location %></h4>
-    <h5><%= event.description %></h5>
-    <%= image_tag(event.image) %>
+  <hr>
+  <div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-3">
+      <%= image_tag(event.image, :style => "height: 225px; width: 225px;") %>
+    </div>
+      <div class="col-sm-6">
+      <h3><%= event.title %></h3>
+      <h4><%= event.location %></h4>
+      <h4><%= event.datetime %></h4>
+      <h5><%= event.description %></h5>
+      <a class="btn btn-small" href="/events/<%= event.id %>" role="button">Details</a>
+
+    </div>
   </div>
 <% end %>
+</div>
