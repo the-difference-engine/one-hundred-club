@@ -22,9 +22,9 @@
   </div> 
 
   <div id="fallen-heroes-row">
-    <%= button_to "Add New Fallen Hero", "/fallen_heroes/new", method: :get %>
+    <%= button_to "Add New Fallen Hero", "/fallen_heroes/new", :type => "button", :class => "btn btn-primary", method: :get %>
 
-    <%= @fallen_heroes.each do | fallen_hero | %>
+    <% @fallen_heroes.each do | fallen_hero | %>
       <% if count == 3 %>
         <div class="clear_both"></div>
         <% count = 0 %>
@@ -32,14 +32,14 @@
         <% count = count + 1 %>
       <% end %>  
 
-        <div class="col-sm-4">
-          <p><%= fallen_hero.first_name %> <%= fallen_hero.middle_name %> <%= fallen_hero.last_name %></h4>
-          <h5><%= fallen_hero.rank %></h5>
-          <p><%= fallen_hero.department %></p>
-          <p><%= fallen_hero.date_deceased %></p>
-          <p><%= fallen_hero.description %></p>
-          <button><a href="/fallen_heroes/#{fallen_hero.id}">Read More</a></button>
-        </div>
+      <div class="col-sm-4">
+        <p><%= fallen_hero.first_name %> <%= fallen_hero.middle_name %> <%= fallen_hero.last_name %></h4>
+        <h5><%= fallen_hero.rank %></h5>
+        <p><%= fallen_hero.department %></p>
+        <p><%= fallen_hero.date_deceased %></p>
+        <p><%= fallen_hero.description %></p>
+        <%= button_to "Read More", "/fallen_heroes/#{fallen_hero.id}", :type => "button", :class => "btn btn-primary", method: :get %>
+      </div>
     <% end %>
 
   </div>
