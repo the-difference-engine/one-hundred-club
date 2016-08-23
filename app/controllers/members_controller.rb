@@ -44,7 +44,7 @@ class MembersController < ApplicationController
   end
 
   def edit
-    has_access_to_edit_page(params[:id])
+    has_access_to_edit_page(params[:id], current_user)
     @member = Member.find_by(id: params[:id])
   end
 
@@ -75,7 +75,7 @@ class MembersController < ApplicationController
 
   private
 
-  def has_access_to_edit_page(member_id)
+  def has_access_to_edit_page(member_id, current_user)
     unless current_user.member_id == member_id.to_i || current_user.member_access
       redirect_to "/"
     end
