@@ -1,4 +1,5 @@
 class BlogPostsController < ApplicationController
+  before_action :authenticate_blog_admin!, except: [:index, :show]
   
   def index
     @blog_posts = BlogPost.all
@@ -26,8 +27,7 @@ class BlogPostsController < ApplicationController
   end
 
   def edit
-    @blog_post = BlogPost.find_by(id: params[:id])
-    render "edit.html.erb"
+      @blog_post = BlogPost.find_by(id: params[:id])
   end
 
   def update
@@ -50,5 +50,12 @@ class BlogPostsController < ApplicationController
     else 
       redirect_to "/blog_posts/#{blog_post.id}"
     end
+  end
+
+private
+  def authenticate_blog_admin!
+      unless current_user && current_user.blog_access
+        redirect_to '/'
+      end
   end
 end
