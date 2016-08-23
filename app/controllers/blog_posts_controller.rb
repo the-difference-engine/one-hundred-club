@@ -43,7 +43,6 @@ class BlogPostsController < ApplicationController
   end
 
   def destroy
-
     blog_post = BlogPost.find_by(id: params[:id])
 
     if blog_post.destroy
@@ -54,7 +53,6 @@ class BlogPostsController < ApplicationController
   end
 
 private
-
   def authenticate_blog_admin!
       unless current_user && current_user.blog_access
         redirect_to '/'
