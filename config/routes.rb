@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'fallen_heroes#index'
+  get '/' => 'static_pages#home'
+  ##########################################################
   get '/fallen_heroes' => 'fallen_heroes#index'
   get '/fallen_heroes/new' => 'fallen_heroes#new'
   post '/fallen_heroes' => 'fallen_heroes#create'
@@ -40,6 +41,9 @@ Rails.application.routes.draw do
   get '/blog_posts/new' => 'blog_posts#new'
   post '/blog_posts' => 'blog_posts#create'
   get '/blog_posts/:id' => 'blog_posts#show'
+  get '/blog_posts/:id/edit' => 'blog_posts#edit'
+  patch '/blog_posts/:id' => 'blog_posts#update'
+  delete '/blog_posts/:id' => 'blog_posts#destroy'
   ##########################################################
   namespace :api do
     get '/events' => 'events#index'

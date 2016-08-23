@@ -1,3 +1,5 @@
 <%= image_tag @blog_post.image, height: "100", width: "100" %>
 <h1><%= @blog_post.title %></h1>
 <p><%= @blog_post.content %></p>
+<%= button_to "Edit Blog Post", "/blog_posts/#{@blog_post.id}/edit", method: :get %>
+<%= button_to "Delete Blog Post", "/blog_posts/#{@blog_post.id}", method: :delete %>
