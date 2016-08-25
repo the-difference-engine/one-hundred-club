@@ -22,7 +22,9 @@
   </div> 
 
   <div id="fallen-heroes-row">
-    <%= button_to "Add New Fallen Hero", "/fallen_heroes/new", method: :get %>
+    <div id="new-fallen-hero-button">
+      <%= button_to "Add New Fallen Hero", "/fallen_heroes/new", method: :get, :class => 'btn btn-small' %>
+    </div>
 
     <%= @fallen_heroes.each do | fallen_hero | %>
       <% if count == 3 %>
@@ -32,16 +34,33 @@
         <% count = count + 1 %>
       <% end %>  
 
-        <div class="col-sm-4">
-          <p><%= fallen_hero.first_name %> <%= fallen_hero.middle_name %> <%= fallen_hero.last_name %></h4>
+      <div class="col-sm-4 entry">          
+        <div class="entry-top">  
+          <div class="col-sm-12">
+            <% if fallen_hero.image_url %>
+              <div class="col-sm-5">
+                <img src="<%= fallen_hero.image_url %>" />
+              </div>
+              <div class="col-sm-7">
+                <p><%= fallen_hero.first_name %> <%= fallen_hero.middle_name %> <%= fallen_hero.last_name %></p>
+              </div>
+              <% else %>
+              <div class="col-sm-12">
+                <p><%= fallen_hero.first_name %> <%= fallen_hero.middle_name %> <%= fallen_hero.last_name %></p>
+              </div>
+            <% end %>
+          </div>
+        </div>
+        <div class="entry-bottom">
           <h5><%= fallen_hero.rank %></h5>
           <p><%= fallen_hero.department %></p>
-          <p><%= fallen_hero.date_deceased %></p>
-          <p><%= fallen_hero.description %></p>
-          <button><a href="/fallen_heroes/#{fallen_hero.id}">Read More</a></button>
+          <p class="date"><%= fallen_hero.date_deceased %></p>
+          <p><%= fallen_hero.description %>..</p>
+          <%= button_to "Read more", "/fallen_heroes/{#fallen_hero.id}", method: :get, :class => 'btn btn-small entry-button' %>
         </div>
+      </div>
     <% end %>
-
   </div>
-
 </div>
+
+
