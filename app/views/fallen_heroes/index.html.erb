@@ -1,7 +1,6 @@
 <% count = 0 %>
 
 <div class="container">
-
   <div class="row" class="block-quote-row">
     <div class="col-sm-2"></div>
     <div class="col-sm-8">
@@ -11,7 +10,6 @@
     </div>
     <div class="col-sm-2"></div>  
   </div>
-
   <div class="row section-heading">
     <div class="col-xs-12 col-sm-4" id="section-heading-text">
       <p id="bold-font" style="display: inline">Fallen Heroes,&nbsp;</p><p style="display: inline">2010-2016</p>
@@ -20,20 +18,17 @@
       <div id="line"></div>
     </div> 
   </div> 
-
   <div id="fallen-heroes-row">
     <div id="new-fallen-hero-button">
       <%= button_to "Add New Fallen Hero", "/fallen_heroes/new", method: :get, :class => 'btn btn-small' %>
     </div>
-
-    <%= @fallen_heroes.each do | fallen_hero | %>
+    <% @fallen_heroes.each do | fallen_hero | %>
       <% if count == 3 %>
         <div class="clear_both"></div>
         <% count = 0 %>
       <% else %>
         <% count = count + 1 %>
       <% end %>  
-
       <div class="col-sm-4 entry">          
         <div class="entry-top">  
           <div class="col-sm-12">

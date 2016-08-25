@@ -84,7 +84,41 @@
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
+
   <%= yield %>
+
+  <div id="footer">
+      <div id="footer-icons">
+        <ul>
+          <li><%= link_to image_tag("facebook_white_bubble.png", :alt => "facebook logo") %></li>
+          <li><%= link_to image_tag("Instagram_white_bubble.png", :alt => "instagram logo") %></li>
+          <li><%= link_to image_tag("youtube_white_bubble.png", :alt => "youtube logo") %></li>
+        </ul>
+      </div> <!-- end "footer-icons" -->
+      <div id="footer-nav">
+        <ul>
+          <li><%= link_to "About", "/" %></li>
+          <li><%= link_to "Programs", "/" %></li>
+          <li><%= link_to "Events", "/" %></li>
+          <li><%= link_to "News", "/" %></li>
+          <li><%= link_to "Supporters", "/" %></li>
+        </ul>
+      </div> <!-- end "footer-nav" -->
+      <div id="footer-subnav">
+        <ul>
+          <li><%= link_to "Donate", "/donations/new" %> |</li>
+          <li><%= link_to "Join", "/members/new" %> |</li>
+          <li><%= link_to "Contact", "/" %></li>
+        </ul>
+      </div> <!-- end "footer-subnav" -->
+      <div id="copyright">
+        <ul>
+          <li>
+            &#169;2016 by 100 Club of Chicago. All rights reserved.
+          </li>
+        </ul>
+      </div>
+  </div> <!-- end "footer"
 
 </body>
 </html>
