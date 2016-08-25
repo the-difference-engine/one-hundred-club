@@ -1,6 +1,6 @@
 class BlogPostsController < ApplicationController
   before_action :authenticate_blog_admin!, except: [:index, :show]
-  
+
   def index
     @blog_posts = BlogPost.all
   end
@@ -47,12 +47,13 @@ class BlogPostsController < ApplicationController
 
     if blog_post.destroy
       redirect_to '/blog_posts'
-    else 
+    else
       redirect_to "/blog_posts/#{blog_post.id}"
     end
   end
 
 private
+
   def authenticate_blog_admin!
       unless current_user && current_user.blog_access
         redirect_to '/'
