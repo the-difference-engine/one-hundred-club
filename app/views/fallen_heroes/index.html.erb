@@ -39,7 +39,10 @@
               <div class="col-sm-7">
                 <p><%= fallen_hero.first_name %> <%= fallen_hero.middle_name %> <%= fallen_hero.last_name %></p>
               </div>
-              <% else %>
+            <% else %>
+              <div class="col-sm-5">
+                <%= image_tag 'badge_generic.png', :style => "width: 68px; height: 68px; object-fit: cover;" %>
+              </div>
               <div class="col-sm-12">
                 <p><%= fallen_hero.first_name %> <%= fallen_hero.middle_name %> <%= fallen_hero.last_name %></p>
               </div>
