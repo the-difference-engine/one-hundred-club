@@ -9,7 +9,7 @@
         <h3 class="block-quote">The following is a listing of public safety professionals in Cook County who lost their lives in the line of duty.</h3>
       </div>
     </div>
-    <div class="col-sm-2"></div>  
+    <div class="col-sm-2"></div>
   </div>
 
   <div class="row section-heading">
@@ -18,8 +18,8 @@
     </div>
     <div class="col-xs-12 col-sm-8" id="section-heading-line">
       <div id="line"></div>
-    </div> 
-  </div> 
+    </div>
+  </div>
 
   <div id="fallen-heroes-row">
     <%= button_to "Add New Fallen Hero", "/fallen_heroes/new", :type => "button", :class => "btn btn-primary", method: :get %>
@@ -30,8 +30,18 @@
         <% count = 0 %>
       <% else %>
         <% count = count + 1 %>
-      <% end %>  
+      <% end %>
 
+<<<<<<< HEAD
+        <div class="col-sm-4">
+          <p><%= fallen_hero.first_name %> <%= fallen_hero.middle_name %> <%= fallen_hero.last_name %></h4>
+          <h5><%= fallen_hero.rank %></h5>
+          <p><%= fallen_hero.department %></p>
+          <p><%= fallen_hero.date_deceased %></p>
+          <p><%= fallen_hero.description %></p>
+          <button><a href="/fallen_heroes/<%= fallen_hero.id %>">Read More</a></button>
+        </div>
+=======
       <div class="col-sm-4">
         <p><%= fallen_hero.first_name %> <%= fallen_hero.middle_name %> <%= fallen_hero.last_name %></h4>
         <h5><%= fallen_hero.rank %></h5>
@@ -40,6 +50,7 @@
         <p><%= fallen_hero.description %></p>
         <%= button_to "Read More", "/fallen_heroes/#{fallen_hero.id}", :type => "button", :class => "btn btn-primary", method: :get %>
       </div>
+>>>>>>> e97ed66c9e74980b32506e39d11d0e08843eaaa9
     <% end %>
 
   </div>
