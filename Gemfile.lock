@@ -46,6 +46,8 @@ GEM
     bootstrap-sass (3.3.6)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
+    braintree (2.65.0)
+      builder (>= 2.0.0)
     builder (3.2.2)
     byebug (9.0.5)
     capybara (2.4.4)
@@ -246,6 +248,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-sass (~> 3.3.6)
+  braintree (~> 2.65.0)
   byebug
   capybara (~> 2.4.3)
   carrierwave
@@ -271,3 +274,6 @@ DEPENDENCIES
   turbolinks
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
+
+BUNDLED WITH
+   1.11.2

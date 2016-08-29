@@ -29,11 +29,13 @@ gem 'puma'
 
 gem 'faker', '~> 1.6.3'
 
-gem 'devise', '~> 4.1.1 '
+gem 'devise', '~> 4.1.1'
 
 gem 'carrierwave'
 
 gem "fog-aws"
+
+gem 'braintree', '~> 2.65.0'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
