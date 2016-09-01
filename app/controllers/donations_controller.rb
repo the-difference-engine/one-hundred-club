@@ -1,11 +1,4 @@
 class DonationsController < ApplicationController
-  require "rubygems"
-  require "braintree"
-
-  Braintree::Configuration.environment = :sandbox
-  Braintree::Configuration.merchant_id = ENV['BRAINTREE_MERCHANT_ID']
-  Braintree::Configuration.public_key = ENV['BRAINTREE_PUBLIC_KEY']
-  Braintree::Configuration.private_key = ENV['BRAINTREE_PRIVATE_KEY']
 
   def index
     @donations = Donation.all
@@ -72,8 +65,8 @@ class DonationsController < ApplicationController
   def checkout
     nonce_from_the_client = params[:payment_method_nonce]
     result = Braintree::Transaction.sale(
-      :amount => "10.00",
-      :payment_method_nonce => 'fake-valid-nonce',
+      :amount => '10.00',
+      :payment_method_nonce => nonce_from_the_client,
       :options => {
         :submit_for_settlement => true
       }
