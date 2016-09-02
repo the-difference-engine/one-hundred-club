@@ -2,12 +2,12 @@
 <html>
 <head>
   <title>OneHundredClub</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <nav class="navbar navbar-default navbar-custom">            
+  <nav class="navbar navbar-default navbar-custom">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
@@ -70,7 +70,7 @@
           <li><%= link_to "Home", '/', {class: "navbar-category", id: ("navbar-category-active" if current_page?('/'))} %></li>
           <li><%= link_to "About", '#', {class: "navbar-category", id: ("navbar-category-active" if current_page?('#'))} %></li>
           <li><%= link_to "Heroes", '/fallen_heroes', {class: "navbar-category", id: ("navbar-category-active" if current_page?('/fallen_heroes'))} %></li>
-          <li><%= link_to "Programs", '#', {class: "navbar-category", id: ("navbar-category-active" if current_page?('#'))} %></li>          
+          <li><%= link_to "Programs", '#', {class: "navbar-category", id: ("navbar-category-active" if current_page?('#'))} %></li>
           <li><%= link_to "Join", '/members/new', {class: "navbar-category", id: ("navbar-category-active" if current_page?('/members/new'))} %></li>
           <li><%= link_to "Supporters", '/members', {class: "navbar-category", id: ("navbar-category-active" if current_page?('/members'))} %></li>
           <li><%= link_to "Events", '/events', {class: "navbar-category", id: ("navbar-category-active" if current_page?('/events'))} %></li>
