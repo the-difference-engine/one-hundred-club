@@ -6,4 +6,8 @@ class StaticPagesController < ApplicationController
     @future_events = Event.where('datetime >= ?', Date.today).first(4)
     render 'home.html.erb'
   end
+
+  def programs
+    render 'programs.html.erb'
+  end
 end
