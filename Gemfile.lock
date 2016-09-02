@@ -46,6 +46,8 @@ GEM
     bootstrap-sass (3.3.6)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
+    braintree (2.65.0)
+      builder (>= 2.0.0)
     builder (3.2.2)
     byebug (9.0.5)
     capybara (2.4.4)
@@ -223,9 +225,6 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (2.0.5)
-    turbolinks (5.0.0)
-      turbolinks-source (~> 5)
-    turbolinks-source (5.0.0)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (3.0.0)
@@ -246,6 +245,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-sass (~> 3.3.6)
+  braintree (~> 2.65.0)
   byebug
   capybara (~> 2.4.3)
   carrierwave
@@ -268,6 +268,5 @@ DEPENDENCIES
   sdoc (~> 0.4.0)
   selenium-webdriver (~> 2.43.0)
   spring
-  turbolinks
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
