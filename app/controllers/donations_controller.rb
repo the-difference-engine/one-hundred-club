@@ -43,7 +43,7 @@ class DonationsController < ApplicationController
   def update
     donation = Donation.find_by(id: params[:id])
 
-    donation = Donation.update(
+    donation.update(
       title: params[:title],
       first_name: params[:first_name],
       middle_name: params[:middle_name],
