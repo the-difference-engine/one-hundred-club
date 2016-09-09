@@ -38,6 +38,14 @@ Rails.application.routes.draw do
   get '/users/:id/edit' => 'users#edit'
   patch '/users/:id' => 'users#update'
   ##########################################################
+  get '/user_permissions' => 'user_permissions#index'
+  get '/user_permissions/search' => 'user_permissions#search'
+  get '/user_permissions/new' => 'user_permissions#new'
+  post '/user_permissions' => 'user_permissions#create'
+  get '/user_permissions/:id' => 'user_permissions#show'
+  get '/user_permissions/:id/edit' => 'user_permissions#edit'
+  patch '/user_permissions/:id' => 'user_permissionss#update'
+  ##########################################################
   get '/blog_posts' => 'blog_posts#index'
   get '/blog_posts/new' => 'blog_posts#new'
   post '/blog_posts' => 'blog_posts#create'
