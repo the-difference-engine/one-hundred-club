@@ -17,24 +17,24 @@
   .entry-top {
     font-family: 'Libre Baskerville', serif;  
     height: 65px;
-    background-color: #BC9B5D;
+    background-color: #C8B791;
 
     img {
       max-width: 80px;
       height: auto;
-      margin-top: 50%;
     }
 
     p {
       font-style: italic;
       color: #002E5D;
-      font-size: 20px;
-      padding-top: 16px;
+      font-size: 22px;
+      line-height: 1.1em;
+      margin: 5% auto;
     }
   }
 
   .entry-bottom {
-    background-color: #DEDEDE;
+    background-color: #F5F5F5;
     padding: 20px;
     height: 335px;
 
@@ -46,7 +46,7 @@
 
 .btn, .btn-small, .entry-button {
   text-align: center;
-  margin: 0 auto;
+  margin: auto;
 }
 
 #new-fallen-hero-button {

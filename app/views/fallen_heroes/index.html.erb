@@ -10,6 +10,7 @@
     </div>
     <div class="col-sm-2"></div>
   </div>
+
   <div class="row section-heading">
     <div class="col-xs-12 col-sm-4" id="section-heading-text">
       <p id="bold-font" style="display: inline">Fallen Heroes,&nbsp;</p><p style="display: inline">2010-2016</p>
@@ -19,10 +20,11 @@
     </div> 
   </div>
 
+  <div id="new-fallen-hero-button">
+    <%= button_to "Add New Fallen Hero", "/fallen_heroes/new", method: :get, :class => 'btn btn-small' %>
+  </div>
+
   <div id="fallen-heroes-row">
-    <div id="new-fallen-hero-button">
-      <%= button_to "Add New Fallen Hero", "/fallen_heroes/new", method: :get, :class => 'btn btn-small' %>
-    </div>
     <% @fallen_heroes.each do | fallen_hero | %>
       <% if count == 3 %>
         <div class="clear_both"></div>
@@ -30,24 +32,15 @@
       <% else %>
         <% count = count + 1 %>
       <% end %>  
-      <div class="col-sm-4 entry">          
+      <div class="col-sm-4 entry">
         <div class="entry-top">  
           <div class="col-sm-12">
-            <% if fallen_hero.image_url %>
-              <div class="col-sm-5">
-                <img src="<%= fallen_hero.image_url %>" />
-              </div>
-              <div class="col-sm-7">
-                <p><%= fallen_hero.first_name %> <%= fallen_hero.middle_name %> <%= fallen_hero.last_name %></p>
-              </div>
-            <% else %>
-              <div class="col-sm-5">
-                <%= image_tag 'badge_generic.png', :style => "width: 68px; height: 68px; object-fit: cover;" %>
-              </div>
-              <div class="col-sm-12">
-                <p><%= fallen_hero.first_name %> <%= fallen_hero.middle_name %> <%= fallen_hero.last_name %></p>
-              </div>
-            <% end %>
+            <div class="col-sm-3">
+              <img src="<%= fallen_hero.image_url %>" />
+            </div>
+            <div class="col-sm-9">
+              <p><%= fallen_hero.first_name %> <%= fallen_hero.middle_name %> <%= fallen_hero.last_name %></p>
+            </div>
           </div>
         </div>
         <div class="entry-bottom">
