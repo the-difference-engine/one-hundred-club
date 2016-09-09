@@ -47,7 +47,7 @@
           <h5><%= fallen_hero.rank %></h5>
           <p><%= fallen_hero.department %></p>
           <p class="date"><%= fallen_hero.date_deceased %></p>
-          <p><%= fallen_hero.description %>..</p>
+          <p><%= fallen_hero.description.truncate(160) %>..</p>
           <%= button_to "Read more", "/fallen_heroes/{#fallen_hero.id}", method: :get, :class => 'btn btn-small entry-button' %>
         </div>
       </div>
