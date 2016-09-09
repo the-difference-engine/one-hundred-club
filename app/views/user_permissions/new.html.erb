@@ -1,0 +1,21 @@
+<%= form_tag '/user_permissions', method: :post do %>
+  <div>
+    <%= label_tag :email, "Enter User E-mail Address: " %>
+    <%= text_field_tag :email %>
+  </div>
+  <div>
+    <%= label_tag :super_admin, "Super Admin: " %>
+    <%= select_tag :super_admin, options_for_select([['YES', true], ['NO', false]]) %>
+  </div>
+  <div>
+    <%= label_tag :admin, "Admin: " %>
+    <%= select_tag :admin, options_for_select([['YES', true], ['NO', false]]) %>
+  </div>
+  <div>
+    <%= label_tag :content, "Content: " %>
+    <%= select_tag :content, options_for_select([['YES', true], ['NO', false]]) %>
+  </div>
+  <div>
+    <%= submit_tag "Submit" %>
+  </div>
+<% end %>
