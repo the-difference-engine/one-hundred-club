@@ -68,7 +68,7 @@
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav navbar-center">
           <li><%= link_to "Home", '/', {class: "navbar-category", id: ("navbar-category-active" if current_page?('/'))} %></li>
-          <li><%= link_to "About", '#', {class: "navbar-category", id: ("navbar-category-active" if current_page?('#'))} %></li>
+          <li><%= link_to "About", '/about-us', {class: "navbar-category", id: ("navbar-category-active" if current_page?('/about-us'))} %></li>
           <li><%= link_to "Heroes", '/fallen_heroes', {class: "navbar-category", id: ("navbar-category-active" if current_page?('/fallen_heroes'))} %></li>
           <li><%= link_to "Programs", '#', {class: "navbar-category", id: ("navbar-category-active" if current_page?('#'))} %></li>
           <li><%= link_to "Join", '/members/new', {class: "navbar-category", id: ("navbar-category-active" if current_page?('/members/new'))} %></li>
