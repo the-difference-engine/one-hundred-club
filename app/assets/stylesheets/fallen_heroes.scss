@@ -6,6 +6,50 @@
 }
 
 .section-heading {
+  margin-top: 80px;
+  margin-bottom: 30px;
+}
+
+.entry {
+  height: 400px;
+  margin-bottom: 25px;
+
+  .entry-top {
+    font-family: 'Libre Baskerville', serif;  
+    height: 65px;
+    background-color: #C8B791;
+
+    img {
+      max-width: 80px;
+      height: auto;
+    }
+
+    p {
+      font-style: italic;
+      color: #002E5D;
+      font-size: 22px;
+      line-height: 1.1em;
+      margin: 5% auto;
+    }
+  }
+
+  .entry-bottom {
+    background-color: #F5F5F5;
+    padding: 20px;
+    height: 335px;
+
+    .date {
+      color: #BC9B5D;
+    }
+  }
+}
+
+.btn, .btn-small, .entry-button {
+  text-align: center;
+  margin: auto;
+}
+
+#new-fallen-hero-button {
   margin-top: 40px;
   margin-bottom: 20px;
 }
