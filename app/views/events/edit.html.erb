@@ -6,7 +6,7 @@
   </div>
   <div>
     <%= label_tag :datetime, "Date and Time: " %>
-    <%= datetime_select :datetime, @event.datetime %>
+    <%= datetime_select(:datetime, :datetime, default: @event.datetime) %>
   </div>
   <div>
     <%= label_tag :location, "Location: " %>
