@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+  include EventsHelper
+  
   def index
     @events = Event.all
   end
@@ -9,14 +11,16 @@ class EventsController < ApplicationController
   end
 
   def new
+    @event = Event.new
   end
 
   def create
-    @event = Event.create(
+    datetime = format_datetime_new(params[:datetime])
+    @event = Event.new(
       image: params[:image],
       title: params[:title],
       description: params[:description],
-      datetime: params[:datetime],
+      datetime: datetime,
       location: params[:location]
     )
     if @event.save
@@ -38,15 +42,14 @@ class EventsController < ApplicationController
 
   def update
     event = Event.find_by(id: params[:id])
-
+    datetime = format_datetime_updates(params[:datetime])
     event.update(
       title: params[:title],
-      datetime: params[:datetime],
+      datetime: datetime,
       description: params[:description],
       image: params[:image],
       location: params[:location]
     )
-
     redirect_to "/events/#{event.id}"
   end
 
@@ -55,9 +58,9 @@ class EventsController < ApplicationController
 
     if event.destroy
       redirect_to '/events'
-    else 
+    else
       redirect_to "/events/#{event.id}"
     end
   end
-  
+
 end

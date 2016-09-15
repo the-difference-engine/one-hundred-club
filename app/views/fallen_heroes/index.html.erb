@@ -1,7 +1,6 @@
 <% count = 0 %>
 
 <div class="container">
-
   <div class="row" class="block-quote-row">
     <div class="col-sm-2"></div>
     <div class="col-sm-8">
@@ -18,41 +17,40 @@
     </div>
     <div class="col-xs-12 col-sm-8" id="section-heading-line">
       <div id="line"></div>
-    </div>
+    </div> 
+  </div>
+
+  <div id="new-fallen-hero-button">
+    <%= button_to "Add New Fallen Hero", "/fallen_heroes/new", method: :get, :class => 'btn btn-small' %>
   </div>
 
   <div id="fallen-heroes-row">
-    <%= button_to "Add New Fallen Hero", "/fallen_heroes/new", :type => "button", :class => "btn btn-primary", method: :get %>
-
     <% @fallen_heroes.each do | fallen_hero | %>
       <% if count == 3 %>
         <div class="clear_both"></div>
         <% count = 0 %>
       <% else %>
         <% count = count + 1 %>
-      <% end %>
-
-<<<<<<< HEAD
-        <div class="col-sm-4">
-          <p><%= fallen_hero.first_name %> <%= fallen_hero.middle_name %> <%= fallen_hero.last_name %></h4>
+      <% end %>  
+      <div class="col-sm-4 entry">
+        <div class="entry-top">  
+          <div class="col-sm-12">
+            <div class="col-sm-3">
+              <img src="<%= fallen_hero.image_url %>" />
+            </div>
+            <div class="col-sm-9">
+              <p><%= fallen_hero.first_name %> <%= fallen_hero.middle_name %> <%= fallen_hero.last_name %></p>
+            </div>
+          </div>
+        </div>
+        <div class="entry-bottom">
           <h5><%= fallen_hero.rank %></h5>
           <p><%= fallen_hero.department %></p>
-          <p><%= fallen_hero.date_deceased %></p>
-          <p><%= fallen_hero.description %></p>
-          <button><a href="/fallen_heroes/<%= fallen_hero.id %>">Read More</a></button>
+          <p class="date"><%= fallen_hero.date_deceased %></p>
+          <p><%= fallen_hero.description.truncate(160) %>..</p>
+          <%= button_to "Read more", "/fallen_heroes/{#fallen_hero.id}", method: :get, :class => 'btn btn-small entry-button' %>
         </div>
-=======
-      <div class="col-sm-4">
-        <p><%= fallen_hero.first_name %> <%= fallen_hero.middle_name %> <%= fallen_hero.last_name %></h4>
-        <h5><%= fallen_hero.rank %></h5>
-        <p><%= fallen_hero.department %></p>
-        <p><%= fallen_hero.date_deceased %></p>
-        <p><%= fallen_hero.description %></p>
-        <%= button_to "Read More", "/fallen_heroes/#{fallen_hero.id}", :type => "button", :class => "btn btn-primary", method: :get %>
       </div>
->>>>>>> e97ed66c9e74980b32506e39d11d0e08843eaaa9
     <% end %>
-
   </div>
-
 </div>
