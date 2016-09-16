@@ -1,24 +1,126 @@
 <div ng-app="app">
-  {{ 1 + 1 }}
+	<div ng-controller="aboutCtrl">
 
+		<div class="container">
+			<div class="well">
+				<div class="row">
+					<div class="col-md-12">
 
-<div ng-controller="aboutCtrl">
-<div ng-click="testFunction()" ng-show="showAbout">
-<h1>About Us</h1>
-<p>
-	The 100 Club of Chicago provides for the families of first responders who have lost their lives in the line of duty. This membership based organization offers several forms of financial assistance, access to resources and moral support.  All sworn federal, state, county and local first responders stationed in Cook and Lake Counties are included.
-</p>
-</div>
-</div>
-</div>
+						<div class="list-group">
+							<div class="col-md-4">
+								<a href="#" class="list-group-item" ng-click="aboutButton()">
+									About
+								</a>
+								<a href="#" class="list-group-item" ng-click="historyButton()">History</a>
+								<a href="#" class="list-group-item" ng-click="leadershipButton()">Leadership</a>
+								<a href="#" class="list-group-item" ng-click="testimonialButton()">Testimonials</a>
+								<a href="#" class="list-group-item" ng-click="faqButton()">FAQ</a>
+							</div>
+						</div>
 
-<div class="list-group">
-  <a href="#" class="list-group-item active">
-    Cras justo odio
-  </a>
-  <a href="/history" class="list-group-item">History</a>
-  <a href="/leadership" class="list-group-item">Leadership</a>
-  <a href="/testimonial" class="list-group-item">Testimonials</a>
-  <a href="/faq" class="list-group-item">FAQ</a>
-</div>
+						<div ng-show="showAbout">
+							<h2>About Us</h2>
+							<p>
+								The 100 Club of Chicago provides for the families of first responders who have lost their lives in the line of duty. This membership based organization offers several forms of financial assistance, access to resources and moral support.  All sworn federal, state, county and local first responders stationed in Cook and Lake Counties are included.
+							</p>
+						</div>
 
+						<div ng-show="showHistory">
+							<h2>History of the 100 Club of Chicago</h2>
+							<h3>Where Did the Hundred Club Concept Come From? Who First Had The Idea?</h3>
+							<p>
+								Here is a short history copied from a saturday evening post article by Arthur W. Baum, which appeared on April 7, 1956. Yes, that’s right, 1956.
+							</p>
+							<p>
+								A policeman is slain by a cornered gunman. A fireman dies in a flaming building. Are the families of these public heroes forgotten? Not in Detroit, thanks to the Hundred Club.
+							</p>
+							<h4>The Bluecoats’ Best Friends</h4>
+							<p>
+								“Not all the superior products of Detroit have carburetors and wheels and windshields. One of the city’s finest developments of the last few years has been a nonprofit organization called the Hundred Club, something that deserves to be copied by other large American cities. The Hundred Club is unorthodox. It has no clubrooms, no paid employees, less than a drawerful of records and the dues are high. It scrounges free talents and services from willing members who are invariably among the ablest and highest-priced in the Detroit area. The club meets only twice a year, at the members’ expense, and the concern of those who belong is not with each other but with complete strangers. The Hundred Club has few assets – nothing but a big fund of money, a growing reservoir of good deeds and the largest heart in town.
+							</p>
+							<p>
+								It is stated in the club charter that its purpose is to help provide for the widows and dependents of policemen and firemen who lose their lives in the line of duty. This is an understatement. For one thing, the city of Detroit maintains a program of death benefits and pensions for this purpose that is inferior to few and better than many similar big-city systems. The widows, in short, are provided for without the Hundred Club. Yet the club is known and loved throughout the police and fire-fighting communities. In the words of one bluecoat, “It has given all of us a real wonderful lift in our emotions.” For the club has put a soothing finger on a tender spot that cannot be touched by a set formula of benefit or pension.
+							</p>
+							<p>
+								As it now functions, the Hundred Club stands as assurance to every policeman and fireman in its territory that if he should die [in the line of] duty the following things will happen within twenty-four hours: His widow will have $1000 in cash in the house, current bills will be paid, and if a debt or mortgage exists on his house, arrangements will be under way to clear it entirely. It is not expected that this will lessen the shock and grief of sudden, tragic widowhood. It is a contribution designed to lift from distracted households the specters of financial worry that are too often born of and compound the tragedy. The widow must face the loss of her husband, but she need not face also the loss of her home, the burden of debt, and possible deprivation for the children.
+							</p>
+							<p>
+								The Hundred Club does not require that a policeman or fireman die in violence or as a public hero, nor that his widow be threatened with impoverishment. One of the most recent club cases is that of Chief of Police William Katke, of the suburban village of Pleasant Ridge. In October, Chief Katke answered an ambulance call for a heart-attack victim and assisted in carrying the fatally stricken man to the car. Within moments Chief Katke was a second fatality. His own heart had stopped.
+							</p>
+							<p>
+								The Hundred Club, advised of the death, went into motion. Club president William Packer, who is the world’s largest Pontiac automobile dealer, set out for the Katke home carrying, according to club custom, a check for $1000 for the widow’s immediate contingencies. He had a little trouble getting Mrs. Katke to accept it. She had never heard of this group of Detroit big names.
+							</p>
+							<p>
+								The Katke’s, in middle age, had been thrifty and frugal, their modest home in adjoining Ferndale was clear of debt and Mrs. Katke would have an income she considered sufficient, including future education for her fourteen-year-old daughter. Bill Packer admired her stand, but the Hundred Club has a mind of its own and a committee that is smarter than the average citizen. Nate Shapiro, who has built a huge chain of drugstrores and who has had wide experience as a philanthropist, heads it. The committee, after an analysis by officers of the National Bank of Detroit, found Mrs. Katke overoptimistic. Had her husband been a Detroit policeman she would have received $4000 and a pension of a little less than half his salary. But he was not, and small communities have more meager resources for widows, sometimes none. Mrs. Katke, it was decided, needed a little more.
+							</p>
+							<p>
+								Within sixty days Jim Zinn, a vice-president of the bank, had ready an annuity which would add thirty dollars a month to Mrs. Katke’s income for ten years, more than enough time to see the daughter out of school. Nate Shapiro delivered the surprise a week before Christmas, Only then was the Hundred Club satisfied.
+							</p>
+							<p>
+								The Krueger case was different. On a warm August night last year, in the dark upstairs hallway of a Detroit apartment building, a shotgun blast boomed from a doorway, Five policemen were closing in for an arrest. The blast hit only one of them, Patrolman George Krueger, but it killed him. Patrolman George Krueger left a twenty-two-year-old widow with three small children. Next morning, Bill Packer, accompanied by Deputy Police Commissioner Miles Furlong, delivered the Hundred Club’s customary cash check and then surveyed the Krueger situation. The distraught young widow produced a cigar box. It held papers on $614 of small loans. The house was under a $6925 mortgage. There was an automobile, worth just about what was still due on installment payments. The Hundred Club paid off the mortgage and debts and helped dispose of the automobile. Mrs. Krueger was out of debt years before she would otherwise have been and her pension would thus be unencumbered.
+							</p>
+							<p>
+								It is not unusual for Detroit police and firemen to live intimately with debt. They have job security. They are good risks and credit comes easily. Many of the rookies are war veterans with houses bought on slim margins, but with youthful confidence that a long pay-off period can be managed because the job is steady. This is not unusual, but for a group of businessmen to spot a potential weakness in this way of life and then, when tragedy strikes, to make a generous repair is unique.
+							</p>
+							<p>
+								The story reaches back before 1950, when a police sergeant in the Palmer Park area of Detroit was wounded by an attacker’s bullet. Bill Packer knew the sergeant and considered him a friend, as he did most of the policemen and firemen in the area of his home and nearby business. He thought they did a good job in a friendly way, and he visited the sergeant in the hospital and talked to him about his work and the risks that went with it, Packer concluded that it was a rough deal and that citizens like himself should be pretty grateful. The sergeant recovered, but as Packer later said, “I thought about him for a long time after that. He was probably on my mind when former Commissioner George Boos one night told me about the death of Officer Andreas Mellert, a young ex-marine.
+							</p>
+							<p>
+								Patrolman Andreas Mellert was engaged in a routine pickup of a young man who had failed to appear on a traffic-violation charge. The young man had not resisted, but his father was enraged, and, as Mellert and his charge left the front door the father opened a front window and shot the patrolman in the back, killing him. Andreas Mellert left a young widow, a tiny girl with large eyes. She had just a few days earlier sold a little one-woman beauty shop that she had been operating. She had to sell – she was shortly going to the hospital to have her first child. As a widow she would receive $4000 and a pension of $170 a month. The Mellerts owed $4500 on their modest home.
+							</p>
+							<p>
+								Bill Packer went to the hospital to see Esther Mellert and was so touched by the collapse of her bright family plans that he sat down and wrote 100 friends, asking them to contribute to a fund for the policeman’s widow. He also enlisted the interest of columnist Jack Carlisle, of the Detroit News, who published a moving column about the expectant young mother in the hospital and the posthumous child of the police hero waiting to be born. Before Mrs. Mellert and newborn Kathleen Mellert left the hospital, Packer, Carlisle and Commissioner Boos handed Esther Mellert a bankbook with $7800 standing in her name. Andreas was killed on November 17, 1950. Kathleen was born on New Year’s Eve. Three and one half years later the Hundred Club was to set up a scholarship fund of $1000 for Kathleen.
+							</p>
+							<p>
+								The Hundred Club did not then exist. Nor had it been conceived a year later, when another benefit was collected for the widow of Officer Jerlecki, shot making an arrest in an armed robbery. Packer was only a contributor to this fund. He was in Florida. Four other Detroiters managed it, two of them subsequently Hundred Club members, H.W. Hart and C. S. Fitzgerlad. But Packer began to wonder if this was quite the way for citizens like him to discharge a civic obligation that they felt should be met. Suppose that Mellert’s young wife had not been in the hospital on the eve of motherhood or that Jerlecki had died less dramatically than he did. Would the response of donors have been so easy to obtain? Would a girl widowed by an undramatic fatality be less in need of help than a hero’s widow?
+							</p>
+							<p>
+								Packer discussed these ideas with Jack Carlisle on a boat trip in the summer of 1952. Don Mumford, manager of Detroit Statler Hotel and at that time a newcomer to town, was present. Among them they created the idea of a club whose members would contribute a fixed amount annually so that a permanent fund would be available to meet the problems as they arose. Dues were to be $200 a year, solely for the widows and dependents, plus $50 for expenses and two fancy dinners a year, just enough social binding to keep members together. The dinners have indeed been fancy, and well attended. Mumford, who is now secretary of the club, donated the first dinner at the Statler, including grouse flown in from Scotland, and expensive gift. The manager of the Sheraton-Cadillac donated the second, and from then on the club has paid its way.
+							</p>
+							<p>
+								Of the first 100 invited to join, only two failed to respond promptly, and they joined later. Then other Detroit businessmen, approving the idea, demanded to be let in. The limit was raised to 200, then to 250. The membership stands now at 267, with the reserve fund at $157,000.00 – enough to cope with results of a real disaster. At the last meeting the membership was asked if, in view of the large reserve, dues henceforth should be reduced. The suggestion was thunderously voted down.
+							</p>
+							<p>
+								Membership in the Hundred Club is sliced right off the top of Detroit business. Of the five automobile manufacturers, four presidents are members, together with a string of top officers of all five. There are also a Cabinet member, nationally known manufacturers, retailers, advertising heads, bankers and professional men. An honorary list includes the mayor, president of the Common Council, and the heads of four police and fire associations. Commissioner of Police Edward Piggins is a regular member. In his report at the last meeting he gave a clue as to how the force looks on the club. He said, “I echo the sentiment of every man and every woman in the Detroit Police Department when I say God bless each and every one of you.”
+							</p>
+							<p>
+								Organized in 1952, the Hundred Club had only six months to wait to find out what it was like to play angel. In July, 1953, Motorcycle Patrolman Arthur Meyers, while on duty, was killed at a downtown intersection. Bill Packer, Bert Hart and Jack Carlisle did not go immediately to the Meyers’ house on the first official club errand. They stopped instead at the home of the man who, they had learned, held a land contract on the Meyers’ home. The amount due was $7500. When the trio arrived at the Meyers’ house they found Violet Meyers, a fine young woman with three children. There was also a police sergeant present. It is doubtful that any of them will ever forget the scene. Bill packer wrote out a Hundred Club check for $7500 and told Mrs. Meyers that it would be waiting to pay off the land contract when the holder called. Mrs. Meyers broke down. The burly sergeant broke down. The three Hundred Club members nearly joined them.
+							</p>
+							<p>
+								The emotional strain in this phase of the club’s work is so intense that it is probably as well that the members are all pretty hardheaded men. Only once has a woman played a part. On that occasion Don Mumford’s wife undertook to deliver the deed that gave a young Melvindale widow the house she lived in with her three children. Her husband, Patrolman Cashel Fergurson, of the Melvindale Police, had shortly before that been killed while he was directing traffic around the scene of an accident on a rainy, misty night. His widow remembered too well that traffic was the one job her husband disliked. The Hundred Club had already given her the customary cash and had, because it was vital to her, completed payment on an automobile. Then, when Mrs. Mumford brought her the evidence that her house was clear, she was overcome. So was Don Mumford’s wife.
+							</p>
+							<p>
+								When the Hundred Club was two years old members voted to go back beyond the club’s formation to see if hardship existed among the women who had been widowed before the club appeared. So, with the help of both police and fire departments, every woman who had been widowed by a line-of-duty casualty was investigated. Those who had remarried were assumed to be provided for, and there were others who were in comfortable circumstances. But twenty-five were found who might use a cash gift, and to each of these a check for $1000 was sent. As a result, the club now has a file of twenty-three heart-warming thank-you letters. They speak of a hearing aid that was needed and could now be obtained, a child that could now go a little further in school than had been hoped, or the great lift that came with the knowledge that after all the years, someone had remembered.
+							</p>
+							<p>
+								Perhaps the longest step that the Hundred Club has yet taken is in the minds of the policemen and the fire fighters themselves. They were skeptics at first. Some of the uniformed men wondered what these big-shot businessmen had up their sleeves. Did they have an angle, and what could it be? One of the more suspicious fire officers expressed his strong skepticism to Jack Carlisle on the street one day and a fist fight nearly ensued. About a year ago the skeptic apologized. “I was wrong,” he said, “and I’m glad to admit it. You fellows are just about the nicest thing in town.”
+							</p>
+							<p>
+								Undoubtedly, the members of the Hundred Club are out-going men. In their benevolent concern with the deaths of certain citizens probably not one of them had noticed a curious and perhaps entirely irrelevant parallel – the fact that for each death in which they have helped a widow, two of their own members have quietly passed away.”
+							</p>
+							<p>
+								So, the Hundred or 100 or whatever variation of the name is used comes from the 100 friends Bill Packer originally wrote. It was his first idea to limit membership to that number when he incorporated The Hundred Club of Detroit in 1952. Demands from others to be admitted were granted, but the name stayed the same.
+							</p>
+						</div>
+
+						<div ng-show="showLeadership">
+							<h2>Leadership</h2>
+							<p>This page shows Board of Directors list and Staff</p>
+						</div>
+
+						<div ng-show="showTestimonial">
+							<h2>Testimonials</h2>
+							<p>This page shows all the nice things people say.</p>
+						</div>
+
+						<div ng-show="showFaq">
+							<h2>FAQ</h2>
+							<p>questions and answers answered</p>
+						</div>
+
+					</div> <!-- class="col-md-12" -->
+				</div> <!-- class=row -->
+			</div> <!-- class=well -->
+		</div> <!-- class=Containter -->
+	</div> <!-- ng-aboutCtrl -->
+		</div> <!-- ng-app -->
