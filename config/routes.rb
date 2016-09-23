@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get '/' => 'static_pages#home'
   get '/home' => 'static_pages#home'
   get '/programs' => 'static_pages#programs'
+  get '/news' => 'static_pages#news'
   ##########################################################
   get '/fallen_heroes' => 'fallen_heroes#index'
   get '/fallen_heroes/new' => 'fallen_heroes#new'
