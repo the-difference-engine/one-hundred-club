@@ -11,8 +11,23 @@
 // about supported directives.
 //
 //= require jquery
-//= require bootstrap-sprockets
 //= require jquery_ujs
+//= require theme/jquery-1.11.2.min
+//= require theme/plugin/jquery.easing
+//= require theme/plugin/jquery.fitvids
+//= require theme/plugin/jquery.viewportchecker
+//= require theme/plugin/jquery.stellar.min
+//= require theme/plugin/wow.min
+//= require theme/plugin/jquery.colorbox-min
+//= require theme/plugin/owl.carousel.min
+//= require theme/plugin/isotope.pkgd.min
+//= require theme/plugin/masonry.pkgd.min
+//= require theme/plugin/imagesloaded.pkgd.min
+//= require theme/plugin/jquery.fs.tipper.min
+//= require theme/plugin/mediaelement-and-player.min
+//= require theme/plugin/sidebar-menu
+//= require theme/theme
+//= require theme/navigation
 //= require_tree .
 
 
