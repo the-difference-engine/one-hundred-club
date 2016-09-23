@@ -1223,7 +1223,6 @@ form label.error {
     .logo a {
         width: 132px;
         display: block;
-        margin-top: 34px;
         /*margin-bottom: 28px;*/
         transition: all 0.27s cubic-bezier(0, 0, 0.58, 1) 0s;
         -o-transition: all 0.27s cubic-bezier(0, 0, 0.58, 1) 0s;
@@ -1233,7 +1232,8 @@ form label.error {
     }
 
         .logo a img {
-            width: 100%;
+            height: inherit;
+            width: auto;
             position: absolute;
             top: 0;
             left: 0;

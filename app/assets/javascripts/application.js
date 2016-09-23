@@ -14,6 +14,9 @@
 //= require jquery_ujs
 //= require theme/jquery-1.11.2.min
 //= require theme/plugin/jquery.easing
+//= require theme/jquery-ui.min
+//= require theme/bootstrap.min
+//= require theme/plugin/jquery.flexslider
 //= require theme/plugin/jquery.fitvids
 //= require theme/plugin/jquery.viewportchecker
 //= require theme/plugin/jquery.stellar.min
