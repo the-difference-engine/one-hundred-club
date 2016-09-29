@@ -10,6 +10,13 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require theme/style
+ *= require theme/bootstrap
+ *= require theme/font-awesome
+ *= require theme/ionicons
+ *= require theme/plugin/sidebar-menu
+ *= require theme/plugin/animate
+ *= require theme/jquery-ui
  *= require_tree .
  *= require_self
  */
@@ -94,7 +101,7 @@
 }
 
 .block-quote {
-  font-family: 'Libre Baskerville', serif;  
+  font-family: 'Libre Baskerville', serif;
   font-style: italic;
   font-size: 30px;
   text-align: center;
