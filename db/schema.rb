@@ -11,10 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160929233853) do
+ActiveRecord::Schema.define(version: 20160930003528) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "access_levels", force: :cascade do |t|
+    t.boolean  "admin"
+    t.boolean  "content"
+    t.boolean  "financial"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "blog_posts", force: :cascade do |t|
     t.string   "title"
@@ -63,6 +71,47 @@ ActiveRecord::Schema.define(version: 20160929233853) do
     t.string   "image_url"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+  end
+
+  create_table "transactions", force: :cascade do |t|
+    t.decimal  "amount",          precision: 15, scale: 2
+    t.string   "payment_type"
+    t.string   "user_profile_id"
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
+  end
+
+  create_table "user_access_levels", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "access_level_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "user_profiles", force: :cascade do |t|
+    t.string   "title"
+    t.string   "first_name"
+    t.string   "middle_name"
+    t.string   "last_name"
+    t.string   "street_address"
+    t.string   "secondary_address"
+    t.string   "suffix"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip_code"
+    t.string   "country"
+    t.string   "phone_number"
+    t.string   "how_heard"
+    t.string   "if_other"
+    t.string   "company"
+    t.string   "job_title"
+    t.string   "name_on_card"
+    t.string   "other_name_1"
+    t.string   "other_name_2"
+    t.string   "other_name_3"
+    t.string   "member_status"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
   create_table "users", force: :cascade do |t|
