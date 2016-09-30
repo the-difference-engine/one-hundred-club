@@ -1,12 +1,47 @@
 <div class="container">
-  <h1>New Donation</h1>
+
+<!-- GIFT INFORMATION -->
+
+  <h3>Gift Information</h3>
   <%= form_tag "/donations", method: :post do %>
+
+    <div>
+      <%= label_tag :donation_frequency, "Donation Frequency: " %>
+      <%= select_tag :donation_frequency, options_for_select(donation_frequency) %>
+    </div>
+
+    <div>
+      <%= label_tag :how_did_you_hear, "How Did You Hear? " %>
+      <%= select_tag :how_did_you_hear, options_for_select(how_did_you_hear) %>
+    </div>
+
+    <label>Please Be Specific</label>
+    <div class="input-group">
+      <input type="text" class="form-control" aria-label="Please Be Specific">
+    </div>
+
+    <div>
+      <%= label_tag :donation_category, "Donation Category: " %>
+      <%= select_tag :donation_category, options_for_select(donation_category) %>
+    </div>
+
+    <label>Please Be Specific</label>
+    <div class="input-group">
+      <input type="text" class="form-control" aria-label="Please Be Specific">
+    </div>
+
+
+<!-- CONTACT INFORMATION -->
+
+
+    <h3>Contact Information</h3>
+
     <div>
       <%= label_tag :title, "Title: " %>
-      <%= text_field_tag :title %>
+      <%= select_tag :title, options_for_select(title) %>
     </div>
     <div>
-      <%= label_tag :first_name, "First Name: " %>
+      <%= label_tag :first_name, "First Name:* " %>
       <%= text_field_tag :first_name %>
     </div>
     <div>
@@ -14,7 +49,7 @@
       <%= text_field_tag :middle_name %>
     </div>
     <div>
-      <%= label_tag :last_name, "Last Name: " %>
+      <%= label_tag :last_name, "Last Name:* " %>
       <%= text_field_tag :last_name %>
     </div>
     <div>
@@ -30,31 +65,61 @@
       <%= text_field_tag :city %>
     </div>
     <div>
-      <%= label_tag :state, "State: " %>
+      <%= label_tag :state, "State/Provence:* " %>
       <%= select_tag :state, options_for_select(us_states) %>
     </div>
     <div>
-      <%= label_tag :zip_code, "Zip Code: " %>
+      <%= label_tag :zip_code, "Postal Code:* " %>
       <%= text_field_tag :zip_code %>
     </div>
     <div>
-      <%= label_tag :country, "Country: " %>
+      <%= label_tag :country, "Country:* " %>
       <%= select_tag :country, options_for_select(countries) %>
     </div>
     <div>
-      <%= label_tag :email, "E-mail: " %>
+      <%= label_tag :email, "E-mail:* " %>
       <%= text_field_tag :email %>
     </div>
     <div>
-      <%= label_tag :phone, "Phone: " %>
+      <%= label_tag :phone, "Phone:* " %>
       <%= text_field_tag :phone %>
     </div>
-    <div>
-      <%= label_tag :amount, "Donation Amount: $" %>
-      <%= text_field_tag :amount %>
-    </div>  
-    <div>
-      <%= submit_tag "Submit Changes" %>
+
+
+<!-- PAYMENT INFORMATION -->
+
+
+    <h3>Payment Information</h3>
+    
+    <%= label_tag :amount, 'Donation Amount' %>
+    <div class="input-group">
+      <span class="input-group-addon">$</span>
+      <%= text_field_tag :amount, nil, class: 'form-control' %>
     </div>
+
+    <div>
+      <%= label_tag :payment_type, "Payment Type:* " %>
+      <%= select_tag :payment_type, options_for_select(payment_type) %>
+    </div>
+
+    <%= label_tag :name_on_card, 'Name on Card:*' %>
+    <div class="input-group">
+      <%= text_field_tag :name_on_card, nil, class: 'form-control' %>
+    </div>
+
+    <%= label_tag :card_number, 'Card Number*' %>
+    <div class="input-group">
+      <%= text_field_tag :card_number, nil, class: 'form-control' %>
+    </div>
+
+    <%= label_tag :cvv, 'CVV2*' %>
+    <div class="input-group">
+      <%= text_field_tag :cvv, nil, class: 'form-control' %>
+    </div>
+
+     <div>
+      <%= submit_tag "Submit" %>
+    </div>
+
   <% end %>
 </div>
