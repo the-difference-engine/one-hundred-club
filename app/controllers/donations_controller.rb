@@ -64,6 +64,9 @@ class DonationsController < ApplicationController
 
   def checkout
     nonce_from_the_client = params[:payment_method_nonce]
+    puts "*******************"
+    puts params
+    puts "*******************"
     result = Braintree::Transaction.sale(
       :amount => params[:amount],
       :payment_method_nonce => nonce_from_the_client,
