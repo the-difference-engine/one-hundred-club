@@ -6,6 +6,7 @@ class DonationsController < ApplicationController
   end
 
   def new
+    @token = Braintree::ClientToken.generate
   end
 
   def create
@@ -33,7 +34,6 @@ class DonationsController < ApplicationController
 
   def show
     @donation = Donation.find_by(id: params[:id])
-    @token = Braintree::ClientToken.generate
   end
 
   def edit
@@ -64,8 +64,11 @@ class DonationsController < ApplicationController
 
   def checkout
     nonce_from_the_client = params[:payment_method_nonce]
+    puts "*******************"
+    puts params
+    puts "*******************"
     result = Braintree::Transaction.sale(
-      :amount => '10.00',
+      :amount => params[:amount],
       :payment_method_nonce => nonce_from_the_client,
       :options => {
         :submit_for_settlement => true
