@@ -1,9 +1,18 @@
 <div class="container">
 
-<!-- GIFT INFORMATION -->
+
+
+
+<%= form_tag("/checkout", method: "post", id: "payment-form") do %>
+  <section>
+    <div class="bt-drop-in-wrapper">
+      <div id="bt-dropin"></div>
+    </div>
+
+    <!-- GIFT INFORMATION -->
 
   <h3>Gift Information</h3>
-  <%= form_tag "/donations", method: :post do %>
+ 
 
     <div>
       <%= label_tag :donation_frequency, "Donation Frequency: " %>
@@ -30,8 +39,7 @@
       <input type="text" class="form-control" aria-label="Please Be Specific">
     </div>
 
-
-<!-- CONTACT INFORMATION -->
+    <!-- CONTACT INFORMATION -->
 
 
     <h3>Contact Information</h3>
@@ -42,27 +50,27 @@
     </div>
     <div>
       <%= label_tag :first_name, "First Name:* " %>
-      <%= text_field_tag :first_name %>
+      <%= text_field_tag :first_name, nil, class: 'form-control'  %>
     </div>
     <div>
       <%= label_tag :middle_name, "Middle Name: " %>
-      <%= text_field_tag :middle_name %>
+      <%= text_field_tag :middle_name, nil, class: 'form-control'  %>
     </div>
     <div>
       <%= label_tag :last_name, "Last Name:* " %>
-      <%= text_field_tag :last_name %>
+      <%= text_field_tag :last_name, nil, class: 'form-control'  %>
     </div>
     <div>
       <%= label_tag :suffix, "Suffix: " %>
-      <%= text_field_tag :suffix %>
+      <%= text_field_tag :suffix, nil, class: 'form-control'  %>
     </div>
     <div>
       <%= label_tag :address, "Street Address: " %>
-      <%= text_field_tag :address %>
+      <%= text_field_tag :address, nil, class: 'form-control'  %>
     </div>
     <div>
       <%= label_tag :city, "City: " %>
-      <%= text_field_tag :city %>
+      <%= text_field_tag :city, nil, class: 'form-control'  %>
     </div>
     <div>
       <%= label_tag :state, "State/Provence:* " %>
@@ -70,7 +78,7 @@
     </div>
     <div>
       <%= label_tag :zip_code, "Postal Code:* " %>
-      <%= text_field_tag :zip_code %>
+      <%= text_field_tag :zip_code, nil, class: 'form-control'  %>
     </div>
     <div>
       <%= label_tag :country, "Country:* " %>
@@ -78,67 +86,35 @@
     </div>
     <div>
       <%= label_tag :email, "E-mail:* " %>
-      <%= text_field_tag :email %>
+      <%= text_field_tag :email, nil, class: 'form-control'  %>
     </div>
     <div>
       <%= label_tag :phone, "Phone:* " %>
-      <%= text_field_tag :phone %>
+      <%= text_field_tag :phone, nil, class: 'form-control'  %>
+    </div>
+  
+    <!-- Payment Information -->
+
+    <div >
+      <%= label_tag :amount, 'Donation Amount' %>
+      <%= text_field_tag :amount, '10', class: 'form-control' %>
     </div>
 
+  </section>
 
-<!-- PAYMENT INFORMATION -->
-
-
-    <h3>Payment Information</h3>
-    
-    <%= label_tag :amount, 'Donation Amount' %>
-    <div class="input-group">
-      <span class="input-group-addon">$</span>
-      <%= text_field_tag :amount, nil, class: 'form-control' %>
-    </div>
-
-    <div>
-      <%= label_tag :payment_type, "Payment Type:* " %>
-      <%= select_tag :payment_type, options_for_select(payment_type) %>
-    </div>
-
-    <%= label_tag :name_on_card, 'Name on Card:*' %>
-    <div class="input-group">
-      <%= text_field_tag :name_on_card, nil, class: 'form-control' %>
-    </div>
-
-    <%= label_tag :card_number, 'Card Number*' %>
-    <div class="input-group">
-      <%= text_field_tag :card_number, nil, class: 'form-control' %>
-    </div>
-
-    <%= label_tag :cvv, 'CVV2*' %>
-    <div class="input-group">
-      <%= text_field_tag :cvv, nil, class: 'form-control' %>
-    </div>
-
-     <div>
-      <%= submit_tag "Submit" %>
-    </div>
-
-  <% end %>
-
-  <form id="checkout" method="post" action="/checkout">
-    <div id="payment-form"></div>
-    <input type="submit" value="Pay $10">
-  </form>
-
-  <script src="https://js.braintreegateway.com/js/braintree-2.27.0.min.js"></script>
-
-  <script>
-  // We generated a client token for you so you can test out this code
-  // immediately. In a production-ready integration, you will need to
-  // generate a client token on your server (see section below).
-  var clientToken = "<%= @token %>";
-
-  braintree.setup(clientToken, "dropin", {
-    container: "payment-form"
-  });
-  </script>
+  <button class="button" type="submit"><span>Test Transaction</span></button>
+<% end %>
 
 </div>
+
+<script src="https://js.braintreegateway.com/js/braintree-2.27.0.min.js"></script>
+<script>
+// We generated a client token for you so you can test out this code
+// immediately. In a production-ready integration, you will need to
+// generate a client token on your server (see section below).
+var clientToken = "<%= @token %>";
+
+braintree.setup(clientToken, "dropin", {
+  container: "payment-form"
+});
+</script>

@@ -65,7 +65,7 @@ class DonationsController < ApplicationController
   def checkout
     nonce_from_the_client = params[:payment_method_nonce]
     result = Braintree::Transaction.sale(
-      :amount => '10.00',
+      :amount => params[:amount],
       :payment_method_nonce => nonce_from_the_client,
       :options => {
         :submit_for_settlement => true
