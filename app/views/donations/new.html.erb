@@ -112,7 +112,13 @@
 var clientToken = "<%= @token %>";
 
 braintree.setup(clientToken, "dropin", {
-  container: "payment-form"
+  container: "payment-form",
+  paypal: {
+    button: {
+      type: 'checkout'
+    }
+  }
+
 });
 </script>
 
