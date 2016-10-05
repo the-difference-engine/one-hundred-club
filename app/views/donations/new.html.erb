@@ -24,9 +24,9 @@
       <%= select_tag :how_did_you_hear, options_for_select(how_did_you_hear) %>
     </div>
 
-    <label>Please Be Specific</label>
-    <div class="input-group">
-      <input type="text" class="form-control" aria-label="Please Be Specific">
+    <div>
+      <%= label_tag :how_did_you_hear_other, "Please Specify" %>
+      <%= text_field_tag :how_did_you_hear_other, nil, class: 'form-control'  %>
     </div>
 
     <div>
@@ -34,10 +34,11 @@
       <%= select_tag :donation_category, options_for_select(donation_category) %>
     </div>
 
-    <label>Please Be Specific</label>
-    <div class="input-group">
-      <input type="text" class="form-control" aria-label="Please Be Specific">
+    <div>
+      <%= label_tag :donation_category_other, "Please Specify" %>
+      <%= text_field_tag :donation_category_other, nil, class: 'form-control'  %>
     </div>
+
 
     <!-- CONTACT INFORMATION -->
 
@@ -122,5 +123,5 @@ braintree.setup(clientToken, "dropin", {
 });
 </script>
 
-  <button class="button" type="submit"><span>Test Transaction</span></button>
+  <button class="button" type="submit"><span>Check Out</span></button>
 <% end %>
