@@ -1,421 +1,91 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8" />
   <title>OneHundredClub</title>
-  <meta name="description" content="" />
-  <meta name="keywords" content="" />
-  <meta name="author" content="nileforest">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-  <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-  <!-- Preloader -->
-  <section id="preloader">
-      <div class="loader" id="loader">
-          <div class="loader-img"></div>
+  <nav class="navbar navbar-default navbar-custom">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
       </div>
-  </section>
-  <!-- End Preloader -->
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <% if !user_signed_in? %>
+            <li><a href="/users/sign_up">Sign Up</a></li>
+            <li><a href="/users/sign_in">Log In</a></li>
+          <% else %>
+            <li><a href="/users/sign_out">Log Out</a></li>
+          <% end %>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
 
-  <!-- Search Overlay Menu -->
-  <div class="search-overlay-menu">
-      <span class="search-overlay-close"><i class="ion ion-ios-close-empty"></i></span>
-      <form role="search" id="searchform" action="/search" method="get">
-          <input value="" name="q" type="search" placeholder="Search..." />
-          <button type="submit"><i class="ion ion-ios-search"></i></button>
-      </form>
+<div class="container">
+  <div class="rsow">
+    <div class="col-sm-2">
+      <%= image_tag '100_club_badge.jpeg', :style => "float:right; width: 80px; height: 64px; object-fit: cover;" %>
+    </div>
+    <div class="col-sm-10">
+      <h2 style="float:left; color:#BF0A30; font-family:arial;"><strong>100 Club Chicago</strong></h2>
+    </div>
+    <div>
+      <%= image_tag 'instagram icon.png', :style => "width: 28px; height: 28px; object-fit: cover; float: right; " %>
+    </div>
+    <div>
+      <%= image_tag 'facebook icon.png', :style => "width: 28px; height: 28px; object-fit: cover; float: right; " %>
+    </div>
+    <div>
+      <%= image_tag 'youtube icon.png', :style => "width: 28px; height: 28px; object-fit: cover; float: right; " %>
+    </div>
   </div>
-  <!-- End Search Overlay Menu -->
+</div>
 
-  <!-- Sidemenu -->
-  <section id="pushmenu-right" class="pushmenu pushmenu-right side-menu">
-      <a id="menu-sidebar-close-icon" class="menu-close"><i class="ion ion-android-close"></i></a>
-      <h5 class="white">Sign In</h5>
-      <div class="sign-in">
-          <input class="input-sm form-full" type="email" aria-required="true" id="email1" name="email" placeholder="Email" value="" />
-          <input class="input-sm form-full" type="password" aria-required="true" id="password1" name="password" placeholder="Password" value="" />
-          <input type="submit" class="btn btn-md btn-color-b form-full" value="Sign In" />
-          <a>New Customer?</a>
+  <nav class="navbar navbar-custom">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
       </div>
-      <ul>
-          <li><a class="all-demos-link" target="_blank" href="../demo.html">Main Demo Page</a></li>
-          <li><a href="home.html">Home Default</a></li>
-          <li><a href="portfolio-grid-2col.html">Portfolio</a></li>
-          <li><a href="login-register.html">Login & Signup</a></li>
-          <li><a href="faq-1.html">FAQ</a></li>
-          <li><a href="about-1.html">About</a></li>
-          <li><a href="service-1.html">Service</a></li>
-          <li><a href="blog-grid-3col.html">Blog</a></li>
-          <li><a href="404-error-1.html">404 Error</a></li>
-          <li><a href="shop-checkout.html">Shopping Cart</a></li>
-          <li><a href="contact-1.html">Contact Us</a></li>
-      </ul>
-  </section>
-  <!--End Sidemenu -->
 
-  <!-- Site Wraper -->
-  <div class="wrapper">
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav navbar-center">
+          <li><%= link_to "Home", '/', {class: "navbar-category", id: ("navbar-category-active" if current_page?('/'))} %></li>
+          <li><%= link_to "About", '#', {class: "navbar-category", id: ("navbar-category-active" if current_page?('#'))} %></li>
+          <li><%= link_to "Heroes", '/fallen_heroes', {class: "navbar-category", id: ("navbar-category-active" if current_page?('/fallen_heroes'))} %></li>
+          <li><%= link_to "Programs", '#', {class: "navbar-category", id: ("navbar-category-active" if current_page?('#'))} %></li>
+          <li><%= link_to "Join", '/members/new', {class: "navbar-category", id: ("navbar-category-active" if current_page?('/members/new'))} %></li>
+          <li><%= link_to "Supporters", '/members', {class: "navbar-category", id: ("navbar-category-active" if current_page?('/members'))} %></li>
+          <li><%= link_to "Events", '/events', {class: "navbar-category", id: ("navbar-category-active" if current_page?('/events'))} %></li>
+          <li><%= link_to "News", '/blog_posts', {class: "navbar-category", id: ("navbar-category-active" if current_page?('/blog_posts'))} %></li>
+          <li><%= link_to "Donate", '/donations/new', {class: "navbar-donate", id: ("navbar-donate-active" if current_page?('/donations/new'))} %></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
 
-      <!-- Header -->
-      <header id="header" class="header">
-          <div class="container header-inner">
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
 
-              <!-- Logo -->
-              <div class="logo">
-                  <a href="index.html">
-                      <%= image_tag 'original_logo.png', :class => "logo-light", :alt => "logo" %>
-                      <%= image_tag 'original_logo.png', :class => "logo-dark", :alt => "logo" %>
-                  </a>
-              </div>
-              <!-- End Logo -->
 
-              <!-- Rightside Menu (Search, Cart, Bart icon) -->
-              <div class="side-menu-btn">
-                  <ul>
-                      <!-- Search Icon -->
-                      <li class="">
-                          <a class="search-overlay-menu-btn header-icon"><i class="fa fa-search"></i></a>
-                      </li>
-                      <!-- End Search Icon -->
+  <%= yield %>
 
-                      <!--Sidebar Menu Icon-->
-                      <li class="">
-                          <a id="menu-sidebar-list-icon" class="nav-bar-icon"><span></span></a>
-                      </li>
-                      <!-- End Sidebar Menu Icon-->
-                  </ul>
-              </div>
-              <!-- End Rightside Menu -->
-
-              <!-- Mobile Navbar Icon -->
-              <div class="nav-mobile nav-bar-icon">
-                  <span></span>
-              </div>
-              <!-- End Mobile Navbar Icon -->
-
-              <!--------------------------------------------->
-              <!---------- OLD LINKS FOR REFERENCE ---------->
-              <!-- <div class="collapse navbar-collapse">
-                     <ul class="nav navbar-nav navbar-center">
-                       <li><%= link_to "Home", '/', {class: "navbar-category", id: ("navbar-category-active" if current_page?('/'))} %></li>
-                       <li><%= link_to "About", '#', {class: "navbar-category", id: ("navbar-category-active" if current_page?('#'))} %></li>
-                       <li><%= link_to "Heroes", '/fallen_heroes', {class: "navbar-category", id: ("navbar-category-active" if current_page?('/fallen_heroes'))} %></li>
-                       <li><%= link_to "Programs", '/programs', {class: "navbar-category", id: ("navbar-category-active" if current_page?('#'))} %></li>
-                       <li><%= link_to "Join", '/members/new', {class: "navbar-category", id: ("navbar-category-active" if current_page?('/members/new'))} %></li>
-                       <li><%= link_to "Supporters", '/members', {class: "navbar-category", id: ("navbar-category-active" if current_page?('/members'))} %></li>
-                       <li><%= link_to "Events", '/events', {class: "navbar-category", id: ("navbar-category-active" if current_page?('/events'))} %></li>
-                       <li><%= link_to "News", '/blog_posts', {class: "navbar-category", id: ("navbar-category-active" if current_page?('/blog_posts'))} %></li>
-                       <li><%= link_to "Donate", '/donations/new', {class: "navbar-donate", id: ("navbar-donate-active" if current_page?('/donations/new'))} %></li>
-                     </ul>
-                   </div>
-                 </div>
-               </nav> -->
-               <!--------------------------------------------->
-               <!--------------------------------------------->
-
-              <!-- Navbar Navigation -->
-              <div class="nav-menu">
-                  <ul class="nav-menu-inner">
-                      <li>
-                          <a class="menu-has-sub" href="home.html">Home <i class="fa fa-angle-down"></i></a>
-                          <!-- Dropdown -->
-                          <ul class="sub-dropdown dropdown">
-                              <li>
-                                  <a class="menu-has-sub" href='#'>Multi Page <i class="fa fa-angle-right"></i></a>
-                                  <ul class="sub-dropdown">
-                                      <li><a href="home.html">Default</a></li>
-                                      <li><a href="home-video.html">Intro Video</a></li>
-                                      <li><a href="home-youtube.html">Intro Youtube</a></li>
-                                      <li><a href="home-static.html">Intro Static</a></li>
-                                      <li><a href="home-agency-grid.html">Agency Grid</a></li>
-                                      <li><a href="home-agency-masonry.html">Agency Masonry</a></li>
-                                      <li><a href="home-fullwidth-slider.html">Fullwidth Slider</a></li>
-                                      <li><a href="home-text-rotator1.html">Text Rotator1</a></li>
-                                      <li><a href="home-text-rotator2.html">Text Rotator2</a></li>
-                                      <li><a href="home-personal.html">Personal</a></li>
-                                      <li><a href="home-fullscreen.html">Full Screen</a></li>
-                                      <li><a href="home-canvas-pattern.html">Canvas Pattern</a></li>
-                                      <li><a href="home-section-scroll.html">Page Section Scroll</a></li>
-                                      <li><a href="shop-2col.html">Shop</a></li>
-                                      <li><a href="home-revolution-slider1.html">Revolution Slider 1</a></li>
-                                      <li><a href="home-revolution-slider2.html">Revolution Slider 2</a></li>
-                                      <li><a href="home-coming-soon.html">Comming Soon</a></li>
-                                  </ul>
-                              </li>
-                              <li>
-                                  <a class="menu-has-sub" href="#">One Page <i class="fa fa-angle-right"></i></a>
-                                  <ul class="sub-dropdown">
-                                      <li><a href="onepage.html">Default</a></li>
-                                      <li><a href="onepage-personal.html">Personal</a></li>
-                                      <li><a href="onepage-video.html">Video</a></li>
-                                      <li><a href="onepage-youtube.html">Youtube</a></li>
-                                      <li><a href="onepage-static.html">Static</a></li>
-                                      <li><a href="onepage-fullwidth-slider.html">Fullwidth</a></li>
-                                      <li><a href="onepage-text-rotator1.html">Text Rotator1</a></li>
-                                      <li><a href="onepage-text-rotator2.html">Text Rotator2</a></li>
-                                      <li><a href="onepage-canvas-pattern.html">Canvas Pattern</a></li>
-                                      <li><a href="onepage-revolution-slider1.html">Revolution Slider 1</a></li>
-                                      <li><a href="onepage-revolution-slider2.html">Revolution Slider 2</a></li>
-                                  </ul>
-                              </li>
-                          </ul>
-                          <!-- End Dropdown -->
-                      </li>
-                      <li>
-                          <a class="menu-has-sub">Pages <i class="fa fa-angle-down"></i></a>
-                          <!-- Dropdown -->
-                          <ul class="sub-dropdown dropdown">
-                              <li>
-                                  <a class="menu-has-sub">About Us <i class="fa fa-angle-right"></i></a>
-                                  <ul class="sub-dropdown">
-                                      <li><a href="about-1.html">About 1</a></li>
-                                      <li><a href="about-2.html">About 2</a></li>
-                                      <li><a href="about-3.html">About 3</a></li>
-                                  </ul>
-                              </li>
-                              <li>
-                                  <a class="menu-has-sub">Service <i class="fa fa-angle-right"></i></a>
-                                  <ul class="sub-dropdown">
-                                      <li><a href="service-1.html">Service 1</a></li>
-                                      <li><a href="service-2.html">Service 2</a></li>
-                                      <li><a href="service-3.html">Service 3</a></li>
-                                  </ul>
-                              </li>
-                              <li>
-                                  <a class="menu-has-sub">Contact Us <i class="fa fa-angle-right"></i></a>
-                                  <ul class="sub-dropdown">
-                                      <li><a href="contact-1.html">Contact 1</a></li>
-                                      <li><a href="contact-2.html">Contact 2</a></li>
-                                      <li><a href="contact-3.html">Contact 3</a></li>
-                                  </ul>
-                              </li>
-                              <li>
-                                  <a class="menu-has-sub">Faq<i class="fa fa-angle-right"></i></a>
-                                  <ul class="sub-dropdown">
-                                      <li><a href="faq-1.html">Faq 1</a></li>
-                                      <li><a href="faq-2.html">Faq 2</a></li>
-                                  </ul>
-                              </li>
-                              <li>
-                                  <a class="menu-has-sub">Login / Register<i class="fa fa-angle-right"></i></a>
-                                  <ul class="sub-dropdown">
-                                      <li><a href="login.html">Login</a></li>
-                                      <li><a href="register.html">Register</a></li>
-                                      <li><a href="login-register.html">Login / Register</a></li>
-                                  </ul>
-                              </li>
-                              <li><a href="pricing.html">Pricing</a></li>
-                              <li>
-                                  <a class="menu-has-sub">404 Error<i class="fa fa-angle-right"></i></a>
-                                  <ul class="sub-dropdown">
-                                      <li><a href="404-error-1.html">404 page1</a></li>
-                                      <li><a href="404-error-2.html">404 page2</a></li>
-                                  </ul>
-                              </li>
-                              <li><a href="sidebar-left.html">Sidebar Left</a></li>
-                              <li><a href="sidebar-right.html">Sidebar Right</a></li>
-                              <li><a href="blank-page.html">Blank Page</a></li>
-                          </ul>
-                          <!-- End Dropdown -->
-                      </li>
-                      <li>
-                          <a class="menu-has-sub">Portfolio <i class="fa fa-angle-down"></i></a>
-                          <!-- Dropdown -->
-                          <ul class="sub-dropdown dropdown">
-                              <li>
-                                  <a class="menu-has-sub">Grid <i class="fa fa-angle-right"></i></a>
-                                  <ul class="sub-dropdown">
-                                      <li><a href="portfolio-grid-2col.html">2 Columns</a></li>
-                                      <li><a href="portfolio-grid-2col-no_spacing.html">2 Columns no-Spacing</a></li>
-                                      <li><a href="portfolio-grid-3col.html">3 Columns</a></li>
-                                      <li><a href="portfolio-grid-3col-no_spacing.html">3 Columns no-Spacing</a></li>
-                                      <li><a href="portfolio-grid-4col.html">4 Columns</a></li>
-                                      <li><a href="portfolio-grid-4col-no_spacing.html">4 Columns no-Spacing</a></li>
-                                  </ul>
-                              </li>
-                              <li>
-                                  <a class="menu-has-sub">Masonry <i class="fa fa-angle-right"></i></a>
-                                  <ul class="sub-dropdown">
-                                      <li><a href="portfolio-masonry-2col.html">2 Columns</a></li>
-                                      <li><a href="portfolio-masonry-2col-no_spacing.html">2 Columns no-Spacing</a></li>
-                                      <li><a href="portfolio-masonry-3col.html">3 Columns</a></li>
-                                      <li><a href="portfolio-masonry-3col-no_spacing.html">3 Columns no-Spacing</a></li>
-                                      <li><a href="portfolio-masonry-4col.html">4 Columns</a></li>
-                                      <li><a href="portfolio-masonry-4col-no_spacing.html">4 Columns no-Spacing</a></li>
-                                  </ul>
-                              </li>
-                              <li>
-                                  <a class="menu-has-sub">Wide <i class="fa fa-angle-right"></i></a>
-                                  <ul class="sub-dropdown">
-                                      <li><a href="portfolio-wide-grid.html">Grid</a></li>
-                                      <li><a href="portfolio-wide-grid-no_spacing.html">Grid no-Spacing</a></li>
-                                      <li><a href="portfolio-wide-masonry.html">Masonry</a></li>
-                                      <li><a href="portfolio-wide-masonry-no_spacing.html">Masonry no-Spacing</a></li>
-                                  </ul>
-                              </li>
-                              <li>
-                                  <a class="menu-has-sub">Classical <i class="fa fa-angle-right"></i></a>
-                                  <ul class="sub-dropdown">
-                                      <li><a href="portfolio-classical-spacing.html">Spacing</a></li>
-                                      <li><a href="portfolio-classical-no_spacing.html">no-Spacing</a></li>
-                                  </ul>
-                              </li>
-                              <li>
-                                  <a class="menu-has-sub">Lightbox <i class="fa fa-angle-right"></i></a>
-                                  <ul class="sub-dropdown">
-                                      <li><a href="portfolio-lightbox-grid.html">Grid</a></li>
-                                      <li><a href="portfolio-lightbox-masonry.html">Masonry</a></li>
-                                  </ul>
-                              </li>
-                              <li>
-                                  <a class="menu-has-sub">Single <i class="fa fa-angle-right"></i></a>
-                                  <ul class="sub-dropdown">
-                                      <li><a href="portfolio-single1.html">Single 1</a></li>
-                                      <li><a href="portfolio-single2.html">Single 2</a></li>
-                                      <li><a href="portfolio-single3.html">Single 3</a></li>
-                                      <li><a href="portfolio-single4.html">Single 4</a></li>
-                                      <li><a href="portfolio-single5-slider.html">Single 5 - Slider</a></li>
-                                      <li><a href="portfolio-single6-video.html">Single 6 - Video</a></li>
-                                      <li><a href="portfolio-single7-youtube.html">Single 7 - youtube</a></li>
-                                      <li><a href="portfolio-single8-vimeo.html">Single 8 - vimeo</a></li>
-                                  </ul>
-                              </li>
-                          </ul>
-                          <!-- End Dropdown -->
-                      </li>
-                      <li>
-                          <a class="menu-has-sub">Blog <i class="fa fa-angle-down"></i></a>
-                          <!-- Dropdown -->
-                          <ul class="sub-dropdown dropdown">
-                              <li>
-                                  <a class="menu-has-sub">Grid <i class="fa fa-angle-right"></i></a>
-                                  <ul class="sub-dropdown">
-                                      <li><a href="blog-grid-2col.html">2 Columns</a></li>
-                                      <li><a href="blog-grid-2col-sidebar.html">2 Columns - sidebar</a></li>
-                                      <li><a href="blog-grid-3col.html">3 Columns</a></li>
-                                  </ul>
-                              </li>
-                              <li>
-                                  <a class="menu-has-sub">Masonry <i class="fa fa-angle-right"></i></a>
-                                  <ul class="sub-dropdown">
-                                      <li><a href="blog-masonry-2col.html">2 Columns</a></li>
-                                      <li><a href="blog-masonry-2col-sidebar.html">2 Columns - sidebar</a></li>
-                                      <li><a href="blog-masonry-3col.html">3 Columns</a></li>
-                                  </ul>
-                              </li>
-                              <li>
-                                  <a class="menu-has-sub">One Columns <i class="fa fa-angle-right"></i></a>
-                                  <ul class="sub-dropdown">
-                                      <li><a href="blog-1col.html">no-sidebar</a></li>
-                                      <li><a href="blog-1col-sidebar.html">with sidebar</a></li>
-                                  </ul>
-                              </li>
-                              <li>
-                                  <a class="menu-has-sub">Blog Detail <i class="fa fa-angle-right"></i></a>
-                                  <ul class="sub-dropdown">
-                                      <li><a href="blog-single-image-post.html">Image Post</a></li>
-                                      <li><a href="blog-single-slider-post.html">Slider Post</a></li>
-                                      <li><a href="blog-single-video-post.html">Video Post</a></li>
-                                      <li><a href="blog-single-audio-post.html">Audio Post</a></li>
-                                      <li><a href="blog-single-youtube-post.html">Youtube Post</a></li>
-                                      <li><a href="blog-single-vimeo-post.html">Vimeo Post</a></li>
-                                      <li><a href="blog-single-quote-post.html">Quote Post</a></li>
-                                  </ul>
-                              </li>
-                          </ul>
-                          <!-- End Dropdown -->
-                      </li>
-                      <li>
-                          <a class="menu-has-sub">Elements <i class="fa fa-angle-down"></i></a>
-                          <!-- Dropdown -->
-                          <ul class="sub-dropdown dropdown">
-                              <li><a href="element-components.html">Components</a></li>
-                              <li><a href="element-tabs-and-accordian.html">Tabs & Accordian</a></li>
-                              <li><a href="element-slider.html">Slider</a></li>
-                              <li><a href="element-team.html">Team</a></li>
-                              <li><a href="element-pricing.html">Pricing</a></li>
-                              <li><a href="element-video-and-audio.html">Video / Audio</a></li>
-                              <li><a href="element-typography.html">Typography</a></li>
-                          </ul>
-                          <!-- End Dropdown -->
-                      </li>
-                      <li>
-                          <a class="menu-has-sub">Shop <i class="fa fa-angle-down"></i></a>
-                          <!-- Dropdown -->
-                          <ul class="sub-dropdown dropdown">
-                              <li><a href="shop-2col.html">2 Columns</a></li>
-                              <li><a href="shop-3col.html">3 Columns</a></li>
-                              <li><a href="shop-4col.html">4 Columns</a></li>
-                              <li><a href="shop-left-sidebar.html">Left Sidebar</a></li>
-                              <li><a href="shop-right-sidebar.html">Right Sidebar</a></li>
-                              <li><a href="shop-detail.html">Shop Detail</a></li>
-                              <li><a href="shop-checkout.html">Checkout</a></li>
-                          </ul>
-                          <!-- End Dropdown -->
-                      </li>
-                  </ul>
-              </div>
-              <!-- End Navbar Navigation -->
-
-          </div>
-      </header>
-      <!-- End Header -->
-
-      <% flash.each do |type, message| %>
-        <div class="alert <%= bootstrap_class_for(type) %> fade in">
-          <button class="close" data-dismiss="alert">×</button>
-          <%= message %>
-        </div>
-      <% end %>
-
-      <%= yield %>
-
-          <!-- FOOTER -->
-      <footer>
-        <div class="container">
-          <div class="row">
-            <div class="text-center icon-margines">
-              <ul class="list-inline" id="footer-icons">
-                <li><a target="_blank" href="https://www.facebook.com/100clubofchicago"><%= image_tag 'facebook_white_bubble.png' %></a></li>
-                <li><a target="_blank" href="https://www.instagram.com/100clubchicago/?ref=badge"><%= image_tag 'Instagram_white_bubble.png' %></a></li>
-                <li><a target="_blank" href="https://www.youtube.com/user/100ClubChicago"><%= image_tag 'youtube_white_bubble.png' %></a></li>
-              </ul>  
-            </div>
-            <div class="text-center footer-links">
-              <ul class="list-inline">
-                <li><a href="">About</a></li>
-                <li><a href="/programs">Programs</a></li>
-                <li><a href="/events">Events</a></li>
-                <li><a href="">News</a></li>
-                <li><a href="">Supporters</a></li>
-              </ul>   
-            </div>  
-            <div class="text-center">
-              <a href="/donations/new">Donate </a>|<a href="/members/new"> Join </a>|<a href=""> Contact</a>
-            </div>
-            <div class="text-center">    
-              <p>
-                ©2016 by 100 Club of Chicago. All rights reserved.
-              </p>
-            </div>
-           
-          </div>
-        </div>
-      </footer>
-      <!-- END FOOTER -->
-
-      <!-- Scroll Top -->
-      <a class="scroll-top">
-          <i class="fa fa-angle-double-up"></i>
-      </a>
-      <!-- End Scroll Top -->
-
-  </div>
-  <!-- Site Wraper End -->
 </body>
 </html>
