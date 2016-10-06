@@ -133,6 +133,7 @@
   font-size: 12px;
   background-color: #002E5D;
   color: #ffffff;
+  border-radius: 8px;
 }
 
 .btn-small:hover {
