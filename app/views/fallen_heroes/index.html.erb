@@ -1,5 +1,3 @@
-<% count = 0 %>
-
 <div class="container">
   <div class="row" class="block-quote-row">
     <div class="col-sm-2"></div>
@@ -23,34 +21,27 @@
   <div id="new-fallen-hero-button">
     <%= button_to "Add New Fallen Hero", "/fallen_heroes/new", method: :get, :class => 'btn btn-small' %>
   </div>
-
-  <div id="fallen-heroes-row">
-    <% @fallen_heroes.each do | fallen_hero | %>
-      <% if count == 3 %>
-        <div class="clear_both"></div>
-        <% count = 0 %>
-      <% else %>
-        <% count = count + 1 %>
-      <% end %>  
-      <div class="col-sm-4 entry">
-        <div class="entry-top">  
-          <div class="col-sm-12">
-            <div class="col-sm-3">
-              <img src="<%= fallen_hero.image_url %>" />
+</div>
+<div class="container">  
+  <% @fallen_heroes.each_slice(3) do |heroes| %> 
+    <div class="row">
+      <% heroes.each do |hero| %>  
+        <div class="col-md-3" id="pad-right">
+          <div class="hero-box">
+            <div class="hero-name">
+              <img src="<%= hero.image_url %>" /><%= hero.first_name %> <%= hero.last_name %>
             </div>
-            <div class="col-sm-9">
-              <p><%= fallen_hero.first_name %> <%= fallen_hero.middle_name %> <%= fallen_hero.last_name %></p>
-            </div>
+            <hr />
+            <div class="hero-body text-left">
+              <h5><%= hero.rank %></h5>
+              <p><%= hero.department %></p>
+              <p class="date"><%= hero.date_deceased.strftime("%m/%d/%Y")%></p>              
+              <p><%= hero.description.truncate(160) %>..</p>
+              <%= button_to "Read more", "/fallen_heroes/{#hero.id}", method: :get, class:"btn-small", id:"center-button"%>
+            </div>  
           </div>
         </div>
-        <div class="entry-bottom">
-          <h5><%= fallen_hero.rank %></h5>
-          <p><%= fallen_hero.department %></p>
-          <p class="date"><%= fallen_hero.date_deceased %></p>
-          <p><%= fallen_hero.description.truncate(160) %>..</p>
-          <%= button_to "Read more", "/fallen_heroes/{#fallen_hero.id}", method: :get, :class => 'btn btn-small entry-button' %>
-        </div>
-      </div>
-    <% end %>
-  </div>
+      <% end %>  
+    </div>
+  <% end %>
 </div>
