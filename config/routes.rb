@@ -24,11 +24,10 @@ Rails.application.routes.draw do
   get '/members' => 'members#index'
   get '/members/new' => 'members#new'
   post '/members' => 'members#create'
-  get '/members/:id' => 'members#show'
-  get '/members/:id/edit' => 'members#edit'
-  patch 'members/:id' => 'members#update'
+  # get '/members/:id' => 'members#show'
+  # get '/members/:id/edit' => 'members#edit'
+  # patch 'members/:id' => 'members#update'
   ##########################################################
-  post '/checkout' => 'donations#checkout'
   get '/donations' => 'donations#index'
   get '/donations/new' => 'donations#new'
   post '/donations' => 'donations#create'
@@ -48,6 +47,9 @@ Rails.application.routes.draw do
   get '/blog_posts/:id/edit' => 'blog_posts#edit'
   patch '/blog_posts/:id' => 'blog_posts#update'
   delete '/blog_posts/:id' => 'blog_posts#destroy'
+  ##########################################################
+  get '/about' => 'static_pages#about'
+
   ##########################################################
   namespace :api do
     get '/events' => 'events#index'

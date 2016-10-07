@@ -2,10 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#bannerDiv {
-	padding-right: 75px;
-}
-
 #logoText {
 	color: #bc9b5d;;
 	font-weight: bold;
@@ -116,4 +112,30 @@
 
 .wellPrograms {
   height: 475px;
+}
+
+footer {
+  background: #bc9b5d;
+  color: #ffffff;
+}
+footer a {
+  color: #ffffff;
+}
+footer p {
+  font-size: 12px;
+  color: #ffffff;
+  margin-top: 30px;
+  margin-bottom: 35px;
+}
+#footer-icons {
+  display: inline;
+  list-style-type: none;
+}
+.icon-margines {
+  margin-top: 44px;
+  margin-bottom: 20px;
+}
+.footer-links {
+  font-size: 17px;
+  font-weight: bold;
 }
