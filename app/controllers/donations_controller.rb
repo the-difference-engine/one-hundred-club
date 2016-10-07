@@ -51,6 +51,9 @@ class DonationsController < ApplicationController
         submit_for_settlement: true
       }
     )
+    puts '*******************'
+    p result
+    puts '*******************'
     if result.success?
       puts 'success!: #{result.transaction.id}'
       @donation = Donation.create(
