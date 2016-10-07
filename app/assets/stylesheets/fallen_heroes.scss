@@ -10,44 +10,13 @@
   margin-bottom: 30px;
 }
 
-.entry {
-  height: 400px;
-  margin-bottom: 25px;
-
-  .entry-top {
-    font-family: 'Libre Baskerville', serif;  
-    height: 65px;
-    background-color: #C8B791;
-
-    img {
-      max-width: 80px;
-      height: auto;
-    }
-
-    p {
-      font-style: italic;
-      color: #002E5D;
-      font-size: 22px;
-      line-height: 1.1em;
-      margin: 5% auto;
-    }
-  }
-
-  .entry-bottom {
-    background-color: #F5F5F5;
-    padding: 20px;
-    height: 335px;
-
-    .date {
-      color: #BC9B5D;
-    }
-  }
-}
-.stretch {
-  width:100%;
+#jumbotronHands {
+  background-image: image-url("comforting_hands_parallax_strip.jpg");
+  background-size: cover;
+  height: 356px;
+  margin-bottom: 0px;
 }
 
-  
 
 #new-fallen-hero-button {
   margin-top: 40px;
@@ -57,7 +26,9 @@
 #hero-show-well {
   text-align: center;
 }
-
+.stretch {
+  width: 100%;
+}
 
 .hero-box {
   border: 1px solid #f1f1f1;
