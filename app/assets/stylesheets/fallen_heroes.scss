@@ -43,11 +43,11 @@
     }
   }
 }
-
-.btn, .btn-small, .entry-button {
-  text-align: center;
-  margin: 0 auto;
+.stretch {
+  width:100%;
 }
+
+  
 
 #new-fallen-hero-button {
   margin-top: 40px;
@@ -83,24 +83,33 @@
   padding: 20px;
   color: #605E5E;
   height: 261px;
-  
+  line-height: normal;
+  font-family: "Open Sans", sans-serif;
 }
+.bold-rank {
+  font-weight:bold;
 
+}
 #pad-right {
   margin-right: 25px;
 }
 
 #center-button {
-  margin: 0 35%;
   height: 30px;
   width: 84px;
 }
+
 .btn-small {
     font-family: "Open Sans", sans-serif;
     font-size: 12px;
     background-color: #002E5D;
     color: #ffffff;
+    text-align: center;
+}
+#department {
+  margin: 0;
 }
 .date {
   color: #BC9B5D;
+  margin-bottom: 18px;
 }
