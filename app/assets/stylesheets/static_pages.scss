@@ -2,6 +2,117 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#logoText {
+	color: #bc9b5d;;
+	font-weight: bold;
+	font-size: 27px;
+}
+
+#logo {
+	height: 132px;
+	width: 132px;
+}
+
+.socialTop {
+	float: right;
+	margin-top: 42px;
+  margin-right: 10px;
+  height: 42px;
+  width: 42px;
+}
+
+.navLinks {
+  font-weight: bold;
+  color: #0E2553;
+}
+
+#jumbotronGif {
+  background-image: image-url("jumbotron.gif");
+  background-size: cover;
+  height: 55vh;
+}
+
+#jumbotronText {
+  color: white;
+  font-family: Open Sans;
+  font-size: 50px;
+  text-align: center;
+}
+
+#jumbotronTextMini {
+  color: white;
+  font-family: Libre Baskerville;
+  text-align: center;
+  font-style: italic;
+}
+
+.joinDonate {
+	background-color: #BF0A30;
+	color: white;
+}
+
+.wellHeader {
+	font-size: 20px;
+  color: #bc9b5d;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.wellNewsEvents {
+  height: 450px;
+}
+
+.wellImg {
+	width: 100%;
+	height: 230;
+}
+
+.wellDate {
+  display: inline;
+  color: #bc9b5d;
+  font-size: 20px;
+  font-family: Open Sans;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.wellTitle {
+  color: #605e5e;
+  font-size: 17px;
+  font-family: Open Sans;
+  font-weight: bold;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.wellBody {
+  color: #605e5e;
+  font-size: 20px;
+  font-family: Open Sans;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.readMore {
+  font-family: Open Sans;
+  font-size: 16px;
+  font-weight: bold;
+  color: #605e5e;
+}
+
+.introText {
+  color: #605E5E;
+  font-size: 30px;
+  font-family: Libre Baskerville;
+  text-align: center;
+  font-style: italic;
+  padding-left: 230px;
+  padding-right: 230px;
+}
+
+.wellPrograms {
+  height: 475px;
+}
 
 footer {
   background: #bc9b5d;

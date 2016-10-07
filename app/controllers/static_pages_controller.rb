@@ -10,5 +10,8 @@ class StaticPagesController < ApplicationController
   def programs
     render 'programs.html.erb'
   end
-  
+
+  def about
+    
+  end
 end
