@@ -49,6 +49,9 @@ Rails.application.routes.draw do
   patch '/blog_posts/:id' => 'blog_posts#update'
   delete '/blog_posts/:id' => 'blog_posts#destroy'
   ##########################################################
+  get '/about' => 'static_pages#about'
+
+  ##########################################################
   namespace :api do
     get '/events' => 'events#index'
   end
