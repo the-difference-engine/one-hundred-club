@@ -1,13 +1,10 @@
 // Place all the styles related to the fallen-heroes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-#fallen-heroes-row {
-  margin: 0 50px;
-}
 
 .section-heading {
-  margin-top: 80px;
-  margin-bottom: 30px;
+  margin-top: 60px;
+  margin-bottom: 15px;
 }
 
 #jumbotronHands {
@@ -29,6 +26,25 @@
 .stretch {
   width: 100%;
 }
+#hero-head {
+  font-size: 18px;
+  color: #bc9b5d;
+  font-weight: bold;
+  display: inline;
+  margin-left: 104px;
+}
+#hero-head-date {
+ display: inline; 
+ font-size: 18px;
+}
+
+#line {
+  height: 21px;
+  border-bottom: 1px solid rgba(201, 182, 145, 1);
+  width: 59%;
+  display: inline-block;
+  margin-left: 20px;
+}
 
 .hero-box {
   border: 1px solid #f1f1f1;
@@ -39,12 +55,12 @@
 }
 
 .hero-name {
-  font-size: 22px;
+  font-size: 24px;
   font-style: italic;
   font-family: 'Libre Baskerville', serif;
   text-align: center;
   height: 81px;
-  padding-top: 30px;
+  padding-top: 24px;
   color: #002E5D;
   background: #bc9b5d;
 }
