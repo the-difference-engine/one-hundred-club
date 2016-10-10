@@ -27,15 +27,15 @@
   <div class="container">
     <div class="col-lg-12">
       <ul class="nav nav-justified">
-        <li class="navLinks" id="home"> Home </li>
-        <li class="navLinks"> About </li>
-        <li class="navLinks"> Heroes </li>
-        <li class="navLinks"> Programs </li>
-        <li class="navLinks"> Join </li>
-        <li class="navLinks"> Supporters </li>
-        <li class="navLinks"> Events </li>
-        <li class="navLinks"> News </li>
-        <li class="navLinks" id="donate"> Donate </li>
+        <li class="navLinks"><%= link_to "Home", '/', {class: "navbar-category", id: ("navbar-category-active" if current_page?('/'))} %></li>
+        <li class="navLinks"><%= link_to "About", '/about', {class: "navbar-category", id: ("navbar-category-active" if current_page?('/about'))} %></li>
+        <li class="navLinks"><%= link_to "Heroes", '/fallen_heroes', {class: "navbar-category", id: ("navbar-category-active" if current_page?('/fallen_heroes'))} %></li>
+        <li class="navLinks"><%= link_to "Programs", '/programs', {class: "navbar-category", id: ("navbar-category-active" if current_page?('/programs'))} %></li>
+        <li class="navLinks"><%= link_to "Join", '/members/new', {class: "navbar-category", id: ("navbar-category-active" if current_page?('/members/new'))} %></li>
+        <li class="navLinks"><%= link_to "Supporters", '/members', {class: "navbar-category", id: ("navbar-category-active" if current_page?('/members'))} %></li>
+        <li class="navLinks"><%= link_to "Events", '/events', {class: "navbar-category", id: ("navbar-category-active" if current_page?('/events'))} %></li>
+        <li class="navLinks"><%= link_to "News", '/blog_posts', {class: "navbar-category", id: ("navbar-category-active" if current_page?('/blog_posts'))} %></li>
+        <li class="navLinks" id="donate"><%= link_to "Donate", '/donations/new', {class: "navbar-donate", id: ("navbar-donate-active" if current_page?('/donations/new'))} %></li>
       </ul>
     </div>
   </div>
