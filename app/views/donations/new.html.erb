@@ -1,9 +1,24 @@
 <div class="container">
 
-  <div class="row">
-  <p class="">Transform Lives Today</p>
+  <div class="row col-lg-12">
+    <p id="transformLives">Transform Lives Today</p>
+    <br>
+    <p>When you donate to 100 Club of Chicago, 
+      you empower families of fallen first responders.</p>
+    <hr>
   </div>
-  
+  <div class="row col-lg-12">
+    <h3 id="transformLivesFormHead">$200 can feed a family of four for 3 weeks</h3>
+    <div id="btn-toolbar">
+      <button type="button" class="btn btn-lg donationButton">$500</button>
+      <button type="button" class="btn btn-lg donationButton">$200</button>
+      <button type="button" class="btn btn-lg donationButton">$100</button>
+      <button type="button" class="btn btn-lg donationButton">$50</button>
+      <button type="button" class="btn btn-lg donationButton">$20</button>
+    </div>
+    <br>
+  </div>
+
 <%= form_tag("/checkout", method: "post", id: "payment-form") do %>
 
   <section>

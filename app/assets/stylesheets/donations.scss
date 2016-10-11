@@ -1,3 +1,21 @@
 // Place all the styles related to the donations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#transformLives{
+  color: #BC9B5D;
+  font-family: Libre Baskerville;
+  font-size: 30px;
+}
+
+#transformLivesFormHead {
+  size: 24px;
+  color: #605E5E;
+  font-family: Arial;
+}
+
+.donationButton {
+  background-color: #BC9B5D;
+  margin-right: 10px;
+  width: 120px;
+}
