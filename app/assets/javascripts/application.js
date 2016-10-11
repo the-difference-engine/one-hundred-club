@@ -83,4 +83,5 @@ $.getScript('http://arshaw.com/js/fullcalendar-1.6.4/fullcalendar/fullcalendar.m
     //   }
     // ]
   });
-})
+});
+
