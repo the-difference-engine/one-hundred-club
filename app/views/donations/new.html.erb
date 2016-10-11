@@ -19,46 +19,11 @@
     <br>
   </div>
 
-<%= form_tag("/checkout", method: "post", id: "payment-form") do %>
+  <%= form_tag("/checkout", method: "post", id: "payment-form") do %>
 
-  <section>
-    <div class="bt-drop-in-wrapper">
-      <div id="bt-dropin"></div>
+    <div class="form-inline">
+      <%= text_field_tag :amount, nil, class: 'form-control', placeholder: "Other Amount" %>
     </div>
-
-    <!-- GIFT INFORMATION -->
-
-  <h3>Gift Information</h3>
- 
-
-    <div>
-      <%= label_tag :donation_frequency, "Donation Frequency: " %>
-      <%= select_tag :donation_frequency, options_for_select(donation_frequency) %>
-    </div>
-
-    <div>
-      <%= label_tag :how_did_you_hear, "How Did You Hear? " %>
-      <%= select_tag :how_did_you_hear, options_for_select(how_did_you_hear) %>
-    </div>
-
-    <div>
-      <%= label_tag :how_did_you_hear_other, "Please Specify" %>
-      <%= text_field_tag :how_did_you_hear_other, nil, class: 'form-control'  %>
-    </div>
-
-    <div>
-      <%= label_tag :donation_category, "Donation Category: " %>
-      <%= select_tag :donation_category, options_for_select(donation_category) %>
-    </div>
-
-    <div>
-      <%= label_tag :donation_category_other, "Please Specify" %>
-      <%= text_field_tag :donation_category_other, nil, class: 'form-control'  %>
-    </div>
-
-
-    <!-- CONTACT INFORMATION -->
-
 
     <h3>Contact Information</h3>
 
