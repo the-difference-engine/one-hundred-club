@@ -67,6 +67,11 @@
 	height: 230;
 }
 
+.programWellImg {
+  width: 100%;
+  height: 70;
+}
+
 .wellDate {
   display: inline;
   color: #bc9b5d;
@@ -111,7 +116,15 @@
 }
 
 .wellPrograms {
-  height: 475px;
+  height: 650px;
+}
+
+.supporters {
+  height: 300px;
+}
+
+.supporterImg {
+  display: inline-block;
 }
 
 footer {
