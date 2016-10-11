@@ -2,91 +2,159 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-#footer{
-	background-color: rgba(188, 155, 93, 1);
-	position: absolute;
-	height: 246px;
-	width: 100%;
-	padding-top: 40px;
-	color: white;
-	margin: auto;
-	text-align: center;
-}
-
-#copyright {
-	font-size: 12px;
-	letter-spacing: 0.04em;
-	display: inline;
-	margin: auto;
-}
-
-#copyright ul li {
-	display: inline;
-	list-style-type: none;
-}
-
-#footer-nav {
-	font-family: Arial, Helvetica, sans-serif;
-	font: normal normal normal 18px/1.4em 'open sans', sans-serif;
+#logoText {
+	color: #bc9b5d;;
 	font-weight: bold;
-	font-size: 16px;
+	font-size: 27px;
 }
 
-#footer-nav ul li {
-	display: inline;
-	list-style-type: none;
+#logo {
+	height: 132px;
+	width: 132px;
 }
 
-#footer-nav a {
-	color: white;
-	text-decoration: none;
+.socialTop {
+	float: right;
+	margin-top: 42px;
+  margin-right: 10px;
+  height: 42px;
+  width: 42px;
 }
 
-#footer-nav a:hover {
-	text-decoration: underline;
-}		
-
-#footer-subnav {
-	font-size: 13px;
-	font-weight: lighter;
+.navLinks {
+  font-weight: bold;
+  color: #0E2553;
 }
 
-#footer-subnav ul li {
-	display: inline;
-	list-style-type: none;
+#jumbotronGif {
+  background-image: image-url("jumbotron.gif");
+  background-size: cover;
+  height: 55vh;
 }
 
-#footer-subnav a {
-	color: white;
-	text-decoration: none;
-}	
-
-#footer-subnav a:hover {
-	text-decoration: underline;
-}	
-
-#footer-icons img {
-	object-fit: cover;
-	height: 26px;
-	width: 26px;
-}
-
-#footer-icons ul li {
-	display: inline;
-	list-style-type: none;
-}
-
-.jumbotron-home {
+#jumbotronText {
+  color: white;
+  font-family: Open Sans;
+  font-size: 50px;
   text-align: center;
 }
 
-.home-section-header {
-  font-family: "Arial Black", "Arial Bold", sans-serif;
-  text-color: #BC9B5D;
+#jumbotronTextMini {
+  color: white;
+  font-family: Libre Baskerville;
+  text-align: center;
+  font-style: italic;
+}
+
+.joinDonate {
+	background-color: #BF0A30;
+	color: white;
+}
+
+.wellHeader {
+	font-size: 20px;
+  color: #bc9b5d;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.wellNewsEvents {
+  height: 450px;
+}
+
+.wellImg {
+	width: 100%;
+	height: 230;
+}
+
+.programWellImg {
+  width: 100%;
+  height: 70;
+}
+
+.wellDate {
+  display: inline;
+  color: #bc9b5d;
+  font-size: 20px;
+  font-family: Open Sans;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.wellTitle {
+  color: #605e5e;
+  font-size: 17px;
+  font-family: Open Sans;
+  font-weight: bold;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.wellBody {
+  color: #605e5e;
+  font-size: 20px;
+  font-family: Open Sans;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.readMore {
+  font-family: Open Sans;
+  font-size: 16px;
+  font-weight: bold;
+  color: #605e5e;
+}
+
+.introText {
+  color: #605E5E;
+  font-size: 30px;
+  font-family: Libre Baskerville;
+  text-align: center;
+  font-style: italic;
+  padding-left: 230px;
+  padding-right: 230px;
+}
+
+.wellPrograms {
+  height: 650px;
 }
 
 .supporters {
-  text-align: center;
+  height: 300px;
 }
 
+.supporterImg {
+  display: inline-block;
+}
+
+footer {
+  background: #bc9b5d;
+  color: #ffffff;
+}
+footer a {
+  color: #ffffff;
+}
+footer p {
+  font-size: 12px;
+  color: #ffffff;
+  margin-top: 30px;
+  margin-bottom: 35px;
+}
+#footer-icons {
+  display: inline;
+  list-style-type: none;
+}
+
+#socialBottom{
+ height: 26px;
+  width: 26px; 
+}
+
+.icon-margines {
+  margin-top: 44px;
+  margin-bottom: 20px;
+}
+.footer-links {
+  font-size: 17px;
+  font-weight: bold;
+}

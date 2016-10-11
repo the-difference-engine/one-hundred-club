@@ -1,0 +1,132 @@
+/*
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+.navbar-custom {
+  background-color: transparent;
+}
+
+.navbar .navbar-nav {
+  background: transparent;
+  font-family: "Arial Black", "Arial Bold", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 20px;
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+}
+
+.navbar .navbar-collapse {
+  background: transparent;
+  text-align: center;
+}
+.navbar-category {
+  color: #000000 !important;
+  margin-left: 12px;
+  margin-right: 12px;
+}
+
+.navbar-category:hover {
+  background-color: transparent !important;
+  color:#BF0A30 !important;
+}
+
+
+.navbar-donate {
+  background-color: transparent !important;
+  color: #BF0A30 !important;
+}
+
+.navbar-donate:hover {
+  color: #002E5D !important;
+}
+
+#navbar-donate-active, #navbar-category-active  {
+  color:#C8B791 !important;
+}
+
+.section-heading {
+  color: #BC9B5D;
+  height: 30px;
+}
+
+#section-heading-text {
+  text-align: right;
+}
+
+.section-heading p {
+  font-size: 1.2em;
+  margin-top: 2px;
+}
+
+#section-heading-line {
+  height: 30px;
+}
+
+#bold-font {
+  font-weight: bold;
+}
+
+.block-quote-row {
+  height: 300px;
+  vertical-align: middle;
+}
+
+.block-quote {
+  font-family: 'Libre Baskerville', serif;
+  font-style: italic;
+  font-size: 30px;
+  text-align: center;
+  color: #605E5E;
+  line-height: 1.5;
+  font-weight: normal;
+  font-stretch: normal;
+}
+
+.btn-large {
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #BF0A30;
+  color: #ffffff;
+}
+
+.btn-large:hover {
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #002E5D;
+  color: #ffffff;
+}
+
+.btn-small {
+  font-family: "Open Sans", sans-serif;
+  font-size: 12px;
+  background-color: #002E5D;
+  color: #ffffff;
+  border-radius: 8px;
+}
+
+.btn-small:hover {
+  font-family: "Open Sans", sans-serif;
+  font-size: 12px;
+  background-color: #BC9B5D;
+  color: #000000;
+}
+

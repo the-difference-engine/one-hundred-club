@@ -1,5 +1,6 @@
-<% count = 0 %>
-
+<div class="jumbotron">
+  <%= image_tag 'Heroes_page_header_image.jpg', class:"stretch"%>
+</div>
 <div class="container">
   <div class="row" class="block-quote-row">
     <div class="col-sm-2"></div>
@@ -12,45 +13,43 @@
   </div>
 
   <div class="row section-heading">
-    <div class="col-xs-12 col-sm-4" id="section-heading-text">
-      <p id="bold-font" style="display: inline">Fallen Heroes,&nbsp;</p><p style="display: inline">2010-2016</p>
-    </div>
-    <div class="col-xs-12 col-sm-8" id="section-heading-line">
-      <div id="line"></div>
-    </div> 
+      <span id="hero-head">Fallen Heroes,&nbsp;</span><span id="hero-head-date">2010-2016</span><div id="line"></div>
+
   </div>
 
   <div id="new-fallen-hero-button">
     <%= button_to "Add New Fallen Hero", "/fallen_heroes/new", method: :get, :class => 'btn btn-small' %>
   </div>
-
-  <div id="fallen-heroes-row">
-    <% @fallen_heroes.each do | fallen_hero | %>
-      <% if count == 3 %>
-        <div class="clear_both"></div>
-        <% count = 0 %>
-      <% else %>
-        <% count = count + 1 %>
-      <% end %>  
-      <div class="col-sm-4 entry">
-        <div class="entry-top">  
-          <div class="col-sm-12">
-            <div class="col-sm-3">
-              <img src="<%= fallen_hero.image_url %>" />
+</div>
+<div class="container">  
+  <% @fallen_heroes.each_slice(3) do |heroes| %> 
+    <div class="row">
+      <% heroes.each do |hero| %>
+        <div class="col-md-3" id="pad-right"> 
+          <div class="hero-box">
+            <div class="hero-name">
+              <img src="<%= hero.image_url %>" /><%= hero.first_name %> <%= hero.last_name %>
             </div>
-            <div class="col-sm-9">
-              <p><%= fallen_hero.first_name %> <%= fallen_hero.middle_name %> <%= fallen_hero.last_name %></p>
-            </div>
+            <div class="hero-body text-left">
+              <h5 class="bold-rank"><%= hero.rank %></h5>
+              <p id="department"><%= hero.department %></p>
+              <div class="date"><%= hero.date_deceased.strftime("%m/%d/%Y")%></div>              
+              <p><%= hero.description.truncate(160) %>..</p>
+              <%= button_to "Read more", "/fallen_heroes/{#hero.id}", method: :get, class:"btn-small center-block", id:"center-button"%>
+            </div>  
           </div>
-        </div>
-        <div class="entry-bottom">
-          <h5><%= fallen_hero.rank %></h5>
-          <p><%= fallen_hero.department %></p>
-          <p class="date"><%= fallen_hero.date_deceased %></p>
-          <p><%= fallen_hero.description.truncate(160) %>..</p>
-          <%= button_to "Read more", "/fallen_heroes/{#fallen_hero.id}", method: :get, :class => 'btn btn-small entry-button' %>
-        </div>
-      </div>
-    <% end %>
+        </div>  
+      <% end %>  
+    </div>
+  <% end %>
+</div>  
+<div class="jumbotron" id="jumbotronHands">
+  <div class="container">
+    <p id="jumbotronText">We can't do it without you</p>
+    <p id="jumbotronTextMini">Join our membership programs to make a difference today</p>
+    <div class="text-center">
+        <button type="button" class="btn btn-lg joinDonate"> Join us </button>
+        <button type="button" class="btn btn-lg joinDonate"> Donate </button>
+    </div>
   </div>
 </div>
