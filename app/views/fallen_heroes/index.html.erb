@@ -1,6 +1,5 @@
-<div class="jumbotron">
-  <%= image_tag 'Heroes_page_header_image.jpg', class:"stretch"%>
-</div>
+<div class="parallax-window" data-parallax="scroll" data-image-src="<%= asset_path 'Heroes_page_header_image.jpeg'%>"></div>
+
 <div class="container">
   <div class="row" class="block-quote-row">
     <div class="col-sm-2"></div>
@@ -14,12 +13,11 @@
 
   <div class="row section-heading">
       <span id="hero-head">Fallen Heroes,&nbsp;</span><span id="hero-head-date">2010-2016</span><div id="line"></div>
-
   </div>
 
-  <div id="new-fallen-hero-button">
+  <!-- <div id="new-fallen-hero-button">
     <%= button_to "Add New Fallen Hero", "/fallen_heroes/new", method: :get, :class => 'btn btn-small' %>
-  </div>
+  </div> -->
 </div>
 <div class="container">  
   <% @fallen_heroes.each_slice(3) do |heroes| %> 
@@ -43,13 +41,4 @@
     </div>
   <% end %>
 </div>  
-<div class="jumbotron" id="jumbotronHands">
-  <div class="container">
-    <p id="jumbotronText">We can't do it without you</p>
-    <p id="jumbotronTextMini">Join our membership programs to make a difference today</p>
-    <div class="text-center">
-        <button type="button" class="btn btn-lg joinDonate"> Join us </button>
-        <button type="button" class="btn btn-lg joinDonate"> Donate </button>
-    </div>
-  </div>
-</div>
+
