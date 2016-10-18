@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require parallax
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require angular
@@ -82,4 +83,5 @@ $.getScript('http://arshaw.com/js/fullcalendar-1.6.4/fullcalendar/fullcalendar.m
     //   }
     // ]
   });
-})
+});
+

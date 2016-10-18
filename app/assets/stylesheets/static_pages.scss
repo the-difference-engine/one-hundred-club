@@ -2,6 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.parallax-window {
+    min-height: 350px;
+    background: transparent;
+    font-family: "Arial Black", "Arial Bold", sans-serif;
+}
+
+.helping_hands {
+  padding-top: 85px;
+}
+
 #logoText {
 	color: #bc9b5d;;
 	font-weight: bold;
@@ -34,8 +44,8 @@
 
 #jumbotronText {
   color: white;
-  font-family: Open Sans;
-  font-size: 50px;
+  font-family: "Arial Black", "Arial Bold", sans-serif;
+  font-size: 40px;
   text-align: center;
 }
 
@@ -44,6 +54,8 @@
   font-family: Libre Baskerville;
   text-align: center;
   font-style: italic;
+  font-size: 23px;
+  margin-bottom: 20px;
 }
 
 .joinDonate {
