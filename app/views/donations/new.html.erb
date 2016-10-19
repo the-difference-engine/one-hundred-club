@@ -1,105 +1,110 @@
 <div class="container">
 
+  <div class="row col-lg-12">
+    <p id="transformLives" class="text-center">Donations Transform Lives Today</p>
+    <p class="text-center">When you donate to 100 Club of Chicago, 
+      you empower families of fallen first responders.</p>
+    <hr>
+  </div>
 
+  <div class="form-group">
 
+  <%= form_tag("/checkout", method: "post", id: "payment-form") do %>
 
-<%= form_tag("/donations", method: "post", id: "payment-form") do %>
-  <section>
-    <div class="bt-drop-in-wrapper">
-      <div id="bt-dropin"></div>
-    </div>
+    <h3 class="transformLivesFormHead">Your Information</h3>
 
-    <!-- GIFT INFORMATION -->
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="form-group">
+          <%= label_tag :title, "Title: " %>
+          <%= select_tag :title, options_for_select(title), class: 'form-control' %>
+        </div>
+      </div>
 
-  <h3>Gift Information</h3>
- 
-
-    <div>
-      <%= label_tag :donation_frequency, "Donation Frequency: " %>
-      <%= select_tag :donation_frequency, options_for_select(donation_frequency) %>
+      <div class="col-lg-6">
+        <div class="form-group">
+          <%= label_tag :first_name, "First Name:* " %>
+          <%= text_field_tag :first_name, nil, class: 'form-control'  %>
+        </div>
+      </div>
     </div>
-
-    <div>
-      <%= label_tag :how_did_you_hear, "How Did You Hear? " %>
-      <%= select_tag :how_did_you_hear, options_for_select(how_did_you_hear) %>
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="form-group">
+          <%= label_tag :middle_name, "Middle Name: " %>
+          <%= text_field_tag :middle_name, nil, class: 'form-control'  %>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="form-group">
+          <%= label_tag :last_name, "Last Name:* " %>
+          <%= text_field_tag :last_name, nil, class: 'form-control'  %>
+        </div>
+      </div>
     </div>
-
-    <div>
-      <%= label_tag :how_did_you_hear_other, "Please Specify" %>
-      <%= text_field_tag :how_did_you_hear_other, nil, class: 'form-control'  %>
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="form-group">
+          <%= label_tag :suffix, "Suffix: " %>
+          <%= text_field_tag :suffix, nil, class: 'form-control'  %>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="form-group">
+          <%= label_tag :address, "Street Address: " %>
+          <%= text_field_tag :address, nil, class: 'form-control'  %>
+        </div>
+      </div>
     </div>
-
-    <div>
-      <%= label_tag :donation_category, "Donation Category: " %>
-      <%= select_tag :donation_category, options_for_select(donation_category) %>
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="form-group">
+          <%= label_tag :city, "City: " %>
+          <%= text_field_tag :city, nil, class: 'form-control'  %>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="form-group">
+          <%= label_tag :state, "State/Provence:* " %>
+          <%= select_tag :state, options_for_select(us_states), class: 'form-control' %>
+        </div>
+      </div>
     </div>
-
-    <div>
-      <%= label_tag :donation_category_other, "Please Specify" %>
-      <%= text_field_tag :donation_category_other, nil, class: 'form-control'  %>
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="form-group">
+          <%= label_tag :zip_code, "Postal Code:* " %>
+          <%= text_field_tag :zip_code, nil, class: 'form-control'  %>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="form-group">
+          <%= label_tag :country, "Country:* " %>
+          <%= select_tag :country, options_for_select(countries), class: 'form-control' %>
+        </div>
+      </div>
     </div>
-
-
-    <!-- CONTACT INFORMATION -->
-
-
-    <h3>Contact Information</h3>
-
-    <div>
-      <%= label_tag :title, "Title: " %>
-      <%= select_tag :title, options_for_select(title) %>
-    </div>
-    <div>
-      <%= label_tag :first_name, "First Name:* " %>
-      <%= text_field_tag :first_name, nil, class: 'form-control'  %>
-    </div>
-    <div>
-      <%= label_tag :middle_name, "Middle Name: " %>
-      <%= text_field_tag :middle_name, nil, class: 'form-control'  %>
-    </div>
-    <div>
-      <%= label_tag :last_name, "Last Name:* " %>
-      <%= text_field_tag :last_name, nil, class: 'form-control'  %>
-    </div>
-    <div>
-      <%= label_tag :suffix, "Suffix: " %>
-      <%= text_field_tag :suffix, nil, class: 'form-control'  %>
-    </div>
-    <div>
-      <%= label_tag :address, "Street Address: " %>
-      <%= text_field_tag :address, nil, class: 'form-control'  %>
-    </div>
-    <div>
-      <%= label_tag :city, "City: " %>
-      <%= text_field_tag :city, nil, class: 'form-control'  %>
-    </div>
-    <div>
-      <%= label_tag :state, "State/Provence:* " %>
-      <%= select_tag :state, options_for_select(us_states) %>
-    </div>
-    <div>
-      <%= label_tag :zip_code, "Postal Code:* " %>
-      <%= text_field_tag :zip_code, nil, class: 'form-control'  %>
-    </div>
-    <div>
-      <%= label_tag :country, "Country:* " %>
-      <%= select_tag :country, options_for_select(countries) %>
-    </div>
-    <div>
-      <%= label_tag :email, "E-mail:* " %>
-      <%= text_field_tag :email, nil, class: 'form-control'  %>
-    </div>
-    <div>
-      <%= label_tag :phone, "Phone:* " %>
-      <%= text_field_tag :phone, nil, class: 'form-control'  %>
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="form-group">
+          <%= label_tag :email, "E-mail:* " %>
+          <%= text_field_tag :email, nil, class: 'form-control'  %>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="form-group">
+          <%= label_tag :phone, "Phone:* " %>
+          <%= text_field_tag :phone, nil, class: 'form-control'  %>
+        </div>
+      </div>
     </div>
   
     <!-- Payment Information -->
-
-    <div >
+    <div class="form-group">
       <%= label_tag :amount, 'Donation Amount' %>
       <%= text_field_tag :amount, '10', class: 'form-control' %>
     </div>
+    <br>
 
   </section>
 
@@ -123,5 +128,7 @@ braintree.setup(clientToken, "dropin", {
 });
 </script>
 
-  <button class="button" type="submit"><span>Check Out</span></button>
+  <button class="btn btn-primary btn-block" type="submit"><span>Check Out</span></button>
+  <br>
+  </div>
 <% end %>
