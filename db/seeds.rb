@@ -1,3 +1,8 @@
+BlogPost.delete_all
+FallenHero.delete_all
+Event.delete_all
+Donation.delete_all
+
 50.times do
   BlogPost.create(
     title: Faker::Name.title,
