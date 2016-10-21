@@ -6,6 +6,7 @@ class BlogPostsController < ApplicationController
   end
 
   def new
+    puts "HELOOOOOOOOOO!!!!!!!!"
   end
 
   def create
