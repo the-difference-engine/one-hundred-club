@@ -31,7 +31,7 @@
             <div class="hero-body text-left">
               <h5 class="bold-rank"><%= hero.rank %></h5>
               <p id="department"><%= hero.department %></p>
-              <div class="date"><%= hero.date_deceased.strftime("%m/%d/%Y")%></div>              
+              <div class="date"><%= hero.date_deceased.to_datetime.strftime("%m/%d/%Y")%></div>              
               <p><%= hero.description.truncate(160) %>..</p>
               <%= button_to "Read more", "/fallen_heroes/{#hero.id}", method: :get, class:"btn-small center-block", id:"center-button"%>
             </div>  
