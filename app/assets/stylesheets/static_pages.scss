@@ -8,27 +8,31 @@
     font-family: "Arial Black", "Arial Bold", sans-serif;
 }
 
+.block-quote {
+  padding-top: 20px;
+}
+
 .helping_hands {
   padding-top: 85px;
 }
 
 #logoText {
-	color: #bc9b5d;;
+	color: #bc9b5d;
 	font-weight: bold;
 	font-size: 27px;
 }
 
 #logo {
-	height: 132px;
-	width: 132px;
+	height: 80px;
+	width: 80px;
 }
 
 .socialTop {
 	float: right;
-	margin-top: 42px;
+	margin-top: 15px;
   margin-right: 10px;
-  height: 42px;
-  width: 42px;
+  height: 35px;
+  width: 35px;
 }
 
 .navLinks {
@@ -127,11 +131,8 @@
   padding-right: 230px;
 }
 
-.wellPrograms {
-  height: 650px;
-}
-
 .supporters {
+  clear: both;
   height: 300px;
 }
 
@@ -169,4 +170,191 @@ footer p {
 .footer-links {
   font-size: 17px;
   font-weight: bold;
+}
+
+.programs_headers {
+  clear: both;
+  color: #bc9b5d;
+  padding-top: 20px;
+}
+
+.number {
+  background-color: #bc9b5d;
+  border-radius: 50px;
+  color: white;
+  padding: 10px 16px;
+  font-style: normal;
+  font-family: sans-serif;
+}
+
+.programs {
+  border-color: #bc9b5d;
+}
+
+.ourprograms {
+  clear: both;
+  padding-top: 50px;
+}
+
+.allprograms {
+  width: 100%;
+  clear: both;
+}
+
+.eachprogram {
+  clear: both;
+  padding-bottom: 20px;
+}
+
+.eachprogram h3 {
+  padding-bottom: 30px;
+}
+
+#first_response, #education, #gold-shield {
+  height: 450px;
+  width: 290px;
+  float: left;
+  background-color: rgba(237, 237, 237, 100);
+  margin: 10px 0px;
+}
+
+#first_response, #education {
+  margin-right: 30px;
+}
+
+ul{
+  list-style: none;
+  }
+
+li {
+  position: relative;
+  line-height: 16px;
+}
+
+li:before {
+  content: '\2022';
+  line-height: 16px; 
+  position: absolute;
+  left: -41px;
+  color: #bc9b5d;
+}
+
+li.huge:before {
+  font-size: 45px;
+}
+
+.star-container,
+.star-container:before,
+.star-container:after,
+.star-container .star,
+.star-container .star:before,
+.star-container .star:after {
+  height: 8em;
+  width: 8em;
+  background: #bc9b5d; 
+  background-size: 8em;
+}
+
+/* star styling */
+
+.star-container,
+.star-container:before,
+.star-container:after,
+.star-container .star,
+.star-container .star:before,
+.star-container .star:after {
+  height: 8em;
+  width: 8em;
+  background: #bc9b5d; 
+  background-size: 8em;
+}
+
+.star-container:before,
+.star-container:after,
+.star-container .star:before,
+.star-container .star:after {
+  content: "";
+  position: absolute;
+}
+
+.star-container {
+  position: relative; /* Context */
+  top: 3em;
+  left: 6em;
+  -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+     -ms-transform: rotate(-45deg);
+      -o-transform: rotate(-45deg);
+         transform: rotate(-45deg);
+}
+
+.star-container:before {
+  top: 0;
+  left: 0;
+  -webkit-transform: rotate(-30deg);
+    -moz-transform: rotate(-30deg);
+     -ms-transform: rotate(-30deg);
+      -o-transform: rotate(-30deg);
+         transform: rotate(-30deg);
+}
+
+.star-container:after {
+  top: 0;
+  left: 0;
+  -webkit-transform: rotate(-15deg);
+    -moz-transform: rotate(-15deg);
+     -ms-transform: rotate(-15deg);
+      -o-transform: rotate(-15deg);
+         transform: rotate(-15deg);
+}
+
+.star-container .star {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+     -ms-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+         transform: rotate(45deg);
+  z-index: 1; /* important so the text shows up */
+}
+
+.star-container .star:before {
+  top: 0;
+  left: 0;
+  -webkit-transform: rotate(60deg);
+    -moz-transform: rotate(60deg);
+     -ms-transform: rotate(60deg);
+      -o-transform: rotate(60deg);
+         transform: rotate(60deg);
+}
+
+.star-container .star:after {
+  top: 0;
+  left: 0;
+  -webkit-transform: rotate(75deg);
+    -moz-transform: rotate(75deg);
+     -ms-transform: rotate(75deg);
+      -o-transform: rotate(75deg);
+         transform: rotate(75deg);
+}
+
+/* text styling */
+
+.star-container .star span {
+  position: relative;
+  z-index: 100;
+  display: block;
+  text-align: center;
+  color: #fff;
+  font: 1.8em/1.4em Sans-Serif;
+  font-size: 1em;
+}
+
+.star-container .star span.number {
+  font-weight: bold;
+  font-size: 1.5em;
+  line-height: .5em;
+  color: #fff;
 }
