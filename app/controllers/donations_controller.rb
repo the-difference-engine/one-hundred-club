@@ -19,7 +19,6 @@ class DonationsController < ApplicationController
 
   def update
     donation = Donation.find_by(id: params[:id])
-
     donation.update(
       title: params[:title],
       first_name: params[:first_name],
@@ -35,15 +34,11 @@ class DonationsController < ApplicationController
       phone: params[:phone],
       amount: params[:amount]
     )
-
     redirect_to "/donations/#{donation.id}"
   end
 
   def create
     nonce_from_the_client = params[:payment_method_nonce]
-    puts '*******************'
-    puts params
-    puts '*******************'
     result = Braintree::Transaction.sale(
       amount: params[:amount],
       payment_method_nonce: nonce_from_the_client,
@@ -51,9 +46,6 @@ class DonationsController < ApplicationController
         submit_for_settlement: true
       }
     )
-    puts '*******************'
-    p result
-    puts '*******************'
     if result.success?
       puts 'success!: #{result.transaction.id}'
       @donation = Donation.create(
@@ -81,8 +73,6 @@ class DonationsController < ApplicationController
       puts 'Error processing transaction:'
       puts '  code: #{result.transaction.processor_response_code}'
       puts '  text: #{result.transaction.processor_response_text}'
-    else
-      p result.errors
     end
   end
 end

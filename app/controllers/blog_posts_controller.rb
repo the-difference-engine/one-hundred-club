@@ -6,6 +6,7 @@ class BlogPostsController < ApplicationController
   end
 
   def new
+    @blog_post = BlogPost.new
   end
 
   def create
@@ -17,7 +18,7 @@ class BlogPostsController < ApplicationController
     if @blog_post.save
       redirect_to "/blog_posts/#{@blog_post.id}"
     else
-      render "new.html.erb"
+      render 'new.html.erb'
     end
   end
 
@@ -27,7 +28,7 @@ class BlogPostsController < ApplicationController
   end
 
   def edit
-      @blog_post = BlogPost.find_by(id: params[:id])
+    @blog_post = BlogPost.find_by(id: params[:id])
   end
 
   def update
@@ -38,25 +39,16 @@ class BlogPostsController < ApplicationController
       content: params[:content],
       image: params[:image]
     )
-    flash[:success] = "Your blog post has been updated!"
+    flash[:success] = 'Your blog post has been updated!'
     redirect_to "/blog_posts/#{blog_post.id}"
   end
 
   def destroy
     blog_post = BlogPost.find_by(id: params[:id])
-
     if blog_post.destroy
       redirect_to '/blog_posts'
     else
       redirect_to "/blog_posts/#{blog_post.id}"
     end
-  end
-
-private
-
-  def authenticate_blog_admin!
-      unless current_user && current_user.blog_access
-        redirect_to '/'
-      end
   end
 end
