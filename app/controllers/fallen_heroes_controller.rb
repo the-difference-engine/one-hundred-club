@@ -5,6 +5,7 @@ class FallenHeroesController < ApplicationController
   end
 
   def new
+    @fallen_hero = FallenHero.new
   end
 
   def create
@@ -21,7 +22,7 @@ class FallenHeroesController < ApplicationController
     if @fallen_hero.save
       redirect_to "/fallen_heroes/#{@fallen_hero.id}"
     else
-      render "new.html.erb"
+      render 'new.html.erb'
     end
   end
 
@@ -37,7 +38,6 @@ class FallenHeroesController < ApplicationController
 
   def update
     fallen_hero = FallenHero.find_by(id: params[:id])
-
     fallen_hero.update(
       rank: params[:rank],
       first_name: params[:first_name],
@@ -48,7 +48,6 @@ class FallenHeroesController < ApplicationController
       description: params[:description],
       image_url: params[:image_url]
     )
-
     redirect_to "/fallen_heroes/#{fallen_hero.id}"
   end
 
@@ -57,7 +56,7 @@ class FallenHeroesController < ApplicationController
 
     if fallen_hero.destroy
       redirect_to '/fallen_heroes'
-    else 
+    else
       redirect_to "/fallen_heroes/#{fallen_hero.id}"
     end
   end

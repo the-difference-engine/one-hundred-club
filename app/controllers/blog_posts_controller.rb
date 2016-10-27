@@ -1,5 +1,4 @@
 class BlogPostsController < ApplicationController
-  before_action :authenticate_blog_admin!, except: [:index, :show]
 
   def index
     @blog_posts = BlogPost.all
