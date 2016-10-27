@@ -33,7 +33,7 @@ gem 'devise', '~> 4.1.1'
 
 gem 'carrierwave'
 
-gem "fog-aws"
+gem 'fog-aws'
 
 gem 'braintree', '~> 2.65.0'
 

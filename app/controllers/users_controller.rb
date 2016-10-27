@@ -16,7 +16,6 @@ class UsersController < ApplicationController
 
   def update
     user = User.find_by(id: params[:id])
-
     user.update(
       user_access: params[:user_access],
       blog_access: params[:blog_access],
@@ -26,7 +25,6 @@ class UsersController < ApplicationController
       donation_access: params[:donation_access],
       reporting_access: params[:user_access]
     )
-
     redirect_to "/users/#{user.id}"
   end
 end
