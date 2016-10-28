@@ -1,8 +1,0 @@
-<% @users.each do |user| %>
-  <p><%= link_to "#{user.email}", "/users/#{user.id}", method: :get %></p>
-  <p>Blog Access: <%= user.blog_access %> | 
-    Events Access: <%= user.events_access %> | 
-    Fallen Hero Access: <%= user.fallen_hero_access %> | 
-    Reporting Access: <%= user.reporting_access %> | 
-    Member Access: <%= user.member_access %> | Donation Access: <%= user.donation_access %></p> 
-<% end %>
