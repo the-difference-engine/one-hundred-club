@@ -37,6 +37,8 @@ gem "fog-aws"
 
 gem 'braintree', '~> 2.65.0'
 
+gem 'american_date'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
