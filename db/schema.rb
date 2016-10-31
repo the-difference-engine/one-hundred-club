@@ -10,7 +10,8 @@
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
 # It's strongly recommended that you check this file into your version control system.
-ActiveRecord::Schema.define(version: 20161027004303) do
+
+ActiveRecord::Schema.define(version: 20161028003001) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,10 +37,10 @@ ActiveRecord::Schema.define(version: 20161027004303) do
     t.string   "email"
     t.string   "phone"
     t.string   "zip_code"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
     t.integer  "amount"
     t.string   "bt_transaction_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
   create_table "events", force: :cascade do |t|

@@ -2,10 +2,40 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  color: #605E5E;
+}
+
 .parallax-window {
     min-height: 350px;
     background: transparent;
-    font-family: "Arial Black", "Arial Bold", sans-serif;
+}
+
+.heading {
+  font-size: 18px;
+  color: #bc9b5d;
+  font-weight: bold;
+}
+
+.sub-heading {  
+  font: 16px/1.4em;
+  font-weight: bold; 
+  font-style: italic;
+  color: #605E5E;
+  margin-bottom: 0px;
+}
+
+.box-heading {  
+  font: 16px/1.4em;
+  font-weight: bold; 
+  color: #605E5E;
+  padding: 15px;
+}
+
+.summary-box {
+  padding: 20px 15px 0px 15px;
 }
 
 .block-quote {
@@ -48,14 +78,12 @@
 
 #jumbotronText {
   color: white;
-  font-family: "Arial Black", "Arial Bold", sans-serif;
   font-size: 40px;
   text-align: center;
 }
 
 #jumbotronTextMini {
   color: white;
-  font-family: Libre Baskerville;
   text-align: center;
   font-style: italic;
   font-size: 23px;
@@ -92,7 +120,6 @@
   display: inline;
   color: #bc9b5d;
   font-size: 20px;
-  font-family: Open Sans;
   padding-left: 10px;
   padding-right: 10px;
 }
@@ -100,7 +127,6 @@
 .wellTitle {
   color: #605e5e;
   font-size: 17px;
-  font-family: Open Sans;
   font-weight: bold;
   padding-left: 10px;
   padding-right: 10px;
@@ -109,26 +135,14 @@
 .wellBody {
   color: #605e5e;
   font-size: 20px;
-  font-family: Open Sans;
   padding-left: 10px;
   padding-right: 10px;
 }
 
 .readMore {
-  font-family: Open Sans;
   font-size: 16px;
   font-weight: bold;
   color: #605e5e;
-}
-
-.introText {
-  color: #605E5E;
-  font-size: 30px;
-  font-family: Libre Baskerville;
-  text-align: center;
-  font-style: italic;
-  padding-left: 230px;
-  padding-right: 230px;
 }
 
 .supporters {
@@ -142,24 +156,27 @@
 
 footer {
   background: #bc9b5d;
-  color: #ffffff;
+  color: #fff;
 }
+
 footer a {
-  color: #ffffff;
+  color: #fff;
 }
+
 footer p {
   font-size: 12px;
-  color: #ffffff;
+  color: #fff;
   margin-top: 30px;
   margin-bottom: 35px;
 }
+
 #footer-icons {
   display: inline;
   list-style-type: none;
 }
 
 #socialBottom{
- height: 26px;
+  height: 26px;
   width: 26px; 
 }
 
@@ -167,6 +184,7 @@ footer p {
   margin-top: 44px;
   margin-bottom: 20px;
 }
+
 .footer-links {
   font-size: 17px;
   font-weight: bold;
@@ -179,12 +197,12 @@ footer p {
 }
 
 .number {
+  font-family: Arial, Helvetica, sans-serif;
   background-color: #bc9b5d;
   border-radius: 50px;
   color: white;
-  padding: 10px 16px;
+  padding: 10px 10px 10px 18px;
   font-style: normal;
-  font-family: sans-serif;
 }
 
 .programs {
@@ -192,7 +210,6 @@ footer p {
 }
 
 .ourprograms {
-  clear: both;
   padding-top: 50px;
 }
 
@@ -228,12 +245,15 @@ ul{
 
 li {
   position: relative;
-  line-height: 16px;
+  line-height: 150%;
+  font-size: 16px;
+  color: #605E5E;
+
 }
 
-li:before {
+li.huge:before {
   content: '\2022';
-  line-height: 16px; 
+  line-height: 50%;
   position: absolute;
   left: -41px;
   color: #bc9b5d;
@@ -241,18 +261,6 @@ li:before {
 
 li.huge:before {
   font-size: 45px;
-}
-
-.star-container,
-.star-container:before,
-.star-container:after,
-.star-container .star,
-.star-container .star:before,
-.star-container .star:after {
-  height: 8em;
-  width: 8em;
-  background: #bc9b5d; 
-  background-size: 8em;
 }
 
 /* star styling */
@@ -263,8 +271,20 @@ li.huge:before {
 .star-container .star,
 .star-container .star:before,
 .star-container .star:after {
-  height: 8em;
-  width: 8em;
+  height: 6.5em;
+  width: 6.5em;
+  background: #bc9b5d; 
+  background-size: 8em;
+}
+
+.star-container,
+.star-container:before,
+.star-container:after,
+.star-container .star,
+.star-container .star:before,
+.star-container .star:after {
+  height: 6.5em;
+  width: 6.5em;
   background: #bc9b5d; 
   background-size: 8em;
 }
@@ -348,13 +368,20 @@ li.huge:before {
   display: block;
   text-align: center;
   color: #fff;
-  font: 1.8em/1.4em Sans-Serif;
+  font: 1.8em/1.4em;
   font-size: 1em;
+  line-height: 1.1em;
 }
 
 .star-container .star span.number {
   font-weight: bold;
-  font-size: 1.5em;
-  line-height: .5em;
+  font-size: 1.3em;
+  line-height: .3em;
+  color: #fff;
+}
+
+.star-container .star span.what {
+  font-weight: bold;
+  font-size: 1.2em;
   color: #fff;
 }
