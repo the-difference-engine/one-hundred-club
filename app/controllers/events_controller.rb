@@ -1,6 +1,5 @@
 class EventsController < ApplicationController
   include EventsHelper
-  
   def index
     @events = Event.all
   end
@@ -24,14 +23,9 @@ class EventsController < ApplicationController
       location: params[:location]
     )
     if @event.save
-      # Deliver the event notification email
-      @users = User.all
-      @users.each do |user|
-        EventNotifier.send_event_email(user).deliver_now
-      end
       redirect_to "/events/#{@event.id}"
     else
-      render "new.html.erb"
+      render 'new.html.erb'
     end
   end
 
@@ -55,12 +49,10 @@ class EventsController < ApplicationController
 
   def destroy
     event = Event.find_by(id: params[:id])
-
     if event.destroy
       redirect_to '/events'
     else
       redirect_to "/events/#{event.id}"
     end
   end
-
 end
