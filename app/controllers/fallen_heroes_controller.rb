@@ -1,6 +1,6 @@
 class FallenHeroesController < ApplicationController
   def index
-    @fallen_heroes = FallenHero.all
+    @fallen_heroes = FallenHero.all.sort_by(&:date_deceased).reverse
   end
 
   def new
