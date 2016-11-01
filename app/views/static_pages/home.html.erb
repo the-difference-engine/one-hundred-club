@@ -15,11 +15,11 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-8">
-      <p class="wellHeader">Latest News</p>
+      <p class="heading">Latest News</p>
       <hr>
     </div>
     <div class="col-lg-4">
-      <p class="wellHeader">Next Event</p>
+      <p class="heading">Events</p>
       <hr>
     </div>
   </div>
@@ -56,47 +56,58 @@
   <br>
   <div class="row">
     <div class="col-lg-12">
-      <p class="introText">The 100 Club of Chicago provides financial assistance, 
+      <p class="block-quote">The 100 Club of Chicago provides financial assistance, 
         access to resources and moral support for the families of first responders 
         who have lost their lives in the line of duty in Cook and Lake Counties.</p>
     </div>
   </div>
   <br>
-  <div class="row">
-    <div class="col-lg-12">
-      <p class="wellHeader">Our Programs</p>
-      <hr>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-lg-12">
-      <div class="col-lg-4 well well-sm wellPrograms">
-        <img class="img-responsive wellImg" src="<%= asset_path 'first_response_assistance.jpg' %>">
-        <br>
-        <p class="wellTitle">First Response Assistance</p>
-        <p class="wellBody">Financial support is provided to families of fallen 
-          responders within 24 hours and in the following weeks</p>
-        <br>
-        <p class="wellFooter"> </p>
-      </div>
-      <div class="col-lg-4 well well-sm wellPrograms">
-        <img class="img-responsive wellImg" src="<%= asset_path 'educational_resources.jpg' %>">
-        <br>
-        <p class="wellTitle">Educational Assistance</p>
-        <p class="wellBody">Grants and scholarships to the spouses and children 
-          of fallen first responders for higher education</p>
-        <p class="wellFooter"> </p>
-      </div>
-      <div class="col-lg-4 well well-sm wellPrograms">
-        <img class="img-responsive wellImg" src="<%= asset_path 'gold_shield_partners.jpg' %>">
-        <br>
-        <p class="wellTitle">Gold Shield Partners</p>
-        <p class="wellBody">Professional support in the areas of Health, Education,
-          Job Training, and Insurance</p>
-        <p class="wellFooter"> </p>
+
+<div>
+  <h4 class="heading ourprograms">Our Programs</h4>
+</div>
+
+<div class="allprograms">
+  <div id="first_response">
+    <%= image_tag("programsa.jpg") %>
+    <h4>First Response Assistance</h4>
+    <p>Financial support is provided to families of fallen responders within 24 hours and in the following weeks.</p>
+    <div class="star-container">
+      <div class="star">
+        <span class="number">$10</span>
+        <span class="number">Million</span>
+        <span class="action">given to <br> families</span>
       </div>
     </div>
   </div>
+
+  <div id="education">
+    <%= image_tag("programsb.jpg") %>
+    <h4>Educational Assistance</h4>
+    <p>Grants and scholarships to the spouses and children of fallen first responders for higher education.</p>
+    <div class="star-container">
+      <div class="star">
+        <span class="number">618</span>
+        <span class="number">Dependents</span>
+        <span class="action">supported <br> over the years</span>
+      </div>
+    </div>
+  </div>
+
+  <div id="gold-shield">
+    <%= image_tag("programsc.jpg") %>
+    <h4>Gold Shield Partners</h4>
+    <p>Professional support in the areas of Health, Education, Job Training, and Insurance.</p>
+    <div class="star-container">
+      <div class="star">
+        <span class="number">216</span>
+        <span class="number">Families</span>
+        <span class="action">benefited<br> from this</span>
+      </div>
+    </div>
+  </div>
+</div>
+
   <div class="row">
     <div class="col-lg-12 supporters">
       <br>

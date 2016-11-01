@@ -12,7 +12,9 @@ class CreateDonations < ActiveRecord::Migration
       t.string :state
       t.string :email
       t.string :phone
-      t.integer :zip_code
+      t.string :zip_code
+      t.integer :amount
+      t.string :bt_transaction_id
 
       t.timestamps null: false
     end
