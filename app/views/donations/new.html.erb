@@ -4,6 +4,9 @@
     <p id="transformLives" class="text-center">Donations Transform Lives Today</p>
     <p class="text-center">When you donate to 100 Club of Chicago, 
       you empower families of fallen first responders.</p>
+      <% if user_signed_in? %>
+        <%= link_to "Donations Index", '/donations', class: 'btn btn-info center-block' %>
+      <% end %>
     <hr>
   </div>
 
