@@ -40,7 +40,13 @@
   display: inline-block;
   margin-left: 20px;
 }
-
+.hero-badge {
+    width: 71px;
+    height: 71px;
+    display: inline-block;
+    float: left;
+    margin-right: 5px
+}
 .hero-box {
   border: 1px solid #f1f1f1;
   height: 342px;
@@ -55,9 +61,11 @@
   font-family: 'Libre Baskerville', serif;
   text-align: center;
   height: 81px;
-  padding-top: 24px;
   color: #002E5D;
   background: #bc9b5d;
+  display: flex;
+  justify-content: center; /* align horizontal */
+  align-items: center; /* align vertical */
 }
 
 .hero-body {
