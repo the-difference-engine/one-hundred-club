@@ -1,4 +1,4 @@
-<div class="parallax-window" data-parallax="scroll" data-position="0px -20px" data-image-src="<%= asset_path 'Heroes_page_header_image.jpeg'%>"></div>
+<div class="parallax-window" data-parallax="scroll" data-position="0px -169px" data-image-src="<%= asset_path 'Heroes_page_header_image.jpeg'%>"></div>
 
 <div class="container">
   <div class="row" class="block-quote-row">
@@ -26,14 +26,19 @@
         <div class="col-md-3" id="pad-right"> 
           <div class="hero-box">
             <div class="hero-name">
-              <img src="<%= hero.image_url %>" /><%= hero.first_name %> <%= hero.middle_name %> <%= hero.last_name %>
+              <% unless hero.image_url == nil %>
+                <%= image_tag hero.image_url, class:"hero-badge" %>
+              <% end %>  
+             <%= hero.full_name %>
             </div>
             <div class="hero-body text-left">
               <h5 class="bold-rank"><%= hero.rank %></h5>
               <p id="department"><%= hero.department %></p>
               <div class="date"><%= hero.date_deceased.to_datetime.strftime("%m/%d/%Y")%></div>              
-              <p><%= hero.description.truncate(160) %>..</p>
-              <%= button_to "Read more", "/fallen_heroes/{#hero.id}", method: :get, class:"btn-small center-block", id:"center-button"%>
+                <% if hero.description.length > 1 %>
+                  <p><%= hero.description.truncate(160) %></p>
+                  <%= button_to "Read more", "/fallen_heroes/{#hero.id}", method: :get, class:"btn-small center-block", id:"center-button"%>
+                <% end %>
             </div>  
           </div>
         </div>  
