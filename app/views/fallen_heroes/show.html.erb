@@ -1,12 +1,12 @@
 <div class ="container">
   <div class="well" id="hero-show-well">
-    <h2 id="hero-name"><%= @fallen_hero.rank + " " + @fallen_hero.first_name + " " + @fallen_hero.middle_name + " " + @fallen_hero.last_name %></h2>
-    <h3 id="hero-dept"><%= @fallen_hero.department %></h3>
-    <h3 id="deceased-date"><%= @fallen_hero.date_deceased %></h3>
+    <h2><%= @fallen_hero.rank + " " + @fallen_hero.full_name %></h2>
+    <h3><%= @fallen_hero.department %></h3>
+    <h3><%= @fallen_hero.date_deceased.to_datetime.strftime("%m/%d/%Y")%></h3>
     <div id="hero-badge-img">
-      <%= image_tag @fallen_hero.image_url, height: "100", width: "100" %>
+      <%= image_tag @fallen_hero.image_url || 'original_logo.png', id:"showbadge" %>
     </div>
-    <p id="hero-desc"><%= @fallen_hero.description %></p>
+    <p><%= @fallen_hero.description %></p>
     <% if current_user && current_user.fallen_hero_access %>
       <%= button_to "Edit Fallen Hero", "/fallen_heroes/#{@fallen_hero.id}/edit", method: :get %>
       <%= button_to "Delete Fallen Hero", "/fallen_heroes/#{@fallen_hero.id}", method: :delete %>

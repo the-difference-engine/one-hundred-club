@@ -37,6 +37,7 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     addressable (2.4.0)
+    american_date (1.1.1)
     arel (6.0.3)
     autoprefixer-rails (6.4.0.1)
       execjs
@@ -244,6 +245,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  american_date
   bootstrap-sass
   braintree (~> 2.65.0)
   byebug
