@@ -602,7 +602,7 @@ He was conducting surveillance on the station, which had seen a recent surge in 
 On January 5, 2009, authorities charged one of two suspects with three counts of murder. In October 2010 the subject pleaded guilty to murder for acting as a lookout during Officer Cook's slaying. He also pleaded guilty to attempted murder for his involvement in a shootout with a Harvey Police Department officer earlier that same day. On November 11, 2010, a second man was charged with the murder of Officer Cook.
 
 Officer Cook was a US Army veteran. He had served with the Metra Transit Police Department for three years and previously served with the Riverdale Police Department for nine years. He is survived by his wife, son, daughter, mother, brother, and sister. His brother serves with the Cook County Sheriff's Office and his father served as chief of the Riverdale Police Department."},
-{rank: "K-9", first_name: "Officer", middle_name: "", last_name: "Wood", department: "Maywood Police Department", date_deceased: "10/23/2006", description: "Officer Thomas Wood was shot several times as he sat in his department vehicle on the intersection of Erie Street and 6th Avenue at approximately 11:00 pm. Officer Wood's canine partner was not wounded in the shooting.
+{rank: "K-9 Officer", first_name: "Thomas", middle_name: "T.", last_name: "Wood", department: "Maywood Police Department", date_deceased: "10/23/2006", description: "Officer Thomas Wood was shot several times as he sat in his department vehicle on the intersection of Erie Street and 6th Avenue at approximately 11:00 pm. Officer Wood's canine partner was not wounded in the shooting.
 
 He was transported to Loyola University Medical Center where he succumbed to his wounds approximately 45 minutes later.
 
