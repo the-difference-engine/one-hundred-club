@@ -26,9 +26,7 @@
         <div class="col-md-3" id="pad-right"> 
           <div class="hero-box">
             <div class="hero-name">
-              <% unless hero.image_url == nil %>
-                <%= image_tag hero.image_url, class:"hero-badge" %>
-              <% end %>  
+              <%= image_tag hero.image_url || 'original_logo.png', class:"hero-badge" %>
              <%= hero.full_name %>
             </div>
             <div class="hero-body text-left">
@@ -37,7 +35,7 @@
               <div class="date"><%= hero.date_deceased.to_datetime.strftime("%m/%d/%Y")%></div>              
                 <% if hero.description.length > 1 %>
                   <p><%= hero.description.truncate(160) %></p>
-                  <%= button_to "Read more", "/fallen_heroes/{#hero.id}", method: :get, class:"btn-small center-block", id:"center-button"%>
+                  <a href="/fallen_heroes/<%=hero.id%>" id="nounderline"><button type="button" class="btn-small center-block" id="center-button">Read more</button></a>
                 <% end %>
             </div>  
           </div>

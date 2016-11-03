@@ -40,13 +40,16 @@
   display: inline-block;
   margin-left: 20px;
 }
+
 .hero-badge {
-    width: 71px;
-    height: 71px;
+    width: 68px;
+    height: 68px;
     display: inline-block;
     float: left;
-    margin-right: 5px
+    margin-right: 5px;
+    margin-left: 7px;
 }
+
 .hero-box {
   border: 1px solid #f1f1f1;
   height: 342px;
@@ -64,7 +67,7 @@
   color: #002E5D;
   background: #bc9b5d;
   display: flex;
-  justify-content: center; /* align horizontal */
+  justify-content: justify; /* align horizontal */
   align-items: center; /* align vertical */
 }
 
@@ -89,6 +92,12 @@
 #center-button {
   height: 30px;
   width: 84px;
+  text-decoration: none;
+}
+
+#showbadge {
+  height: 100px;
+   width: 100px;
 }
 
 .btn-small {
@@ -97,6 +106,9 @@
     background-color: #002E5D;
     color: #ffffff;
     text-align: center;
+}
+#nounderline {
+    text-decoration: none;  
 }
 
 #department {
