@@ -1,25 +1,28 @@
 <div class="parallax-window" data-parallax="scroll" data-position="0px 30px" data-image-src="<%= asset_path 'champagne.jpeg'%>">
 </div>
 
-<div>
-  <p class="pageHead text-center">Checkout the Latest Events</p>
-</div>
-
-<div class="row">
-  <div class="col-xs-8 col-xs-offset-2">
-    <p class="block-quote">
-      The 100 Club of Chicago provides financial assistance, access to resources and moral support 
-      for the families of first responders who have lost their lives in the line of duty in Cook 
-      and Lake Counties.
-    </p>
-  </div>
-</div>
-
 <div class="container">
+  <div>
+    <p class="pageHead text-center">Checkout the Latest Events</p>
+  </div>
+
+  <% if user_signed_in? %>
+    <%= link_to "Add a New Event", '/events/new', class: 'btn btn-info center-block' %>
+  <% end %>
+
+  <div class="row">
+    <div class="col-xs-8 col-xs-offset-2">
+      <p class="block-quote">
+        The 100 Club of Chicago provides financial assistance, access to resources and moral support 
+        for the families of first responders who have lost their lives in the line of duty in Cook 
+        and Lake Counties.
+      </p>
+    </div>
+  </div>
+
   <hr>
   <div id="calendar"></div>
 </div>
-
 <div class="container">
 <% @events.each do |event| %>
   <hr>
