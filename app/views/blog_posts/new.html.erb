@@ -1,18 +1,36 @@
-<h1>Add a new blog post.</h1>
-<%= form_tag '/blog_posts', method: :post, multipart: true do %>
-  <div>
-    <%= label_tag :title, "Title: "  %>
-    <%= text_field_tag :title %>
+<div class="container">
+  <p class="pageHead text-center">Create News Story</p>
+  <div class="form-group">
+    <%= form_tag '/blog_posts', method: :post, multipart: true do %>
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+          <%= text_field_tag :title, nil, class: 'form-control', placeholder: 'Story Title' %>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+          <div>
+            <%= text_area_tag :content, nil, rows: 10, class: 'form-control', placeholder: 'Story Content' %>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+          <div>
+            <%= text_field_tag :image, nil, class: 'form-control', placeholder: 'Image URL' %>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+          <div>
+            <%= submit_tag "Add Story", class: 'btn btn-primary btn-block' %>
+          </div>
+        </div>
+      </div>
+    <% end %>
   </div>
-  <div>
-    <%= label_tag :content, "Content: " %>
-    <%= text_field_tag :content %>
-  </div>
-  <div>
-    <%= label_tag :image, "Image: " %>
-    <%= text_field_tag :image %>
-  </div>
-  <div>
-    <%= submit_tag "Add Blog Post", class: "btn btn-default" %>
-  </div>
-<% end %>
+</div>
