@@ -21,7 +21,7 @@ gem 'carrierwave'
 gem 'fog-aws'
 gem 'braintree', '~> 2.65.0'
 gem 'ngannotate-rails'
-
+gem 'seed_dump'
 gem 'american_date'
 
 # Use ActiveModel has_secure_password
