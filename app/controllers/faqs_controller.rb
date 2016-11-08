@@ -1,0 +1,2 @@
+class FaqsController < ApplicationController
+end

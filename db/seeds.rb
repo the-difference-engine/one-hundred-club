@@ -3,6 +3,7 @@ FallenHero.delete_all
 Event.delete_all
 Donation.delete_all
 Staff.delete_all
+Faq.delete_all
 
 50.times do
   BlogPost.create(
@@ -11,8 +12,6 @@ Staff.delete_all
     image: Faker::Placeholdit.image("100x100")
   )
 end
-
-
 
 20.times do 
   Event.create(image: Faker::Placeholdit.image("100x100"), title: Faker::Lorem.word, description: Faker::Lorem.paragraph, datetime: Faker::Time.forward(30, :evening), location: Faker::Address.street_address)
@@ -809,3 +808,16 @@ Staff.create([
 {first_name: "Elizabeth M.", last_name: "Rochford", title: "", category: "Senior Directors"},
 {first_name: "Robert", last_name: "Sheridan", title: "", category: "Senior Directors"},
 {first_name: "William P.", last_name: "Sullivan", title: "", category: "Senior Directors"}])
+
+Faq.create([
+{question: "What does the 100 Club of Chicago do?", answer: "The mission of the 100 Club of Chicago is to help provide for the surviving spouses and dependents of first responders who lose their lives in the line-of-duty. This includes all federal, state, county and local officers, firefighters and paramedics stationed in and working out of Cook and Lake Counties."},
+{question: "Do we cover all family members?", answer: "Our benefits go to surviving spouses, dependents and even surviving parents if they were dependent on the deceased for their support. Our educational assistance is available to surviving spouses, children and even those children from former marriages."},
+{question: "Do all deaths qualify for coverage by the 100 Club of Chicago?", answer: "We provide benefits when a public safety professional loses his/her life in the line-of-duty. We do not provide benefits when a professional dies of natural causes, either on or off duty."},
+{question: "What support does the 100 Club of Chicago provide?", answer: "Within 24 hours of a fatality, the 100 Club of Chicago provides the surviving spouse a check for $15,000. The Club will provide an additional check to the family within several weeks of the fatality to help defray a portion of the family’s debt. The Club will also provide educational assistance to the spouse and post-secondary education for the children."},
+{question: "What level of support has been provided in the past?", answer: "The 100 Club of Chicago has provided benefits to 261 families of fallen public safety professionals. Total benefits have exceeded $10 million."},
+{question: "How is money raised?", answer: "Funds are raised through individual and corporate memberships, donations, charitable and corporate grants and special events."},
+{question: "Is my membership or contribution tax deductible?", answer: "Yes, the 100 Club of Chicago is an Illinois nonprofit (501)(c)(3) charitable organization. All contributions are tax deductible within the limits of the law."},
+{question: "Why do we do it?", answer: "We do it to express, in our own way, our gratitude for the job that every law enforcement officer, firefighter and paramedic does to make our lives safer. Should one of them die in the line-of-duty, our actions acknowledge our obligation to their families in the best way we know how."},
+{question: "How can I help?", answer: "You can join or donate to the 100 Club of Chicago and give back to the families of those professionals who protect us in our daily lives; fill-out an application to become a member of the 100 Club of Chicago; encourage family members and friends to join the Club or donate to the Club."},
+{question: "Can I join as an active duty police officer or firefighter?", answer: "Yes, we have many members who are active public safety professionals."},
+{question: "What’s the history of the 100 Club? Where did the name come from?", answer: "In 1950, a Detroit businessman asked 100 of his friends and associates to help the family of a slain police officer. Since then, 100 Clubs have developed in many cities and countries around the world – including the 100 Club of Chicago."}])

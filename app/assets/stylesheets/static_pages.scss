@@ -84,13 +84,28 @@ body {  /* font for all static pages */
 
 /* ---------------- about page ---------------- */
 
+.list-group-item {
+  background-color: #bc9b5d;
+  padding-bottom: 20px;
+}
+
+.about_content {
+  padding-left: 16px;
+}
+
 .about {
   margin-top: -20px;
 }
 
-.list-group-item {
-  background-color: #bc9b5d;
-  padding-bottom: 20px;
+.faqs, .history, .staff {
+  font: 16px/1.4em;
+  font-weight: bold; 
+  color: #002E5D;
+}
+
+.staff_categories {
+  width: 33%;
+  float: left;
 }
 
 /* ----------------  ---------------- */

@@ -6,6 +6,8 @@
         <div class="row">
           <div class="col-md-12">
 
+          <!-- ---------------- menu bar ---------------- -->
+
             <div class="list-group">
               <div class="col-md-4">
                 <a href="#" class="list-group-item" ng-click="aboutButton()">
@@ -18,6 +20,10 @@
               </div>
             </div>
 
+            <div class="about_content">
+
+            <!-- ---------------- about us ---------------- -->
+
             <div ng-show="showAbout">
               <h2 class="gold_headers about">About Us</h2>
               <p>
@@ -25,16 +31,18 @@
               </p>
             </div>
 
+            <!-- ---------------- history ---------------- -->
+
             <div ng-show="showHistory">
               <h2 class="gold_headers about">History of the 100 Club of Chicago</h2>
-              <h4 class="sub-heading">Where Did the Hundred Club Concept Come From? Who First Had The Idea?</h3>
+              <h4 class="history">Where Did the Hundred Club Concept Come From? Who First Had The Idea?</h3>
               <p>
                 Here is a short history copied from a saturday evening post article by Arthur W. Baum, which appeared on April 7, 1956. Yes, that’s right, 1956.
               </p>
               <p>
                 A policeman is slain by a cornered gunman. A fireman dies in a flaming building. Are the families of these public heroes forgotten? Not in Detroit, thanks to the Hundred Club.
               </p>
-              <h4 class="sub-heading">The Bluecoats’ Best Friends</h4>
+              <h4 class="history">The Bluecoats’ Best Friends</h4>
               <p>
                 “Not all the superior products of Detroit have carburetors and wheels and windshields. One of the city’s finest developments of the last few years has been a nonprofit organization called the Hundred Club, something that deserves to be copied by other large American cities. The Hundred Club is unorthodox. It has no clubrooms, no paid employees, less than a drawerful of records and the dues are high. It scrounges free talents and services from willing members who are invariably among the ablest and highest-priced in the Detroit area. The club meets only twice a year, at the members’ expense, and the concern of those who belong is not with each other but with complete strangers. The Hundred Club has few assets – nothing but a big fund of money, a growing reservoir of good deeds and the largest heart in town.
               </p>
@@ -103,46 +111,64 @@
               </p>
             </div>
 
+            <!-- ---------------- leadership ---------------- -->
+
             <div ng-show="showLeadership">
               <h2 class="gold_headers about">Leadership</h2>
 
-              <h4 class="sub-heading">Officers</h4>
+              <h4 class="staff">Officers</h4>
               <% @staffs.each do |staff| %>
                 <% if staff.category === "Officers" %>
                   <%= staff.first_name %> <%= staff.last_name %>, <%= staff.title %><br>
                 <% end %>
               <% end %>
-              
-              <h4 class="sub-heading">Board of Directors</h4>
+              <br>
+
+              <div class="staff_categories">
+              <h4 class="staff">Board of Directors</h4>
               <% @staffs.each do |staff| %>
                 <% if staff.category === "Board of Directors" %>
                   <%= staff.first_name %> <%= staff.last_name %><br>
                 <% end %>
               <% end %>
+              </div>
 
-              <h4 class="sub-heading">Senior Directors</h4>
+              <div class="staff_categories">
+              <h4 class="staff">Senior Directors</h4>
               <% @staffs.each do |staff| %>
                 <% if staff.category === "Senior Directors" %>
                   <%= staff.first_name %> <%= staff.last_name %><br>
                 <% end %>
               <% end %>
+              </div>
 
-              <h4 class="sub-heading">Staff</h4>
+              <div class="staff_categories">
+              <h4 class="staff">Staff</h4>
               <% @staffs.each do |staff| %>
                 <% if staff.category === "Staff" %>
-                  <%= staff.first_name %> <%= staff.last_name %><br>
+                  <%= staff.first_name %> <%= staff.last_name %> <%= staff.title %><br>
                 <% end %>
               <% end %>
+              </div>
             </div>
+
+            <!-- ---------------- testimonials ---------------- -->
 
             <div ng-show="showTestimonial">
               <h2 class="gold_headers about">Testimonials</h2>
               <p>This page shows all the nice things people say.</p>
             </div>
 
+            <!-- ---------------- faqs ---------------- -->
+
             <div ng-show="showFaq">
-              <h2 class="gold_headers about">FAQ</h2>
-              <p>questions and answers answered</p>
+              <h2 class="gold_headers about">FAQs</h2>
+              <% @faqs.each do |faq| %>
+                <h4 class="faqs"><%= faq.question %></h4>
+                <%= faq.answer %>
+              <% end %>
+            </div>
+
             </div>
 
           </div> <!-- class="col-md-12" -->
