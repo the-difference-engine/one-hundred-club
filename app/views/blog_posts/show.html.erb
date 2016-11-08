@@ -8,7 +8,7 @@
   <br>
   <div class="row">
     <div class="col-xs-8 col-xs-offset-2">
-      <p><%= @blog_post.content %></p>
+      <p><%= simple_format(@blog_post.content) %></p>
     </div>
   </div>
   <div class="row">
