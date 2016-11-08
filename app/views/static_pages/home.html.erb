@@ -14,25 +14,38 @@
 <!-- News and Events -->
 <div class="container">
   <div class="row">
-
     <div class="col-sm-8">
       <p class="heading">Latest News</p>
       <hr>
-
-      <div class="row">
-        <div class="col-lg-6 well well-sm wellNewsEvents">
-        </div>   
-      </div>
     </div>
-
     <div class="col-sm-4">
       <p class="heading">Events</p>
       <hr>
-
-      <div class="row">
-        <div class="col-lg-6 well well-sm wellNewsEvents">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="col-sm-6 well well-sm wellNewsEvents">
+        <img class="img-responsive wellImg" src="<%= asset_path 'police_luncheon.jpg' %>">
+        <br>
+        <p class="wellDate">5/20/16</p>
+        <p class="wellTitle">53rd Fire Luncheon</p>
+        <p class="wellBody">The chicoago 53rd police luncheon was held on May 20th. 
+          Officers Jameka Sherrod, Rodney Jones and... <a class="readMore" href="#">Read More</a></p>
+      </div>
+      <div class="col-sm-6 well well-sm wellNewsEvents">
+        <img class="img-responsive wellImg" src="<%= asset_path 'paris_club_night.jpg' %>">
+        <br>
+        <p class="wellDate">5/08/16</p>
+        <p class="wellTitle">Paris Club Night</p>
+        <p class="wellBody">Our recent fundraising event was held on Nov. 
+          15 at Paris Club restaurant in River North neighborhood center... <a class="readMore" href="#">Read More</a></p>
+      </div>  
+    </div>
+    <div class="col-sm-4">
+      <div class="col-sm-12 well well-sm wellNewsEvents">
         <% @future_events.each do |event| %>
-          <div class="date">
+          <div class="circle_date">
             <%= event.datetime.strftime("%b") %><br>
             <%= event.datetime.strftime("%d") %>    
           </div><br>
@@ -44,10 +57,9 @@
         <% end %>
         </div>   
       </div>
+
 </div>
 
-  </div>
-  
   <br>
   <div class="row">
     <div class="col-lg-12">
@@ -58,11 +70,12 @@
   </div>
   <br>
 
-<div>
-  <h4 class="heading ourprograms">Our Programs</h4>
-</div>
+
 
 <div class="allprograms">
+  <div>
+    <h4 class="heading ourprograms">Our Programs</h4>
+  </div>
   <div id="first_response">
     <%= image_tag("programsa.jpg") %>
     <h4>First Response Assistance</h4>

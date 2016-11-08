@@ -2,6 +2,7 @@ BlogPost.delete_all
 FallenHero.delete_all
 Event.delete_all
 Donation.delete_all
+Staff.delete_all
 
 50.times do
   BlogPost.create(
@@ -744,3 +745,67 @@ Firefighter Harris was a 28-year veteran of the Oak Park Fire Department. He is 
 {rank: "Officer", first_name: "Jason", middle_name: "", last_name: "Gallero", department: "Cook County Sheriff's Police", date_deceased: "09/15/2016", description: "Jason Gallero died in the line of duty on Thursday, September 15, 2016 after collapsing while participating in a colors run at the Cook County Sheriff's Police Training Academy, where he served as a highly respected instructor to recruits of the Cook County Sheriff's office and other law enforcement agencies across Cook County.
 
 Officer Gallero had served with the Cook County Sheriff's Office for 22 years. He started his career in the Department of Corrections in 1994 before joining the Sheriff's Police Department in 2002. He is survived by his daughter. Our thoughts and prayers continue for the Gallero family and the Cook County Sheriff's Office."}])
+
+Staff.create([
+{first_name: "Joe", last_name: "Ahern", title: "Chief Executive Officer", category: "Staff"},
+{first_name: "Caitlyn", last_name: "Brennan", title: "Chief Operating Officer", category: "Staff"},
+{first_name: "Taryn", last_name: "Mason", title: "Program and Event Manager", category: "Staff"},
+{first_name: "Lindsey", last_name: "Dorcus", title: "Executive Administrator", category: "Staff"},
+{first_name: "Chelsea", last_name: "Barras", title: "Marketing and Communications Manager", category: "Staff"},
+{first_name: "Thomas J.", last_name: "Cashman", title: "Chairman", category: "Officers"},
+{first_name: "Ralph B.", last_name: "Mandell", title: "President", category: "Officers"},
+{first_name: "Darrell B.", last_name: "Jackson", title: "Executive Vice President & Treasurer", category: "Officers"},
+{first_name: "Denis J.", last_name: "Healy", title: "Vice President", category: "Officers"},
+{first_name: "Liz", last_name: "Livingston Howard", title: "Secretary", category: "Officers"},
+{first_name: "Joseph J.", last_name: "Ahern", title: "Chief Executive Officer", category: "Officers"},
+{first_name: "James V.", last_name: "Riley", title: "Chairman Emeritus", category: "Officers"},
+{first_name: "James J.", last_name: "O’Connor", title: "President Emeritus", category: "Officers"},
+{first_name: "Melissa", last_name: "Bean", title: "", category: "Board of Directors"},
+{first_name: "Jeffrey", last_name: "Bergren", title: "", category: "Board of Directors"},
+{first_name: "Charles", last_name: "Besser", title: "", category: "Board of Directors"},
+{first_name: "Hon. Edward M.", last_name: "Burke", title: "", category: "Board of Directors"},
+{first_name: "John", last_name: "Carroll", title: "", category: "Board of Directors"},
+{first_name: "Juan", last_name: "Gaytan", title: "", category: "Board of Directors"},
+{first_name: "Steve", last_name: "Ginsburg", title: "", category: "Board of Directors"},
+{first_name: "Robert", last_name: "Graham", title: "", category: "Board of Directors"},
+{first_name: "Mark", last_name: "Hacker", title: "", category: "Board of Directors"},
+{first_name: "Steve", last_name: "Hearn", title: "", category: "Board of Directors"},
+{first_name: "John", last_name: "Idler", title: "", category: "Board of Directors"},
+{first_name: "Jay", last_name: "Javors", title: "", category: "Board of Directors"},
+{first_name: "Bennett", last_name: "Kaplan", title: "", category: "Board of Directors"},
+{first_name: "Elizabeth", last_name: "Kelly", title: "", category: "Board of Directors"},
+{first_name: "John", last_name: "Kelly", title: "", category: "Board of Directors"},
+{first_name: "Scott", last_name: "Kluth", title: "", category: "Board of Directors"},
+{first_name: "Andrew", last_name: "MacDonald", title: "", category: "Board of Directors"},
+{first_name: "Karin Lijana", last_name: "Matura", title: "", category: "Board of Directors"},
+{first_name: "Ted", last_name: "McNabola", title: "", category: "Board of Directors"},
+{first_name: "Michael J.", last_name: "Meagher", title: "", category: "Board of Directors"},
+{first_name: "Richard", last_name: "Melman", title: "", category: "Board of Directors"},
+{first_name: "Dana M.", last_name: "Mikstay", title: "", category: "Board of Directors"},
+{first_name: "Joshua A.", last_name: "Mintzer", title: "", category: "Board of Directors"},
+{first_name: "Dennis I.", last_name: "Mudd, Sr.", title: "", category: "Board of Directors"},
+{first_name: "William J.", last_name: "O’Connell", title: "", category: "Board of Directors"},
+{first_name: "Fred J.", last_name: "O’Connor", title: "", category: "Board of Directors"},
+{first_name: "James", last_name: "Papajohn", title: "", category: "Board of Directors"},
+{first_name: "Dennis", last_name: "Pedrelli", title: "", category: "Board of Directors"},
+{first_name: "James V.", last_name: "Riley", title: "", category: "Board of Directors"},
+{first_name: "Larry R.", last_name: "Rogers, Jr.", title: "", category: "Board of Directors"},
+{first_name: "Robert A.", last_name: "Sullivan", title: "", category: "Board of Directors"},
+{first_name: "Glenn F.", last_name: "Tilton", title: "", category: "Board of Directors"},
+{first_name: "Jay", last_name: "Vincent", title: "", category: "Board of Directors"},
+{first_name: "Edward S.", last_name: "Weil, Jr.", title: "", category: "Board of Directors"},
+{first_name: "Lawrence J.", last_name: "Wert", title: "", category: "Board of Directors"},
+
+{first_name: "Robert H.", last_name: "Asher", title: "", category: "Senior Directors"},
+{first_name: "Hon. Anne M.", last_name: "Burke", title: "", category: "Senior Directors"},
+{first_name: "Russell H.", last_name: "Ewert", title: "", category: "Senior Directors"},
+{first_name: "Peter A.", last_name: "Fasseas", title: "", category: "Senior Directors"},
+{first_name: "James E.", last_name: "Gorman", title: "", category: "Senior Directors"},
+{first_name: "Sheldon F.", last_name: "Good", title: "", category: "Senior Directors"},
+{first_name: "Martin E.", last_name: "Janis", title: "", category: "Senior Directors"},
+{first_name: "Jeanne", last_name: "Randall Malkin", title: "", category: "Senior Directors"},
+{first_name: "Thomas F.", last_name: "Meagher, Sr.", title: "", category: "Senior Directors"},
+{first_name: "B. Michael", last_name: "Pallasch", title: "", category: "Senior Directors"},
+{first_name: "Elizabeth M.", last_name: "Rochford", title: "", category: "Senior Directors"},
+{first_name: "Robert", last_name: "Sheridan", title: "", category: "Senior Directors"},
+{first_name: "William P.", last_name: "Sullivan", title: "", category: "Senior Directors"}])
