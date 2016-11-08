@@ -4,6 +4,7 @@
     <%= form_tag '/blog_posts', method: :post, multipart: true do %>
       <div class="row">
         <div class="col-xs-8 col-xs-offset-2">
+          <%= label_tag :title, "Title: " %>
           <%= text_field_tag :title, nil, class: 'form-control', placeholder: 'Story Title' %>
         </div>
       </div>
@@ -11,6 +12,7 @@
       <div class="row">
         <div class="col-xs-8 col-xs-offset-2">
           <div>
+            <%= label_tag :content, "Content: " %>
             <%= text_area_tag :content, nil, rows: 10, class: 'form-control', placeholder: 'Story Content' %>
           </div>
         </div>
@@ -19,6 +21,7 @@
       <div class="row">
         <div class="col-xs-8 col-xs-offset-2">
           <div>
+            <%= label_tag :image, "Image URL: " %>
             <%= text_field_tag :image, nil, class: 'form-control', placeholder: 'Image URL' %>
           </div>
         </div>

@@ -1,18 +1,35 @@
-<h1>Edit Blog Post</h1>
-<%= form_tag "/blog_posts/#{params[:id]}", method: :patch, multipart: true  do %>
-  <div>
-    <%= label_tag :title, "Title: "  %>
-    <%= text_field_tag :title, @blog_post.title %>
+<div class="container">
+  <p class="pageHead text-center">Edit News Story</p>
+  <div class="form-group">
+    <%= form_tag "/blog_posts/#{params[:id]}", method: :patch, multipart: true  do %>
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+          <%= label_tag :title, "Title: " %>
+          <%= text_field_tag :title, @blog_post.title, class: 'form-control' %>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+          <div>
+            <%= label_tag :content, "Content: " %>
+            <%= text_area_tag :content, @blog_post.content, rows: 10, class: 'form-control' %>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+          <%= label_tag :image, "Image URL: " %>
+          <%= text_field_tag :image, @blog_post.image, class: 'form-control' %>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+          <%= submit_tag "Save Changes", class: 'btn btn-primary btn-block' %>
+        </div>
+      </div>
+    <% end %>
   </div>
-  <div>
-    <%= label_tag :content, "Content: " %>
-    <%= text_field_tag :content, @blog_post.content %>
-  </div>
-  <div>
-    <%= label_tag :image, "Image URL: " %>
-    <%= text_field_tag :image, @blog_post.image %>
-  </div>
-  <div>
-    <%= submit_tag "Submit Changes" %>
-  </div>
-<% end %>
+</div>
