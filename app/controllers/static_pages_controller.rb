@@ -12,6 +12,7 @@ class StaticPagesController < ApplicationController
   end
 
   def about
+    @staffs = Staff.all
     render 'about.html.erb'
   end
 end

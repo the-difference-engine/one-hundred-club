@@ -1,2 +1,3 @@
 class StaffController < ApplicationController
+  
 end

@@ -105,7 +105,34 @@
 
             <div ng-show="showLeadership">
               <h2 class="gold_headers about">Leadership</h2>
-              <p>This page shows Board of Directors list and Staff</p>
+
+              <h4 class="sub-heading">Officers</h4>
+              <% @staffs.each do |staff| %>
+                <% if staff.category === "Officers" %>
+                  <%= staff.first_name %> <%= staff.last_name %>, <%= staff.title %><br>
+                <% end %>
+              <% end %>
+              
+              <h4 class="sub-heading">Board of Directors</h4>
+              <% @staffs.each do |staff| %>
+                <% if staff.category === "Board of Directors" %>
+                  <%= staff.first_name %> <%= staff.last_name %><br>
+                <% end %>
+              <% end %>
+
+              <h4 class="sub-heading">Senior Directors</h4>
+              <% @staffs.each do |staff| %>
+                <% if staff.category === "Senior Directors" %>
+                  <%= staff.first_name %> <%= staff.last_name %><br>
+                <% end %>
+              <% end %>
+
+              <h4 class="sub-heading">Staff</h4>
+              <% @staffs.each do |staff| %>
+                <% if staff.category === "Staff" %>
+                  <%= staff.first_name %> <%= staff.last_name %><br>
+                <% end %>
+              <% end %>
             </div>
 
             <div ng-show="showTestimonial">
