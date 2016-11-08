@@ -1,5 +1,12 @@
-<div> 
-  <p class="pageHead text-center">News</p>
+<div class="container">
+  <div class="row"> 
+    <p class="pageHead text-center">100 Club News</p>
+  </div>
+  <div class="row">
+    <% if user_signed_in? %>
+      <%= link_to "Add New News Story", 'blog_posts/new', class: 'btn btn-info center-block' %>
+    <% end %>
+  </div>
 </div>
 
 <% @blog_posts.each do |post| %>
