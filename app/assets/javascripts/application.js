@@ -15,6 +15,7 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require angular
+//= require fullcalendar.min
 //= require app
 //= require_tree .
 
