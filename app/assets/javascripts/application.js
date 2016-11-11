@@ -13,6 +13,7 @@
 //= require jquery
 //= require parallax
 //= require jquery_ujs
+//= require fullcalendar.min.js
 //= require bootstrap-sprockets
 //= require angular
 //= require app
