@@ -12,8 +12,8 @@
 //
 //= require jquery
 //= require parallax
-//= require jquery_ujs
 //= require bootstrap-sprockets
+//= require jquery_ujs
 //= require angular
 //= require fullcalendar
 //= require app
