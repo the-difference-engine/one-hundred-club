@@ -35,6 +35,7 @@
         <li class="navLinks"><%= link_to "Supporters", '/members', {class: "navbar-category", id: ("navbar-category-active" if current_page?('/members'))} %></li>
         <li class="navLinks"><%= link_to "Events", '/events', {class: "navbar-category", id: ("navbar-category-active" if current_page?('/events'))} %></li>
         <li class="navLinks"><%= link_to "News", '/blog_posts', {class: "navbar-category", id: ("navbar-category-active" if current_page?('/blog_posts'))} %></li>
+        <li class="navLinks"><%= link_to "Shop", 'http://100club.bsmgecommerce.com', class: "navbar-category", :target =>"_blank" %></li>
         <li class="navLinks" id="donate"><%= link_to "Donate", '/donations/new', {class: "navbar-donate", id: ("navbar-donate-active" if current_page?('/donations/new'))} %></li>
       </ul>
     </div>
