@@ -6,6 +6,8 @@
         <div class="row">
           <div class="col-md-12">
 
+          <!-- ---------------- menu bar ---------------- -->
+
             <div class="list-group">
               <div class="col-md-4">
                 <a href="#" class="list-group-item" ng-click="aboutButton()">
@@ -18,23 +20,29 @@
               </div>
             </div>
 
+            <div class="about_content">
+
+            <!-- ---------------- about us ---------------- -->
+
             <div ng-show="showAbout">
-              <h2>About Us</h2>
+              <h2 class="gold_headers about">About Us</h2>
               <p>
                 The 100 Club of Chicago provides for the families of first responders who have lost their lives in the line of duty. This membership based organization offers several forms of financial assistance, access to resources and moral support.  All sworn federal, state, county and local first responders stationed in Cook and Lake Counties are included.
               </p>
             </div>
 
+            <!-- ---------------- history ---------------- -->
+
             <div ng-show="showHistory">
-              <h2>History of the 100 Club of Chicago</h2>
-              <h3>Where Did the Hundred Club Concept Come From? Who First Had The Idea?</h3>
+              <h2 class="gold_headers about">History of the 100 Club of Chicago</h2>
+              <h4 class="history">Where Did the Hundred Club Concept Come From? Who First Had The Idea?</h3>
               <p>
                 Here is a short history copied from a saturday evening post article by Arthur W. Baum, which appeared on April 7, 1956. Yes, that’s right, 1956.
               </p>
               <p>
                 A policeman is slain by a cornered gunman. A fireman dies in a flaming building. Are the families of these public heroes forgotten? Not in Detroit, thanks to the Hundred Club.
               </p>
-              <h4>The Bluecoats’ Best Friends</h4>
+              <h4 class="history">The Bluecoats’ Best Friends</h4>
               <p>
                 “Not all the superior products of Detroit have carburetors and wheels and windshields. One of the city’s finest developments of the last few years has been a nonprofit organization called the Hundred Club, something that deserves to be copied by other large American cities. The Hundred Club is unorthodox. It has no clubrooms, no paid employees, less than a drawerful of records and the dues are high. It scrounges free talents and services from willing members who are invariably among the ablest and highest-priced in the Detroit area. The club meets only twice a year, at the members’ expense, and the concern of those who belong is not with each other but with complete strangers. The Hundred Club has few assets – nothing but a big fund of money, a growing reservoir of good deeds and the largest heart in town.
               </p>
@@ -103,19 +111,125 @@
               </p>
             </div>
 
+            <!-- ---------------- leadership ---------------- -->
+
             <div ng-show="showLeadership">
-              <h2>Leadership</h2>
-              <p>This page shows Board of Directors list and Staff</p>
+              <h2 class="gold_headers about">Leadership</h2>
+
+              <h4 class="staff">Officers</h4>
+              <% @staffs.each do |staff| %>
+                <% if staff.category === "Officers" %>
+                  <%= staff.first_name %> <%= staff.last_name %>, <span class="title"><%= staff.title %></span><br>
+                <% end %>
+              <% end %>
+              <br>
+
+              <div class="staff_categories">
+              <h4 class="staff">Board of Directors</h4>
+              <% @staffs.each do |staff| %>
+                <% if staff.category === "Board of Directors" %>
+                  <%= staff.first_name %> <%= staff.last_name %><br>
+                <% end %>
+              <% end %>
+              </div>
+
+              <div class="staff_categories">
+              <h4 class="staff">Senior Directors</h4>
+              <% @staffs.each do |staff| %>
+                <% if staff.category === "Senior Directors" %>
+                  <%= staff.first_name %> <%= staff.last_name %><br>
+                <% end %>
+              <% end %>
+              </div>
+
+              <div class="staff_categories">
+              <h4 class="staff">Staff</h4>
+              <% @staffs.each do |staff| %>
+                <% if staff.category === "Staff" %>
+                  <%= staff.first_name %> <%= staff.last_name %><br>
+                  <span class="title"><%= staff.title %></span><br>
+                <% end %>
+              <% end %>
+              </div>
             </div>
+
+            <!-- ---------------- testimonials ---------------- -->
 
             <div ng-show="showTestimonial">
-              <h2>Testimonials</h2>
-              <p>This page shows all the nice things people say.</p>
+              <h2 class="gold_headers about">Testimonial Gallery</h2>
+
+              <div class="testimonial1">
+                <div class="headshot">
+                  <%= image_tag("donna_carroll.jpg") %>
+                </div>
+
+                <div>
+                  <p>Dominican University is pleased to partner with the 100 Club of Chicago, through the university’s William J. Darley Scholarship Fund, to provide scholarship support to the children of firefighters and emergency responders. For over a century, W. S. Darley & Company has built a strong reputation in the firefighting industry, and this scholarship program is a natural extension of the company’s commitment to the firefighting community. We are proud to work with the 100 Club to support those emergency responders who, on a daily basis, risk their lives while assuring our safety and security.</p>
+
+                  <p class="name_title">~ Donna Carroll, President of Dominican University</p>
+                </div>
+              </div>
+
+              <div class="testimonial">
+                <div class="headshot">
+                  <%= image_tag("chuck_middleton.jpg") %>
+                </div>
+
+                <div>
+                  <p>We at Roosevelt University believe in the mission of the 100 Club of Chicago so much that we immediately decided to double the club’s initial request. We are proud to offer two Roosevelt scholarships for the children of fallen firefighters, officers and paramedics. This is the best way we know to express our gratitude to first responders and invest in the future of deserving families. The 100 Club of Chicago’s Educational Assistance Program strikes us as a powerful way to express gratitude for the sacrifices of those who keep us safe. Like the 100 Club, Roosevelt University believes that the families of the fallen should also be remembered. </p>
+              
+                  <p class="name_title">~ Chuck Middleton, President of Roosevelt University</p>
+                </div>
+              </div>
+
+              <div class="testimonial">
+                <div class="headshot">
+                  <%= image_tag("father_michael_garazini.jpg") %>
+                </div>
+
+                <div>
+                  <p>Loyola University Chicago is honored to partner with the 100 Club of Chicago to meet the needs of young men and women who have lost a parent in the line of duty. </p>
+
+                  <p class="name_title">~ Father Michael J. Garanzini, S.J., President and CEO of Loyola University Chicago</p>
+                </div>
+              </div>
+
+              <div class="testimonial">
+                <div class="headshot">
+                  <%= image_tag("morton_schapiro.jpg") %>
+                </div>
+
+                <div>
+                  <p>Northwestern is honored to partner with the 100 Club of Chicago Educational Assistance Program to support children of fallen emergency responders in Cook County with the offering of two scholarships a year. Helping families in educational financial need is a mission that the University can help to fulfill. We are especially proud that the scholarships at Northwestern are named after Life Trustee Jim O’Connor, who is also the 2013 President of the 100 Club of Chicago. We applaud Jim’s role in forming the 100 Club’s Educational Assistance Program many years ago. Northwestern is thrilled to participate. </p>
+
+                  <p class="name_title">~ Morton O. Schapiro, President of Northwestern University</p>
+                </div>
+              </div>
+
+              <div class="testimonial">
+                <div class="headshot">
+                  <%= image_tag("rev_dennis_holtschneider.jpg") %>
+                </div>
+
+                <div>
+                  <p>At DePaul, we believe everyone deserves the opportunity to receive a college education. We are honored to partner with the 100 Club of Chicago to support the families of the fallen firefighters, police officers and paramedics who so bravely devoted their lives to protecting their fellow citizens. </p>
+
+                  <p class="name_title">~ Rev. Dennis H. Holtschneider, C.M., Ed.D. – President of DePaul University</p>
+                </div>
+              </div>
+
             </div>
 
+            <!-- ---------------- faqs ---------------- -->
+
             <div ng-show="showFaq">
-              <h2>FAQ</h2>
-              <p>questions and answers answered</p>
+              <h2 class="gold_headers about">FAQs</h2>
+              <% @faqs.each do |faq| %>
+                <h4 class="faqs"><%= faq.question %></h4>
+                <%= faq.answer %>
+              <% end %>
+            </div>
+
             </div>
 
           </div> <!-- class="col-md-12" -->
