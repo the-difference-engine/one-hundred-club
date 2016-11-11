@@ -119,7 +119,7 @@
               <h4 class="staff">Officers</h4>
               <% @staffs.each do |staff| %>
                 <% if staff.category === "Officers" %>
-                  <%= staff.first_name %> <%= staff.last_name %>, <%= staff.title %><br>
+                  <%= staff.first_name %> <%= staff.last_name %>, <span class="title"><%= staff.title %></span><br>
                 <% end %>
               <% end %>
               <br>
@@ -146,7 +146,8 @@
               <h4 class="staff">Staff</h4>
               <% @staffs.each do |staff| %>
                 <% if staff.category === "Staff" %>
-                  <%= staff.first_name %> <%= staff.last_name %> <%= staff.title %><br>
+                  <%= staff.first_name %> <%= staff.last_name %><br>
+                  <span class="title"><%= staff.title %></span><br>
                 <% end %>
               <% end %>
               </div>
@@ -155,8 +156,68 @@
             <!-- ---------------- testimonials ---------------- -->
 
             <div ng-show="showTestimonial">
-              <h2 class="gold_headers about">Testimonials</h2>
-              <p>This page shows all the nice things people say.</p>
+              <h2 class="gold_headers about">Testimonial Gallery</h2>
+
+              <div class="testimonial1">
+                <div class="headshot">
+                  <%= image_tag("donna_carroll.jpg") %>
+                </div>
+
+                <div>
+                  <p>Dominican University is pleased to partner with the 100 Club of Chicago, through the university’s William J. Darley Scholarship Fund, to provide scholarship support to the children of firefighters and emergency responders. For over a century, W. S. Darley & Company has built a strong reputation in the firefighting industry, and this scholarship program is a natural extension of the company’s commitment to the firefighting community. We are proud to work with the 100 Club to support those emergency responders who, on a daily basis, risk their lives while assuring our safety and security.</p>
+
+                  <p class="name_title">~ Donna Carroll, President of Dominican University</p>
+                </div>
+              </div>
+
+              <div class="testimonial">
+                <div class="headshot">
+                  <%= image_tag("chuck_middleton.jpg") %>
+                </div>
+
+                <div>
+                  <p>We at Roosevelt University believe in the mission of the 100 Club of Chicago so much that we immediately decided to double the club’s initial request. We are proud to offer two Roosevelt scholarships for the children of fallen firefighters, officers and paramedics. This is the best way we know to express our gratitude to first responders and invest in the future of deserving families. The 100 Club of Chicago’s Educational Assistance Program strikes us as a powerful way to express gratitude for the sacrifices of those who keep us safe. Like the 100 Club, Roosevelt University believes that the families of the fallen should also be remembered. </p>
+              
+                  <p class="name_title">~ Chuck Middleton, President of Roosevelt University</p>
+                </div>
+              </div>
+
+              <div class="testimonial">
+                <div class="headshot">
+                  <%= image_tag("father_michael_garazini.jpg") %>
+                </div>
+
+                <div>
+                  <p>Loyola University Chicago is honored to partner with the 100 Club of Chicago to meet the needs of young men and women who have lost a parent in the line of duty. </p>
+
+                  <p class="name_title">~ Father Michael J. Garanzini, S.J., President and CEO of Loyola University Chicago</p>
+                </div>
+              </div>
+
+              <div class="testimonial">
+                <div class="headshot">
+                  <%= image_tag("morton_schapiro.jpg") %>
+                </div>
+
+                <div>
+                  <p>Northwestern is honored to partner with the 100 Club of Chicago Educational Assistance Program to support children of fallen emergency responders in Cook County with the offering of two scholarships a year. Helping families in educational financial need is a mission that the University can help to fulfill. We are especially proud that the scholarships at Northwestern are named after Life Trustee Jim O’Connor, who is also the 2013 President of the 100 Club of Chicago. We applaud Jim’s role in forming the 100 Club’s Educational Assistance Program many years ago. Northwestern is thrilled to participate. </p>
+
+                  <p class="name_title">~ Morton O. Schapiro, President of Northwestern University</p>
+                </div>
+              </div>
+
+              <div class="testimonial">
+                <div class="headshot">
+                  <%= image_tag("rev_dennis_holtschneider.jpg") %>
+                </div>
+
+                <div>
+                  <p>At DePaul, we believe everyone deserves the opportunity to receive a college education. We are honored to partner with the 100 Club of Chicago to support the families of the fallen firefighters, police officers and paramedics who so bravely devoted their lives to protecting their fellow citizens. </p>
+
+                  <p class="name_title">~ Rev. Dennis H. Holtschneider, C.M., Ed.D. – President of DePaul University</p>
+                </div>
+              </div>
+
             </div>
 
             <!-- ---------------- faqs ---------------- -->

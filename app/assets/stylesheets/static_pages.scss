@@ -94,7 +94,8 @@ body {  /* font for all static pages */
 }
 
 .about {
-  margin-top: -20px;
+  margin-top: -25px;
+  padding-bottom: 13px;
 }
 
 .faqs, .history, .staff {
@@ -106,6 +107,33 @@ body {  /* font for all static pages */
 .staff_categories {
   width: 33%;
   float: left;
+}
+
+.title {
+  font-size: 14px;
+  font-style: italic;
+  color: #002E5D;
+}
+
+.headshot {
+  float: left;
+  padding: 0 20px 10px 0;
+}
+
+.testimonial1 {
+  padding-bottom: 20px;
+}
+
+.testimonial {
+  float: left;
+  clear: both;
+  padding-bottom: 20px;
+}
+
+.name_title {
+  text-align: right;
+  font-style: italic;
+  color: #002E5D;
 }
 
 /* ----------------  ---------------- */
