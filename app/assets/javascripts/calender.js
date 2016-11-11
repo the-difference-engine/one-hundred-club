@@ -1,10 +1,10 @@
-$(document).ready(function() {
+$.getScript('http://arshaw.com/js/fullcalendar-1.6.4/fullcalendar/fullcalendar.js',function() {
 
 
-  // var date = new Date();
-  // var d = date.getDate();
-  // var m = date.getMonth();
-  // var y = date.getFullYear();
+  var date = new Date();
+  var d = date.getDate();
+  var m = date.getMonth();
+  var y = date.getFullYear();
 
   $('#calendar').fullCalendar({
     header: {
