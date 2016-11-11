@@ -46174,7 +46174,7 @@ function hideEverything() {
 
 
 }).call(this);
-$.getScript('//arshaw.com/js/fullcalendar-1.6.4/fullcalendar/fullcalendar.min.js',function() {
+$.getScript('//arshaw.com/js/fullcalendar-1.6.4/fullcalendar/fullcalendar.js',function() {
 
   var date = new Date();
   var d = date.getDate();
