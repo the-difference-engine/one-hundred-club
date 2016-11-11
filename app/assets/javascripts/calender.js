@@ -1,4 +1,6 @@
-$.getScript('http://arshaw.com/js/fullcalendar-1.6.4/fullcalendar/fullcalendar.min.js',function(){
+// $.getScript('http://arshaw.com/js/fullcalendar-1.6.4/fullcalendar/fullcalendar.js',function() {
+
+$(document).ready(function() {
 
   var date = new Date();
   var d = date.getDate();
@@ -60,4 +62,6 @@ $.getScript('http://arshaw.com/js/fullcalendar-1.6.4/fullcalendar/fullcalendar.m
     //   }
     // ]
   });
+// });
 });
+

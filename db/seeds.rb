@@ -2,6 +2,8 @@ BlogPost.delete_all
 FallenHero.delete_all
 Event.delete_all
 Donation.delete_all
+Staff.delete_all
+Faq.delete_all
 
 50.times do
   BlogPost.create(
@@ -10,8 +12,6 @@ Donation.delete_all
     image: Faker::Placeholdit.image("100x100")
   )
 end
-
-
 
 20.times do 
   Event.create(image: Faker::Placeholdit.image("100x100"), title: Faker::Lorem.word, description: Faker::Lorem.paragraph, datetime: Faker::Time.forward(30, :evening), location: Faker::Address.street_address)
@@ -24,6 +24,85 @@ end
     amount: rand(1..100)
   )
 end
+
+Staff.create([
+  {first_name: "Joe", last_name: "Ahern", title: "Chief Executive Officer", category: "Staff"},
+  {first_name: "Caitlyn", last_name: "Brennan", title: "Chief Operating Officer", category: "Staff"},
+  {first_name: "Taryn", last_name: "Mason", title: "Program and Event Manager", category: "Staff"},
+  {first_name: "Lindsey", last_name: "Dorcus", title: "Executive Administrator", category: "Staff"},
+  {first_name: "Chelsea", last_name: "Barras", title: "Marketing and Communications Manager", category: "Staff"},
+  {first_name: "Thomas J.", last_name: "Cashman", title: "Chairman", category: "Officers"},
+  {first_name: "Ralph B.", last_name: "Mandell", title: "President", category: "Officers"},
+  {first_name: "Darrell B.", last_name: "Jackson", title: "Executive Vice President & Treasurer", category: "Officers"},
+  {first_name: "Denis J.", last_name: "Healy", title: "Vice President", category: "Officers"},
+  {first_name: "Liz", last_name: "Livingston Howard", title: "Secretary", category: "Officers"},
+  {first_name: "Joseph J.", last_name: "Ahern", title: "Chief Executive Officer", category: "Officers"},
+  {first_name: "James V.", last_name: "Riley", title: "Chairman Emeritus", category: "Officers"},
+  {first_name: "James J.", last_name: "O’Connor", title: "President Emeritus", category: "Officers"},
+  {first_name: "Melissa", last_name: "Bean", title: "", category: "Board of Directors"},
+  {first_name: "Jeffrey", last_name: "Bergren", title: "", category: "Board of Directors"},
+  {first_name: "Charles", last_name: "Besser", title: "", category: "Board of Directors"},
+  {first_name: "Hon. Edward M.", last_name: "Burke", title: "", category: "Board of Directors"},
+  {first_name: "John", last_name: "Carroll", title: "", category: "Board of Directors"},
+  {first_name: "Juan", last_name: "Gaytan", title: "", category: "Board of Directors"},
+  {first_name: "Steve", last_name: "Ginsburg", title: "", category: "Board of Directors"},
+  {first_name: "Robert", last_name: "Graham", title: "", category: "Board of Directors"},
+  {first_name: "Mark", last_name: "Hacker", title: "", category: "Board of Directors"},
+  {first_name: "Steve", last_name: "Hearn", title: "", category: "Board of Directors"},
+  {first_name: "John", last_name: "Idler", title: "", category: "Board of Directors"},
+  {first_name: "Jay", last_name: "Javors", title: "", category: "Board of Directors"},
+  {first_name: "Bennett", last_name: "Kaplan", title: "", category: "Board of Directors"},
+  {first_name: "Elizabeth", last_name: "Kelly", title: "", category: "Board of Directors"},
+  {first_name: "John", last_name: "Kelly", title: "", category: "Board of Directors"},
+  {first_name: "Scott", last_name: "Kluth", title: "", category: "Board of Directors"},
+  {first_name: "Andrew", last_name: "MacDonald", title: "", category: "Board of Directors"},
+  {first_name: "Karin Lijana", last_name: "Matura", title: "", category: "Board of Directors"},
+  {first_name: "Ted", last_name: "McNabola", title: "", category: "Board of Directors"},
+  {first_name: "Michael J.", last_name: "Meagher", title: "", category: "Board of Directors"},
+  {first_name: "Richard", last_name: "Melman", title: "", category: "Board of Directors"},
+  {first_name: "Dana M.", last_name: "Mikstay", title: "", category: "Board of Directors"},
+  {first_name: "Joshua A.", last_name: "Mintzer", title: "", category: "Board of Directors"},
+  {first_name: "Dennis I.", last_name: "Mudd, Sr.", title: "", category: "Board of Directors"},
+  {first_name: "William J.", last_name: "O’Connell", title: "", category: "Board of Directors"},
+  {first_name: "Fred J.", last_name: "O’Connor", title: "", category: "Board of Directors"},
+  {first_name: "James", last_name: "Papajohn", title: "", category: "Board of Directors"},
+  {first_name: "Dennis", last_name: "Pedrelli", title: "", category: "Board of Directors"},
+  {first_name: "James V.", last_name: "Riley", title: "", category: "Board of Directors"},
+  {first_name: "Larry R.", last_name: "Rogers, Jr.", title: "", category: "Board of Directors"},
+  {first_name: "Robert A.", last_name: "Sullivan", title: "", category: "Board of Directors"},
+  {first_name: "Glenn F.", last_name: "Tilton", title: "", category: "Board of Directors"},
+  {first_name: "Jay", last_name: "Vincent", title: "", category: "Board of Directors"},
+  {first_name: "Edward S.", last_name: "Weil, Jr.", title: "", category: "Board of Directors"},
+  {first_name: "Lawrence J.", last_name: "Wert", title: "", category: "Board of Directors"},
+  {first_name: "Robert H.", last_name: "Asher", title: "", category: "Senior Directors"},
+  {first_name: "Hon. Anne M.", last_name: "Burke", title: "", category: "Senior Directors"},
+  {first_name: "Russell H.", last_name: "Ewert", title: "", category: "Senior Directors"},
+  {first_name: "Peter A.", last_name: "Fasseas", title: "", category: "Senior Directors"},
+  {first_name: "James E.", last_name: "Gorman", title: "", category: "Senior Directors"},
+  {first_name: "Sheldon F.", last_name: "Good", title: "", category: "Senior Directors"},
+  {first_name: "Martin E.", last_name: "Janis", title: "", category: "Senior Directors"},
+  {first_name: "Jeanne", last_name: "Randall Malkin", title: "", category: "Senior Directors"},
+  {first_name: "Thomas F.", last_name: "Meagher, Sr.", title: "", category: "Senior Directors"},
+  {first_name: "B. Michael", last_name: "Pallasch", title: "", category: "Senior Directors"},
+  {first_name: "Elizabeth M.", last_name: "Rochford", title: "", category: "Senior Directors"},
+  {first_name: "Robert", last_name: "Sheridan", title: "", category: "Senior Directors"},
+  {first_name: "William P.", last_name: "Sullivan", title: "", category: "Senior Directors"}
+])
+
+Faq.create([
+  {question: "What does the 100 Club of Chicago do?", answer: "The mission of the 100 Club of Chicago is to help provide for the surviving spouses and dependents of first responders who lose their lives in the line-of-duty. This includes all federal, state, county and local officers, firefighters and paramedics stationed in and working out of Cook and Lake Counties."},
+  {question: "Do we cover all family members?", answer: "Our benefits go to surviving spouses, dependents and even surviving parents if they were dependent on the deceased for their support. Our educational assistance is available to surviving spouses, children and even those children from former marriages."},
+  {question: "Do all deaths qualify for coverage by the 100 Club of Chicago?", answer: "We provide benefits when a public safety professional loses his/her life in the line-of-duty. We do not provide benefits when a professional dies of natural causes, either on or off duty."},
+  {question: "What support does the 100 Club of Chicago provide?", answer: "Within 24 hours of a fatality, the 100 Club of Chicago provides the surviving spouse a check for $15,000. The Club will provide an additional check to the family within several weeks of the fatality to help defray a portion of the family’s debt. The Club will also provide educational assistance to the spouse and post-secondary education for the children."},
+  {question: "What level of support has been provided in the past?", answer: "The 100 Club of Chicago has provided benefits to 261 families of fallen public safety professionals. Total benefits have exceeded $10 million."},
+  {question: "How is money raised?", answer: "Funds are raised through individual and corporate memberships, donations, charitable and corporate grants and special events."},
+  {question: "Is my membership or contribution tax deductible?", answer: "Yes, the 100 Club of Chicago is an Illinois nonprofit (501)(c)(3) charitable organization. All contributions are tax deductible within the limits of the law."},
+  {question: "Why do we do it?", answer: "We do it to express, in our own way, our gratitude for the job that every law enforcement officer, firefighter and paramedic does to make our lives safer. Should one of them die in the line-of-duty, our actions acknowledge our obligation to their families in the best way we know how."},
+  {question: "How can I help?", answer: "You can join or donate to the 100 Club of Chicago and give back to the families of those professionals who protect us in our daily lives; fill-out an application to become a member of the 100 Club of Chicago; encourage family members and friends to join the Club or donate to the Club."},
+  {question: "Can I join as an active duty police officer or firefighter?", answer: "Yes, we have many members who are active public safety professionals."},
+  {question: "What’s the history of the 100 Club? Where did the name come from?", answer: "In 1950, a Detroit businessman asked 100 of his friends and associates to help the family of a slain police officer. Since then, 100 Clubs have developed in many cities and countries around the world – including the 100 Club of Chicago."}
+  ])
+
 FallenHero.create!([
   {rank: "Captain", first_name: "Thomas", middle_name: "G.", last_name: "Gotkowski", department: "Tinley Park Volunteer Fire Department", date_deceased: "2000-10-01", description: "On October 1, 2000, Captain Thomas G. Gotkowski of the Tinley Park Volunteer Fire Department suffered a fatal heart attack in the line of duty.\nCaptain Gotkowski and his engine company were assisting the police department with the ventilation of a condominium. Gotkowski became ill while he and other firefighters helped the police department ventilate a condominium in which a dead body had remained undiscovered for two weeks. Captain Gotkowski assisted with the placement of a ventilation fan and assisted with the repositioning and stacking of fans. Captain Gotkowski felt ill and was sitting on the back of an engine. He walked to a nearby ambulance where it was determined that he was experiencing a heart attack. Gotkowski was treated by paramedics on the scene, and he was transported to Palos Community Hospital, where he died in the emergency room.\nThis incident was the fifth call of the shift for Captain Gotkowski. According to the fire chief, Captain Gotkowski was the first line-of-duty death for the department since it was founded in 1901.\nFuneral services for Gotkowski were held at St. Julie Billiart Catholic Church on October 4, and he was survived by his widow and three children.", image_url: nil},
   {rank: "Captain", first_name: "Robert", middle_name: "", last_name: "Ely", department: "Holbrook Volunteer Fire Department", date_deceased: "1990-09-25", description: "", image_url: nil},
