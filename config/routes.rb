@@ -53,6 +53,7 @@ Rails.application.routes.draw do
   ##########################################################
   namespace :api do
     get '/events' => 'events#index'
+    get '/fallen_heroes' => 'fallen_heroes#index'
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
