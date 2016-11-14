@@ -7,10 +7,13 @@
       <%= link_to "Add New News Story", 'blog_posts/new', class: 'btn btn-info center-block' %>
     <% end %>
   </div>
+  <div class="row">
+    <div class="col-xs-4">
+      <% @blog_posts.each do |post| %>
+        <h1 class="text-center"><%= post.title %></h1>
+        <h4><%= truncate(post.content, length: 200) %></h4>
+        <p class="text-center"><%= image_tag(post.image) %></p>
+      <% end %>
+    </div>
+  </div>
 </div>
-
-<% @blog_posts.each do |post| %>
-	<h1><%= post.title %></h1>
-	<h4><%= post.content %></h4>
-	<p><%= image_tag(post.image) %></p>
-<% end %>
