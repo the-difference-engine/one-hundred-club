@@ -1,0 +1,105 @@
+<div class="container">
+
+  <div class="row col-lg-12">
+    <p id="transformLives" class="text-center">Add New Member</p>
+    <hr>
+  </div>
+
+  <div class="form-group"> 
+
+  <%= form_tag("/members", method: "post", id: "payment-form") do %>
+
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="form-group">
+          <%= label_tag :title, "Title: " %>
+          <%= select_tag :title, options_for_select(title), class: 'form-control' %>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="form-group">
+          <%= label_tag :first_name, "First Name:* " %>
+          <%= text_field_tag :first_name, nil, class: 'form-control'  %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="form-group">
+          <%= label_tag :middle_name, "Middle Name: " %>
+          <%= text_field_tag :middle_name, nil, class: 'form-control'  %>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="form-group">
+          <%= label_tag :last_name, "Last Name:* " %>
+          <%= text_field_tag :last_name, nil, class: 'form-control'  %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="form-group">
+          <%= label_tag :suffix, "Suffix: " %>
+          <%= text_field_tag :suffix, nil, class: 'form-control'  %>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="form-group">
+          <%= label_tag :address, "Street Address: " %>
+          <%= text_field_tag :address, nil, class: 'form-control'  %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="form-group">
+          <%= label_tag :city, "City: " %>
+          <%= text_field_tag :city, nil, class: 'form-control'  %>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="form-group">
+          <%= label_tag :state, "State/Province:* " %>
+          <%= select_tag :state, options_for_select(us_states), class: 'form-control' %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="form-group">
+          <%= label_tag :zip_code, "Postal Code:* " %>
+          <%= text_field_tag :zip_code, nil, class: 'form-control'  %>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="form-group">
+          <%= label_tag :country, "Country:* " %>
+          <%= select_tag :country, options_for_select(countries), class: 'form-control' %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="form-group">
+          <%= label_tag :email, "E-mail:* " %>
+          <%= text_field_tag :email, nil, class: 'form-control'  %>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="form-group">
+          <%= label_tag :phone_number, "Phone:* " %>
+          <%= text_field_tag :phone_number, nil, class: 'form-control'  %>
+        </div>
+      </div>
+    </div>
+
+  <button class="btn btn-primary btn-block" type="submit"><span>Create</span></button>
+  <br>
+</div>
+<% end %>
+
+</div>
+</div>
