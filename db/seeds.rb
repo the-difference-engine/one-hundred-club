@@ -6,7 +6,7 @@ Donation.delete_all
 50.times do
   BlogPost.create(
     title: Faker::Name.title,
-    content: Faker::Lorem.paragraph,
+    content: Faker::Lorem.paragraph(2, false, 25),
     image: 'https://i.ytimg.com/vi/mRf3-JkwqfU/hqdefault.jpg'
   )
 end
