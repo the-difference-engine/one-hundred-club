@@ -51,7 +51,7 @@
             <%= event.datetime.strftime("%d") %>    
           </div>
           <div class="event_info">
-            <p class="event-heading"><%= event.title %></p>
+            <p><a href="/events/<%= event.id %>" class="event-heading"><%= event.title %></a></p>
             <p><%= image_tag("Time.png", :size => "17x17") %> <%= event.datetime.strftime("%I:%M %p").downcase %></p>
             <p><%= image_tag("Locator.png", :size => "15x20") %> <%= event.location %></p>
           </div>

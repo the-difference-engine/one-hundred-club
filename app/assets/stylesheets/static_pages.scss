@@ -78,10 +78,21 @@ body {  /* font for all static pages */
   border-bottom: 1px solid #bc9b5d;
 }
 
+.event_info:last-child {
+  border-bottom: none;
+}
+
+.event-heading:hover {
+  background-color: transparent !important;
+  color:#BF0A30 !important;
+  text-decoration: none;
+}
+
 .event-heading { 
   font: 16px/1.4em;
   font-weight: bold; 
   color: #605E5E;
+  padding-bottom: 50px;
 }
 
 .circle_date {
