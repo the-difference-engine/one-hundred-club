@@ -12,10 +12,10 @@
 //
 //= require jquery
 //= require parallax
-//= require jquery_ujs
 //= require bootstrap-sprockets
-//= require angular
+//= require jquery_ujs
 //= require fullcalendar
+//= require angular
 //= require app
 //= require_tree .
 
