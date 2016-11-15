@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row section-heading">
+    <span id="hero-head">Fallen Heroes,&nbsp;</span><span id="hero-head-date"><%= range %></span><div id="line"></div>
+  </div>  
+  <% group.each_slice(3) do |heroes| %> 
+    <div class="row">
+      <% heroes.each do |hero| %>
+        <div class="col-md-3" id="pad-right"> 
+          <div class="hero-box">
+            <div class="hero-name">
+              <%= image_tag hero.image_url || 'original_logo.png', class:"hero-badge" %>
+              <%= hero.full_name %>
+            </div>
+            <div class="hero-body text-left">
+              <h5 class="bold-rank"><%= hero.rank %></h5>
+              <p id="department"><%= hero.department %></p>
+              <div class="date"><%= hero.date_deceased.to_datetime.strftime("%m/%d/%Y")%></div>              
+              <% if hero.description.length > 1 %>
+                <p><%= hero.description.truncate(160) %></p>
+                <a href="/fallen_heroes/<%=hero.id%>" id="nounderline"><button type="button" class="btn-small center-block" id="center-button">Read more</button></a>
+              <% end %>
+            </div>  
+          </div>
+        </div>  
+      <% end %>  
+    </div>
+  <% end %>
+</div>  

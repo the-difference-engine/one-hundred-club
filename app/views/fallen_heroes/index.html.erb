@@ -10,48 +10,55 @@
     </div>
     <div class="col-sm-2"></div>
   </div>
-
-  <div class="row section-heading">
-      <span id="hero-head">Fallen Heroes,&nbsp;</span><span id="hero-head-date">2010-2016</span><div id="line"></div>
-  </div>
-
-  <!-- <div id="new-fallen-hero-button">
-    <%= button_to "Add New Fallen Hero", "/fallen_heroes/new", method: :get, :class => 'btn btn-small' %>
-  </div> -->
+    <!-- <div id="new-fallen-hero-button">
+      <%= button_to "Add New Fallen Hero", "/fallen_heroes/new", method: :get, :class => 'btn btn-small' %>
+    </div> -->
 </div>
-<div class="container">  
-  <% @fallen_heroes.each_slice(3) do |heroes| %> 
-    <div class="row">
-      <% heroes.each do |hero| %>
-        <div class="col-md-3" id="pad-right"> 
-          <div class="hero-box">
-            <div class="hero-name">
-              <%= image_tag hero.image_url || 'original_logo.png', class:"hero-badge" %>
-             <%= hero.full_name %>
-            </div>
-            <div class="hero-body text-left">
-              <h5 class="bold-rank"><%= hero.rank %></h5>
-              <p id="department"><%= hero.department %></p>
-              <div class="date"><%= hero.date_deceased.to_datetime.strftime("%m/%d/%Y")%></div>              
-                <% if hero.description.length > 1 %>
-                  <p><%= hero.description.truncate(160) %></p>
-                  <a href="/fallen_heroes/<%=hero.id%>" id="nounderline"><button type="button" class="btn-small center-block" id="center-button">Read more</button></a>
-                <% end %>
-            </div>  
-          </div>
-        </div>  
-      <% end %>  
+<div ng-app="app">
+  <div ng-controller="heroCtrl">
+    <div class="container">
+      <div class="row text-center">
+        <button class="btn btn-default" ng-click="show = 1">2010-present</button>
+        <button class="btn btn-default" ng-click="show = 2">2000-2009</button>
+        <button class="btn btn-default" ng-click="show = 3">1990-1999</button>
+        <button class="btn btn-default" ng-click="show = 4">1980-1989</button>
+        <button class="btn btn-default" ng-click="show = 5">1970-1979</button>
+        <button class="btn btn-default" ng-click="show = 6">1967-1969</button>
+      </div>
     </div>
-  <% end %>
-</div>  
 
-<div class="parallax-window" data-parallax="scroll" data-image-src="<%= asset_path 'comforting_hands.jpg' %>">
-  <div class="helping_hands">
+    <div ng-show="show==1" >
+      <%= render "heroBox", group: @first_heroes, range: "2010-present" %>
+    </div>
+
+    <div ng-show="show==2" >
+       <%= render "heroBox", group: @second_heroes, range: "2010-2009" %>
+    </div>
+
+    <div ng-show="show==3" >
+       <%= render "heroBox", group: @third_heroes, range: "1990-1999" %>
+    </div>
+
+    <div ng-show="show==4" >
+       <%= render "heroBox", group: @fourth_heroes, range: "1980-1989" %>
+    </div>
+
+    <div ng-show="show==5" >
+       <%= render "heroBox", group: @fifth_heroes, range: "1970-1979" %>
+    </div>
+
+    <div ng-show="show==6" >
+       <%= render "heroBox", group: @sixth_heroes, range: "1967-1969" %>
+    </div>
+  </div>
+</div>    
+<div class="jumbotron" id="jumbotron-hands">
+  <div class="container">
     <p id="jumbotronText">We can't do it without you</p>
     <p id="jumbotronTextMini">Join our membership programs to make a difference today</p>
     <div class="text-center">
-        <button type="button" class="btn btn-lg joinDonate"> Join us </button>
-        <button type="button" class="btn btn-lg joinDonate"> Donate </button>
+      <button type="button" class="btn btn-lg joinDonate"> Join us </button>
+      <button type="button" class="btn btn-lg joinDonate"> Donate </button>
     </div>
   </div>
-</div>
+</div>  
