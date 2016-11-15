@@ -7,7 +7,7 @@ Donation.delete_all
   BlogPost.create(
     title: Faker::Name.title,
     content: Faker::Lorem.paragraph,
-    image: Faker::Placeholdit.image("100x100")
+    image: 'https://i.ytimg.com/vi/mRf3-JkwqfU/hqdefault.jpg'
   )
 end
 

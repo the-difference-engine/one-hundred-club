@@ -8,12 +8,15 @@
     <% end %>
   </div>
   <div class="row">
-    <div class="col-xs-4">
-      <% @blog_posts.each do |post| %>
-        <h1 class="text-center"><%= post.title %></h1>
+    <% @blog_posts.each do |post| %>
+      <div class="col-xs-12 text-center">
+        <%= link_to "#{post.title}", "blog_posts/#{post.id}", class: 'blogPostsIndexHead'%>
         <h4><%= truncate(post.content, length: 200) %></h4>
-        <p class="text-center"><%= image_tag(post.image) %></p>
-      <% end %>
-    </div>
+        <%= image_tag(post.image, class: 'newsImg img-rounded') %>
+      </div>
+    <% end %>
+  </div>
+  <div class="flickr_pagination">
+    <%= will_paginate @blog_posts %>
   </div>
 </div>

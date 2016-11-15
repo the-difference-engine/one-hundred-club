@@ -19,6 +19,7 @@ gem 'fog-aws'
 gem 'braintree', '~> 2.65.0'
 gem 'ngannotate-rails'
 gem 'american_date'
+gem 'will_paginate'
 
 group :development, :test do
   gem 'byebug'
