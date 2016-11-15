@@ -1,9 +1,5 @@
-(function() {
-  angular.module("app").controller("heroCtrl", function($scope, $http) {
-    $scope.setup = function() {
-      $http.get('/api/fallen_heroes.json').then(function(response) {
-        $scope.fallenHeroes = response.data;
-      });
-    };
-  });
-}());
+var app = angular.module('app',[]);
+app.controller('heroCtrl',function($scope) {
+  $scope.show = 1;
+
+});

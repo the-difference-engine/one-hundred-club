@@ -16,8 +16,11 @@
   text-align: center;
 }
 
-.stretch {
-  width: 100%;
+#jumbotron-hands {
+  background-image: url("comforting_hands.jpg");
+  background-size: cover;
+  height: 45vh;
+  margin-bottom: 0px;
 }
 
 #hero-head {
@@ -119,7 +122,9 @@
   color: #BC9B5D;
   margin-bottom: 18px;
 }
-
+.button-row {
+  text-align: center;
+}
 .parallax-window {
     min-height: 350px;
     background: transparent;
