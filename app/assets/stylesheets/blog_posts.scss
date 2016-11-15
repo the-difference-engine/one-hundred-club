@@ -8,9 +8,14 @@
   font-size: 25px;
 }
 
+.newsBody {
+  margin-top: 10px;
+}
+
 .newsImg {
-  width: 250px;
-  height: 250px;
+  margin-top: 10px;
+  max-width: 250px;
+  max-height: 250px;
 }
 
 .flickr_pagination {

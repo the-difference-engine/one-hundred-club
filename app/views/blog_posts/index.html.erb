@@ -7,12 +7,21 @@
       <%= link_to "Add New News Story", 'blog_posts/new', class: 'btn btn-info center-block' %>
     <% end %>
   </div>
+  <hr>
   <div class="row">
     <% @blog_posts.each do |post| %>
-      <div class="col-xs-12 text-center">
-        <%= link_to "#{post.title}", "blog_posts/#{post.id}", class: 'blogPostsIndexHead'%>
-        <h4><%= truncate(post.content, length: 200) %></h4>
-        <%= image_tag(post.image, class: 'newsImg img-rounded') %>
+      <div class="col-xs-8 col-xs-offset-2 text-center">
+        <div>
+          <%= link_to "#{post.title}", "blog_posts/#{post.id}", class: 'blogPostsIndexHead' %>
+        </div>
+        <div class="newsBody">
+          <%= truncate(post.content, length: 200) %>
+        </div>
+        <div>
+          <%= image_tag(post.image, class: 'newsImg img-rounded') %>
+        </div>
+        <hr>
+        <br>
       </div>
     <% end %>
   </div>
