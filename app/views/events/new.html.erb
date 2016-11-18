@@ -1,27 +1,40 @@
-<h1>Add a new event</h1>
-<%= form_tag '/events', method: :post do %>
-
+<div class="container">
+  <p class="pageHead text-center">Add a New Event</p>
   <div class="form-group">
-    <%= label_tag :image %>
-    <%= text_field_tag :image %>
+    <%= form_tag '/events', method: :post do %>
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+          <%= label_tag :title %>
+          <%= text_field_tag :title, nil, class: 'form-control' %>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+          <%= label_tag :description %>
+          <%= text_field_tag :description, nil, class: 'form-control' %>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+          <%= label_tag :datetime %>
+          <%= datetime_select :datetime, @event.datetime, ampm: true, order: [:day, :month, :year], class: 'form-control' %>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+          <%= label_tag :location %>
+          <%= text_field_tag :location, nil, class: 'form-control' %>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+          <%= submit_tag "Add Event", class: 'btn btn-primary btn-block' %>
+        </div>
+      </div>
+    <% end %>
   </div>
-  <div class="form-group">
-    <%= label_tag :title %>
-    <%= text_field_tag :title %>
-  </div>
-  <div class="form-group">
-    <%= label_tag :description %>
-    <%= text_field_tag :description %>
-  </div>
-  <div class="form-group">
-    <%= label_tag :datetime %>
-    <%= datetime_select :datetime, @event.datetime %>
-  </div>
-  <div class="form-group">
-    <%= label_tag :location %>
-    <%= text_field_tag :location %>
-  </div>
-  <div>
-    <%= submit_tag "Add Event", class: "btn btn-default" %>
-  </div>
-<% end %>
+</div>
