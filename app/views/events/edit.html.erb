@@ -19,7 +19,7 @@
       <div class="row">
         <div class="col-xs-8 col-xs-offset-2">
           <%= label_tag :datetime, "Date and Time: " %>
-          <%= datetime_select :datetime, @event.datetime, ampm: true, order: [:day, :month, :year], class: 'form-control' %>
+          <%= datetime_select :datetime, :datetime, default: @event.datetime, ampm: true, order: [:day, :month, :year], class: 'form-control' %>
         </div>
       </div>
       <br>
