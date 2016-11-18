@@ -23,22 +23,3 @@
   <hr>
   <div id="calendar"></div>
 </div>
-<div class="container">
-<% @events.each do |event| %>
-  <hr>
-  <div class="row">
-    <div class="col-sm-3"></div>
-    <div class="col-sm-3">
-      <%= image_tag(event.image, :style => "height: 225px; width: 225px;") %>
-    </div>
-      <div class="col-sm-6">
-      <h3><%= event.title %></h3>
-      <h4><%= event.location %></h4>
-      <h4><%= event.datetime %></h4>
-      <h5><%= event.description %></h5>
-      <a class="btn btn-small" href="/events/<%= event.id %>" role="button">Details</a>
-
-    </div>
-  </div>
-<% end %>
-</div>

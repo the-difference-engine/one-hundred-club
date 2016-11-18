@@ -31,8 +31,11 @@
       </div>
       <br>
       <div class="row">
-        <div class="col-xs-8 col-xs-offset-2">
+        <div class="col-xs-4 col-xs-offset-2">
           <%= submit_tag "Save Changes", class: 'btn btn-primary btn-block' %>
+        </div>
+        <div class="col-xs-4">
+          <%= link_to "Delete Event", "/events/#{@event.id}", method: :delete, class: 'btn btn-danger btn-block' %>
         </div>
       </div>
     <% end %>
