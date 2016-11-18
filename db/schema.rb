@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161101014504) do
+ActiveRecord::Schema.define(version: 20161115020901) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,8 +39,12 @@ ActiveRecord::Schema.define(version: 20161101014504) do
     t.string   "zip_code"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+<<<<<<< HEAD
     t.integer  "amount"
     t.string   "bt_transaction_id"
+=======
+    t.integer  "member_id"
+>>>>>>> a7c66481ce03a1c83337ce6ab4c92ab4167c1271
   end
 
   create_table "events", force: :cascade do |t|
@@ -66,21 +70,37 @@ ActiveRecord::Schema.define(version: 20161101014504) do
     t.datetime "updated_at",    null: false
   end
 
+  create_table "faqs", force: :cascade do |t|
+    t.string   "question"
+    t.string   "answer"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "members", force: :cascade do |t|
     t.string   "title"
     t.string   "first_name"
     t.string   "middle_name"
     t.string   "last_name"
-    t.string   "street_address"
-    t.string   "secondary_address"
+    t.string   "address"
     t.string   "suffix"
     t.string   "city"
     t.string   "state"
     t.string   "zip_code"
     t.string   "country"
     t.string   "phone_number"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "email"
+  end
+
+  create_table "staffs", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "title"
+    t.string   "category"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "last_name"
   end
 
   create_table "transactions", force: :cascade do |t|

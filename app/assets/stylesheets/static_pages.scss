@@ -8,24 +8,26 @@
   font-size: 30px;
 }
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 16px;
-  color: #605E5E;
-}
-
 .parallax-window {
     min-height: 350px;
     background: transparent;
 }
 
-.heading {
+/* ---------------- fonts ---------------- */
+
+body {  /* font for all static pages */
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  color: #605E5E;
+}
+
+.heading {  /* golden headings */
   font-size: 18px;
   color: #bc9b5d;
   font-weight: bold;
 }
 
-.sub-heading {  
+.sub-heading {  /* grey cursive headings in programs */
   font: 16px/1.4em;
   font-weight: bold; 
   font-style: italic;
@@ -33,12 +35,145 @@ body {
   margin-bottom: 0px;
 }
 
-.box-heading {  
+.box-heading {  /* grey headings in boxes */
   font: 16px/1.4em;
   font-weight: bold; 
   color: #605E5E;
   padding: 15px;
 }
+
+.gold_headers {
+  color: #bc9b5d;
+  font-family: 'Libre Baskerville', serif;
+  font-style: italic;
+  font-size: 30px;
+  line-height: 1.5;
+  font-weight: normal;
+  font-stretch: normal;
+}
+
+/* ---------------- jumbotron ---------------- */
+
+#jumbotronGif {
+  background-image: image-url("jumbotron.gif");
+  background-size: cover;
+  height: 55vh;
+}
+
+#jumbotronText {
+  color: white;
+  font-size: 40px;
+  text-align: center;
+}
+
+#jumbotronTextMini {
+  color: white;
+  text-align: center;
+  font-style: italic;
+  font-size: 23px;
+  margin-bottom: 20px;
+}
+
+/* ---------------- home page ---------------- */
+
+.event_info {
+  font-size: 15px;
+  padding-top: 10px;
+  padding-left: 10px;
+  line-height: 1;
+  border-bottom: 1px solid #bc9b5d;
+}
+
+.event_info:last-child {
+  border-bottom: none;
+}
+
+.event-heading:hover {
+  background-color: transparent !important;
+  color:#BF0A30 !important;
+  text-decoration: none;
+}
+
+.event-heading { 
+  font: 16px/1.4em;
+  font-weight: bold; 
+  color: #605E5E;
+  padding-bottom: 50px;
+}
+
+.circle_date {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #bc9b5d;
+  border-radius: 50px;
+  color: white;
+  margin: 10px 15px 0 0;
+  padding: 12px 17px 10px 20px;
+  font-style: normal;
+  text-align: center;
+  float: left;
+  clear: both;
+}
+
+.wellNewsEvents {
+  height: 390px;
+  width: 290px;
+}
+
+/* ---------------- about page ---------------- */
+
+.list-group-item {
+  background-color: #bc9b5d;
+  padding-bottom: 20px;
+}
+
+.about_content {
+  padding-left: 16px;
+}
+
+.about {
+  margin-top: -25px;
+  padding-bottom: 13px;
+}
+
+.faqs, .history, .staff {
+  font: 16px/1.4em;
+  font-weight: bold; 
+  color: #002E5D;
+}
+
+.staff_categories {
+  width: 33%;
+  float: left;
+}
+
+.title {
+  font-size: 14px;
+  font-style: italic;
+  color: #002E5D;
+}
+
+.headshot {
+  float: left;
+  padding: 0 20px 10px 0;
+}
+
+.testimonial1 {
+  padding-bottom: 20px;
+}
+
+.testimonial {
+  float: left;
+  clear: both;
+  padding-bottom: 20px;
+}
+
+.name_title {
+  text-align: right;
+  font-style: italic;
+  color: #002E5D;
+}
+
+/* ----------------  ---------------- */
 
 .summary-box {
   padding: 20px 15px 0px 15px;
@@ -76,26 +211,6 @@ body {
   color: #0E2553;
 }
 
-#jumbotronGif {
-  background-image: image-url("jumbotron.gif");
-  background-size: cover;
-  height: 55vh;
-}
-
-#jumbotronText {
-  color: white;
-  font-size: 40px;
-  text-align: center;
-}
-
-#jumbotronTextMini {
-  color: white;
-  text-align: center;
-  font-style: italic;
-  font-size: 23px;
-  margin-bottom: 20px;
-}
-
 .joinDonate {
 	background-color: #BF0A30;
 	color: white;
@@ -106,10 +221,6 @@ body {
   color: #bc9b5d;
   font-weight: bold;
   display: inline-block;
-}
-
-.wellNewsEvents {
-  height: 450px;
 }
 
 .wellImg {
@@ -140,7 +251,6 @@ body {
 
 .wellBody {
   color: #605e5e;
-  font-size: 20px;
   padding-left: 10px;
   padding-right: 10px;
 }
@@ -160,47 +270,12 @@ body {
   display: inline-block;
 }
 
-footer {
-  background: #bc9b5d;
-  color: #fff;
-}
-
-footer a {
-  color: #fff;
-}
-
-footer p {
-  font-size: 12px;
-  color: #fff;
-  margin-top: 30px;
-  margin-bottom: 35px;
-}
-
-#footer-icons {
-  display: inline;
-  list-style-type: none;
-}
-
-#socialBottom{
-  height: 26px;
-  width: 26px; 
-}
-
 .icon-margines {
   margin-top: 44px;
   margin-bottom: 20px;
 }
 
-.footer-links {
-  font-size: 17px;
-  font-weight: bold;
-}
-
-.programs_headers {
-  clear: both;
-  color: #bc9b5d;
-  padding-top: 20px;
-}
+/* ---------------- programs page ---------------- */
 
 .number {
   font-family: Arial, Helvetica, sans-serif;
@@ -220,6 +295,7 @@ footer p {
 }
 
 .allprograms {
+  text-align: center;
   width: 100%;
   clear: both;
 }
@@ -236,9 +312,10 @@ footer p {
 #first_response, #education, #gold-shield {
   height: 450px;
   width: 290px;
-  float: left;
+  display: inline-block;
   background-color: rgba(237, 237, 237, 100);
   margin: 10px 0px;
+  text-align: left;
 }
 
 #first_response, #education {
@@ -269,7 +346,7 @@ li.huge:before {
   font-size: 45px;
 }
 
-/* star styling */
+/* ---------------- star styling ---------------- */
 
 .star-container,
 .star-container:before,
@@ -366,7 +443,7 @@ li.huge:before {
          transform: rotate(75deg);
 }
 
-/* text styling */
+/* star text styling */
 
 .star-container .star span {
   position: relative;
@@ -390,4 +467,37 @@ li.huge:before {
   font-weight: bold;
   font-size: 1.2em;
   color: #fff;
+}
+
+/* ---------------- footer styling ---------------- */
+
+footer {
+  background: #bc9b5d;
+  color: #fff;
+}
+
+footer a {
+  color: #fff;
+}
+
+footer p {
+  font-size: 12px;
+  color: #fff;
+  margin-top: 30px;
+  margin-bottom: 35px;
+}
+
+#footer-icons {
+  display: inline;
+  list-style-type: none;
+}
+
+.footer-links {
+  font-size: 17px;
+  font-weight: bold;
+}
+
+#socialBottom{
+  height: 26px;
+  width: 26px; 
 }

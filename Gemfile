@@ -17,7 +17,7 @@ gem 'devise', '~> 4.1.1'
 gem 'carrierwave'
 gem 'fog-aws'
 gem 'braintree', '~> 2.65.0'
-gem 'ngannotate-rails'
+gem 'seed_dump'
 gem 'american_date'
 gem 'will_paginate'
 
