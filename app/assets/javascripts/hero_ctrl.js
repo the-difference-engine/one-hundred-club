@@ -1,5 +1,10 @@
-var app = angular.module('app',[]);
-app.controller('heroCtrl',function($scope) {
+(function() {
+  "use strict";
+
+  angular.module("app").controller("heroCtrl", function($scope) {
+
+
   $scope.show = 1;
 
 });
+})();
