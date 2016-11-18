@@ -39,12 +39,9 @@ ActiveRecord::Schema.define(version: 20161115020901) do
     t.string   "zip_code"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
-<<<<<<< HEAD
     t.integer  "amount"
     t.string   "bt_transaction_id"
-=======
     t.integer  "member_id"
->>>>>>> a7c66481ce03a1c83337ce6ab4c92ab4167c1271
   end
 
   create_table "events", force: :cascade do |t|

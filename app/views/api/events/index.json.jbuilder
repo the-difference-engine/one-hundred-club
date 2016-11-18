@@ -3,4 +3,5 @@ json.array! @events.each do |event|
 	json.title event.title
 	json.id event.id
 	json.start event.datetime
+  json.url "events/#{event.id}"
 end
