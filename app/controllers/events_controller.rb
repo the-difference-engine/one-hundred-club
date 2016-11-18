@@ -36,7 +36,7 @@ class EventsController < ApplicationController
 
   def update
     event = Event.find_by(id: params[:id])
-    datetime = format_datetime_updates(params[:datetime])
+    datetime = format_datetime_new(params[:datetime])
     event.update(
       title: params[:title],
       datetime: datetime,
