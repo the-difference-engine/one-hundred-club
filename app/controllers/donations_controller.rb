@@ -1,7 +1,23 @@
 class DonationsController < ApplicationController
   def index
-    @donations = Donation.all
+    @donations = Donation.where(member_id: nil)
+    @members = []
+    @donations.each do |donation|
+      Member.where(phone_number: donation.phone_number).each do |member|
+        @members << member
+      end
+
+
+
+
+      # if @members.first.first != nil
+      #   puts @members.first.first.first_name
+      # end
+
+      end
+      puts @members
     render 'index.html.erb'
+
   end
 
   def new
@@ -30,7 +46,7 @@ class DonationsController < ApplicationController
       zip_code: params[:zip_code],
       country: params[:country],
       email: params[:email],
-      phone: params[:phone],
+      phone_number: params[:phone],
       amount: params[:amount]
     )
     redirect_to "/donations/#{donation.id}"
@@ -59,7 +75,7 @@ class DonationsController < ApplicationController
         zip_code: params[:zip_code],
         country: params[:country],
         email: params[:email],
-        phone: params[:phone],
+        phone_number: params[:phone],
         amount: params[:amount],
         bt_transaction_id: result.transaction.id
       )

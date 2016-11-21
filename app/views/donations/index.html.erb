@@ -1,3 +1,16 @@
-<%= @donations.each do |donation| %>
-  <h3><%= "#{donation.first_name} #{donation.last_name} | $#{donation.amount}" %></h3>
-<% end %>
+<div class="container">
+  <div class="row">
+
+    <% @donations.each do |donation| %>
+      <h3><%= "#{donation.created_at.strftime("%b %d")} #{donation.first_name} #{donation.last_name}  $#{donation.amount}" %></h3>
+      <% @members.each do |member| %>
+        <% if member.phone_number == donation.phone_number %>
+          <p>This donation matches <%= member.first_name%> <%= member.last_name%> by phone number.</p>
+        <% end %>  
+
+
+      <% end %>
+
+    <% end %>
+  </div>
+</div>  
