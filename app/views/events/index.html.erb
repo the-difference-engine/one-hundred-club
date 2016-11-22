@@ -1,43 +1,27 @@
 <div class="parallax-window" data-parallax="scroll" data-position="0px 30px" data-image-src="<%= asset_path 'champagne.jpeg'%>"></div>
-</div>
-<!-- </div> -->
 
-<!-- <div class="container"> -->
-  <div class="row block-quote-row">
-  <div class="col-sm-2"></div>
-    <div class="col-sm-8">
-      <h3 class="block-quote">
+<div class="container">
+  <div>
+    <br>
+    <p class="pageHead text-center">Checkout the Latest Events</p>
+  </div>
+
+  <% if user_signed_in? %>
+    <div class="col-xs-8 col-xs-offset-2">
+      <%= link_to "Add a New Event", '/events/new', class: 'btn btn-info center-block' %>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="col-xs-8 col-xs-offset-2">
+      <p class="block-quote">
         The 100 Club of Chicago provides financial assistance, access to resources and moral support 
         for the families of first responders who have lost their lives in the line of duty in Cook 
         and Lake Counties.
-      </h3>
+      </p>
     </div>
-    <div class="col-sm-2"></div>
   </div>
-<!-- </div> -->
 
-
-<div class="container">
-    <hr>
-  <div id="calendar"></div>
-</div>
-
-<div class="container">
-<% @events.each do |event| %>
   <hr>
-  <div class="row">
-    <div class="col-sm-3"></div>
-    <div class="col-sm-3">
-      <%= image_tag(event.image, :style => "height: 225px; width: 225px;") %>
-    </div>
-      <div class="col-sm-6">
-      <h3><%= event.title %></h3>
-      <h4><%= event.location %></h4>
-      <h4><%= event.datetime %></h4>
-      <h5><%= event.description %></h5>
-      <a class="btn btn-small" href="/events/<%= event.id %>" role="button">Details</a>
-
-    </div>
-  </div>
-<% end %>
+  <div id="calendar"></div>
 </div>

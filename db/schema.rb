@@ -37,10 +37,10 @@ ActiveRecord::Schema.define(version: 20161115020901) do
     t.string   "email"
     t.string   "phone"
     t.string   "zip_code"
-    t.integer  "amount"
-    t.string   "bt_transaction_id"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+    t.integer  "amount"
+    t.string   "bt_transaction_id"
     t.integer  "member_id"
   end
 

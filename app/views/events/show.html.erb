@@ -1,10 +1,24 @@
-  <% if @event %>
-    <h3><%= @event.title %></h3>
-    <h4>Date: <%= @event.datetime %></h4>
-    <h4>Location: <%= @event.location %></h4>
-    <h5><%= @event.description %></h5>
-    <img src="<%= @event.image %>" />
-    <%= button_to "Delete Event", "/events/#{@event.id}", method: :delete %>  
-  <% else %>
-    <h3>There are currently no events!</h3>
-  <% end %>
+<div class="container">
+  <div class="row">
+    <p class="pageHead text-center"><%= @event.title %></p>
+  </div>
+  <div class="row">
+    <div class="col-xs-8 col-xs-offset-2">
+      <p>Where: <%= @event.location %></p>
+      <p>When: <%= @event.datetime %></p> 
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-8 col-xs-offset-2">
+      <p><%= simple_format(@event.description) %></p>
+    </div>
+  </div>  
+  <div class="row">
+    <div class="col-xs-8 col-xs-offset-2">
+      <% if user_signed_in? %>
+        <%= link_to "Edit Event", "/events/#{@event.id}/edit", method: :get, class: 'btn btn-primary btn-block' %>
+      <% end %>
+    </div>
+  </div>
+  <br> 
+</div>
