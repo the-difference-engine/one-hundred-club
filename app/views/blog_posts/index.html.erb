@@ -1,5 +1,33 @@
-<% @blog_posts.each do |post| %>
-	<h1><%= post.title %></h1>
-	<h4><%= post.content %></h4>
-	<p><%= image_tag(post.image) %></p>
-<% end %>
+<div class="container">
+  <div class="row"> 
+    <p class="pageHead text-center">100 Club News</p>
+  </div>
+  <div class="row">
+    <% if user_signed_in? %>
+      <div class="col-xs-8 col-xs-offset-2">
+        <%= link_to "Add News", 'blog_posts/new', class: 'btn btn-info center-block' %>
+      </div>
+    <% end %>
+  </div>
+  <hr>
+  <div class="row">
+    <% @blog_posts.each do |post| %>
+      <div class="col-xs-8 col-xs-offset-2 text-center">
+        <div>
+          <%= link_to "#{post.title}", "blog_posts/#{post.id}", class: 'blogPostsIndexHead' %>
+        </div>
+        <div class="newsBody">
+          <%= truncate(post.content, length: 200) %>
+        </div>
+        <div>
+          <%= image_tag(post.image, class: 'newsImg img-rounded') %>
+        </div>
+        <hr>
+        <br>
+      </div>
+    <% end %>
+  </div>
+  <div class="flickr_pagination">
+    <%= will_paginate @blog_posts %>
+  </div>
+</div>

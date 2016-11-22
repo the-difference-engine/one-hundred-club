@@ -1,26 +1,43 @@
-<h1>Edit Event</h1>
-<%= form_tag "/events/#{params[:id]}", method: :patch do %>
-  <div>
-    <%= label_tag :title, "Title: "  %>
-    <%= text_field_tag :title, @event.title %>
+<div class="container">
+  <p class="pageHead text-center">Edit Event</p>
+  <div class="form-group">
+    <%= form_tag "/events/#{params[:id]}", method: :patch do %>
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+          <%= label_tag :title, "Title: "  %>
+          <%= text_field_tag :title, @event.title, class: 'form-control' %>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+          <%= label_tag :description, "Description: " %>
+          <%= text_field_tag :description, @event.description, class: 'form-control' %>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+          <%= label_tag :datetime, "Date and Time: " %>
+          <%= datetime_select :datetime, :datetime, default: @event.datetime, ampm: true, order: [:day, :month, :year], class: 'form-control' %>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+          <%= label_tag :location, "Location: " %>
+          <%= text_field_tag :location, @event.location, class: 'form-control' %>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-xs-4 col-xs-offset-2">
+          <%= submit_tag "Save Changes", class: 'btn btn-primary btn-block' %>
+        </div>
+        <div class="col-xs-4">
+          <%= link_to "Delete Event", "/events/#{@event.id}", method: :delete, class: 'btn btn-danger btn-block' %>
+        </div>
+      </div>
+    <% end %>
   </div>
-  <div>
-    <%= label_tag :datetime, "Date and Time: " %>
-    <%= datetime_select(:datetime, :datetime, default: @event.datetime) %>
-  </div>
-  <div>
-    <%= label_tag :location, "Location: " %>
-    <%= text_field_tag :location, @event.location %>
-  </div>
-  <div>
-    <%= label_tag :description, "Description: " %>
-    <%= text_field_tag :description, @event.description %>
-  </div>
-  <div>
-    <%= label_tag :image, "Image URL: " %>
-    <%= text_field_tag :image, @event.image %>
-  </div>
-  <div>
-    <%= submit_tag "Submit Changes" %>
-  </div>
-<% end %>
+</div>

@@ -66,7 +66,12 @@
           </ul>   
         </div>  
         <div class="text-center">
-          <a href="/donations/new">Donate </a>|<a href="/members/new"> Join </a>|<a href=""> Contact</a>
+          <a href="/donations/new">Donate </a>|<a href="/members/new"> Join </a>|<a href=""> Contact </a>|
+          <% if current_user %>
+            <%= link_to 'Sign Out', '/users/sign_out', :method => :delete %>
+          <% else %>
+            <a href="/users/sign_in"> Login</a> 
+          <% end %> 
         </div>
         <div class="text-center">    
           <p>
