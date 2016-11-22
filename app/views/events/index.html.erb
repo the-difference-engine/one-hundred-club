@@ -7,7 +7,9 @@
   </div>
 
   <% if user_signed_in? %>
-    <%= link_to "Add a New Event", '/events/new', class: 'btn btn-info center-block' %>
+    <div class="col-xs-8 col-xs-offset-2">
+      <%= link_to "Add a New Event", '/events/new', class: 'btn btn-info center-block' %>
+    </div>
   <% end %>
 
   <div class="row">

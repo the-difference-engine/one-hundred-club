@@ -14,7 +14,7 @@
   <div class="row">
     <div class="col-xs-8 col-xs-offset-2">
       <% if user_signed_in? %>
-        <%= link_to "Edit News Post", "/blog_posts/#{@blog_post.id}/edit", method: :get, class: 'btn btn-primary btn-block' %>
+        <%= link_to "Edit News", "/blog_posts/#{@blog_post.id}/edit", method: :get, class: 'btn btn-primary btn-block' %>
       <% end %>
     </div>
   </div>
