@@ -6,7 +6,7 @@
     <div id="hero-badge-img">
       <%= image_tag @fallen_hero.image_url || 'original_logo.png', id:"showbadge" %>
     </div>
-    <p><%= @fallen_hero.description %></p>
+    <p><%= simple_format(@fallen_hero.description) %></p>
     <% if user_signed_in? %>
       <div class="row">
           <div class="col-xs-4 col-xs-offset-2">
