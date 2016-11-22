@@ -2,23 +2,27 @@ class DonationsController < ApplicationController
   def index
     @donations = Donation.where(member_id: nil)
     @members = []
+
     @donations.each do |donation|
       Member.where(phone_number: donation.phone_number).each do |member|
         @members << member
       end
-
-
-
-
-      # if @members.first.first != nil
-      #   puts @members.first.first.first_name
-      # end
-
+      Member.where("first_name = ? AND last_name = ?", donation.first_name, donation.last_name).each do |member|
+        @members << member unless @members.include?(member)
       end
-      puts @members
+    end
+      
     render 'index.html.erb'
 
   end
+  
+  def add_member_id
+    @donation = Donation.find_by(id: params[:id])
+      @donation.update(
+        member_id: params[:member_id]
+      )
+      
+  end  
 
   def new
     @token = Braintree::ClientToken.generate
