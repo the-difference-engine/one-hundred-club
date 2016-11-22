@@ -14,6 +14,17 @@
       <%= button_to "Add New Fallen Hero", "/fallen_heroes/new", method: :get, :class => 'btn btn-small' %>
     </div> -->
 </div>
+<% if user_signed_in? %>
+<div class="container"> 
+  <div class="row">
+    <div class="col-xs-8 col-xs-offset-2">
+    <br>
+      <%= link_to "Add Fallen Hero", "/fallen_heroes/new", method: :get, class: 'btn btn-primary btn-block' %>
+    <br>
+    </div>
+  </div>
+</div>
+<% end %>   
 <div ng-app="app">
   <div ng-controller="heroCtrl">
     <div class="container">
@@ -51,7 +62,7 @@
        <%= render "heroBox", group: @sixth_heroes, range: "1967-1969" %>
     </div>
   </div>
-</div>    
+</div>
 <div class="jumbotron" id="jumbotron-hands">
   <div class="container">
     <p id="jumbotronText">We can't do it without you</p>

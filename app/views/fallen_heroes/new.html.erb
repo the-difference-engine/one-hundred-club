@@ -1,38 +1,61 @@
-<h1>Add a new fallen hero</h1>
-<%= form_tag '/fallen_heroes', method: :post, multipart: true do %>
-  <div>
-    <%= label_tag :rank, "Rank: "  %>
-    <%= text_field_tag :rank %>
+<div class="container">
+  <p class="pageHead text-center">Add Fallen Hero</p>
+  <div class="form-group">
+    <%= form_tag '/fallen_heroes', method: :post, multipart: true do %>
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+          <%= label_tag :rank, "Rank: "  %>
+          <%= text_field_tag :rank, nil, class: 'form-control', placeholder: 'Rank' %>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+          <%= label_tag :first_name, "First Name: " %>
+          <%= text_field_tag :first_name, nil, class: 'form-control', placeholder: 'First Name' %>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+          <%= label_tag :middle_name, "Middle Name: " %>
+          <%= text_field_tag :middle_name, nil, class: 'form-control', placeholder: 'Middle Name' %>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+          <%= label_tag :last_name, "Last Name: " %>
+          <%= text_field_tag :last_name, nil, class: 'form-control', placeholder: 'Last Name' %>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+          <%= label_tag :date_deceased, "Date Deceased: " %>
+          <%= date_field_tag :date_deceased, nil, class: 'form-control' %>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+          <%= label_tag :department, "Department: " %>
+          <%= text_field_tag :department, nil, class: 'form-control', placeholder: 'Department' %>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+          <%= label_tag :description, "Description: " %>
+          <%= text_area_tag :description, nil, rows: 10, class: 'form-control', placeholder: 'Description' %>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+          <%= submit_tag "Add Fallen Hero", class: 'btn btn-primary btn-block' %>
+        </div>
+      </div>
+    <% end %>
   </div>
-  <div>
-    <%= label_tag :first_name, "First Name: " %>
-    <%= text_field_tag :first_name %>
-  </div>
-  <div>
-    <%= label_tag :middle_name, "Middle Name: " %>
-    <%= text_field_tag :middle_name %>
-  </div>
-  <div>
-    <%= label_tag :last_name, "Last Name: " %>
-    <%= text_field_tag :last_name %>
-  </div>
-  <div>
-    <%= label_tag :date_deceased, "Date Deceased: " %>
-    <%= date_field_tag :date_deceased %>
-  </div>
-  <div>
-    <%= label_tag :department, "Department: " %>
-    <%= text_field_tag :department %>
-  </div>
-  <div>
-    <%= label_tag :description, "Description: " %>
-    <%= text_field_tag :description %>
-  </div>
-  <div>
-    <%= label_tag :image_url, "Image: " %>
-    <%= file_field_tag :image_url %>
-  </div>
-  <div>
-    <%= submit_tag "Add Fallen Hero", class: "btn btn-default" %>
-  </div>
-<% end %>
+</div>
