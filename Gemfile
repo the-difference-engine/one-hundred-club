@@ -20,6 +20,7 @@ gem 'braintree', '~> 2.65.0'
 gem 'seed_dump'
 gem 'american_date'
 gem 'will_paginate'
+gem 'nokogiri', '~>1.6.1'
 
 group :development, :test do
   gem 'byebug'
