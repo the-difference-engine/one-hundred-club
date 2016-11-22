@@ -1,8 +1,28 @@
 class DonationsController < ApplicationController
   def index
-    @donations = Donation.all
+    @donations = Donation.where(member_id: nil)
+    @members = []
+
+    @donations.each do |donation|
+      Member.where(phone_number: donation.phone_number).each do |member|
+        @members << member
+      end
+      Member.where("first_name = ? AND last_name = ?", donation.first_name, donation.last_name).each do |member|
+        @members << member unless @members.include?(member)
+      end
+    end
+      
     render 'index.html.erb'
+
   end
+  
+  def add_member_id
+    @donation = Donation.find_by(id: params[:id])
+      @donation.update(
+        member_id: params[:member_id]
+      )
+      
+  end  
 
   def new
     @token = Braintree::ClientToken.generate
@@ -30,7 +50,7 @@ class DonationsController < ApplicationController
       zip_code: params[:zip_code],
       country: params[:country],
       email: params[:email],
-      phone: params[:phone],
+      phone_number: params[:phone],
       amount: params[:amount]
     )
     redirect_to "/donations/#{donation.id}"
@@ -59,7 +79,7 @@ class DonationsController < ApplicationController
         zip_code: params[:zip_code],
         country: params[:country],
         email: params[:email],
-        phone: params[:phone],
+        phone_number: params[:phone],
         amount: params[:amount],
         bt_transaction_id: result.transaction.id
       )
