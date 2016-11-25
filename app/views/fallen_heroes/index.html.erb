@@ -1,32 +1,30 @@
-<div class="parallax-window" data-parallax="scroll" data-position="0px -169px" data-image-src="<%= asset_path 'Heroes_page_header_image.jpeg'%>"></div>
-
-<div class="container">
-  <div class="row" class="block-quote-row">
-    <div class="col-sm-2"></div>
-    <div class="col-sm-8">
-      <div>
-        <h3 class="block-quote">The following is a listing of public safety professionals in Cook County who lost their lives in the line of duty.</h3>
-      </div>
-    </div>
-    <div class="col-sm-2"></div>
-  </div>
-    <!-- <div id="new-fallen-hero-button">
-      <%= button_to "Add New Fallen Hero", "/fallen_heroes/new", method: :get, :class => 'btn btn-small' %>
-    </div> -->
-</div>
-<% if user_signed_in? %>
-<div class="container"> 
-  <div class="row">
-    <div class="col-xs-8 col-xs-offset-2">
-    <br>
-      <%= link_to "Add Fallen Hero", "/fallen_heroes/new", method: :get, class: 'btn btn-primary btn-block' %>
-    <br>
-    </div>
-  </div>
-</div>
-<% end %>   
 <div ng-app="app">
   <div ng-controller="heroCtrl">
+    <div class="parallax-window" data-parallax="scroll" data-position="0px -169px" data-image-src="<%= asset_path 'Heroes_page_header_image.jpeg'%>"></div>
+
+    <div class="container">
+      <div class="row" class="block-quote-row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+          <div>
+            <h3 class="block-quote">The following is a listing of public safety professionals in Cook County who lost their lives in the line of duty.</h3>
+          </div>
+        </div>
+        <div class="col-sm-2"></div>
+      </div>    
+    </div>
+
+    <% if user_signed_in? %>
+    <div class="container"> 
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+        <br>
+          <%= link_to "Add Fallen Hero", "/fallen_heroes/new", method: :get, class: 'btn btn-primary btn-block' %>
+        <br>
+        </div>
+      </div>
+    </div>
+    <% end %>   
     <div class="container">
       <div class="row text-center">
         <button class="btn btn-default" ng-click="show = 1">2010-present</button>
