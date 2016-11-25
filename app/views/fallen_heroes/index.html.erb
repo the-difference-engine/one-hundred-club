@@ -11,12 +11,20 @@
           </div>
         </div>
         <div class="col-sm-2"></div>
-      </div>
-        <!-- <div id="new-fallen-hero-button">
-          <%= button_to "Add New Fallen Hero", "/fallen_heroes/new", method: :get, :class => 'btn btn-small' %>
-        </div> -->
+      </div>    
     </div>
 
+    <% if user_signed_in? %>
+    <div class="container"> 
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+        <br>
+          <%= link_to "Add Fallen Hero", "/fallen_heroes/new", method: :get, class: 'btn btn-primary btn-block' %>
+        <br>
+        </div>
+      </div>
+    </div>
+    <% end %>   
     <div class="container">
       <div class="row text-center">
         <button class="btn btn-default" ng-click="show = 1">2010-present</button>
@@ -52,13 +60,13 @@
        <%= render "heroBox", group: @sixth_heroes, range: "1967-1969" %>
     </div>
   </div>
-</div>    
+</div>
 <div class="jumbotron" id="jumbotron-hands">
   <div class="container">
     <p id="jumbotronText">We can't do it without you</p>
     <p id="jumbotronTextMini">Join our membership programs to make a difference today</p>
     <div class="text-center">
-      <button type="button" class="btn btn-lg joinDonate"> Join us </button>
+      <button type="button" class="btn btn-lg joinDonate"> Info </button>
       <button type="button" class="btn btn-lg joinDonate"> Donate </button>
     </div>
   </div>

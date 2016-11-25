@@ -1,38 +1,61 @@
-<h1>Edit Fallen Hero</h1>
-<%= form_tag "/fallen_heroes/#{params[:id]}", method: :patch, multipart: true do %>
-  <div>
-    <%= label_tag :rank, "Rank: "  %>
-    <%= text_field_tag :rank, @fallen_hero.rank %>
+<div class="container">
+  <p class="pageHead text-center">Edit Fallen Hero</p>
+  <div class="form-group">
+    <%= form_tag "/fallen_heroes/#{params[:id]}", method: :patch, multipart: true do %>
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+          <%= label_tag :rank, "Rank: "  %>
+          <%= text_field_tag :rank, @fallen_hero.rank, class: 'form-control' %>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+          <%= label_tag :first_name, "First Name: " %>
+          <%= text_field_tag :first_name, @fallen_hero.first_name, class: 'form-control' %>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+          <%= label_tag :middle_name, "Middle Name: " %>
+          <%= text_field_tag :middle_name, @fallen_hero.middle_name, class: 'form-control' %>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+          <%= label_tag :last_name, "Last Name: " %>
+          <%= text_field_tag :last_name, @fallen_hero.last_name, class: 'form-control' %>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+          <%= label_tag :date_deceased, "Date Deceased: " %>
+          <%= date_field_tag :date_deceased, @fallen_hero.date_deceased, class: 'form-control' %>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+          <%= label_tag :department, "Department: " %>
+          <%= text_field_tag :department, @fallen_hero.department, class: 'form-control' %>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+          <%= label_tag :description, "Description: " %>
+          <%= text_area_tag :description, @fallen_hero.description, rows: 10, class: 'form-control' %>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+          <%= submit_tag "Save Changes", class: 'btn btn-primary btn-block' %>
+        </div>
+      </div>
+    <% end %>
   </div>
-  <div>
-    <%= label_tag :first_name, "First Name: " %>
-    <%= text_field_tag :first_name, @fallen_hero.first_name %>
-  </div>
-  <div>
-    <%= label_tag :middle_name, "Middle Name: " %>
-    <%= text_field_tag :middle_name, @fallen_hero.middle_name %>
-  </div>
-  <div>
-    <%= label_tag :last_name, "Last Name: " %>
-    <%= text_field_tag :last_name, @fallen_hero.last_name %>
-  </div>
-  <div>
-    <%= label_tag :date_deceased, "Date Deceased: " %>
-    <%= date_field_tag :date_deceased, @fallen_hero.date_deceased %>
-  </div>
-  <div>
-    <%= label_tag :department, "Department: " %>
-    <%= text_field_tag :department, @fallen_hero.department %>
-  </div>
-  <div>
-    <%= label_tag :description, "Description: " %>
-    <%= text_field_tag :description, @fallen_hero.description %>
-  </div>
-  <div>
-    <%= label_tag :image_url, "Image: " %>
-    <%= image_tag @fallen_hero.image_url, height: "100", width: "100"%>
-    <%= file_field_tag :image_url %>
-  </div>
-    <%= submit_tag "Submit Changes" %>
-  </div>
-<% end %>
+</div>

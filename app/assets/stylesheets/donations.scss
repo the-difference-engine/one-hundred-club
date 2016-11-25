@@ -2,20 +2,19 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#transformLives{
-  color: #BC9B5D;
-  font-family: Libre Baskerville;
-  font-size: 30px;
+.transformLivesFormHead
+{
+    font-family: Arial;
+
+    color: #605e5e;
+
+    size: 24px;
 }
 
-.transformLivesFormHead {
-  size: 24px;
-  color: #605E5E;
-  font-family: Arial;
-}
+.donationButton
+{
+    width: 120px;
+    margin-right: 10px;
 
-.donationButton {
-  background-color: #BC9B5D;
-  margin-right: 10px;
-  width: 120px;
+    background-color: #bc9b5d;
 }
