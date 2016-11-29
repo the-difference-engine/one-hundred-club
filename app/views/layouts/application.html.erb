@@ -31,6 +31,7 @@
         <li class="navLinks"><%= link_to "About", '/about', {class: "navbar-category", id: ("navbar-category-active" if current_page?('/about'))} %></li>
         <li class="navLinks"><%= link_to "Heroes", '/fallen_heroes', {class: "navbar-category", id: ("navbar-category-active" if current_page?('/fallen_heroes'))} %></li>
         <li class="navLinks"><%= link_to "Programs", '/programs', {class: "navbar-category", id: ("navbar-category-active" if current_page?('/programs'))} %></li>
+        <li class="navLinks"><%= link_to "Join", '/members/new', {class: "navbar-category", id: ("navbar-category-active" if current_page?('/members/new'))} %></li>
         <li class="navLinks"><%= link_to "Supporters", '', {class: "navbar-category", id: ("navbar-category-active" if current_page?('/members'))} %></li>
         <li class="navLinks"><%= link_to "Events", '/events', {class: "navbar-category", id: ("navbar-category-active" if current_page?('/events'))} %></li>
         <li class="navLinks"><%= link_to "News", '/blog_posts', {class: "navbar-category", id: ("navbar-category-active" if current_page?('/blog_posts'))} %></li>
