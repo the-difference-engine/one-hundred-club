@@ -1,7 +1,7 @@
 (function() {
   "use strict";
 
-  angular.module("app").controller("heroCtrl", function($scope) {
+  angular.module("app").controller("hCtrl", function($scope) {
 
 // ABOUT
 $scope.showAbout = true;
