@@ -1,9 +1,18 @@
 <div class="container">
 
-  <div class="row col-lg-12">
-    <p id="transformLives" class="text-center">Add New Member</p>
-    <hr>
-  </div>
+  <div class="row">
+    <p class="gold_headers">Join the 100 Club of Chicago</p>
+    <p class="text-center">In order to expand our ability to respond to the needs of the families of fallen law enforcement officers, firefighters and EMS professionals, the 100 Club of Chicago has a goal of increasing its membership and revenue levels. 
+    Please actively support our efforts by becoming a member of the 100 Club of Chicago and by encouraging your friends and business associates to join our cause.<br>
+    Our Membership Program provides various membership options to choose from. If you have any questions about which category best suits you or your company’s needs, please contact us at 312-265-0920 for additional information. </p>
+    <div id="border-line"></div> 
+  </div> 
+      <h4><button type="button" class="btn btn-default btn-lg member-levels" >Bronze </button>  <strong>$50 - $199:</strong> Membership for 1 year</p></h4>
+      <h4><button type="button" class="btn btn-default btn-lg member-levels">Silver </button>  <strong>$200 - $499: </strong> Membership for 1 year and a club pin</p></h4>
+      <h4><button type="button" class="btn btn-default btn-lg member-levels">Gold </button>  <strong>$500 - $4999: </strong>4 Memberships for 1 year and a club pin</p></h4>
+      <h4><button type="button" class="btn btn-default btn-lg member-levels">Lifetime </button>  <strong>$5000: </strong>Lifetime membership </p></h4>
+  
+
 
   <div class="form-group"> 
 
@@ -12,82 +21,88 @@
     <div class="row">
       <div class="col-lg-6">
         <div class="form-group">
+          <%= label_tag :amount, "Amount:* " %>
+          <%= text_field_tag :amount, nil, class: 'form-control' %>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="form-group">
           <%= label_tag :title, "Title: " %>
           <%= select_tag :title, options_for_select(title), class: 'form-control' %>
         </div>
       </div>
-
+    </div>
+    <div class="row">
       <div class="col-lg-6">
         <div class="form-group">
           <%= label_tag :first_name, "First Name:* " %>
           <%= text_field_tag :first_name, nil, class: 'form-control'  %>
         </div>
       </div>
-    </div>
-
-    <div class="row">
       <div class="col-lg-6">
         <div class="form-group">
           <%= label_tag :middle_name, "Middle Name: " %>
           <%= text_field_tag :middle_name, nil, class: 'form-control'  %>
         </div>
       </div>
+    </div>  
+    <div class="row">
       <div class="col-lg-6">
         <div class="form-group">
           <%= label_tag :last_name, "Last Name:* " %>
           <%= text_field_tag :last_name, nil, class: 'form-control'  %>
         </div>
       </div>
-    </div>
-    <div class="row">
       <div class="col-lg-6">
         <div class="form-group">
           <%= label_tag :suffix, "Suffix: " %>
           <%= text_field_tag :suffix, nil, class: 'form-control'  %>
         </div>
       </div>
+    </div>  
+    <div class="row">
       <div class="col-lg-6">
         <div class="form-group">
           <%= label_tag :address, "Street Address: " %>
           <%= text_field_tag :address, nil, class: 'form-control'  %>
         </div>
       </div>
-    </div>
-    <div class="row">
       <div class="col-lg-6">
         <div class="form-group">
           <%= label_tag :city, "City: " %>
           <%= text_field_tag :city, nil, class: 'form-control'  %>
         </div>
       </div>
+    </div>  
+    <div class="row">
       <div class="col-lg-6">
         <div class="form-group">
           <%= label_tag :state, "State/Province:* " %>
           <%= select_tag :state, options_for_select(us_states), class: 'form-control' %>
         </div>
       </div>
-    </div>
-    <div class="row">
       <div class="col-lg-6">
         <div class="form-group">
           <%= label_tag :zip_code, "Postal Code:* " %>
           <%= text_field_tag :zip_code, nil, class: 'form-control'  %>
         </div>
       </div>
+    </div>  
+    <div class="row">
       <div class="col-lg-6">
         <div class="form-group">
           <%= label_tag :country, "Country:* " %>
           <%= select_tag :country, options_for_select(countries), class: 'form-control' %>
         </div>
       </div>
-    </div>
-    <div class="row">
       <div class="col-lg-6">
         <div class="form-group">
           <%= label_tag :email, "E-mail:* " %>
           <%= text_field_tag :email, nil, class: 'form-control'  %>
         </div>
       </div>
+    </div>  
+    <div class="row">
       <div class="col-lg-6">
         <div class="form-group">
           <%= label_tag :phone_number, "Phone:* " %>
@@ -95,11 +110,27 @@
         </div>
       </div>
     </div>
+  </div>  
+    <script src="https://js.braintreegateway.com/js/braintree-2.27.0.min.js"></script>
+    <script>
+    // We generated a client token for you so you can test out this code
+    // immediately. In a production-ready integration, you will need to
+    // generate a client token on your server (see section below).
+    var clientToken = "<%= @token %>";
 
-  <button class="btn btn-primary btn-block" type="submit"><span>Create</span></button>
-  <br>
-</div>
+    braintree.setup(clientToken, "dropin", {
+      container: "payment-form",
+      paypal: {
+        button: {
+          type: 'checkout'
+        }
+      }
+
+    });
+    </script>
+    <button class="btn btn-primary btn-block" type="submit"><span>Create</span></button>
+    <br>
+  </div>
 <% end %>
 
-</div>
-</div>
+

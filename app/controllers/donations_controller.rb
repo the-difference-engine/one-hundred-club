@@ -50,7 +50,7 @@ class DonationsController < ApplicationController
       zip_code: params[:zip_code],
       country: params[:country],
       email: params[:email],
-      phone_number: params[:phone],
+      phone_number: params[:phone_number],
       amount: params[:amount]
     )
     redirect_to "/donations/#{donation.id}"

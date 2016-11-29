@@ -501,3 +501,20 @@ footer p {
   height: 26px;
   width: 26px; 
 }
+.member-levels {
+  font-size: 18px;
+  width: 97.02px;
+  margin-right: 11px;
+  margin-bottom: 10px;
+  background: #bc9b5d;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.member-levels:focus {
+  outline: none;
+}
+#border-line {
+  height: 1px;
+  border-bottom: 1px solid rgba(201, 182, 145, 1);
+  width: 100%;
+  margin-left: 20px;
+}
