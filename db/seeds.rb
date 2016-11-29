@@ -1,3 +1,12 @@
+Event.delete_all
+Donation.delete_all
+Staff.delete_all
+Faq.delete_all
+BlogPost.delete_all
+FallenHero.delete_all
+Member.delete_all
+Staff.delete_all
+
 BlogPost.create!([
   {title: "Senior Directives Liaison", content: "Hic voluptatibus sed quibusdam ea ut harum. Commodi non deserunt nobis officiis laboriosam placeat non. Totam nihil qui. Omnis possimus hic maxime ut et rerum. Doloribus similique nihil vel consequuntur eveniet est rerum.", image: "https://placehold.it/100x100.png"},
   {title: "Chief Branding Technician", content: "Cum eos aliquam recusandae labore sed. Quos iure error voluptatem sit totam aut. Ut aliquam dolorem porro officiis sit exercitationem. Iste rem soluta porro assumenda voluptas cum.", image: "https://placehold.it/100x100.png"},
@@ -50,6 +59,7 @@ BlogPost.create!([
   {title: "Principal Response Executive", content: "Ullam debitis officiis praesentium numquam. Similique assumenda enim temporibus. Est consequatur in occaecati error hic. Beatae cupiditate vitae.", image: "https://placehold.it/100x100.png"},
   {title: "Central Research Orchestrator", content: "Architecto maxime consequuntur. Ut in sit velit. Rerum qui quia. Eos nisi architecto consequatur fugit placeat nihil enim. Perferendis molestiae rem omnis in ipsam.", image: "https://placehold.it/100x100.png"}
 ])
+
 Donation.create!([
   {first_name: "Jettie", last_name: "Anderson", address: nil, title: nil, middle_name: nil, suffix: nil, country: nil, city: nil, state: nil, email: nil, phone_number: nil, zip_code: nil, amount: 8, bt_transaction_id: nil, member_id: nil},
   {first_name: "Helga", last_name: "Rempel", address: nil, title: nil, middle_name: nil, suffix: nil, country: nil, city: nil, state: nil, email: nil, phone_number: nil, zip_code: nil, amount: 34, bt_transaction_id: nil, member_id: nil},
@@ -102,6 +112,7 @@ Donation.create!([
   {first_name: "Francesca", last_name: "Crist", address: "123 Sesame St.", title: nil, middle_name: nil, suffix: nil, country: nil, city: "Chicago", state: "IL", email: "test@test.com", phone_number: "911", zip_code: nil, amount: 26, bt_transaction_id: nil, member_id: nil},
   {first_name: "Cristian", last_name: "Ruecker", address: "1 Main St.", title: nil, middle_name: nil, suffix: nil, country: nil, city: "New York", state: "NY", email: "test2@test@.com", phone_number: "411", zip_code: nil, amount: 6, bt_transaction_id: nil, member_id: nil}
 ])
+
 Event.create!([
   {image: "https://placehold.it/100x100.png", title: "quod", description: "Iusto delectus non odit. Illo et in qui distinctio. Saepe necessitatibus unde rerum. Sit fugit voluptatem blanditiis mollitia aut eius quas.", datetime: "2016-11-15 23:25:16", location: "677 Dagmar Station"},
   {image: "https://placehold.it/100x100.png", title: "rem", description: "Tenetur ut numquam commodi. Porro consequatur facilis corrupti nostrum neque consequuntur qui. Ad iure fugiat optio nulla numquam et.", datetime: "2016-12-03 03:57:03", location: "12990 Schinner Drives"},
@@ -124,6 +135,7 @@ Event.create!([
   {image: "https://placehold.it/100x100.png", title: "quasi", description: "Aliquam debitis molestiae praesentium sint ut. A officia hic voluptate quis qui. In ad nulla placeat officia atque laboriosam dolorem. Magni architecto neque dolorum distinctio est aliquam aliquid. Nulla repudiandae voluptate rerum aspernatur consequuntur.", datetime: "2016-11-19 01:38:18", location: "440 Pauline Parkways"},
   {image: "https://placehold.it/100x100.png", title: "eum", description: "Non ipsam provident sit omnis dignissimos. Aut dolores ea. Sed vel occaecati id tempora aut.", datetime: "2016-11-24 02:06:36", location: "10469 Jacobson Islands"}
 ])
+
 FallenHero.create!([
   {rank: "Officer", first_name: "Patrick", middle_name: "J.", last_name: "Crowley", department: "Chicago Police Department", date_deceased: "1976-09-13", description: "", image_url: "police_badge.png"},
   {rank: "Officer", first_name: "Donald", middle_name: "E.", last_name: "Andrews", department: "Chicago Police Department", date_deceased: "1975-01-01", description: "", image_url: "police_badge.png"},
@@ -389,9 +401,87 @@ FallenHero.create!([
   {rank: "Battalion Chief", first_name: "William", middle_name: "E.", last_name: "Bonnar Sr.", department: "Orland Fire Protection District", date_deceased: "1998-02-25", description: "On February 25, 1998, Battalion Chief William E. Bonnar, Sr., of the Orland Fire Protection District suffered a fatal heart attack in the line of duty following a training exercise.\nBonnar joined four other firefighters for an annual consumption test that measured how much air each firefighter consumed while wearing a self-contained breathing apparatus. The test simulated firefighting activities by requiring firefighters to complete an obstacle course while wearing full bunker gear, and the test also checked each firefighter’s blood pressure, pulse rate, respiratory rate, and pulse oximetry. Bonnar completed the obstacle course in less than an hour, and was recovering from the exercise when he received a message on his pager, prompting him to leave the training area to use the cellular telephone in his car. Approximately twenty-five minutes later, another firefighter found Bonnar unconscious in his car. The firefighters, who were also certified paramedics, began advanced life support immediately, and Bonnar was transported to the hospital. Efforts to revive him in the field and at the hospital were unsuccessful, and he was pronounced dead from a heart attack.\nBonnar joined the Orland Fire Protection District as a volunteer in 1972. He soon became an emergency medical technician, enrolled in the first paramedic course at Ingalls Memorial Hospital in Harvey, Illinois, and joined the Chicago Fire Department as a paramedic in 1974. In 1977, Bonnar was among the first full-time firefighter/paramedics hired by the Orland Fire Protection District.\nThree years later, firefighters from the Orland Fire Protection District joined the International Association of Fire Fighters as Local 2754, and Bonnar was elected as the union’s first president. Over the next decade, Bonnar was promoted to lieutenant in 1981, to shift commander in 1989, and to battalion chief in 1990.", image_url: nil},
   {rank: "Detective", first_name: "William", middle_name: " ", last_name: "Rolniak Jr.", department: "Riverdale Police Department", date_deceased: "2004-02-04", description: "Detective William Rolniak was shot and killed execution style after being taken hostage inside the Riverdale police station.\nThe suspect had been in custody on charges of attempted murder, home invasion and aggravated kidnapping after breaking into a home and abducting his ex-girlfriend at gunpoint nine days earlier, despite having an order of protection issued against him. The suspect had just finished being interviewed by an assistant state's attorney and was being transferred from an interview room to the lockup area of the station when he grabbed Detective Rolniak's service weapon out of its holster at approximately 8:15 pm. The suspect was not handcuffed at the time because he had been cooperating with the authorities.\n\nThe suspect then forced Detective Rolniak out of the police station, took him behind a building across the street and shot him in the head. The suspect attempted to flee by trying to carjack three different vehicles, shooting and wounding an elderly man who refused to give up his vehicle. Three other officers in pursuit of the suspect ordered him to drop the weapon, but instead, he aimed the gun at the officers, who then shot and killed him. Detective Rolniak was transported to Christ Medical Center where he died two hours later.\n\nDetective Rolniak had served with the Riverdale Police Department for 14 years and was a US Air Force veteran. He was survived by his wife, two teenage daughters, parents and three sisters. On March 4, 2005, the Detective William (Wally) Rolniak Jr. Public Safety Building was dedicated in his honor.", image_url: nil}
 ])
+
 Member.create!([
   {title: "", first_name: "Francesca", middle_name: "", last_name: "Crist", address: "123 Sesame St.", suffix: "", city: "Chicago", state: "IL", zip_code: "", country: "United States", phone_number: "911", email: ""},
   {title: "", first_name: "Alycia", middle_name: "", last_name: "Mills", address: "1 Mills Way", suffix: "", city: "Skokie", state: "IL", zip_code: "", country: "United States", phone_number: "111-111-1111", email: ""},
   {title: "", first_name: "Cristian", middle_name: nil, last_name: "Ruecker", address: "1 Main St.", suffix: "", city: "New York", state: "NY", zip_code: "", country: "United States", phone_number: "411", email: ""},
   {title: nil, first_name: "Alycia", middle_name: nil, last_name: "Mills", address: "2 Alicia St.", suffix: nil, city: "Niles", state: "IL", zip_code: nil, country: nil, phone_number: "222-222-2222", email: nil}
 ])
+
+Faq.create([
+  {question: "What does the 100 Club of Chicago do?", answer: "The mission of the 100 Club of Chicago is to help provide for the surviving spouses and dependents of first responders who lose their lives in the line-of-duty. This includes all federal, state, county and local officers, firefighters and paramedics stationed in and working out of Cook and Lake Counties."},
+  {question: "Do we cover all family members?", answer: "Our benefits go to surviving spouses, dependents and even surviving parents if they were dependent on the deceased for their support. Our educational assistance is available to surviving spouses, children and even those children from former marriages."},
+  {question: "Do all deaths qualify for coverage by the 100 Club of Chicago?", answer: "We provide benefits when a public safety professional loses his/her life in the line-of-duty. We do not provide benefits when a professional dies of natural causes, either on or off duty."},
+  {question: "What support does the 100 Club of Chicago provide?", answer: "Within 24 hours of a fatality, the 100 Club of Chicago provides the surviving spouse a check for $15,000. The Club will provide an additional check to the family within several weeks of the fatality to help defray a portion of the family’s debt. The Club will also provide educational assistance to the spouse and post-secondary education for the children."},
+  {question: "What level of support has been provided in the past?", answer: "The 100 Club of Chicago has provided benefits to 261 families of fallen public safety professionals. Total benefits have exceeded $10 million."},
+  {question: "How is money raised?", answer: "Funds are raised through individual and corporate memberships, donations, charitable and corporate grants and special events."},
+  {question: "Is my membership or contribution tax deductible?", answer: "Yes, the 100 Club of Chicago is an Illinois nonprofit (501)(c)(3) charitable organization. All contributions are tax deductible within the limits of the law."},
+  {question: "Why do we do it?", answer: "We do it to express, in our own way, our gratitude for the job that every law enforcement officer, firefighter and paramedic does to make our lives safer. Should one of them die in the line-of-duty, our actions acknowledge our obligation to their families in the best way we know how."},
+  {question: "How can I help?", answer: "You can join or donate to the 100 Club of Chicago and give back to the families of those professionals who protect us in our daily lives; fill-out an application to become a member of the 100 Club of Chicago; encourage family members and friends to join the Club or donate to the Club."},
+  {question: "Can I join as an active duty police officer or firefighter?", answer: "Yes, we have many members who are active public safety professionals."},
+  {question: "What’s the history of the 100 Club? Where did the name come from?", answer: "In 1950, a Detroit businessman asked 100 of his friends and associates to help the family of a slain police officer. Since then, 100 Clubs have developed in many cities and countries around the world – including the 100 Club of Chicago."}]) 
+
+Staff.create([
+  {first_name: "Joe", last_name: "Ahern", title: "Chief Executive Officer", category: "Staff"},
+  {first_name: "Caitlyn", last_name: "Brennan", title: "Chief Operating Officer", category: "Staff"},
+  {first_name: "Taryn", last_name: "Mason", title: "Program and Event Manager", category: "Staff"},
+  {first_name: "Lindsey", last_name: "Dorcus", title: "Executive Administrator", category: "Staff"},
+  {first_name: "Chelsea", last_name: "Barras", title: "Marketing and Communications Manager", category: "Staff"},
+  {first_name: "Thomas J.", last_name: "Cashman", title: "Chairman", category: "Officers"},
+  {first_name: "Ralph B.", last_name: "Mandell", title: "President", category: "Officers"},
+  {first_name: "Darrell B.", last_name: "Jackson", title: "Executive Vice President & Treasurer", category: "Officers"},
+  {first_name: "Denis J.", last_name: "Healy", title: "Vice President", category: "Officers"},
+  {first_name: "Liz", last_name: "Livingston Howard", title: "Secretary", category: "Officers"},
+  {first_name: "Joseph J.", last_name: "Ahern", title: "Chief Executive Officer", category: "Officers"},
+  {first_name: "James V.", last_name: "Riley", title: "Chairman Emeritus", category: "Officers"},
+  {first_name: "James J.", last_name: "O’Connor", title: "President Emeritus", category: "Officers"},
+  {first_name: "Melissa", last_name: "Bean", title: "", category: "Board of Directors"},
+  {first_name: "Jeffrey", last_name: "Bergren", title: "", category: "Board of Directors"},
+  {first_name: "Charles", last_name: "Besser", title: "", category: "Board of Directors"},
+  {first_name: "Hon. Edward M.", last_name: "Burke", title: "", category: "Board of Directors"},
+  {first_name: "John", last_name: "Carroll", title: "", category: "Board of Directors"},
+  {first_name: "Juan", last_name: "Gaytan", title: "", category: "Board of Directors"},
+  {first_name: "Steve", last_name: "Ginsburg", title: "", category: "Board of Directors"},
+  {first_name: "Robert", last_name: "Graham", title: "", category: "Board of Directors"},
+  {first_name: "Mark", last_name: "Hacker", title: "", category: "Board of Directors"},
+  {first_name: "Steve", last_name: "Hearn", title: "", category: "Board of Directors"},
+  {first_name: "John", last_name: "Idler", title: "", category: "Board of Directors"},
+  {first_name: "Jay", last_name: "Javors", title: "", category: "Board of Directors"},
+  {first_name: "Bennett", last_name: "Kaplan", title: "", category: "Board of Directors"},
+  {first_name: "Elizabeth", last_name: "Kelly", title: "", category: "Board of Directors"},
+  {first_name: "John", last_name: "Kelly", title: "", category: "Board of Directors"},
+  {first_name: "Scott", last_name: "Kluth", title: "", category: "Board of Directors"},
+  {first_name: "Andrew", last_name: "MacDonald", title: "", category: "Board of Directors"},
+  {first_name: "Karin Lijana", last_name: "Matura", title: "", category: "Board of Directors"},
+  {first_name: "Ted", last_name: "McNabola", title: "", category: "Board of Directors"},
+  {first_name: "Michael J.", last_name: "Meagher", title: "", category: "Board of Directors"},
+  {first_name: "Richard", last_name: "Melman", title: "", category: "Board of Directors"},
+  {first_name: "Dana M.", last_name: "Mikstay", title: "", category: "Board of Directors"},
+  {first_name: "Joshua A.", last_name: "Mintzer", title: "", category: "Board of Directors"},
+  {first_name: "Dennis I.", last_name: "Mudd, Sr.", title: "", category: "Board of Directors"},
+  {first_name: "William J.", last_name: "O’Connell", title: "", category: "Board of Directors"},
+  {first_name: "Fred J.", last_name: "O’Connor", title: "", category: "Board of Directors"},
+  {first_name: "James", last_name: "Papajohn", title: "", category: "Board of Directors"},
+  {first_name: "Dennis", last_name: "Pedrelli", title: "", category: "Board of Directors"},
+  {first_name: "James V.", last_name: "Riley", title: "", category: "Board of Directors"},
+  {first_name: "Larry R.", last_name: "Rogers, Jr.", title: "", category: "Board of Directors"},
+  {first_name: "Robert A.", last_name: "Sullivan", title: "", category: "Board of Directors"},
+  {first_name: "Glenn F.", last_name: "Tilton", title: "", category: "Board of Directors"},
+  {first_name: "Jay", last_name: "Vincent", title: "", category: "Board of Directors"},
+  {first_name: "Edward S.", last_name: "Weil, Jr.", title: "", category: "Board of Directors"},
+  {first_name: "Lawrence J.", last_name: "Wert", title: "", category: "Board of Directors"},
+
+  {first_name: "Robert H.", last_name: "Asher", title: "", category: "Senior Directors"},
+  {first_name: "Hon. Anne M.", last_name: "Burke", title: "", category: "Senior Directors"},
+  {first_name: "Russell H.", last_name: "Ewert", title: "", category: "Senior Directors"},
+  {first_name: "Peter A.", last_name: "Fasseas", title: "", category: "Senior Directors"},
+  {first_name: "James E.", last_name: "Gorman", title: "", category: "Senior Directors"},
+  {first_name: "Sheldon F.", last_name: "Good", title: "", category: "Senior Directors"},
+  {first_name: "Martin E.", last_name: "Janis", title: "", category: "Senior Directors"},
+  {first_name: "Jeanne", last_name: "Randall Malkin", title: "", category: "Senior Directors"},
+  {first_name: "Thomas F.", last_name: "Meagher, Sr.", title: "", category: "Senior Directors"},
+  {first_name: "B. Michael", last_name: "Pallasch", title: "", category: "Senior Directors"},
+  {first_name: "Elizabeth M.", last_name: "Rochford", title: "", category: "Senior Directors"},
+  {first_name: "Robert", last_name: "Sheridan", title: "", category: "Senior Directors"},
+  {first_name: "William P.", last_name: "Sullivan", title: "", category: "Senior Directors"}])
