@@ -47,7 +47,7 @@ class MembersController < ApplicationController
         zip_code: params[:zip_code],
         country: params[:country],
         email: params[:email],
-        phone_number: params[:phone],
+        phone_number: params[:phone_number],
         amount: params[:amount],
         bt_transaction_id: result.transaction.id
       )
