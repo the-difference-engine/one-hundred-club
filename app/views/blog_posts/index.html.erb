@@ -1,3 +1,5 @@
+<div class="parallax-window" data-parallax="scroll" data-position="0px 30px" data-image-src="<%= asset_path 'newspaper_chicago.jpg'%>"></div>
+<br>
 <div class="container">
   <div class="row"> 
     <p class="pageHead text-center">100 Club News</p>
@@ -9,10 +11,11 @@
       </div>
     <% end %>
   </div>
-  <hr>
+  <br>
   <div class="row">
     <% @blog_posts.each do |post| %>
       <div class="col-xs-8 col-xs-offset-2 text-center">
+        <br>
         <div>
           <%= link_to "#{post.title}", "blog_posts/#{post.id}", class: 'blogPostsIndexHead' %>
         </div>
@@ -22,7 +25,6 @@
         <div>
           <%= image_tag(post.image, class: 'newsImg img-rounded') %>
         </div>
-        <hr>
         <br>
       </div>
     <% end %>
