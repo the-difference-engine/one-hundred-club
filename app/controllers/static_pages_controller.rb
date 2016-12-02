@@ -17,4 +17,8 @@ class StaticPagesController < ApplicationController
     @faqs = Faq.all
     render 'about.html.erb'
   end
+
+  def contact
+    render 'contact.html.erb'
+  end
 end
