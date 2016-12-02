@@ -53,10 +53,5 @@ function hideEverything() {
 }
 
 
-
-
-
-
-
 });
 })();
