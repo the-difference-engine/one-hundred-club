@@ -1,7 +1,7 @@
 (function() {
   "use strict";
 
-  angular.module("app").controller("aboutCtrl", function($scope) {
+  angular.module("app").controller("aboutCtrl", ['$scope', function($scope) {
 
 // ABOUT
 $scope.showAbout = true;
@@ -53,5 +53,5 @@ function hideEverything() {
 }
 
 
-});
+}]);
 })();
