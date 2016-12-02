@@ -3,6 +3,8 @@
 
   angular.module("app").controller("aboutCtrl", function($scope) {
 
+$scope.show = 1;
+
 // ABOUT
 $scope.showAbout = true;
 
@@ -52,7 +54,6 @@ function hideEverything() {
   $scope.showFaq = false;
 }
 
-$scope.show = 1;
 
 
 });
