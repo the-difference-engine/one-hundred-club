@@ -21,7 +21,6 @@ gem 'seed_dump'
 gem 'american_date'
 gem 'will_paginate'
 gem 'nokogiri', '~>1.6.1'
-gem 'ngannotate-rails'
 
 group :development, :test do
   gem 'byebug'

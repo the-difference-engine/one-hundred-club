@@ -52,7 +52,7 @@ function hideEverything() {
   $scope.showFaq = false;
 }
 
-$scope.show = 1;
+
 
 
 });
