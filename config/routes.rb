@@ -50,7 +50,7 @@ Rails.application.routes.draw do
   delete '/blog_posts/:id' => 'blog_posts#destroy'
   ##########################################################
   get '/about' => 'static_pages#about'
-
+  get '/siren' => 'static_pages#siren'
   ##########################################################
   namespace :api do
     get '/events' => 'events#index'
