@@ -7,6 +7,7 @@
       <%= image_tag @fallen_hero.image_url || 'original_logo.png', id:"showbadge" %>
     </div>
     <p><%= simple_format(@fallen_hero.description) %></p>
+    <button class="btn btn-link" onclick="goBack()">Back to the list</button>
     <% if user_signed_in? %>
       <div class="row">
           <div class="col-xs-4 col-xs-offset-2">
