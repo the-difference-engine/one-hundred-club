@@ -6,6 +6,18 @@
     <p class="page-head text-center">100 Club News</p> 
   </div>
   <div class="row">
+    <div class="col-xs-8 col-xs-offset-2">
+        <%= search_form_for @q, class: '' do |f| %>
+          <div class="input-group">
+            <%= f.search_field :title_cont, class: 'form-control', placeholder: 'Search News' %>
+            <span class="input-group-btn">
+            <%= f.submit 'Search', class: 'btn btn-default' %>
+            </span>
+          </div>
+        <% end %>
+    </div>
+  </div>
+  <div class="row">
     <% if user_signed_in? %>
       <div class="col-xs-8 col-xs-offset-2">
         <%= link_to "Add News", 'blog_posts/new', class: 'btn btn-info center-block' %>
