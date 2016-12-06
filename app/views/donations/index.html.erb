@@ -48,7 +48,7 @@
         <td>
           <% if donation.member_id %>
             <!-- if donation has been linked to member, display checkmark -->
-            <p>Matched!</p>
+            <p><i class="fa fa-check" aria-hidden="true" fa-2x></i></p>
           <% else donation.member_id = !nil %>  
             <!-- if donation has possible matches, display link to connect -->
             <a href="/donations/<%= donation.id %>/edit">Link</a>
