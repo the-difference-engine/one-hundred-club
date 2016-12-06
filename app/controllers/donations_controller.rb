@@ -1,44 +1,37 @@
 class DonationsController < ApplicationController
   def index
-    @donations = Donation.where(member_id: nil)
-    @members = []
-
-    @donations.each do |donation|
-      Member.where(phone_number: donation.phone_number).each do |member|
-        @members << member
-      end
-      Member.where("first_name = ? AND last_name = ?", donation.first_name, donation.last_name).each do |member|
-        @members << member unless @members.include?(member)
-      end
-    end
-      
+    @donations = Donation.all.order(created_at: :desc) 
     render 'index.html.erb'
-
-  end
-  
-  def add_member_id
-    @donation = Donation.find_by(id: params[:id])
-      @donation.update(
-        member_id: params[:member_id]
-      )
-      
-  end  
+  end 
 
   def new
     @token = Braintree::ClientToken.generate
   end
 
   def show
-    @donation = Donation.find_by(id: params[:id])
+    @donation = Donation.find_by(id: params['id'])
   end
 
   def edit
     @donation = Donation.find_by(id: params[:id])
-  end
+    
+    @members = []
+
+      Member.where(phone_number: @donation.phone_number).each do |member|
+        @members << member
+      end
+      Member.where("first_name = ? AND last_name = ?", @donation.first_name, @donation.last_name).each do |member|
+        @members << member unless @members.include?(member)
+      end
+      Member.where(email: @donation.email).each do |member|
+        @members << member
+      end
+    end
 
   def update
     donation = Donation.find_by(id: params[:id])
     donation.update(
+      member_id: params[:member_id],
       title: params[:title],
       first_name: params[:first_name],
       middle_name: params[:middle_name],
@@ -53,7 +46,7 @@ class DonationsController < ApplicationController
       phone_number: params[:phone_number],
       amount: params[:amount]
     )
-    redirect_to "/donations/#{donation.id}"
+    redirect_to "/donations/"
   end
 
   def create

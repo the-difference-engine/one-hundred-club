@@ -1,57 +1,160 @@
-<h1>Edit Donations</h1>
-<%= form_tag "/donations/#{params[:id]}", method: :patch, multipart: true do %>
-  <div>
-    <%= label_tag :title, "Title: "  %>
-    <%= text_field_tag :title, @donation.title %>
-  </div>
-  <div>
-    <%= label_tag :first_name, "First Name: " %>
-    <%= text_field_tag :first_name, @donation.first_name %>
-  </div>
-  <div>
-    <%= label_tag :middle_name, "Middle Name: " %>
-    <%= text_field_tag :middle_name, @donation.middle_name %>
-  </div>
-  <div>
-    <%= label_tag :last_name, "Last Name: " %>
-    <%= text_field_tag :last_name, @donation.last_name %>
-  </div>
-  <div>
-    <%= label_tag :suffix, "Suffix: " %>
-    <%= text_field_tag :suffix, @donation.suffix %>
-  </div>
-  <div>
-    <%= label_tag :address, "Address: " %>
-    <%= text_field_tag :address, @donation.address %>
-  </div>
-  <div>
-    <%= label_tag :city, "City: " %>
-    <%= text_field_tag :city, @donation.city %>
-  </div>
-  <div>
-    <%= label_tag :state, "State: " %>
-    <%= text_field_tag :state %>
-  </div>
-  <div>
-    <%= label_tag :zip_code, "Zip Code: " %>
-    <%= text_field_tag :zip_code %>
-  </div>
-  <div>
-    <%= label_tag :country, "Country: " %>
-    <%= text_field_tag :country %>
-  </div>
-  <div>
-    <%= label_tag :email, "Email: " %>
-    <%= text_field_tag :email %>
-  </div>
-  <div>
-    <%= label_tag :phone, "Phone: " %>
-    <%= text_field_tag :phone %>
-  </div>
-  <div>
-    <%= label_tag :amount, "Amount: " %>
-    <%= text_field_tag :amount %>
-  </div>
-    <%= submit_tag "Submit Changes" %>
-  </div>
-<% end %>
+<div class="container">
+
+  <h1 class="gold_headers">Donation</h1>
+
+  <div class="row">
+     
+  <table id="donations">
+    <tr>
+      <th>Title</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Address</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Zip Code</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Donation</th>
+    </tr>
+
+    <tr>
+      <td><%= @donation.title %></td>
+      <td><%= @donation.first_name %></td>
+      <td><%= @donation.last_name %></td>
+      <td><%= @donation.address %></td>
+      <td><%= @donation.city %></td>
+      <td><%= @donation.state %></td>
+      <td><%= @donation.zip_code %></td>
+      <td><%= @donation.email %></td>
+      <td><%= @donation.phone_number %></td>
+      <td>$<%= @donation.amount %></td>
+    </tr>
+  </table>
+
+  <%= form_tag "/donations/#{params[:id]}", method: :patch, multipart: true do %>
+
+    <h1 class="gold_headers">Matches Name</h1>
+
+    <table id="donations">
+      <tr>
+        <th>Select</th>
+        <th>Title</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Zip Code</th>
+        <th>Email</th>
+        <th>Phone</th>
+      </tr>
+
+        <% @members.each do |member| %>
+          <% if member.first_name == @donation.first_name && member.last_name == @donation.last_name %>
+            <tr>
+              <td><%= radio_button_tag(:member_id, member.id) %></td>
+              <td><%= member.title %></td>
+              <td><%= member.first_name %></td>
+              <td><%= member.last_name %></td>
+              <td><%= member.address %></td>
+              <td><%= member.city %></td>
+              <td><%= member.state %></td>
+              <td><%= member.zip_code %></td>
+              <td><%= member.email %></td>
+              <td><%= member.phone_number %></td>
+            </tr>
+          <% end %>
+        <% end %>
+    </table>
+
+    <h1 class="gold_headers">Matches Email Address</h1>
+
+    <table id="donations">
+      <tr>
+        <th>Select</th>
+        <th>Title</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Zip Code</th>
+        <th>Email</th>
+        <th>Phone</th>
+      </tr>
+
+        <% @members.each do |member| %>
+          <% if member.email == @donation.email %>
+            <tr>
+              <td><%= radio_button_tag(:member_id, member.id) %></td>
+              <td><%= member.title %></td>
+              <td><%= member.first_name %></td>
+              <td><%= member.last_name %></td>
+              <td><%= member.address %></td>
+              <td><%= member.city %></td>
+              <td><%= member.state %></td>
+              <td><%= member.zip_code %></td>
+              <td><%= member.email %></td>
+              <td><%= member.phone_number %></td>
+            </tr>
+          <% end %>
+        <% end %>
+    </table>
+
+    <h1 class="gold_headers">Matches Phone Number</h1>
+
+    <table id="donations">
+      <tr>
+        <th>Select</th>
+        <th>Title</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Zip Code</th>
+        <th>Email</th>
+        <th>Phone</th>
+      </tr>
+
+        <% @members.each do |member| %>
+          <% if member.email == @donation.email %>
+            <tr>
+              <td><%= radio_button_tag(:member_id, member.id) %></td>
+              <td><%= member.title %></td>
+              <td><%= member.first_name %></td>
+              <td><%= member.last_name %></td>
+              <td><%= member.address %></td>
+              <td><%= member.city %></td>
+              <td><%= member.state %></td>
+              <td><%= member.zip_code %></td>
+              <td><%= member.email %></td>
+              <td><%= member.phone_number %></td>
+            </tr>
+          <% end %>
+        <% end %>
+    </table>
+
+    <div>
+      <%= hidden_field_tag(:title, @donation.title) %>
+      <%= hidden_field_tag(:first_name, @donation.first_name) %>
+      <%= hidden_field_tag(:middle_name, @donation.middle_name) %>
+      <%= hidden_field_tag(:last_name, @donation.last_name) %>
+      <%= hidden_field_tag(:suffix, @donation.suffix) %>
+      <%= hidden_field_tag(:address, @donation.address) %>
+      <%= hidden_field_tag(:city, @donation.city) %>
+      <%= hidden_field_tag(:state, @donation.state) %>
+      <%= hidden_field_tag(:zip_code, @donation.zip_code) %>
+      <%= hidden_field_tag(:country, @donation.country) %>
+      <%= hidden_field_tag(:email, @donation.email) %>
+      <%= hidden_field_tag(:phone_number , @donation.phone_number) %>
+      <%= hidden_field_tag(:amount, @donation.amount) %>
+    </div>
+
+    <div>
+      <%= submit_tag "Submit Changes" %>
+    </div>
+
+    <% end %>
+</div>

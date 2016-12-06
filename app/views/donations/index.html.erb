@@ -1,47 +1,60 @@
 <div class="container">
-  <div class="row">
-    <% @donations.each do |donation| %>      
-      <%= donation.created_at.strftime("%m/%d/%Y %l:%M:%p") %>
-      <%= "#{donation.first_name} #{donation.last_name}"%>
-      $<%= donation.amount %>
-      <% if donation.address %>
-        Address: <%= donation.address %>
-      <% end %>
-      <% if donation.email != nil %>
-        Email: <%= donation.email %>
-      <% end %>
-      <% if donation.phone_number != nil %>
-        Phone: <%= donation.phone_number %>
-      <% end %>
+  <table id="donations">
+    <tr>
+      <th>Date</th>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Donation</th>
+      <th>Donor</th>
+    </tr>
 
-      <ul>
-        <% @members.each do |member| %>
-          <% if member.first_name == donation.first_name && member.last_name == donation.last_name %>
-            <li>Matches <%= member.first_name%> <%= member.last_name%> by name.
-            <% if member.address %>
-              Address: <%= member.address %>, <%= member.city %>, <%= member.state %>.
-            <% end %>
-            <% if !member.email %>
-              Email: <%= member.email %>
-            <% end %>
-            <% if member.phone_number %>
-              Phone: <%= member.phone_number %>
-            <% end %></li> 
+    <% @donations.each do |donation| %>
+      <tr>
+        <td>
+          <%= donation.created_at.strftime("%m/%d/%Y") %>
+        </td>
+        <td>
+          <%= donation.first_name %> <%=donation.last_name %>
+        </td>
+        <td>
+          <% if donation.address %>
+            <%= donation.address %> 
           <% end %>
-          <% if member.phone_number == donation.phone_number %>
-            <li>Matches <%= member.first_name%> <%= member.last_name%> by phone number.
-            <% if member.address %>
-              Address: <%= member.address %>, <%= member.city %>, <%= member.state %>
-            <% end %>
-            <% if member.email.length > 1 %>
-              Email: <%= member.email %>
-            <% end %>
-            <% if member.phone_number %>
-              Phone:<%= member.phone_number %>
-            <% end %></li> 
+          <% if donation.city %>
+            <%= donation.city %>, 
           <% end %>
-        <% end %>  
-      </ul>
+          <% if donation.state %>
+            <%= donation.state %>
+          <% end %>
+          <% if donation.zip_code %>
+            <%= donation.zip_code %>
+          <% end %>
+        </td>
+        <td>
+          <% if donation.email != nil %>
+            <%= donation.email %>
+          <% end %>
+        </td>
+        <td>
+          <% if donation.phone_number != nil %>
+            <%= donation.phone_number %>
+          <% end %>
+        </td>
+        <td>
+          $<%= donation.amount %>
+        </td>
+        <td>
+          <% if donation.member_id %>
+            <!-- if donation has been linked to member, display checkmark -->
+            <p>Matched!</p>
+          <% else donation.member_id = !nil %>  
+            <!-- if donation has possible matches, display link to connect -->
+            <a href="/donations/<%= donation.id %>/edit">Link</a>
+          <% end %>
+        </td>
+      </tr>
     <% end %>
-  </div>
+  </table>
 </div>  
