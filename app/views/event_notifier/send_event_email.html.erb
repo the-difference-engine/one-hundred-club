@@ -4,7 +4,13 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>An event has been created!</h1>
-    <p>Have a great day!</p>
+    
+    
+    <!--  @event.image -->
+    <h1>  <%=@event.title%></h1>
+    <h3><%=@event.description%></h3>
+    <h2> When? <%=@event.datetime.strftime('%A %b %d, %l:%M %p') %></h2>
+    <h2> Where? <%=@event.location%></h2>
+    <h2>Hope to see you there!</h2>
   </body>
 </html>
