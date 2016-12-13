@@ -17,7 +17,7 @@
               <div class="date"><%= hero.date_deceased.to_datetime.strftime("%m/%d/%Y")%></div>              
               <% if hero.description.length > 1 %>
                 <p><%= hero.description.truncate(160) %></p>
-                <a href="/fallen_heroes/<%=hero.id%>" id="nounderline"><button type="button" class="btn-small center-block" id="center-button">Read more</button></a>
+                <a href="/fallen_heroes/<%=hero.id%>" id="nounderline" class="inline"><button type="button" class="btn-small center-block" id="inline-button">Read more</button></a>
               <% end %>
             </div>  
           </div>

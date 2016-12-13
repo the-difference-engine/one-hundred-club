@@ -1,7 +1,7 @@
 <!-- Jumbotron -->
 <div class="jumbotron" id="jumbotronGif">
   <div class="container">
-    <p id="jumbotronText">Give a Little. Change a Lot.</p>
+    <p id="homeJumbotronText">Give a Little. Change a Lot.</p>
     <p id="jumbotronTextMini">Together providing for families of fallen heros since 1952</p>
     <div class="text-center">
       <a href="/members/new"><button type="button" class="btn btn-lg joinDonate"> Join us </button></a>
@@ -15,12 +15,14 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-8">
-      <p class="heading">Latest News</p>
-      <hr>
+      <p class="miniheading">Latest News</p>
+      <div id="news-line"></div>
+      <a href="/blog_posts" id="nounderline" class="inline"><button type="button" class="btn-small center-block" id="news-button">Read more</button></a>
     </div>
     <div class="col-sm-4">
-      <p class="heading">Events</p>
-      <hr>
+      <p class="miniheading">Events</p>
+      <div id="events-line"></div>
+      <a href="/events" id="nounderline" class="inline"><button type="button" class="btn-small center-block" id="news-button">View all</button></a>
     </div>
   </div>
   <div class="row">
@@ -132,7 +134,7 @@
 
 <div class="parallax-window" data-parallax="scroll" data-position="0px -270px" data-image-src="<%= asset_path 'comforting_hands.jpg' %>">
   <div class="helping_hands">
-    <p id="jumbotronText">We can't do it without you</p>
+    <p class="jumbotronText">We can't do it without you</p>
     <p id="jumbotronTextMini">Join our membership programs to make a difference today</p>
     <div class="text-center">
       <a href="/members/new"><button type="button" class="btn btn-lg joinDonate"> Join us </button></a>
