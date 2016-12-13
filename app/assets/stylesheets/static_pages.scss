@@ -121,8 +121,10 @@ body {  /* font for all static pages */
 }
 
 .well-news {
-  height: 390px;
+  height: 390px; 
   width: 290px;
+  padding: 9px; 
+  border-radius: 3px;
 }
 
 /* ---------------- about page ---------------- */
