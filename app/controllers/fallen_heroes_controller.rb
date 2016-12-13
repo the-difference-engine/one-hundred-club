@@ -1,13 +1,12 @@
 class FallenHeroesController < ApplicationController
+  
   def index
-    @fallen_heroes = FallenHero.all.sort_by(&:date_deceased).reverse
-    @first_heroes = FallenHero.where("date_deceased > ?", '2010-01-01').sort_by(&:date_deceased).reverse
-    @second_heroes= FallenHero.where("date_deceased": '2000-01-01'..'2010-01-01').sort_by(&:date_deceased).reverse
-    @third_heroes= FallenHero.where("date_deceased": '1990-01-01'..'2000-01-01').sort_by(&:date_deceased).reverse
-    @fourth_heroes= FallenHero.where("date_deceased": '1980-01-01'..'1990-01-01').sort_by(&:date_deceased).reverse
-    @fifth_heroes= FallenHero.where("date_deceased": '1970-01-01'..'1980-01-01').sort_by(&:date_deceased).reverse
+    @first_heroes = FallenHero.where("date_deceased > ?", '2009-12-31').sort_by(&:date_deceased).reverse
+    @second_heroes= FallenHero.where("date_deceased": '2000-01-01'..'2009-12-31').sort_by(&:date_deceased).reverse
+    @third_heroes= FallenHero.where("date_deceased": '1990-01-01'..'1999-12-31').sort_by(&:date_deceased).reverse
+    @fourth_heroes= FallenHero.where("date_deceased": '1980-01-01'..'1989-12-31').sort_by(&:date_deceased).reverse
+    @fifth_heroes= FallenHero.where("date_deceased": '1970-01-01'..'1979-12-31').sort_by(&:date_deceased).reverse
     @sixth_heroes= FallenHero.where("date_deceased < ?", '1970-01-01').sort_by(&:date_deceased).reverse
-
   end
 
   def new
