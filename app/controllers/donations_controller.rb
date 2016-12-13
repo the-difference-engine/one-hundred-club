@@ -1,6 +1,18 @@
 class DonationsController < ApplicationController
   def index
-    @donations = Donation.all.order(created_at: :desc) 
+    @donations = Donation.where(member_id: nil).order(created_at: :desc) 
+
+    @matching_phone_numbers = []
+    @matching_names = []
+    @matching_emails = []
+
+    @donations.each do |donation|
+      Member.where(phone_number: donation.phone_number).each do |member|
+        @matching_phone_numbers << member.phone_number
+        @matching_names << member.last_name unless @matching_names.include?(member.last_name)
+        @matching_emails << member.email
+      end
+    end
     render 'index.html.erb'
   end 
 
@@ -8,25 +20,35 @@ class DonationsController < ApplicationController
     @token = Braintree::ClientToken.generate
   end
 
-  def show
-    @donation = Donation.find_by(id: params['id'])
-  end
-
   def edit
+    puts "WE ARE IN EDIT NOW"
+    puts "WE ARE IN EDIT NOW"
+    puts "WE ARE IN EDIT NOW"
+    puts "WE ARE IN EDIT NOW"
+    puts "WE ARE IN EDIT NOW"
+    puts "WE ARE IN EDIT NOW"
+    puts "WE ARE IN EDIT NOW"
+    puts "WE ARE IN EDIT NOW"
+    puts "WE ARE IN EDIT NOW"
+    puts "WE ARE IN EDIT NOW"
     @donation = Donation.find_by(id: params[:id])
     
-    @members = []
+    @matching_members = []
 
-      Member.where(phone_number: @donation.phone_number).each do |member|
-        @members << member
-      end
-      Member.where("first_name = ? AND last_name = ?", @donation.first_name, @donation.last_name).each do |member|
-        @members << member unless @members.include?(member)
-      end
-      Member.where(email: @donation.email).each do |member|
-        @members << member
-      end
+    Member.where(phone_number: @donation.phone_number).each do |member|
+      @matching_members << member 
     end
+
+    Member.where("last_name = ?", @donation.last_name).each do |member|
+      @matching_members << member
+    end
+    
+    Member.where(email: @donation.email).each do |member|
+      @matching_members << member
+    end
+
+    @matching_members.uniq!
+  end
 
   def update
     donation = Donation.find_by(id: params[:id])
