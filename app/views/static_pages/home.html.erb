@@ -25,7 +25,7 @@
   </div>
   <div class="row">
     <div class="col-sm-8">
-      <div class="col-sm-6 well well-sm well-news-events">
+      <div class="col-sm-6 well well-sm well-news">
         <img class="img-responsive wellImg" src="<%= asset_path 'police_luncheon.jpg' %>">
         <br>
         <p class="wellDate">5/20/16</p>
@@ -33,7 +33,7 @@
         <p class="wellBody">The chicoago 53rd police luncheon was held on May 20th. 
           Officers Jameka Sherrod, Rodney Jones and... <a class="readMore" href="#">Read More</a></p>
       </div>
-      <div class="col-sm-6 well well-sm well-news-events">
+      <div class="col-sm-6 well well-sm well-news">
         <img class="img-responsive wellImg" src="<%= asset_path 'paris_club_night.jpg' %>">
         <br>
         <p class="wellDate">5/08/16</p>
@@ -44,7 +44,7 @@
     </div>
 
     <div class="col-sm-4">
-      <div class="col-sm-12 well well-sm well-news-events">
+      <div class="col-sm-12 well well-sm well-news">
         <% @future_events.each do |event| %>
           <div class="circle_date">
             <%= event.datetime.strftime("%b") %><br>
