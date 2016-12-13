@@ -30,18 +30,16 @@
       <div class="col-sm-6 well well-news">
         <img class="img-responsive wellImg" src="<%= asset_path 'police_luncheon.jpg' %>">
         <br>
-        <p class="wellDate">5/20/16</p>
-        <p class="wellTitle">53rd Fire Luncheon</p>
-        <p class="wellBody">The chicoago 53rd police luncheon was held on May 20th. 
-          Officers Jameka Sherrod, Rodney Jones and... <a class="readMore" href="#">Read More</a></p>
+        <p class="wellDate"><%=@recent_news.first.created_at.strftime("%m/%d/%Y")%></p>
+        <p class="wellTitle"><%=@recent_news.first.title%></p>
+        <p class="wellBody"><%=@recent_news.first.content.truncate(145)%> <a class="readMore" href="/blog_posts/<%=@recent_news.first.id%>">Read More</a></p>
       </div>
       <div class="col-sm-6 well well-news">
         <img class="img-responsive wellImg" src="<%= asset_path 'paris_club_night.jpg' %>">
         <br>
-        <p class="wellDate">5/08/16</p>
-        <p class="wellTitle">Paris Club Night</p>
-        <p class="wellBody">Our recent fundraising event was held on Nov. 
-          15 at Paris Club restaurant in River North neighborhood center... <a class="readMore" href="#">Read More</a></p>
+        <p class="wellDate"><%=@recent_news.last.created_at.strftime("%m/%d/%Y")%></p>
+        <p class="wellTitle"><%=@recent_news.last.title%></p>
+        <p class="wellBody"><%=@recent_news.last.content.truncate(145)%> <a class="readMore" href="/blog_posts/<%=@recent_news.last.id%>">Read More</a></p>
       </div>  
     </div>
 
