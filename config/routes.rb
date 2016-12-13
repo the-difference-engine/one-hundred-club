@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   get '/' => 'static_pages#home'
   get '/home' => 'static_pages#home'
   get '/programs' => 'static_pages#programs'
-  get '/news' => 'static_pages#news'
   get '/contact' => 'static_pages#contact'
   ##########################################################
   get '/fallen_heroes' => 'fallen_heroes#index'
@@ -50,7 +49,7 @@ Rails.application.routes.draw do
   delete '/blog_posts/:id' => 'blog_posts#destroy'
   ##########################################################
   get '/about' => 'static_pages#about'
-
+  get '/siren' => 'static_pages#siren'
   ##########################################################
   namespace :api do
     get '/events' => 'events#index'

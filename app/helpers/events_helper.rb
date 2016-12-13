@@ -18,4 +18,6 @@ module EventsHelper
     formatted_datetime = "#{year}-#{month}-#{day} [#{hour}:#{minute}]"
     return formatted_datetime
   end
+
+ 
 end

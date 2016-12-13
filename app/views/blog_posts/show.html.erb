@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <p class="pageHead text-center"><%= @blog_post.title %></p>
+    <p class="page-head text-center"><%= @blog_post.title %></p>
   </div>
   <div class="row">
     <%= image_tag @blog_post.image, class: 'img-rounded img-responsive center-block newsImg' %>
@@ -9,6 +9,7 @@
   <div class="row">
     <div class="col-xs-8 col-xs-offset-2">
       <p><%= simple_format(@blog_post.content) %></p>
+      <button class="btn btn-link" onclick="goBack()">Back to the news</button>
     </div>
   </div>
   <div class="row">

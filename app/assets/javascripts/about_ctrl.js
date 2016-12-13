@@ -58,3 +58,6 @@ function hideEverything() {
 
 });
 })();
+function goBack() {
+    window.history.back();
+}

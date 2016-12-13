@@ -2,13 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.bigRed {
+.big-red {
   color: #ff0000;
   font-family: Arial;
   font-size: 20px;
 }
 
-.pageHead {
+.page-head {
   color: #BC9B5D;
   font-family: Libre Baskerville;
   font-size: 30px;
@@ -120,9 +120,11 @@ body {  /* font for all static pages */
   clear: both;
 }
 
-.wellNewsEvents {
-  height: 390px;
+#well-news {
+  height: 390px; 
   width: 290px;
+  padding: 9px; 
+  border-radius: 3px;
 }
 
 /* ---------------- about page ---------------- */
@@ -523,4 +525,16 @@ footer p {
   border-bottom: 1px solid rgba(201, 182, 145, 1);
   width: 100%;
   margin-left: 20px;
+}
+/* ---------------- siren ---------------- */
+#groove {
+  border-style: groove;
+  margin-bottom: 20px;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  height: 707px;
+}
+.inline {
+  display: inline-block;
 }
