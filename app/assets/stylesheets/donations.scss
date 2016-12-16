@@ -2,19 +2,65 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.transformLivesFormHead
-{
+.transformLivesFormHead {
     font-family: Arial;
-
     color: #605e5e;
-
     size: 24px;
 }
 
-.donationButton
-{
+.donationButton {
     width: 120px;
     margin-right: 10px;
-
     background-color: #bc9b5d;
+}
+
+#donations {
+    width: 100%;
+}
+
+td {
+	border-bottom: 1px solid #ddd;
+	padding: 20px 15px 20px 10px;
+}
+
+tr:hover {
+	background-color: #f2f2f2
+}
+
+th {
+	background-color: #bc9b5d;
+    text-align: center;
+    border-right: 1px solid #ffffff;
+    color: white;
+    padding: 15px 15px 15px 10px;
+}
+
+.fa {
+    color: #27AE60;
+    margin: 0 40%;
+}
+
+.donations-headers {
+    font-family: 'Libre Baskerville', serif;
+    color: #bc9b5d;
+    font-style: italic;
+    text-align: center;
+}
+
+.donation-headers {
+    font-family: 'Libre Baskerville', serif;
+    color: #bc9b5d;
+    font-style: italic;
+}
+
+input[type='radio'] {
+    margin: 0 43%;
+}
+
+input[type='submit'] {
+    margin: 30px 43%;
+    padding: 10px 20px;
+    border-radius: 25px;
+    background-color: #002E5D;
+    color: white;
 }
