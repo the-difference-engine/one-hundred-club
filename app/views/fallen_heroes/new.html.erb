@@ -53,6 +53,13 @@
       <br>
       <div class="row">
         <div class="col-xs-8 col-xs-offset-2">
+          <%= label_tag :image_url, "Add Image: " %>
+          <%= file_field_tag :image_url %>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
           <%= submit_tag "Add Fallen Hero", class: 'btn btn-primary btn-block' %>
         </div>
       </div>
