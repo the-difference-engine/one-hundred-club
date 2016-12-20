@@ -21,16 +21,6 @@ class DonationsController < ApplicationController
   end
 
   def edit
-    puts "WE ARE IN EDIT NOW"
-    puts "WE ARE IN EDIT NOW"
-    puts "WE ARE IN EDIT NOW"
-    puts "WE ARE IN EDIT NOW"
-    puts "WE ARE IN EDIT NOW"
-    puts "WE ARE IN EDIT NOW"
-    puts "WE ARE IN EDIT NOW"
-    puts "WE ARE IN EDIT NOW"
-    puts "WE ARE IN EDIT NOW"
-    puts "WE ARE IN EDIT NOW"
     @donation = Donation.find_by(id: params[:id])
     
     @matching_members = []

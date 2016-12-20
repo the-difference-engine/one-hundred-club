@@ -1,3 +1,31 @@
 // Place all the styles related to the Members controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#members {
+    width: 100%;
+}
+
+td {
+	border-bottom: 1px solid #ddd;
+	padding: 20px 15px 20px 10px;
+}
+
+tr:hover {
+	background-color: #f2f2f2
+}
+
+th {
+	background-color: #bc9b5d;
+    text-align: center;
+    border-right: 1px solid #ffffff;
+    color: white;
+    padding: 15px 15px 15px 10px;
+}
+
+.members-headers {
+    font-family: 'Libre Baskerville', serif;
+    color: #bc9b5d;
+    font-style: italic;
+    text-align: center;
+}
