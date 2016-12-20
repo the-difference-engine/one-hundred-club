@@ -1,7 +1,7 @@
 <!-- Jumbotron -->
 <div class="jumbotron" id="jumbotronGif">
   <div class="container">
-    <p id="jumbotronText">Give a Little. Change a Lot.</p>
+    <p id="homeJumbotronText">Give a Little. Change a Lot.</p>
     <p id="jumbotronTextMini">Together providing for families of fallen heros since 1952</p>
     <div class="text-center">
       <a href="/members/new"><button type="button" class="btn btn-lg joinDonate"> Join us </button></a>
@@ -15,12 +15,14 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-8">
-      <p class="heading">Latest News</p>
-      <hr>
+      <p class="miniheading">Latest News</p>
+      <div id="news-line"></div>
+      <a href="/blog_posts" id="nounderline" class="inline"><button type="button" class="btn-small center-block" id="news-button">Read more</button></a>
     </div>
     <div class="col-sm-4">
-      <p class="heading">Events</p>
-      <hr>
+      <p class="miniheading">Events</p>
+      <div id="events-line"></div>
+      <a href="/events" id="nounderline" class="inline"><button type="button" class="btn-small center-block" id="news-button">View all</button></a>
     </div>
   </div>
   <div class="row">
@@ -28,18 +30,16 @@
       <div class="col-sm-6 well" id="well-news">
         <img class="img-responsive wellImg" src="<%= asset_path 'police_luncheon.jpg' %>">
         <br>
-        <p class="wellDate">5/20/16</p>
-        <p class="wellTitle">53rd Fire Luncheon</p>
-        <p class="wellBody">The chicoago 53rd police luncheon was held on May 20th. 
-          Officers Jameka Sherrod, Rodney Jones and... <a class="readMore" href="#">Read More</a></p>
+        <p class="wellDate"><%=@recent_news.first.created_at.strftime("%m/%d/%Y")%></p>
+        <p class="wellTitle"><%=@recent_news.first.title%></p>
+        <p class="wellBody"><%=@recent_news.first.content.truncate(145)%> <a class="readMore" href="/blog_posts/<%=@recent_news.first.id%>">Read More</a></p>
       </div>
       <div class="col-sm-6 well" id="well-news">
         <img class="img-responsive wellImg" src="<%= asset_path 'paris_club_night.jpg' %>">
         <br>
-        <p class="wellDate">5/08/16</p>
-        <p class="wellTitle">Paris Club Night</p>
-        <p class="wellBody">Our recent fundraising event was held on Nov. 
-          15 at Paris Club restaurant in River North neighborhood center... <a class="readMore" href="#">Read More</a></p>
+        <p class="wellDate"><%=@recent_news.last.created_at.strftime("%m/%d/%Y")%></p>
+        <p class="wellTitle"><%=@recent_news.last.title%></p>
+        <p class="wellBody"><%=@recent_news.last.content.truncate(145)%> <a class="readMore" href="/blog_posts/<%=@recent_news.last.id%>">Read More</a></p>
       </div>  
     </div>
 
@@ -84,7 +84,7 @@
     <div class="star-container">
       <div class="star">
         <span class="number">$10</span>
-        <span class="number">Million</span>
+        <span class="what">Million</span>
         <span class="action">given to <br> families</span>
       </div>
     </div>
@@ -97,7 +97,7 @@
     <div class="star-container">
       <div class="star">
         <span class="number">618</span>
-        <span class="number">Dependents</span>
+        <span class="what">Dependents</span>
         <span class="action">supported <br> over the years</span>
       </div>
     </div>
@@ -110,7 +110,7 @@
     <div class="star-container">
       <div class="star">
         <span class="number">216</span>
-        <span class="number">Families</span>
+        <span class="what">Families</span>
         <span class="action">benefited<br> from this</span>
       </div>
     </div>
