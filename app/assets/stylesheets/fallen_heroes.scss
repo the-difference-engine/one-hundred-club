@@ -102,13 +102,8 @@
    width: 100px;
 }
 
-.btn-small {
-    font-family: "Open Sans", sans-serif;
-    font-size: 12px;
-    background-color: #002E5D;
-    color: #ffffff;
-    text-align: center;
-}
+
+
 #nounderline {
     text-decoration: none;  
 }
@@ -121,8 +116,12 @@
   color: #BC9B5D;
   margin-bottom: 18px;
 }
+.read-more {
+    padding: 5px 10px;
+    font-size: 12px;
+    color: white;
+    line-height: 1.5;
+    border-radius: 10px;
+    margin-right: 50px;
 
-#inline-button {
-  text-align: center;
 }
-
