@@ -30,7 +30,6 @@ Rails.application.routes.draw do
   ##########################################################
   get '/donations' => 'donations#index'
   get '/donations/new' => 'donations#new'
-  get '/donations/manual_donation' => 'donations#manual_donation'
   post '/donations' => 'donations#create'
   get 'donations/:id' => 'donations#show'
   get '/donations/:id/edit' => 'donations#edit'
