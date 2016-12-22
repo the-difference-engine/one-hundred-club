@@ -7,11 +7,6 @@
   margin-bottom: 15px;
 }
 
-#new-fallen-hero-button {
-  margin-top: 40px;
-  margin-bottom: 20px;
-}
-
 #hero-show-well {
   text-align: center;
 }
@@ -76,11 +71,26 @@
 
 .hero-body {
   background-color: #f5f5f5;
-  padding: 20px;
+  padding: 11px 20px 20px 20px;
   color: #605E5E;
   height: 261px;
   line-height: normal;
   font-family: "Open Sans", sans-serif;
+}
+
+.hero-body-short {
+  background-color: #f5f5f5;
+  padding: 11px 20px 20px 20px;
+  color: #605E5E;
+  height: 211px;
+  line-height: normal;
+  font-family: "Open Sans", sans-serif;
+}
+
+.morebutton {
+  height: 50px;
+  background-color: #f5f5f5;
+  text-align: center;
 }
 
 .bold-rank {
@@ -123,6 +133,7 @@
     color: white;
     line-height: 1.5;
     border-radius: 10px;
+
 }
 
 .read-more:hover {

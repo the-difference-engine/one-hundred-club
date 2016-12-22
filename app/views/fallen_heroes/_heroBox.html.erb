@@ -11,15 +11,23 @@
               <%= image_tag hero.image_url || 'original_logo.png', class:"hero-badge" %>
               <%= hero.full_name %>
             </div>
-            <div class="hero-body text-left">
-              <h5 class="bold-rank"><%= hero.rank %></h5>
-              <p id="department"><%= hero.department %></p>
-              <div class="date"><%= hero.date_deceased.to_datetime.strftime("%m/%d/%Y")%></div>              
-              <% if hero.description.length > 1 %>
+            <% if hero.description.length > 1 %>
+              <div class="hero-body-short text-left">
+                <h5 class="bold-rank"><%= hero.rank %></h5>
+                <p id="department"><%= hero.department %></p>
+                <div class="date"><%= hero.date_deceased.to_datetime.strftime("%m/%d/%Y")%></div>              
                 <p><%= hero.description.truncate(160) %></p>
-                <a href="/fallen_heroes/<%=hero.id%>" id="nounderline" class="inline"><button type="button" class="read-more">Read more</button></a>
-              <% end %>
-            </div>  
+              </div>
+              <div class="morebutton">
+                <a href="/fallen_heroes/<%=hero.id%>" id="nounderline"><button type="button" class="read-more">Read more</button></a>
+              </div>  
+            <% else %>
+              <div class="hero-body text-left">
+                <h5 class="bold-rank"><%= hero.rank %></h5>
+                <p id="department"><%= hero.department %></p>
+                <div class="date"><%= hero.date_deceased.to_datetime.strftime("%m/%d/%Y")%></div>  
+              </div>  
+            <% end %>
           </div>
         </div>  
       <% end %>  
