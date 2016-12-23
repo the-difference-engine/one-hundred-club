@@ -53,6 +53,21 @@
       <br>
       <div class="row">
         <div class="col-xs-8 col-xs-offset-2">
+          <%= label_tag :image_url, "Edit Badge: " %>
+          <%= file_field_tag :image_url %>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+          <div> <p>Or</p> </div>
+          <%= label_tag :remove_image_url, "Check to Remove Badge" %>
+          <%= check_box_tag :remove_image_url, class: 'checkbox' %>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
           <%= submit_tag "Save Changes", class: 'btn btn-primary btn-block' %>
         </div>
       </div>
