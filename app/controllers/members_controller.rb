@@ -1,6 +1,6 @@
 class MembersController < ApplicationController
   def index
-  	@members = Member.all
+  	@members = Member.all.order(created_at: :desc) 
   	render 'index.html.erb'
   end
 
@@ -60,6 +60,29 @@ class MembersController < ApplicationController
       puts 'Error processing transaction:'
       puts '  code: #{result.transaction.processor_response_code}'
       puts '  text: #{result.transaction.processor_response_text}'
+    end
+  end
+
+  def admin_entered_member
+    @manual_member = Member.create(
+      level: params[:level],
+      title: params[:title],
+      first_name: params[:first_name],
+      middle_name: params[:middle_name],
+      last_name: params[:last_name],
+      suffix: params[:suffix],
+      address: params[:address],
+      city: params[:city],
+      state: params[:state],
+      zip_code: params[:zip_code],
+      country: params[:country],
+      email: params[:email],
+      phone_number: params[:phone_number]
+    )
+    if @manual_member.save
+      redirect_to "/members"
+    else
+      render 'manual_members.html.erb'
     end
   end
 end

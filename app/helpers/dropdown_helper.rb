@@ -119,4 +119,13 @@ module DropdownHelper
       ['American Express', 'American Express']
     ]
   end
+
+  def member_levels
+    [
+      ['Bronze', 'Bronze'],
+      ['Silver', 'Silver'],
+      ['Gold', 'Gold'],
+      ['Lifetime', 'Lifetime']
+    ]
+  end
 end
