@@ -7,11 +7,6 @@
   margin-bottom: 15px;
 }
 
-#new-fallen-hero-button {
-  margin-top: 40px;
-  margin-bottom: 20px;
-}
-
 #hero-show-well {
   text-align: center;
 }
@@ -56,7 +51,7 @@
 .hero-box {
   border: 1px solid #f1f1f1;
   height: 342px;
-  width: 288px;
+  width: 291px;
   margin-bottom: 40px;
   margin-left: 90px;
 }
@@ -76,11 +71,26 @@
 
 .hero-body {
   background-color: #f5f5f5;
-  padding: 20px;
+  padding: 11px 20px 20px 20px;
   color: #605E5E;
   height: 261px;
   line-height: normal;
   font-family: "Open Sans", sans-serif;
+}
+
+.hero-body-short {
+  background-color: #f5f5f5;
+  padding: 11px 20px 20px 20px;
+  color: #605E5E;
+  height: 211px;
+  line-height: normal;
+  font-family: "Open Sans", sans-serif;
+}
+
+.morebutton {
+  height: 50px;
+  background-color: #f5f5f5;
+  text-align: center;
 }
 
 .bold-rank {
@@ -102,13 +112,8 @@
    width: 100px;
 }
 
-.btn-small {
-    font-family: "Open Sans", sans-serif;
-    font-size: 12px;
-    background-color: #002E5D;
-    color: #ffffff;
-    text-align: center;
-}
+
+
 #nounderline {
     text-decoration: none;  
 }
@@ -121,4 +126,19 @@
   color: #BC9B5D;
   margin-bottom: 18px;
 }
+.read-more {
+    font-family: "Open Sans", sans-serif;
+    padding: 5px 10px;
+    font-size: 12px;
+    color: white;
+    line-height: 1.5;
+    border-radius: 10px;
 
+}
+
+.read-more:hover {
+  font-family: "Open Sans", sans-serif;
+  font-size: 12px;
+  background-color: #BC9B5D;
+  color: #000000;
+}

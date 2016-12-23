@@ -18,19 +18,9 @@ class DonationsController < ApplicationController
 
   def new
     @token = Braintree::ClientToken.generate
-  end
+  end 
 
   def edit
-    puts "WE ARE IN EDIT NOW"
-    puts "WE ARE IN EDIT NOW"
-    puts "WE ARE IN EDIT NOW"
-    puts "WE ARE IN EDIT NOW"
-    puts "WE ARE IN EDIT NOW"
-    puts "WE ARE IN EDIT NOW"
-    puts "WE ARE IN EDIT NOW"
-    puts "WE ARE IN EDIT NOW"
-    puts "WE ARE IN EDIT NOW"
-    puts "WE ARE IN EDIT NOW"
     @donation = Donation.find_by(id: params[:id])
     
     @matching_members = []
@@ -107,6 +97,28 @@ class DonationsController < ApplicationController
       puts 'Error processing transaction:'
       puts '  code: #{result.transaction.processor_response_code}'
       puts '  text: #{result.transaction.processor_response_text}'
+    end
+  end
+
+  def admin_entered_donation
+    @manual_donation = Donation.create(
+      title: params[:title],
+      first_name: params[:first_name],
+      middle_name: params[:middle_name],
+      suffix: params[:suffix],
+      address: params[:address],
+      city: params[:city],
+      state: params[:state],
+      zip_code: params[:zip_code],
+      country: params[:country],
+      email: params[:email],
+      phone_number: params[:phone_number],
+      amount: params[:amount]
+    )
+    if @manual_donation.save
+      redirect_to "/donations"
+    else
+      render 'manual_donations.html.erb'
     end
   end
 end

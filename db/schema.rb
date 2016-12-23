@@ -37,10 +37,10 @@ ActiveRecord::Schema.define(version: 20161223014519) do
     t.string   "email"
     t.string   "phone_number"
     t.string   "zip_code"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
     t.integer  "amount"
     t.string   "bt_transaction_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
     t.integer  "member_id"
   end
 
@@ -89,6 +89,7 @@ ActiveRecord::Schema.define(version: 20161223014519) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.string   "email"
+    t.string   "level"
   end
 
   create_table "sirens", force: :cascade do |t|

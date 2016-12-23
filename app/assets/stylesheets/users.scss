@@ -1,0 +1,66 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.dashboard_title {
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+.dashboard {
+	display: block;
+	margin: auto;
+	width: 900px;
+}
+
+.dashboard h2 {
+	text-align: center;
+	margin-bottom: 25px;
+}
+
+.dashboard_link {
+	color: white;
+}
+
+.blank {
+	clear: both;
+}
+
+.edit1, .edit2, .edit3 {
+	float: left;
+	margin: 10px 20px;
+}
+
+.edit4, .edit5, .edit6 {
+	float: left;
+	margin: 10px 20px;
+}
+
+.edit_blank, .edit7, .edit_blank {
+	float: left;
+	margin: 10px 20px 50px 20px;
+}
+
+.edit1, .edit2, .edit3, .edit4, .edit5, .edit6, .edit7 {
+	width: 260px;
+	height: 160px;
+	background-color: #bc9b5d;
+	border-radius: 20px;
+	padding: 0 10px;
+	color: white;
+	text-align: center;
+	border: 5px solid #002E5D;
+}
+
+.edit_blank {
+	width: 260px;
+	height: 160px;
+	margin: 10px 20px;
+}
+
+button {
+	width: 100px;
+  padding: 10px 20px;
+  border-radius: 25px;
+  background-color: #002E5D;
+}

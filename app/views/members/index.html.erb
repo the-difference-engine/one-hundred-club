@@ -1,8 +1,47 @@
-<h2>Members</h2>
+<div class="container">
 
-<% @members.each do |member| %>
-	<%= member.first_name %>
-	<%= member.last_name %>
-	<%= member.phone_number %>
-	<br>
-<% end %>
+  <div class="row">
+
+    <h1 class="members-headers">Members</h1>
+
+    <br>
+
+    <table id="members">
+      <tr>
+        <th id="member-name">Name</th>
+        <th id="member-address">Address</th>
+        <th id="member-email">Email</th>
+        <th id="member-phone">Phone</th>
+        <th id="member-donation">Level</th>
+      </tr>
+
+      <% @members.each do |member| %>
+        <tr>
+          <td>
+            <%= member.first_name %> <%= member.last_name %>
+          </td>
+          <td>
+            <%= member.address %> 
+            <%= member.city %>, 
+            <%= member.state %>
+            <%= member.zip_code %>
+          </td>
+          <td>
+            <% if member.email != nil %>
+              <%= member.email %>
+            <% end %>
+          </td>
+          <td>
+            <% if member.phone_number != nil %>
+              <%= member.phone_number %>
+            <% end %>
+          </td>
+          <td>
+            <%= member.level %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+    <br>
+  </div>
+</div>  

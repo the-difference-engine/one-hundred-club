@@ -49,10 +49,10 @@ body {  /* font for all static pages */
 }
 
 .box-heading {  /* grey headings in boxes */
-  font: 16px/1.4em;
   font-weight: bold; 
   color: #605E5E;
-  padding: 15px;
+  text-align: center;
+  margin-top: 10px;
 }
 
 .gold_headers {
@@ -200,7 +200,8 @@ body {  /* font for all static pages */
 /* ----------------  ---------------- */
 
 .summary-box {
-  padding: 20px 15px 0px 15px;
+  padding: 11px 15px 0px 15px;
+  margin-bottom: 0px;
 }
 
 .block-quote {
@@ -303,18 +304,28 @@ body {  /* font for all static pages */
 
 /* ---------------- programs page ---------------- */
 
+#program-head {
+  font-size: 18px;
+  color: #bc9b5d;
+  font-weight: bold;
+  display: inline;
+  margin-left: 113px;
+}
+
 .number {
   font-family: Arial, Helvetica, sans-serif;
   background-color: #bc9b5d;
   border-radius: 50px;
   color: white;
-  padding: 10px 0px 10px 0px;
+  margin: 10px 15px 0 0;
+  padding: 11px 10px 10px 20px;
   font-style: normal;
 }
 
 .programs {
   border-color: #bc9b5d;
 }
+
 
 .ourprograms {
   padding-top: 50px;
@@ -371,6 +382,14 @@ li.huge:before {
 li.huge:before {
   font-size: 45px;
 }
+
+#program-line {
+  height: 21px;
+  border-bottom: 1px solid rgba(201, 182, 145, 1);
+  width: 68%;
+  display: inline-block;
+  margin-left: 20px;
+}  
 
 /* ---------------- star styling ---------------- */
 
