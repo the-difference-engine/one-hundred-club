@@ -15,11 +15,15 @@
 
 .dashboard h2 {
 	text-align: center;
-	margin-bottom: 25px;
+	margin-bottom: 30px;
 }
 
 .dashboard_link {
 	color: white;
+	padding: 12px 25px;
+  border-radius: 25px;
+  background-color: #002E5D;
+  margin-right: 5px;
 }
 
 .blank {
@@ -56,11 +60,4 @@
 	width: 260px;
 	height: 160px;
 	margin: 10px 20px;
-}
-
-button {
-	width: 100px;
-  padding: 10px 20px;
-  border-radius: 25px;
-  background-color: #002E5D;
 }
