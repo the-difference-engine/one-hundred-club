@@ -1,7 +1,7 @@
 class MembersController < ApplicationController
   def index
-  	@members = Member.all.order(created_at: :desc) 
-  	render 'index.html.erb'
+    @q = Member.ransack(params[:q])
+    @members = @q.result(distinct: true).order(created_at: :desc).paginate(page: params[:page], per_page: 10)
   end
 
   def new

@@ -2,7 +2,7 @@ class BlogPostsController < ApplicationController
   def index
     @q = BlogPost.ransack(params[:q])
     @blog_posts = @q.result(distinct: true).paginate(page: params[:page], per_page: 6)
-  end
+  end 
 
   def new
     @blog_post = BlogPost.new
