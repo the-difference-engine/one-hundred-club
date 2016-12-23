@@ -32,7 +32,6 @@ class BlogPostsController < ApplicationController
 
   def update
     blog_post = BlogPost.find_by(id: params[:id])
-
     blog_post.update(
       title: params[:title],
       content: params[:content],
