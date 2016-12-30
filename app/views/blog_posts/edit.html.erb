@@ -20,11 +20,20 @@
       <br>
       <div class="row">
         <div class="col-xs-8 col-xs-offset-2">
-          <%= label_tag :image, "Image URL: " %>
-          <%= text_field_tag :image, @blog_post.image, class: 'form-control' %>
+          <div>
+            <%= label_tag :image, "Choose An Image: " %>
+            <%= file_field_tag :image %>
+          </div>
         </div>
       </div>
       <br>
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+          <p> Or </p>
+          <%= label_tag :remove_image, "Check Box to Remove Image" %>
+          <%= check_box_tag :remove_image, class: 'checkbox' %>
+        </div> 
+      </div>
       <div class="row">
         <div class="col-xs-4 col-xs-offset-2">
           <%= submit_tag "Save Changes", class: 'btn btn-primary btn-block' %>

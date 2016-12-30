@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-class FallenHeroUploader < CarrierWave::Uploader::Base
+class BlogPostUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
