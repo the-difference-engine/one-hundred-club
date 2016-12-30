@@ -3,7 +3,7 @@
     <p class="page-head text-center"><%= @blog_post.title %></p>
   </div>
   <div class="row">
-    <%= image_tag @blog_post.image, class: 'img-rounded img-responsive center-block newsImg' %>
+    <%= image_tag @blog_post.image.large, class: 'img-rounded center-block' %>
   </div>
   <br>
   <div class="row">

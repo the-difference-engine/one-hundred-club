@@ -54,6 +54,14 @@ Rails.application.routes.draw do
   patch '/blog_posts/:id' => 'blog_posts#update'
   delete '/blog_posts/:id' => 'blog_posts#destroy'
   ##########################################################
+  get '/sirens' => 'sirens#index'
+  get '/sirens/new' => 'sirens#new'
+  post '/sirens' => 'sirens#create'
+  get '/sirens/:id' => 'sirens#show'
+  get '/sirens/:id/edit' => 'sirens#edit'
+  patch '/sirens/:id' => 'sirens#update'
+  delete '/sirens/:id' => 'sirens#destroy'
+  ##########################################################
   get '/about' => 'static_pages#about'
   get '/siren' => 'static_pages#siren'
   ##########################################################

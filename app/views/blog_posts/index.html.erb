@@ -36,7 +36,7 @@
           <%= truncate(post.content, length: 200) %>
         </div>
         <div>
-          <%= image_tag(post.image, class: 'newsImg img-rounded') %>
+          <%= image_tag post.image.medium, class: 'img-rounded' %>
         </div>
         <br>
       </div>

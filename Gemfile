@@ -16,13 +16,14 @@ gem 'puma'
 gem 'faker', '~> 1.6.3'
 gem 'devise', '~> 4.1.1'
 gem 'carrierwave'
+gem 'mini_magick'
 gem 'fog-aws'
 gem 'braintree', '~> 2.65.0'
 gem 'seed_dump'
 gem 'american_date'
 gem 'will_paginate'
 gem 'nokogiri', '~>1.6.1'
-gem "font-awesome-rails"
+gem 'font-awesome-rails'
 gem 'ransack'
 
 group :development, :test do

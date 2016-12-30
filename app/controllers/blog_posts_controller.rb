@@ -32,11 +32,11 @@ class BlogPostsController < ApplicationController
 
   def update
     blog_post = BlogPost.find_by(id: params[:id])
-
     blog_post.update(
       title: params[:title],
       content: params[:content],
-      image: params[:image]
+      image: params[:image],
+      remove_image: params[:remove_image]
     )
     flash[:success] = 'Your blog post has been updated!'
     redirect_to "/blog_posts/#{blog_post.id}"
