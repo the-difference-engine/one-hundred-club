@@ -5,6 +5,7 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
@@ -23,64 +24,88 @@
   </div>
   <hr>
   <!-- End Banner -->
-  <!-- NavBar -->
-  <div class="container">
-    <div class="col-lg-12">
-      <ul class="nav nav-justified">
-        <li class="navLinks"><%= link_to "Home", '/', {class: "navbar-category", id: ("navbar-category-active" if current_page?('/'))} %></li>
-        <li class="navLinks"><%= link_to "About", '/about', {class: "navbar-category", id: ("navbar-category-active" if current_page?('/about'))} %></li>
-        <li class="navLinks"><%= link_to "Heroes", '/fallen_heroes', {class: "navbar-category", id: ("navbar-category-active" if current_page?('/fallen_heroes'))} %></li>
-        <li class="navLinks"><%= link_to "Programs", '/programs', {class: "navbar-category", id: ("navbar-category-active" if current_page?('/programs'))} %></li>
-        <li class="navLinks"><%= link_to "Join", '/members/new', {class: "navbar-category", id: ("navbar-category-active" if current_page?('/members/new'))} %></li>
-        <li class="navLinks"><%= link_to "Supporters", '#', {class: "navbar-category", id: ("navbar-category-active" if current_page?('/members'))} %></li>
-        <li class="navLinks"><%= link_to "Events", '/events', {class: "navbar-category", id: ("navbar-category-active" if current_page?('/events'))} %></li>
-        <li class="navLinks"><%= link_to "News", '/blog_posts', {class: "navbar-category", id: ("navbar-category-active" if current_page?('/blog_posts'))} %></li>
-        <li class="navLinks"><%= link_to "Shop", 'http://100club.bsmgecommerce.com', class: "navbar-category", :target =>"_blank" %></li>
-        <li class="navLinks" id="donate"><%= link_to "Donate", '/donations/new', {class: "navbar-donate", id: ("navbar-donate-active" if current_page?('/donations/new'))} %></li>
-      </ul>
+
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-right white" role="navigation">
+  <div class="container-fluid">  
+
+<!-- Mobile NavBar -->  
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#full-menu">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
     </div>
+<!-- End Mobile NavBar -->  
+
+<!-- Regular NavBar -->
+    <div class="collapse navbar-collapse" id="full-menu">
+      <div class="col-lg-12">
+        <ul class="nav nav-justified">
+          <li class="navLinks"><%= link_to "Home", '/', {class: "navbar-category", id: ("navbar-category-active" if current_page?('/'))} %></li>
+          <li class="navLinks"><%= link_to "About", '/about', {class: "navbar-category", id: ("navbar-category-active" if current_page?('/about'))} %></li>
+          <li class="navLinks"><%= link_to "Heroes", '/fallen_heroes', {class: "navbar-category", id: ("navbar-category-active" if current_page?('/fallen_heroes'))} %></li>
+          <li class="navLinks"><%= link_to "Programs", '/programs', {class: "navbar-category", id: ("navbar-category-active" if current_page?('/programs'))} %></li>
+          <li class="navLinks"><%= link_to "Join", '/members/new', {class: "navbar-category", id: ("navbar-category-active" if current_page?('/members/new'))} %></li>
+          <li class="navLinks"><%= link_to "Supporters", '#', {class: "navbar-category", id: ("navbar-category-active" if current_page?('/members'))} %></li>
+          <li class="navLinks"><%= link_to "Events", '/events', {class: "navbar-category", id: ("navbar-category-active" if current_page?('/events'))} %></li>
+          <li class="navLinks"><%= link_to "News", '/blog_posts', {class: "navbar-category", id: ("navbar-category-active" if current_page?('/blog_posts'))} %></li>
+          <li class="navLinks"><%= link_to "Shop", 'http://100club.bsmgecommerce.com', class: "navbar-category", :target =>"_blank" %></li>
+          <li class="navLinks" id="donate"><%= link_to "Donate", '/donations/new', {class: "navbar-donate", id: ("navbar-donate-active" if current_page?('/donations/new'))} %></li>
+        </ul>
+      </div>
+    </div>
+<!-- End Regular Navbar -->
+
   </div>
-  <br>
-  <!-- End Navbar -->
+</nav>
+
+<!-- End Navigation -->
+
+<br>
+
 
   <%= yield %>
   
-  <!-- FOOTER -->
-  <footer>
-    <div class="container">
-      <div class="row">
-        <div class="text-center icon-margines">
-          <ul class="list-inline" id="footer-icons">
-            <li><a target="_blank" href="https://www.facebook.com/100clubofchicago"><%= image_tag 'facebook_white_bubble.png', id:"socialBottom" %></a></li>
-            <li><a target="_blank" href="https://www.instagram.com/100clubchicago/?ref=badge"><%= image_tag 'Instagram_white_bubble.png', id:"socialBottom" %></a></li>
-            <li><a target="_blank" href="https://www.youtube.com/user/100ClubChicago"><%= image_tag 'youtube_white_bubble.png', id:"socialBottom" %></a></li>
-          </ul>  
-        </div>
-        <div class="text-center footer-links">
-          <ul class="list-inline">
-            <li><a href="/about">About</a></li>
-            <li><a href="/programs">Programs</a></li>
-            <li><a href="/events">Events</a></li>
-            <li><a href="/news">News</a></li>
-            <li><a href="/members">Supporters</a></li>
-          </ul>   
-        </div>  
-        <div class="text-center">
-          <a href="/donations/new">Donate </a>|<a href="/contact"> Contact </a>|
-          <% if current_user %>
-            <%= link_to 'Sign Out', '/users/sign_out', :method => :delete %>
-          <% else %>
-            <a href="/users/sign_in"> Login</a> 
-          <% end %> 
-        </div>
-        <div class="text-center">    
-          <p>
-            ©2016 by 100 Club of Chicago. All rights reserved.
-          </p>
-        </div>
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="text-center icon-margines">
+        <ul class="list-inline" id="footer-icons">
+          <li><a target="_blank" href="https://www.facebook.com/100clubofchicago"><%= image_tag 'facebook_white_bubble.png', id:"socialBottom" %></a></li>
+          <li><a target="_blank" href="https://www.instagram.com/100clubchicago/?ref=badge"><%= image_tag 'Instagram_white_bubble.png', id:"socialBottom" %></a></li>
+          <li><a target="_blank" href="https://www.youtube.com/user/100ClubChicago"><%= image_tag 'youtube_white_bubble.png', id:"socialBottom" %></a></li>
+        </ul>  
+      </div>
+      <div class="text-center footer-links">
+        <ul class="list-inline">
+          <li><a href="/about">About</a></li>
+          <li><a href="/programs">Programs</a></li>
+          <li><a href="/events">Events</a></li>
+          <li><a href="/news">News</a></li>
+          <li><a href="/members">Supporters</a></li>
+        </ul>   
+      </div>  
+      <div class="text-center">
+        <a href="/donations/new">Donate </a>|<a href="/contact"> Contact </a>|
+        <% if current_user %>
+          <%= link_to 'Sign Out', '/users/sign_out', :method => :delete %>
+        <% else %>
+          <a href="/users/sign_in"> Login</a> 
+        <% end %> 
+      </div>
+      <div class="text-center">    
+        <p>
+          © <%= Time.zone.now.year %> by 100 Club of Chicago. All rights reserved.
+        </p>
       </div>
     </div>
-  </footer>
-  <!-- END FOOTER -->
+  </div>
+</footer>
+<!-- END FOOTER -->
+
 </body>
 </html>

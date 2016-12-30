@@ -13,25 +13,8 @@
  *
  *= require_tree .
  *= require_self
-*= require font-awesome
+ *= require font-awesome
  */
-
-.navbar-custom {
-  background-color: transparent;
-}
-
-.navbar .navbar-nav {
-  background: transparent;
-  font-family: "Arial Black", "Arial Bold", sans-serif;
-  font-size: 14px;
-  font-style: normal;
-  font-variant: normal;
-  font-weight: 400;
-  line-height: 20px;
-  display: inline-block;
-  float: none;
-  vertical-align: top;
-}
 
 .navbar .navbar-collapse {
   background: transparent;
@@ -41,6 +24,10 @@
   color: #000000 !important;
   margin-left: 12px;
   margin-right: 12px;
+}
+
+.white {
+  background-color: white;
 }
 
 .navbar-category:hover {
