@@ -8,12 +8,11 @@
         <div class="col-md-3" id="pad-right"> 
           <div class="hero-box">
             <div class="hero-name">
-                <%= image_tag hero.fallen_hero_image.fallen_hero.image_url || 'original_logo.png', class:"hero-badge" %>
-             <!--  <% if hero.fallen_hero_image_id != nil %>
+              <% if hero.fallen_hero_image_id != nil %>
                 <%= image_tag hero.fallen_hero_image.file, class:"hero-badge" %>
                 <% else %>
                 <%= image_tag 'original_logo.png', class:"hero-badge" %>
-              <% end %> -->
+              <% end %>
               <%= hero.full_name %>
             </div>
             <% if hero.description.length > 1 %>
