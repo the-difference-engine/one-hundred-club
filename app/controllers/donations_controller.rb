@@ -14,7 +14,7 @@ class DonationsController < ApplicationController
       end
     end
     render 'index.html.erb'
-  end 
+  end  
 
   def new
     @token = Braintree::ClientToken.generate
@@ -105,6 +105,7 @@ class DonationsController < ApplicationController
       title: params[:title],
       first_name: params[:first_name],
       middle_name: params[:middle_name],
+      last_name: params[:last_name],
       suffix: params[:suffix],
       address: params[:address],
       city: params[:city],
