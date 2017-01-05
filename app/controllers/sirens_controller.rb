@@ -1,6 +1,6 @@
 class SirensController < ApplicationController
   def index
-    @siren = Siren.all
+    @sirens = Siren.all
     render 'index.html.erb'
   end
 
@@ -13,7 +13,7 @@ class SirensController < ApplicationController
       title: params[:title],
       pdf: params[:pdf]
     )
-    if @blog_post.save
+    if @siren.save
       flash[:success] = 'Siren has been added!'
       redirect_to "/sirens/#{@siren.id}"
     else

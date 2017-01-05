@@ -13,6 +13,21 @@ class FallenHeroesController < ApplicationController
     @fallen_hero = FallenHero.new
   end
 
+  def badge_uploader
+  end 
+
+  def create_badge
+    @badge = FallenHeroImage.create(
+      department: params[:department],
+      file: params[:file]
+    )
+  if @badge.save
+    redirect_to "/fallen_heroes"
+  else
+      render 'badge_uploader.html.erb'
+    end
+  end  
+
   def create
     @fallen_hero = FallenHero.create(
       rank: params[:rank],

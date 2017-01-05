@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="page-head text-center">THE SIREN
+      <div class="dropdown inline">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        Archives  <span class="caret"></span></button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <li><a target="_blank" href="http://www.100clubchicago.org/wp-content/uploads/2013/01/Siren_2016.2.pdf">2016 Volume I</a></li>
+          <li><a target="_blank" href="http://www.100clubchicago.org/wp-content/uploads/2013/01/Summer-2014-FINAL-.pdf">Summer 2014</a></li>
+          <li><a target="_blank" href="http://www.100clubchicago.org/wp-content/uploads/2014/06/spring-2014_final.pdf">Spring 2014</a></li>
+          <li><a target="_blank" href="http://www.100clubchicago.org/wp-content/uploads/2014/03/finalwinternewsletter_3.5.14.pdf">Winter 2014</a></li>
+          <li><a target="_blank" href="http://www.100clubchicago.org/wp-content/uploads/2013/01/Autumn-2013-Version-7.pdf">Fall 2013</a></li>
+          <li><a target="_blank" href="https://issuu.com/100clubchicago/docs/summer2013-version5">Summer 2013</a></li>
+          <li><a target="_blank" href="https://issuu.com/100clubchicago/docs/spring2013-version2">Spring 2013</a></li>
+          <li><a target="_blank" href="https://issuu.com/100clubchicago/docs/winter_newsletter_version_11-6_1_?e=6667187/2600530">Winter 2013</a></li>
+          <li><a target="_blank" href="https://issuu.com/100clubchicago/docs/siren_version_14_-_with_hyperlinks_1_?backgroundColor=">Autumn 2012</a></li>
+        </ul>  
+      </div>
+    </div>   
+    
+    <div id="groove">
+      <embed src="localhost:3000/<%= @siren.pdf %>" width="100%" height="700px" type='application/pdf'>
+      <!-- <embed src="<%= @siren.pdf %>" width="100%" height="700px" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html"> -->
+    </div> 
+  </div>
+</div>
