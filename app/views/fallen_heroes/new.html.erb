@@ -39,9 +39,9 @@
       <br>
       <div class="row">
         <div class="col-xs-8 col-xs-offset-2">
-          <%= label_tag :department, "Department: " %>
-          <%= text_field_tag :department, nil, class: 'form-control', placeholder: 'Department' %>
-        </div>
+          <%= label_tag :fallen_hero_image_id, "Department: " %>
+          <%= collection_select( nil, :fallen_hero_image_id, FallenHeroImage.all, :id, :department, {include_blank: true}) %>
+          </div>
       </div>
       <br>
       <div class="row">

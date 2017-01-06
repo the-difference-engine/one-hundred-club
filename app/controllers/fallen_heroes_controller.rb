@@ -37,7 +37,8 @@ class FallenHeroesController < ApplicationController
       date_deceased: params[:date_deceased],
       department: params[:department],
       description: params[:description],
-      image_url: params[:image_url]
+      image_url: params[:image_url],
+      fallen_hero_image_id: params[:FallenHero][:fallen_hero_image_id]
     )
     if @fallen_hero.save
       redirect_to "/fallen_heroes/#{@fallen_hero.id}"

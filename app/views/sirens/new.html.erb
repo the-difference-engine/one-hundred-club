@@ -2,7 +2,7 @@
   <div class="row">
     <h1 class="text-center">Add a new Siren</h1>
     <div class="form-group">
-      <%= form_tag '/sirens', method: :post do %>
+      <%= form_tag '/sirens', method: :post, multipart: true do %>
         <div class="row">
           <div class="col-xs-8 col-xs-offset-2">
             <%= label_tag :title, "title: "  %>
