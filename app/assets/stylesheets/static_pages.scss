@@ -1,6 +1,6 @@
 // Place all the styles related to the static-pages controller here.
 // They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// You can use Sass (SCSS) here: http://sass-lang.com/ 
 
 .big-red {
   color: #ff0000;
@@ -195,6 +195,20 @@ body {  /* font for all static pages */
   text-align: right;
   font-style: italic;
   color: #002E5D;
+}
+
+.home_news {
+  display: inline-block;
+}
+
+.home_events {
+  display: inline-block;
+  margin-left: 25px;
+}
+
+.top-boxes {
+  width: 932px;
+  margin: 0 auto;
 }
 
 /* ----------------  ---------------- */
