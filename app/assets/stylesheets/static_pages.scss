@@ -136,6 +136,20 @@ body {  /* font for all static pages */
   clear: both;
 }
 
+.home_news {
+  display: inline-block;
+}
+
+.home_events {
+  display: inline-block;
+  margin-left: 25px;
+}
+
+.top-boxes {
+  width: 932px;
+  margin: 0 auto;
+}
+
 #well-news {
   height: 390px; 
   width: 290px;
@@ -197,18 +211,8 @@ body {  /* font for all static pages */
   color: #002E5D;
 }
 
-.home_news {
-  display: inline-block;
-}
-
-.home_events {
-  display: inline-block;
-  margin-left: 25px;
-}
-
-.top-boxes {
-  width: 932px;
-  margin: 0 auto;
+.about-box {
+  min-height: 470px;
 }
 
 /* ----------------  ---------------- */
