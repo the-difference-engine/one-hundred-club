@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   post '/fallen_heroes' => 'fallen_heroes#create'
   get '/fallen_heroes/badge_uploader' => 'fallen_heroes#badge_uploader'
   post '/fallen_heroes/badge_uploader' => 'fallen_heroes#create_badge'
+  get '/fallen_heroes/badge_editor' => 'falllen_heroes#edit_badge' 
+  patch 'fallen_heroes/badge_editor' => 'fallen_heroes#update_badge'
   get '/fallen_heroes/:id' => 'fallen_heroes#show'
   get '/fallen_heroes/:id/edit' => 'fallen_heroes#edit'
   patch '/fallen_heroes/:id' => 'fallen_heroes#update'

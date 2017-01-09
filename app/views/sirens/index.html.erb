@@ -6,9 +6,9 @@
         Archives  <span class="caret"></span></button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
           <li><a href="/sirens/9">2016 Volume I</a></li>
-          <li><a href="/sirens/8">Summer 2014</a></li>
-          <li><a href="/sirens/7">Spring 2014</a></li>
-          <li><a href="/sirens/6">Winter 2014</a></li>
+          <li><a href="/sirens/8">Winter 2014</a></li>
+          <li><a href="/sirens/7">Summer 2014</a></li>
+          <li><a href="/sirens/6">Spring 2014</a></li>
           <li><a href="/sirens/5">Fall 2013</a></li>
           <li><a target="_blank" href="https://issuu.com/100clubchicago/docs/summer2013-version5">Summer 2013</a></li>
           <li><a target="_blank" href="https://issuu.com/100clubchicago/docs/spring2013-version2">Spring 2013</a></li>
@@ -16,8 +16,14 @@
           <li><a target="_blank" href="https://issuu.com/100clubchicago/docs/siren_version_14_-_with_hyperlinks_1_?backgroundColor=">Autumn 2012</a></li>
         </ul>
       </div>
+      <% if user_signed_in? %>
+        <div class="row">
+          <div class="col-xs-4 col-xs-offset-4">
+            <%= link_to "Add a Siren", "/sirens/new", method: :get, class: 'btn btn-primary btn-block' %>
+          </div>
+      <% end %>
     </div>   
-    
+   
     <div id="groove">
       <embed src="<%=Siren.last.pdf%>" width="100%" height="700px" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html"> -->
       <!-- <embed src="https://www.100clubchicago.org/wp-content/uploads/2016/11/Siren-2016-Vol-II-PDF-.pdf" width="100%" height="700px" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html"> -->

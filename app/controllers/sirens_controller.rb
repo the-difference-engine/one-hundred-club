@@ -34,7 +34,8 @@ class SirensController < ApplicationController
     @siren = Siren.find_by(id: params[:id])
     @siren.update(
       title: params[:title],
-      pdf: params[:pdf]
+      pdf: params[:pdf],
+      remove_pdf: params[:remove_pdf]
     )
     flash[:success] = 'Siren has been updated!'
     redirect_to "/sirens/#{@siren.id}"

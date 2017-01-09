@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row">
+    <h1 class="text-center">Edit Siren</h1>
+    <div class="form-group">
+      <%= form_tag '/sirens/:id', method: :patch, multipart: true do %>
+        <div class="row">
+          <div class="col-xs-8 col-xs-offset-2">
+            <%= label_tag :title, "title: "  %>
+            <%= text_field_tag :title, @siren.title, class: 'form-control' %>
+          </div>
+        </div>
+        <br>
+        <p class="col-xs-8 col-xs-offset-2">Current file: <%= @siren.pdf.to_s.split("/").last %> </p> 
+        <div class="row">
+          <div class="col-xs-8 col-xs-offset-2">
+            <%= label_tag :pdf, "Edit Pdf:" %>
+            <%= file_field_tag :pdf %>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+          <div> <p>Or</p> </div>
+          <%= label_tag :remove_pdf, "Check Box to Remove pdf" %>
+          <%= check_box_tag :remove_pdf, class: 'checkbox' %>
+        </div>
+      </div>
+      <br>
+
+        <div class="row">
+          <div class="col-xs-8 col-xs-offset-2">
+            <%= submit_tag "Edit Siren", class: 'btn btn-primary btn-block' %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+  </div>
+</div>  

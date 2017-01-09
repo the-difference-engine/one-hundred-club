@@ -1,11 +1,11 @@
- <div class="container">
-  <p class="page-head text-center">Add a Department</p>
+<div class="container">
+  <p class="page-head text-center">Change a Badge</p>
   <div class="form-group">
-    <%= form_tag '/fallen_heroes/badge_uploader', method: :post, multipart: true  do %>
+    <%= form_tag '/fallen_heroes/badge_editor', method: :patch, multipart: true  do %>
       <div class="row">
         <div class="col-xs-8 col-xs-offset-2">
-          <%= label_tag :department, "Department: "  %>
-          <%= text_field_tag :department, nil, class: 'form-control', placeholder: 'Department' %>
+          <%= label_tag :id, "Department: "  %>
+          <%= collection_select( nil, FallenHeroImage.all, :id, :department, {include_blank: true}) %>
         </div>
       </div>
       <br>
@@ -19,7 +19,7 @@
       <br>
       <div class="row">
         <div class="col-xs-8 col-xs-offset-2">
-          <%= submit_tag "Add the Department", class: 'btn btn-primary btn-block' %>
+          <%= submit_tag "Edit Badge", class: 'btn btn-primary btn-block' %>
         </div>
       </div>
     <% end %>
