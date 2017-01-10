@@ -131,7 +131,7 @@
     color: white;
     line-height: 1.5;
     border-radius: 10px;
-
+    background-color: #002E5D;
 }
 
 .read-more:hover {
@@ -139,4 +139,10 @@
   font-size: 12px;
   background-color: #BC9B5D;
   color: #000000;
+}
+
+.smalltype {
+  font-size: 13px;
+  display: inline;
+  margin-left: 12px;
 }

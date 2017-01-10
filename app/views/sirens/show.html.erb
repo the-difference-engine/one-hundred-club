@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row">
+    <div class="page-head text-center">THE SIREN <%= @siren.title %> 
+      <div class="dropdown inline">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        Archives  <span class="caret"></span></button>
+         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <li><a href="/sirens/10">2016 Volume II</a></li>
+          <li><a href="/sirens/9">2016 Volume I</a></li>
+          <li><a href="/sirens/8">Winter 2014</a></li>
+          <li><a href="/sirens/7">Summer 2014</a></li>
+          <li><a href="/sirens/6">Spring 2014</a></li>
+          <li><a href="/sirens/5">Fall 2013</a></li>
+          <li><a target="_blank" href="https://issuu.com/100clubchicago/docs/summer2013-version5">Summer 2013</a></li>
+          <li><a target="_blank" href="https://issuu.com/100clubchicago/docs/spring2013-version2">Spring 2013</a></li>
+          <li><a target="_blank" href="https://issuu.com/100clubchicago/docs/winter_newsletter_version_11-6_1_?e=6667187/2600530">Winter 2013</a></li>
+          <li><a target="_blank" href="https://issuu.com/100clubchicago/docs/siren_version_14_-_with_hyperlinks_1_?backgroundColor=">Autumn 2012</a></li>
+        </ul>
+      </div>
+    </div>   
+    <% if user_signed_in? %>
+      <br>
+      <div class="row">
+        <div class="col-xs-4 col-xs-offset-2">
+          <%= link_to "Edit Siren", "/sirens/#{@siren.id}/edit", method: :get, class: 'btn btn-primary btn-block' %>
+        </div>
+        <div class="col-xs-4">
+          <%= button_to "Delete Siren", "/sirens/#{@siren.id}", method: :delete, class: 'btn btn-danger btn-block' %>
+        </div>
+      </div>
+      <br>
+    <% end %>
+    <div id="groove">
+      <embed src="<%= @siren.pdf %>" width="100%" height="700px" type='application/pdf'>
+    </div> 
+  </div>
+</div>
