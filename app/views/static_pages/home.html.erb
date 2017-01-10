@@ -14,55 +14,71 @@
 
 <!-- News and Events -->
 <div class="container">
-  <div class="row">
-    <div class="col-sm-8">
-      <p class="miniheading">Latest News</p>
-      <div id="news-line"></div>
-      <a href="/blog_posts" id="nounderline" class="inline"><button type="button" class="read-more center-block" id="news-button">Read more</button></a>
+
+  <div class="top-boxes">
+    <div class="home_news">
+      <div class="row">
+        <div class="col-sm-12">
+          <p class="miniheading">Latest News</p>
+          <div id="news-line"></div>
+          <a href="/blog_posts" id="nounderline" class="inline"><button type="button" class="read-more center-block" id="news-button">Read more</button></a>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="col-sm-6 well" id="well-news">
+            <img class="img-responsive wellImg" src="<%= asset_path 'police_luncheon.jpg' %>">
+            <br>
+            <p class="wellDate"><%=@recent_news.first.created_at.strftime("%m/%d/%Y")%></p>
+            <p class="wellTitle"><%=@recent_news.first.title%></p>
+            <p class="wellBody"><%=@recent_news.first.content.truncate(75)%> <a class="readMore" href="/blog_posts/<%=@recent_news.first.id%>">Read More</a></p>
+          </div>
+        </div>
+
+        <div class="col-sm-6">
+          <div class="col-sm-6 well" id="well-news">
+            <img class="img-responsive wellImg" src="<%= asset_path 'paris_club_night.jpg' %>">
+            <br>
+            <p class="wellDate"><%=@recent_news.last.created_at.strftime("%m/%d/%Y")%></p>
+            <p class="wellTitle"><%=@recent_news.last.title%></p>
+            <p class="wellBody"><%=@recent_news.last.content.truncate(75)%> <a class="readMore" href="/blog_posts/<%=@recent_news.last.id%>">Read More</a></p>
+          </div>
+        </div> 
+      </div>
     </div>
-    <div class="col-sm-4">
-      <p class="miniheading">Events</p>
-      <div id="events-line"></div>
-      <a href="/events" id="nounderline" class="inline"><button type="button" class="read-more center-block" id="news-button">View all</button></a>
+
+    <div class="home_events">
+      <div class="row">
+        <div class="col-sm-12">
+          <p class="miniheading">Events</p>
+          <div id="events-line"></div>
+          <a href="/events" id="nounderline" class="inline"><button type="button" class="read-more center-block" id="news-button">View all</button></a>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="col-sm-4 well" id="well-news">
+            <% @future_events.each do |event| %>
+              <div class="circle_date">
+                <%= event.datetime.strftime("%b") %><br>
+                <%= event.datetime.strftime("%d") %>    
+              </div>
+              <div class="event_info">
+                <p><a href="/events/<%= event.id %>" class="event-heading"><%= event.title %></a></p>
+                <p><%= image_tag("Time.png", :size => "17x17") %> <%= event.datetime.strftime("%I:%M %p").downcase %></p>
+                <p><%= image_tag("Locator.png", :size => "15x20") %> <%= event.location %></p>
+              </div>
+            <% end %>
+          </div>   
+        </div>
+      </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col-sm-8">
-      <div class="col-sm-6 well" id="well-news">
-        <img class="img-responsive wellImg" src="<%= asset_path 'police_luncheon.jpg' %>">
-        <br>
-        <p class="wellDate"><%=@recent_news.first.created_at.strftime("%m/%d/%Y")%></p>
-        <p class="wellTitle"><%=@recent_news.first.title%></p>
-        <p class="wellBody"><%=@recent_news.first.content.truncate(75)%> <a class="readMore" href="/blog_posts/<%=@recent_news.first.id%>">Read More</a></p>
-      </div>
-      <div class="col-sm-6 well" id="well-news">
-        <img class="img-responsive wellImg" src="<%= asset_path 'paris_club_night.jpg' %>">
-        <br>
-        <p class="wellDate"><%=@recent_news.last.created_at.strftime("%m/%d/%Y")%></p>
-        <p class="wellTitle"><%=@recent_news.last.title%></p>
-        <p class="wellBody"><%=@recent_news.last.content.truncate(75)%> <a class="readMore" href="/blog_posts/<%=@recent_news.last.id%>">Read More</a></p>
-      </div>  
-    </div>
-
-    <div class="col-sm-4">
-      <div class="col-sm-12 well" id="well-news">
-        <% @future_events.each do |event| %>
-          <div class="circle_date">
-            <%= event.datetime.strftime("%b") %><br>
-            <%= event.datetime.strftime("%d") %>    
-          </div>
-          <div class="event_info">
-            <p><a href="/events/<%= event.id %>" class="event-heading"><%= event.title %></a></p>
-            <p><%= image_tag("Time.png", :size => "17x17") %> <%= event.datetime.strftime("%I:%M %p").downcase %></p>
-            <p><%= image_tag("Locator.png", :size => "15x20") %> <%= event.location %></p>
-          </div>
-        <% end %>
-        </div>   
-      </div>
-
-</div>
 
   <br>
+
   <div class="row">
     <div class="col-lg-12">
       <p class="block-quote">The 100 Club of Chicago provides financial assistance, 
@@ -70,52 +86,51 @@
         who have lost their lives in the line of duty in Cook and Lake Counties.</p>
     </div>
   </div>
+
   <br>
 
+  <p id="program-head">Our Programs</p><div id="program-line"></div>
 
+  <div class="allprograms">
+    <div id="first_response">
+      <%= image_tag("programsa.jpg") %>
+      <p class="box-heading">First Response Assistance</p>
+      <p class="summary-box">Financial support is provided to families of fallen responders within 24 hours and in the following weeks.</p>
+      <div class="star-container">
+        <div class="star">
+          <span class="number">$10</span>
+          <span class="what">Million</span>
+          <span class="action">given to <br> families</span>
+        </div>
+      </div>
+    </div>
 
-<p id="program-head">Our Programs</p><div id="program-line"></div>
+    <div id="education">
+      <%= image_tag("programsb.jpg") %>
+      <p class="box-heading">Educational Assistance</p>
+      <p class="summary-box">Grants and scholarships to the spouses and children of fallen first responders for higher education.</p>
+      <div class="star-container">
+        <div class="star">
+          <span class="number">618</span>
+          <span class="what">Dependents</span>
+          <span class="action">supported <br> over the years</span>
+        </div>
+      </div>
+    </div>
 
-<div class="allprograms">
-  <div id="first_response">
-    <%= image_tag("programsa.jpg") %>
-    <p class="box-heading">First Response Assistance</p>
-    <p class="summary-box">Financial support is provided to families of fallen responders within 24 hours and in the following weeks.</p>
-    <div class="star-container">
-      <div class="star">
-        <span class="number">$10</span>
-        <span class="what">Million</span>
-        <span class="action">given to <br> families</span>
+    <div id="gold-shield">
+      <%= image_tag("programsc.jpg") %>
+      <p class="box-heading">Gold Shield Partners</p>
+      <p class="summary-box">Professional support in the areas of Health, Education, Job Training, and Insurance.</p>
+      <div class="star-container">
+        <div class="star">
+          <span class="number">216</span>
+          <span class="what">Families</span>
+          <span class="action">benefited<br> from this</span>
+        </div>
       </div>
     </div>
   </div>
-
-  <div id="education">
-    <%= image_tag("programsb.jpg") %>
-    <p class="box-heading">Educational Assistance</p>
-    <p class="summary-box">Grants and scholarships to the spouses and children of fallen first responders for higher education.</p>
-    <div class="star-container">
-      <div class="star">
-        <span class="number">618</span>
-        <span class="what">Dependents</span>
-        <span class="action">supported <br> over the years</span>
-      </div>
-    </div>
-  </div>
-
-  <div id="gold-shield">
-    <%= image_tag("programsc.jpg") %>
-    <p class="box-heading">Gold Shield Partners</p>
-    <p class="summary-box">Professional support in the areas of Health, Education, Job Training, and Insurance.</p>
-    <div class="star-container">
-      <div class="star">
-        <span class="number">216</span>
-        <span class="what">Families</span>
-        <span class="action">benefited<br> from this</span>
-      </div>
-    </div>
-  </div>
-</div>
 
   <div class="row">
     <div class="col-lg-12 supporters">
@@ -130,13 +145,13 @@
   </div>
 </div>
 
-<div class="parallax-window" data-parallax="scroll" data-position="0px -270px" data-image-src="<%= asset_path 'comforting_hands.jpg' %>">
-  <div class="helping_hands">
-    <p id="jumbotronText">We can't do it without you</p>
-    <p id="jumbotronTextMini">Join our membership programs to make a difference today</p>
-    <div class="text-center">
-      <a href="/members/new"><button type="button" class="btn btn-lg joinDonate"> Join us </button></a>
-      <a href="/donations/new"><button type="button" class="btn btn-lg joinDonate"> Donate </button></a>
+  <div class="parallax-window" data-parallax="scroll" data-position="0px -270px" data-image-src="<%= asset_path 'comforting_hands.jpg' %>">
+    <div class="helping_hands">
+      <p id="jumbotronText">We can't do it without you</p>
+      <p id="jumbotronTextMini">Join our membership programs to make a difference today</p>
+      <div class="text-center">
+        <a href="/members/new"><button type="button" class="btn btn-lg joinDonate"> Join us </button></a>
+        <a href="/donations/new"><button type="button" class="btn btn-lg joinDonate"> Donate </button></a>
+      </div>
     </div>
   </div>
-</div>
