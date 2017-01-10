@@ -7,9 +7,6 @@ FallenHero.delete_all
 Member.delete_all
 Staff.delete_all
 
-User.create!([
-  {email: "arimsendic@gmail.com", encrypted_password: "$2a$11$eUMrh132hgzmWHLvPKuEBeusE93L2BLEICumYxq0BE63v.nztPMT6", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 4, current_sign_in_at: "2017-01-09 19:05:21", last_sign_in_at: "2016-12-29 21:01:33", current_sign_in_ip: "::1", last_sign_in_ip: "::1"}
-])
 BlogPost.create!([
   {title: "100 Club Featured in Fox Interview", content: "CEO Joe Ahern spoke with Fox 32’s Sylvia Perez along with South Chicago Heights Chief of Police Bill Joyce. Watch the full interview here: http://www.fox32chicago.com/mornings/220251296-video.", image: nil},
   {title: "WLS 890 AM: 100 Club of Chicago to hand out Valor Awards", content: "Joe Ahern, CEO, 100 Club of Chicago, and Chicago firefighter Joe Martinelli sat down to chat with John Howell on WLS 890 AM about the Valor Awards on April 26. Listen here: http://www.wlsam.com/2016/04/26/100-club-of-chicago-to-hand-out-valor-awards/", image: nil},
