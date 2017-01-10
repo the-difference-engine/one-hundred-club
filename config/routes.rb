@@ -69,6 +69,8 @@ Rails.application.routes.draw do
   get '/about' => 'static_pages#about'
   get '/siren' => 'static_pages#siren'
   ##########################################################
+  get '/supporters' => 'supporters#index'
+  ##########################################################
   namespace :api do
     get '/events' => 'events#index'
   end
