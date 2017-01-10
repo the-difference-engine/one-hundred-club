@@ -1,0 +1,27 @@
+ <div class="container">
+  <p class="page-head text-center">Add a Department</p>
+  <div class="form-group">
+    <%= form_tag '/fallen_heroes/badge_uploader', method: :post, multipart: true  do %>
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+          <%= label_tag :department, "Department: "  %>
+          <%= text_field_tag :department, nil, class: 'form-control', placeholder: 'Department' %>
+        </div>
+      </div>
+      <br>
+      
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+          <%= label_tag :file, "Add Badge: " %>
+          <%= file_field_tag :file %>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+          <%= submit_tag "Add the Department", class: 'btn btn-primary btn-block' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -4,7 +4,11 @@
     <h3><%= @fallen_hero.department %></h3>
     <h3><%= @fallen_hero.date_deceased.to_datetime.strftime("%m/%d/%Y")%></h3>
     <div id="hero-badge-img">
-      <%= image_tag @fallen_hero.image_url.large || 'original_logo.png', id:"showbadge" %>
+      <% if !@fallen_hero.fallen_hero_image.file.file %>
+        <%= image_tag 'original_logo.png', id:"showbadge" %>
+      <% else %>
+        <%= image_tag @fallen_hero.fallen_hero_image.file, id:"showbadge" %>
+      <% end %>
     </div>
     <p><%= simple_format(@fallen_hero.description) %></p>
     <button class="btn btn-link" onclick="goBack()">Back to the list</button>

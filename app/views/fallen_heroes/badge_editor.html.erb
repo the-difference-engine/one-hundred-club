@@ -1,0 +1,27 @@
+<div class="container">
+  <p class="page-head text-center">Change a Badge</p>
+  <div class="form-group">
+    <%= form_tag '/fallen_heroes/badge_editor', method: :patch, multipart: true  do %>
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+          <%= label_tag :id, "Department: "  %>
+          <%= collection_select( nil, :id, FallenHeroImage.all, :id, :department, {include_blank: true}) %>
+        </div>
+      </div>
+      <br>
+      
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+          <%= label_tag :file, "Add Badge: " %>
+          <%= file_field_tag :file %>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+          <%= submit_tag "Edit Badge", class: 'btn btn-primary btn-block' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

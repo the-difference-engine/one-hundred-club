@@ -1,3 +1,3 @@
 class Siren < ActiveRecord::Base
-  mount_uploader :siren, SirenUploader
+  mount_uploader :pdf, SirenUploader
 end
