@@ -22,7 +22,7 @@ class FallenHeroesController < ApplicationController
       date_deceased: params[:date_deceased],
       department: params[:department],
       description: params[:description],
-      fallen_hero_image_id: params[:FallenHero][:fallen_hero_image_id]
+      fallen_hero_image_id: params[:fallen_hero_image_id]
     )
     if @fallen_hero.save
       redirect_to "/fallen_heroes/#{@fallen_hero.id}"
@@ -79,7 +79,6 @@ class FallenHeroesController < ApplicationController
   def update_badge
     fallen_hero_image = FallenHeroImage.find_by(id: params[:id])
     fallen_hero_image.update(
-      department: params[:department],
       file: params[:file]
       ) 
     redirect_to "/fallen_heroes"

@@ -5,7 +5,7 @@
       <div class="row">
         <div class="col-xs-8 col-xs-offset-2">
           <%= label_tag :id, "Department: "  %>
-          <%= collection_select( nil, FallenHeroImage.all, :id, :department, {include_blank: true}) %>
+          <%= collection_select( nil, :id, FallenHeroImage.all, :id, :department, {include_blank: true}) %>
         </div>
       </div>
       <br>
