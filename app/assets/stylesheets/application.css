@@ -28,6 +28,7 @@
 
 .white {
   background-color: white;
+  border: none;
 }
 
 .navbar-category:hover {
