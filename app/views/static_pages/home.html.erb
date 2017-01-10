@@ -15,14 +15,12 @@
 <!-- News and Events -->
 <div class="container">
 
-  <div class="top-boxes">
+<div class="top-boxes">
     <div class="home_news">
-      <div class="row">
-        <div class="col-sm-12">
-          <p class="miniheading">Latest News</p>
-          <div id="news-line"></div>
-          <a href="/blog_posts" id="nounderline" class="inline"><button type="button" class="read-more center-block" id="news-button">Read more</button></a>
-        </div>
+      <div>
+        <p class="miniheading">Latest News</p>
+        <div id="news-line"></div>
+        <a href="/blog_posts" id="nounderline" class="inline"><button type="button" class="read-more center-block" id="news-button">Read more</button></a>
       </div>
 
       <div class="row">
@@ -49,17 +47,15 @@
     </div>
 
     <div class="home_events">
-      <div class="row">
-        <div class="col-sm-12">
-          <p class="miniheading">Events</p>
-          <div id="events-line"></div>
-          <a href="/events" id="nounderline" class="inline"><button type="button" class="read-more center-block" id="news-button">View all</button></a>
-        </div>
+      <div>
+        <p class="miniheading">Events</p>
+        <div id="events-line"></div>
+        <a href="/events" id="nounderline" class="inline"><button type="button" class="read-more center-block" id="news-button">View all</button></a>
       </div>
       
       <div class="row">
-        <div class="col-sm-4">
-          <div class="col-sm-4 well" id="well-news">
+        <div class="col-sm-6">
+          <div class="col-sm-6 well" id="well-news">
             <% @future_events.each do |event| %>
               <div class="circle_date">
                 <%= event.datetime.strftime("%b") %><br>
