@@ -151,10 +151,14 @@ body {  /* font for all static pages */
 }
 
 #well-news {
-  height: 390px; 
+  height: 400px; 
   width: 290px;
   padding: 9px; 
   border-radius: 3px;
+}
+
+.block-quote {
+  clear: both;
 }
 
 /* ---------------- about page ---------------- */
@@ -214,6 +218,8 @@ body {  /* font for all static pages */
 .about-box {
   min-height: 470px;
 }
+
+.about
 
 /* ----------------  ---------------- */
 
@@ -338,12 +344,11 @@ body {  /* font for all static pages */
   margin: 10px 15px 0 0;
   padding: 11px 10px 10px 20px;
   font-style: normal;
-}
+} 
 
 .programs {
   border-color: #bc9b5d;
 }
-
 
 .ourprograms {
   padding-top: 50px;
@@ -582,6 +587,7 @@ footer p {
   margin-left: 20px;
 }
 /* ---------------- siren ---------------- */
+
 #groove {
   border-style: groove;
   margin-bottom: 20px;
@@ -615,5 +621,3 @@ footer p {
   display: inline-block;
   margin-left: 20px;
 }
-
-
