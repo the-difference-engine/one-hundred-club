@@ -31,11 +31,11 @@
     font-weight: bold;
     color: #BC9B5D; }
   .flickr_pagination a {
-    border: 1px solid #dddddd;
+
     color: #0063dc;
     text-decoration: none; }
     .flickr_pagination a:hover, .flickr_pagination a:focus {
-      border-color: #003366;
+
       background: #0063dc;
       color: white; }
   .flickr_pagination .page_info {
@@ -48,3 +48,6 @@
   .flickr_pagination .next_page {
     margin-left: 1em; }
 
+.blog-content {
+  min-height: 250px;
+}
