@@ -22,7 +22,4 @@ class StaticPagesController < ApplicationController
     render 'contact.html.erb'
   end
 
-  def srien
-    render 'siren.html.erb'
-  end  
 end
