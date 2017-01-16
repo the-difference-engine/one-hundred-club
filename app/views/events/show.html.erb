@@ -9,8 +9,10 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-xs-8 col-xs-offset-2">
+    <div class="col-xs-8 col-xs-offset-2 event-content">
       <p><%= simple_format(@event.description) %></p>
+
+      <%= link_to "Back to Events", "/events" %>
     </div>
   </div>  
   <div class="row">
@@ -22,3 +24,4 @@
   </div>
   <br> 
 </div>
+ 

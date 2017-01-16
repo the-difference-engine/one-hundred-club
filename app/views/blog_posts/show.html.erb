@@ -7,9 +7,9 @@
   </div>
   <br>
   <div class="row">
-    <div class="col-xs-8 col-xs-offset-2">
+    <div class="col-xs-8 col-xs-offset-2 blog-content">
       <p><%= simple_format(@blog_post.content) %></p>
-      <button class="btn btn-link" onclick="goBack()">Back to the news</button>
+      <%= link_to "Back to News", "/blog_posts" %>
     </div>
   </div>
   <div class="row">
