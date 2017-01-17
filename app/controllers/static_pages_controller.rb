@@ -25,4 +25,8 @@ class StaticPagesController < ApplicationController
   def srien
     render 'siren.html.erb'
   end  
+
+  def donors_and_members
+    @donors = Donation.all
+  end
 end

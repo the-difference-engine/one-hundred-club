@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/home' => 'static_pages#home'
   get '/programs' => 'static_pages#programs'
   get '/contact' => 'static_pages#contact'
+  get '/donors_and_members' => 'static_pages#donors_and_members'
   ##########################################################
   get '/fallen_heroes' => 'fallen_heroes#index'
   get '/fallen_heroes/new' => 'fallen_heroes#new'
@@ -43,7 +44,7 @@ Rails.application.routes.draw do
   get '/donations/:id/edit' => 'donations#edit'
   patch '/donations/:id' => 'donations#update'
   ##########################################################
-  get '/users' => 'users#index'
+  get '/users' => 'users#index', as: :user_root
   get '/users/new' => 'users#new'
   post '/users' => 'users#create'
   get '/users/:id' => 'users#show'
