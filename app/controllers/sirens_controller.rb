@@ -1,7 +1,8 @@
 class SirensController < ApplicationController
   def index
-    @sirens = Siren.all
+    @sirens = Siren.first(Siren.count - 1).reverse
     render 'index.html.erb'
+
   end
 
   def new
@@ -23,6 +24,7 @@ class SirensController < ApplicationController
 
   def show
     @siren = Siren.find_by(id: params[:id])
+    @sirens = Siren.all.reverse
     render 'show.html.erb'
   end
 
