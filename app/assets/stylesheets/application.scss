@@ -16,8 +16,10 @@
  *= require font-awesome
  */
 
-.stick-to-bottom {
-  padding-top: 60px;
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%; 
 }
 
 .navbar .navbar-collapse {
