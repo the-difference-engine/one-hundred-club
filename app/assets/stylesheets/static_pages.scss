@@ -103,7 +103,6 @@ body {  /* font for all static pages */
   padding-top: 10px;
   padding-left: 10px;
   line-height: 1;
-  border-bottom: 1px solid #bc9b5d;
 }
 
 .event_info:last-child {
@@ -159,6 +158,13 @@ body {  /* font for all static pages */
 
 .block-quote {
   clear: both;
+}
+
+.news-title {
+  font-size: 16px;
+  font-weight: bold; 
+  color: #002E5D;
+  margin-bottom: 4px;
 }
 
 /* ---------------- about page ---------------- */
@@ -299,6 +305,12 @@ body {  /* font for all static pages */
 }
 
 .wellBody {
+  color: #605e5e;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.newsText {
+  border-bottom: 1px solid #bc9b5d;
   color: #605e5e;
   padding-left: 10px;
   padding-right: 10px;

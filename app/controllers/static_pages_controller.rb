@@ -1,9 +1,10 @@
 class StaticPagesController < ApplicationController
   def home
-    # news - last 2 by created date
-    @recent_news = BlogPost.last(2)
-    # events - date >= today - limit 4
-    @future_events = Event.where('datetime >= ?', Date.today).first(4)
+    # news - last 3 by created date
+    @recent_news = BlogPost.first(3)
+    
+    # @future_events = Event.where('datetime >= ?', Date.today).first(4)
+    @events = Event.last(2)
     @event = Event.find_by(id: params[:id])
     render 'home.html.erb'
   end
