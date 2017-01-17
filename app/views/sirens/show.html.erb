@@ -4,13 +4,10 @@
       <div class="dropdown inline">
         <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
         Archives  <span class="caret"></span></button>
-         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-          <li><a href="/sirens/10">2016 Volume II</a></li>
-          <li><a href="/sirens/9">2016 Volume I</a></li>
-          <li><a href="/sirens/8">Winter 2014</a></li>
-          <li><a href="/sirens/7">Summer 2014</a></li>
-          <li><a href="/sirens/6">Spring 2014</a></li>
-          <li><a href="/sirens/5">Fall 2013</a></li>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <% @sirens.each do |siren| %>
+            <li><a href="/sirens/<%= siren.id.to_s %>"><%= siren.title %></a></li>
+          <% end %>
           <li><a target="_blank" href="https://issuu.com/100clubchicago/docs/summer2013-version5">Summer 2013</a></li>
           <li><a target="_blank" href="https://issuu.com/100clubchicago/docs/spring2013-version2">Spring 2013</a></li>
           <li><a target="_blank" href="https://issuu.com/100clubchicago/docs/winter_newsletter_version_11-6_1_?e=6667187/2600530">Winter 2013</a></li>

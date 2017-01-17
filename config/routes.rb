@@ -67,7 +67,6 @@ Rails.application.routes.draw do
   delete '/sirens/:id' => 'sirens#destroy'
   ##########################################################
   get '/about' => 'static_pages#about'
-  get '/siren' => 'static_pages#siren'
   ##########################################################
   get '/supporters' => 'supporters#index'
   ##########################################################

@@ -103,7 +103,6 @@ body {  /* font for all static pages */
   padding-top: 10px;
   padding-left: 10px;
   line-height: 1;
-  border-bottom: 1px solid #bc9b5d;
 }
 
 .event_info:last-child {
@@ -159,6 +158,13 @@ body {  /* font for all static pages */
 
 .block-quote {
   clear: both;
+}
+
+.news-title {
+  font-size: 16px;
+  font-weight: bold; 
+  color: #002E5D;
+  margin-bottom: 4px;
 }
 
 /* ---------------- about page ---------------- */
@@ -303,6 +309,12 @@ body {  /* font for all static pages */
   padding-left: 10px;
   padding-right: 10px;
 }
+.newsText {
+  border-bottom: 1px solid #bc9b5d;
+  color: #605e5e;
+  padding-left: 10px;
+  padding-right: 10px;
+}
 
 .readMore {
   font-size: 16px;
@@ -310,11 +322,6 @@ body {  /* font for all static pages */
   color: #605e5e;
   font-style: italic;
   margin-left: 11px;
-}
-
-.supporters {
-  clear: both;
-  height: 300px;
 }
 
 .supporterImg {
@@ -358,6 +365,7 @@ body {  /* font for all static pages */
   text-align: center;
   width: 100%;
   clear: both;
+  margin-bottom: 59px;
 }
 
 .eachprogram {

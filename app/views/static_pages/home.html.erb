@@ -18,45 +18,17 @@
 <div class="top-boxes">
     <div class="home_news">
       <div>
-        <p class="miniheading">Latest News</p>
+        <p class="miniheading">Events</p>
         <div id="news-line"></div>
         <a href="/blog_posts" id="nounderline" class="inline"><button type="button" class="read-more center-block" id="news-button">Read more</button></a>
       </div>
 
       <div class="row">
-        <div class="col-sm-6">
-          <div class="col-sm-6 well" id="well-news">
-            <img class="img-responsive wellImg" src="<%= asset_path 'police_luncheon.jpg' %>">
-            <br>
-            <p class="wellDate"><%=@recent_news.first.created_at.strftime("%m/%d/%Y")%></p>
-            <p class="wellTitle"><%=@recent_news.first.title%></p>
-            <p class="wellBody"><%=@recent_news.first.content.truncate(75)%> <a class="readMore" href="/blog_posts/<%=@recent_news.first.id%>">Read More</a></p>
-          </div>
-        </div>
-
-        <div class="col-sm-6">
-          <div class="col-sm-6 well" id="well-news">
-            <img class="img-responsive wellImg" src="<%= asset_path 'paris_club_night.jpg' %>">
-            <br>
-            <p class="wellDate"><%=@recent_news.last.created_at.strftime("%m/%d/%Y")%></p>
-            <p class="wellTitle"><%=@recent_news.last.title%></p>
-            <p class="wellBody"><%=@recent_news.last.content.truncate(75)%> <a class="readMore" href="/blog_posts/<%=@recent_news.last.id%>">Read More</a></p>
-          </div>
-        </div> 
-      </div>
-    </div>
-
-    <div class="home_events">
-      <div>
-        <p class="miniheading">Events</p>
-        <div id="events-line"></div>
-        <a href="/events" id="nounderline" class="inline"><button type="button" class="read-more center-block" id="news-button">View all</button></a>
-      </div>
-      
-      <div class="row">
-        <div class="col-sm-6">
-          <div class="col-sm-6 well" id="well-news">
-            <% @future_events.each do |event| %>
+        <% @events.each do |event| %>
+          <div class="col-sm-6">
+            <div class="col-sm-6 well" id="well-news">
+              <img class="img-responsive wellImg" src="<%= asset_path 'police_luncheon.jpg' %>">
+              <br>
               <div class="circle_date">
                 <%= event.datetime.strftime("%b") %><br>
                 <%= event.datetime.strftime("%d") %>    
@@ -66,6 +38,37 @@
                 <p><%= image_tag("Time.png", :size => "17x17") %> <%= event.datetime.strftime("%I:%M %p").downcase %></p>
                 <p><%= image_tag("Locator.png", :size => "15x20") %> <%= event.location %></p>
               </div>
+              <!-- <p class="wellTitle"><%=event.title%></p> -->
+              <p class="wellBody"><%=event.description.truncate(75)%> <a class="readMore" href="/events/<%=event.id%>">Read More</a></p>
+            </div>
+          </div>
+
+        <!-- <div class="col-sm-6">
+          <div class="col-sm-6 well" id="well-news">
+            <img class="img-responsive wellImg" src="<%= asset_path 'paris_club_night.jpg' %>">
+            <br>
+            <p class="wellDate"><%=@recent_news.last.created_at.strftime("%m/%d/%Y")%></p>
+            <p class="wellTitle"><%=@recent_news.last.title%></p>
+            <p class="wellBody"><%=@recent_news.last.content.truncate(75)%> <a class="readMore" href="/blog_posts/<%=@recent_news.last.id%>">Read More</a></p>
+          </div>
+        </div>  -->
+        <% end %>
+      </div>
+    </div>
+
+    <div class="home_events">
+      <div>
+        <p class="miniheading">News</p>
+        <div id="events-line"></div>
+        <a href="/events" id="nounderline" class="inline"><button type="button" class="read-more center-block" id="news-button">View all</button></a>
+      </div>
+      
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="col-sm-6 well" id="well-news">
+            <% @recent_news.each do |blog_post| %>
+              <h4 class="news-title"> <%= blog_post.title %> </h4>
+              <p class="newsText"> <%= blog_post.content.truncate(75) %><a class="readMore" href="/blog_posts/<%=blog_post.id%>">Read More</a></p>
             <% end %>
           </div>   
         </div>
@@ -125,18 +128,6 @@
           <span class="action">benefited<br> from this</span>
         </div>
       </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-lg-12 supporters">
-      <br>
-      <p class="text-center wellTitle">Special Thanks to Our Supporters</p>
-        <img class="img-responsive col-lg-3 supporterImg" src="<%= asset_path '' %>">
-        <img class="img-responsive supporterImg" src="<%= asset_path '' %>">
-        <img class="img-responsive supporterImg" src="<%= asset_path '' %>">
-        <img class="img-responsive supporterImg" src="<%= asset_path '' %>">
-        <img class="img-responsive supporterImg" src="<%= asset_path '' %>">
     </div>
   </div>
 </div>
