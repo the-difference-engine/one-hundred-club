@@ -100,7 +100,7 @@ body {  /* font for all static pages */
 
 .event_info {
   font-size: 15px;
-  padding-top: 10px;
+  padding-top: 0px;
   padding-left: 10px;
   line-height: 1;
 }
@@ -291,7 +291,7 @@ body {  /* font for all static pages */
 .wellDate {
   display: inline;
   color: #bc9b5d;
-  font-size: 20px;
+  font-size: 18px;
   padding-left: 10px;
   padding-right: 10px;
 }
@@ -310,10 +310,11 @@ body {  /* font for all static pages */
   padding-right: 10px;
 }
 .newsText {
-  border-bottom: 1px solid #bc9b5d;
+  border-bottom: .5px dotted #bc9b5d;
   color: #605e5e;
   padding-left: 10px;
   padding-right: 10px;
+  margin-bottom: 16px;
 }
 
 .readMore {
@@ -614,18 +615,18 @@ footer p {
   margin-left: 15px;
 }
 
-#news-line {
+#events-line {
   height: 21px;
   border-bottom: 1px solid rgba(201, 182, 145, 1);
-  width: 61%;
+  width: 69%;
   display: inline-block;
   margin-left: 20px;
 }
 
-#events-line {
+#news-line {
   height: 21px;
   border-bottom: 1px solid rgba(201, 182, 145, 1);
-  width: 35%;
+  width: 39%;
   display: inline-block;
   margin-left: 20px;
 }
