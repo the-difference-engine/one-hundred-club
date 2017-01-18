@@ -29,26 +29,14 @@
             <div class="col-sm-6 well" id="well-news">
               <img class="img-responsive wellImg" src="<%= asset_path 'police_luncheon.jpg' %>">
               <br>
-              <p class="wellDate"><%= event.datetime.strftime("%m/%d/%Y") %></p><br>
+              <p class="wellDate"><%= event.datetime.strftime("%b %d, %Y") %></p><br>
               <div class="event_info">
                 <p><a href="/events/<%= event.id %>" class="event-heading"><%= event.title %></a></p>
-                <!-- <p><%= image_tag("Time.png", :size => "17x17") %> <%= event.datetime.strftime("%I:%M %p").downcase %></p> -->
                 <p class="text-center"><%= image_tag("Locator.png", :size => "15x20") %> <%= event.location %></p>
               </div>
-              <!-- <p class="wellTitle"><%=event.title%></p> -->
               <p class="wellBody"><%=event.description.truncate(80)%> <a class="readMore" href="/events/<%=event.id%>">Read More</a></p>
             </div>
           </div>
-
-        <!-- <div class="col-sm-6">
-          <div class="col-sm-6 well" id="well-news">
-            <img class="img-responsive wellImg" src="<%= asset_path 'paris_club_night.jpg' %>">
-            <br>
-            <p class="wellDate"><%=@recent_news.last.created_at.strftime("%m/%d/%Y")%></p>
-            <p class="wellTitle"><%=@recent_news.last.title%></p>
-            <p class="wellBody"><%=@recent_news.last.content.truncate(75)%> <a class="readMore" href="/blog_posts/<%=@recent_news.last.id%>">Read More</a></p>
-          </div>
-        </div>  -->
         <% end %>
       </div>
     </div>
@@ -65,7 +53,7 @@
           <div class="col-sm-6 well" id="well-news">
             <% @recent_news.each do |blog_post| %>
               <h4 class="news-title"> <%= blog_post.title %> </h4>
-              <p class="newsText"> <%= blog_post.content.truncate(100) %><a class="readMore" href="/blog_posts/<%=blog_post.id%>">Read More</a></p>
+              <p class="newsText"> <%= blog_post.content.truncate(110) %><a class="readMore" href="/blog_posts/<%=blog_post.id%>">Read More</a></p>
             <% end %>
           </div>   
         </div>

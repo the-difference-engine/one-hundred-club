@@ -310,10 +310,11 @@ body {  /* font for all static pages */
   padding-right: 10px;
 }
 .newsText {
-  border-bottom: 1px solid #bc9b5d;
+  border-bottom: .5px dotted #bc9b5d;
   color: #605e5e;
   padding-left: 10px;
   padding-right: 10px;
+  margin-bottom: 16px;
 }
 
 .readMore {
