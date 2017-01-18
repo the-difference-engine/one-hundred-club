@@ -1,4 +1,5 @@
 class DonationsController < ApplicationController
+  before_action :custom_authenticate_user!, except: [:new, :create]
   def index
     @donations = Donation.where(member_id: nil).order(created_at: :desc) 
 

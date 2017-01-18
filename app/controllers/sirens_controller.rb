@@ -1,4 +1,5 @@
 class SirensController < ApplicationController
+  before_action :custom_authenticate_user!, except: [:index, :show]
   def index
     @sirens = Siren.first(Siren.count - 1).reverse
     render 'index.html.erb'
