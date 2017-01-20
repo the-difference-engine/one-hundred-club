@@ -1,6 +1,26 @@
 class DonationsController < ApplicationController
+
   before_action :custom_authenticate_user!, except: [:new, :create]
+
   def index
+    @donations = Donation.all
+
+    total = []
+
+    @donations.each do |donation|
+      total << donation.amount
+    end
+
+    @total = total.sum
+
+  end
+
+  def show
+    @donation = Donation.find_by(id: params[:id])
+    render 'show.html.erb'
+  end
+
+  def match
     @donations = Donation.where(member_id: nil).order(created_at: :desc) 
 
     @matching_phone_numbers = []
@@ -14,7 +34,7 @@ class DonationsController < ApplicationController
         @matching_emails << member.email
       end
     end
-    render 'index.html.erb'
+    render 'match.html.erb'
   end  
 
   def new
