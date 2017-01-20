@@ -1,5 +1,7 @@
 class DonationsController < ApplicationController
 
+  before_action :custom_authenticate_user!, except: [:new, :create]
+
   def index
     @donations = Donation.all
 
