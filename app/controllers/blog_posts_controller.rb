@@ -13,7 +13,8 @@ class BlogPostsController < ApplicationController
     @blog_post = BlogPost.create(
       title: params[:title],
       content: params[:content],
-      image: params[:image]
+      image: params[:image],
+      link: params[:link]
     )
     if @blog_post.save
       redirect_to "/blog_posts/#{@blog_post.id}"
@@ -37,6 +38,7 @@ class BlogPostsController < ApplicationController
       title: params[:title],
       content: params[:content],
       image: params[:image],
+      link: params[:link],
       remove_image: params[:remove_image]
     )
     flash[:success] = 'Your blog post has been updated!'
