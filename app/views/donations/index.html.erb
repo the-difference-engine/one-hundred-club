@@ -22,6 +22,7 @@
         <th id="donation-email">Email</th>
         <th id="donation-phone">Phone</th>
         <th id="donation-donation">Donation</th>
+        <th id="donation-donation"></th>
       </tr>
 
       <% @donations.each do |donation| %>
@@ -58,6 +59,14 @@
           </td>
           <td>
             $<%= donation.amount %>
+          </td>
+          <td>
+            $<%= donation.amount %>
+          </td>
+          <td>
+            <% if user_signed_in? %>
+        <a href="/donations/<%= donation.id %>">View</a>
+      <% end %>
           </td>
         </tr>
       <% end %>

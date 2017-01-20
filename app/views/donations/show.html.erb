@@ -40,14 +40,11 @@
 
             $<%= @donation.amount %>
 
-      <%= link_to "Back to Donations", "/donations" %>
     </div>
   </div>  
   <div class="row">
     <div class="col-xs-8 col-xs-offset-2">
-      <% if user_signed_in? %>
-        <%= link_to "Edit Donation", "/donations/#{@donation.id}/edit", method: :get, class: 'btn btn-primary btn-block' %>
-      <% end %>
+    	<%= link_to "Back to Donations", "/donations" %>
     </div>
   </div>
   <br> 
