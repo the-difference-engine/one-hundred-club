@@ -65,6 +65,11 @@ class MembersController < ApplicationController
     end
   end
 
+  def show
+    @member = Member.find_by(id: params[:id])
+    render 'show.html.erb'
+  end
+
   def admin_entered_member
     @manual_member = Member.create(
       level: params[:level],
