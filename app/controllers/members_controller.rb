@@ -24,7 +24,6 @@ class MembersController < ApplicationController
       email: params[:email],
       phone_number: params[:phone_number]
      )
-    
     @amount = params[:amount]
     nonce_from_the_client = params[:payment_method_nonce]
     result = Braintree::Transaction.sale(
@@ -34,7 +33,6 @@ class MembersController < ApplicationController
         submit_for_settlement: true
       }
     )
-
     if result.success? && member.check_amount(@amount)
       member.save
       puts 'success!: #{result.transaction.id}'
@@ -54,7 +52,6 @@ class MembersController < ApplicationController
         amount: params[:amount],
         bt_transaction_id: result.transaction.id
       )
-
       if @donation.save
         redirect_to "/donations/#{@donation.id}"
       else
