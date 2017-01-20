@@ -35,6 +35,7 @@ Rails.application.routes.draw do
   patch 'members/:id' => 'members#update'
   ##########################################################
   get '/donations' => 'donations#index'
+  get '/donations/match' => 'donations#match'
   get '/donations/new' => 'donations#new'
   post '/donations' => 'donations#create'
   get '/donations/manual_donations' => 'donations#manual_donations'
