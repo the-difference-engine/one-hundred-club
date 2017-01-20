@@ -5,13 +5,13 @@ class MembersController < ApplicationController
   end
 
   def new
-  	@token = Braintree::ClientToken.generate
+    @token = Braintree::ClientToken.generate
     render 'new.html.erb'
   end
 
   def create
-    member = Member.create(
-    	title: params[:title],
+    member = Member.new(
+      title: params[:title],
       first_name: params[:first_name],
       middle_name: params[:middle_name],
       last_name: params[:last_name],
@@ -23,17 +23,20 @@ class MembersController < ApplicationController
       country: params[:country],
       email: params[:email],
       phone_number: params[:phone_number]
-  		)
-
-  	nonce_from_the_client = params[:payment_method_nonce]
+     )
+    
+    @amount = params[:amount]
+    nonce_from_the_client = params[:payment_method_nonce]
     result = Braintree::Transaction.sale(
-      amount: params[:amount],
+      amount: @amount,
       payment_method_nonce: nonce_from_the_client,
       options: {
         submit_for_settlement: true
       }
     )
-    if result.success?
+
+    if result.success? && member.check_amount(@amount)
+      member.save
       puts 'success!: #{result.transaction.id}'
       @donation = Donation.create(
         title: params[:title],
@@ -51,6 +54,7 @@ class MembersController < ApplicationController
         amount: params[:amount],
         bt_transaction_id: result.transaction.id
       )
+
       if @donation.save
         redirect_to "/donations/#{@donation.id}"
       else
@@ -58,8 +62,8 @@ class MembersController < ApplicationController
       end
     elsif result.transaction
       puts 'Error processing transaction:'
-      puts '  code: #{result.transaction.processor_response_code}'
-      puts '  text: #{result.transaction.processor_response_text}'
+      puts 'code: #{result.transaction.processor_response_code}'
+      puts 'text: #{result.transaction.processor_response_text}'
     end
   end
 
