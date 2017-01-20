@@ -1,0 +1,51 @@
+<div class="container">
+
+  <div class="row">
+    <div class="col-xs-8 col-xs-offset-2">
+      <th id="donation-date">Date</th>
+      <th id="donation-name">Name</th>
+      <th id="donation-address">Address</th>
+      <th id="donation-email">Email</th>
+      <th id="donation-phone">Phone</th>
+      <th id="donation-donation">Donation</th> 
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-8 col-xs-offset-2">
+
+      	<%= @donation.created_at.strftime("%m/%d/%Y") %>
+
+            <%= @donation.first_name %> <%=@donation.last_name %>
+
+            <% if @donation.address %>
+              <%= @donation.address %> 
+            <% end %>
+            <% if @donation.city %>
+              <%= @donation.city %>, 
+            <% end %>
+            <% if @donation.state %>
+              <%= @donation.state %>
+            <% end %>
+            <% if @donation.zip_code %>
+              <%= @donation.zip_code %>
+            <% end %>
+
+            <% if @donation.email != nil %>
+              <%= @donation.email %>
+            <% end %>
+
+            <% if @donation.phone_number != nil %>
+              <%= @donation.phone_number %>
+            <% end %>
+
+            $<%= @donation.amount %>
+
+    </div>
+  </div>  
+  <div class="row">
+    <div class="col-xs-8 col-xs-offset-2">
+    	<%= link_to "Back to Donations", "/donations" %>
+    </div>
+  </div>
+  <br> 
+</div>
