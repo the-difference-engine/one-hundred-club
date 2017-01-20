@@ -18,7 +18,7 @@
       <% @members.each do |member| %>
         <tr>
           <td>
-            <%= member.first_name %> <%= member.last_name %>
+            <%= link_to "#{member.first_name} #{member.last_name}", "members/#{member.id}" %>
           </td>
           <td>
             <%= member.address %> 
@@ -47,4 +47,4 @@
       <%= will_paginate @blog_posts %> 
   </div>
   </div>
-</div>  
+</div>
