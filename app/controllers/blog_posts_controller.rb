@@ -1,4 +1,5 @@
 class BlogPostsController < ApplicationController
+  before_action :custom_authenticate_user!, except: [:index, :show]
   def index
     @q = BlogPost.ransack(params[:q])
     @blog_posts = @q.result(distinct: true).paginate(page: params[:page], per_page: 6)

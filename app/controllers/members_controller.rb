@@ -1,4 +1,5 @@
 class MembersController < ApplicationController
+  before_action :custom_authenticate_user!
   def index
     @q = Member.ransack(params[:q])
     @members = @q.result(distinct: true).order(created_at: :desc).paginate(page: params[:page], per_page: 10)

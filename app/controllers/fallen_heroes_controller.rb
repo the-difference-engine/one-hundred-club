@@ -1,5 +1,5 @@
 class FallenHeroesController < ApplicationController
-  
+  before_action :custom_authenticate_user!, except: [:index, :show]
   def index
     @first_heroes = FallenHero.where("date_deceased > ?", '2009-12-31').sort_by(&:date_deceased).reverse
     @second_heroes= FallenHero.where("date_deceased": '2000-01-01'..'2009-12-31').sort_by(&:date_deceased).reverse

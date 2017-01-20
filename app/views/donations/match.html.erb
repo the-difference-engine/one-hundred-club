@@ -1,16 +1,8 @@
-<div ng-app="app">
-  <div ng-controller="aboutCtrl">
-
-<div class="container">
+ <div class="container">
 
   <div class="row"> 
 
     <h1 class="donations-headers">Donations</h1>
-
-    <br>
-
-    <p>Number of Donations: <%= @donations.length %></p>
-    <p>Total Amount Donated: <%= number_to_currency(@total) %></p>
 
     <br>
 
@@ -22,7 +14,7 @@
         <th id="donation-email">Email</th>
         <th id="donation-phone">Phone</th>
         <th id="donation-donation">Donation</th>
-        <th id="donation-donation"></th>
+        <th id="donation-member">Member</th>
       </tr>
 
       <% @donations.each do |donation| %>
@@ -61,12 +53,13 @@
             $<%= donation.amount %>
           </td>
           <td>
-            $<%= donation.amount %>
-          </td>
-          <td>
-            <% if user_signed_in? %>
-        <a href="/donations/<%= donation.id %>">View</a>
-      <% end %>
+            <!-- if donation has possible matches, display 'view matches' link -->
+            <% if @matching_names.include?(donation.last_name) || @matching_emails.include?(donation.email) || @matching_phone_numbers.include?(donation.phone_number)  %>  
+              <a href="/donations/<%= donation.id %>/edit">View Matches</a>
+            <!-- if donation has no possible matches, display 'no matches' -->
+            <% else %>
+              <p>No Matches</p>
+            <% end %>
           </td>
         </tr>
       <% end %>
@@ -74,6 +67,3 @@
     <br>
   </div>
 </div>  
-
-	</div>
-</div>
