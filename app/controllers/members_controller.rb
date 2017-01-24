@@ -8,7 +8,7 @@ class MembersController < ApplicationController
   def new
     @token = Braintree::ClientToken.generate
     render 'new.html.erb'
-  end
+  end 
 
   def create
     member = Member.create(

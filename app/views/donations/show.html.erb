@@ -1,22 +1,23 @@
 <div class="container">
 
-  <div class="row">
-    <div class="col-xs-8 col-xs-offset-2">
-      <th id="donation-date">Date</th>
-      <th id="donation-name">Name</th>
-      <th id="donation-address">Address</th>
-      <th id="donation-email">Email</th>
-      <th id="donation-phone">Phone</th>
-      <th id="donation-donation">Donation</th> 
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-8 col-xs-offset-2">
+<table id="donations">
+      <tr>
+        <th id="donation-date">Date</th>
+        <th id="donation-name">Name</th>
+        <th id="donation-address">Address</th>
+        <th id="donation-email">Email</th>
+        <th id="donation-phone">Phone</th>
+        <th id="donation-donation">Donation</th>
+      </tr>
 
-      	<%= @donation.created_at.strftime("%m/%d/%Y") %>
-
+        <tr>
+          <td>
+            <%= @donation.created_at.strftime("%m/%d/%Y") %>
+          </td>
+          <td>
             <%= @donation.first_name %> <%=@donation.last_name %>
-
+          </td>
+          <td>
             <% if @donation.address %>
               <%= @donation.address %> 
             <% end %>
@@ -29,19 +30,24 @@
             <% if @donation.zip_code %>
               <%= @donation.zip_code %>
             <% end %>
-
+          </td>
+          <td>
             <% if @donation.email != nil %>
               <%= @donation.email %>
             <% end %>
-
+          </td>
+          <td>
             <% if @donation.phone_number != nil %>
               <%= @donation.phone_number %>
             <% end %>
-
+          </td>
+          <td>
             $<%= @donation.amount %>
+          </td>
+        </tr>
+    </table>  
 
-    </div>
-  </div>  
+  <br>
   <div class="row">
     <div class="col-xs-8 col-xs-offset-2">
     	<%= link_to "Back to Donations", "/donations" %>
