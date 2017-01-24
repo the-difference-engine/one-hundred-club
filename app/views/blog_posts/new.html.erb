@@ -20,6 +20,13 @@
       <br>
       <div class="row">
         <div class="col-xs-8 col-xs-offset-2">
+          <%= label_tag :link, "Link: " %>
+          <%= text_field_tag :link, nil, class: 'form-control', placeholder: 'Link' %>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
           <div>
             <%= label_tag :image, "Image: " %>
             <%= file_field_tag :image %>
