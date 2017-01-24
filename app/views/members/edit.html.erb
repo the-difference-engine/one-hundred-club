@@ -1,0 +1,108 @@
+<div class="container">
+  <div class="row">
+    <h1 class="members-headers"><%= @member.title %> <%= @member.first_name %> <%= @member.middle_name %>
+                            <%= @member.last_name %> <%= @member.suffix %></h1>
+  </div>
+  <br>
+  <%= form_tag "/members/#{params[:id]}", method: :patch, multipart: true  do %>
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="form-group">
+          <%= label_tag :title, "Title: " %>
+          <%= select_tag :title, options_for_select(title, selected: @member.title), class: 'form-control' %>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="form-group">
+          <%= label_tag :first_name, "First Name: " %>
+          <%= text_field_tag :first_name, @member.first_name, class: 'form-control'  %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="form-group">
+          <%= label_tag :middle_name, "Middle Name: " %>
+          <%= text_field_tag :middle_name, @member.middle_name, class: 'form-control'  %>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="form-group">
+          <%= label_tag :last_name, "Last Name: " %>
+          <%= text_field_tag :last_name, @member.last_name, class: 'form-control'  %>
+        </div>
+      </div>
+    </div>  
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="form-group">
+          <%= label_tag :suffix, "Suffix: " %>
+          <%= text_field_tag :suffix, @member.suffix, class: 'form-control'  %>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="form-group">
+          <%= label_tag :address, "Street Address: " %>
+          <%= text_field_tag :address, @member.address, class: 'form-control'  %>
+        </div>
+      </div>
+    </div>  
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="form-group">
+          <%= label_tag :city, "City: " %>
+          <%= text_field_tag :city, @member.city, class: 'form-control'  %>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="form-group">
+          <%= label_tag :state, "State/Province: " %>
+          <%= select_tag :state, options_for_select(us_states, selected: @member.state), class: 'form-control' %>
+        </div>
+      </div>
+    </div>  
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="form-group">
+          <%= label_tag :zip_code, "Postal Code: " %>
+          <%= text_field_tag :zip_code, @member.zip_code, class: 'form-control'  %>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="form-group">
+          <%= label_tag :country, "Country: " %>
+          <%= select_tag :country, options_for_select(countries), class: 'form-control' %>
+        </div>
+      </div>
+    </div>  
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="form-group">
+          <%= label_tag :email, "E-mail: " %>
+          <%= text_field_tag :email, @member.email, class: 'form-control'  %>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="form-group">
+          <%= label_tag :phone_number, "Phone: " %>
+          <%= text_field_tag :phone_number, @member.phone_number, class: 'form-control'  %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="form-group">
+          <%= label_tag :level, "Membership Level: " %>
+          <%= select_tag :level, options_for_select(member_levels, selected: @member.level), class: 'form-control'  %>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-lg-12">
+        <%= submit_tag "Save Changes", class: 'btn btn-primary btn-block' %>
+      </div>
+    </div>
+    <br>
+  <% end %>  
+</div> 

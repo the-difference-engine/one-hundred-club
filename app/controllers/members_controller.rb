@@ -70,6 +70,32 @@ class MembersController < ApplicationController
     render 'show.html.erb'
   end
 
+  def edit
+    @member = Member.find_by(id: params[:id])
+    render 'edit.html.erb'
+  end
+
+  def update
+    member = Member.find_by(id: params[:id])
+    member.update(
+      title: params[:title],
+      first_name: params[:first_name],
+      middle_name: params[:middle_name],
+      last_name: params[:last_name],
+      suffix: params[:suffix],
+      address: params[:address],
+      city: params[:city],
+      state: params[:state],
+      zip_code: params[:zip_code],
+      country: params[:country],
+      email: params[:email],
+      phone_number: params[:phone_number],
+      level: params[:level]
+    )
+    flash[:success] = 'Member has been updated!'
+    redirect_to '/members'
+  end
+
   def admin_entered_member
     @manual_member = Member.create(
       level: params[:level],
