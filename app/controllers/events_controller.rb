@@ -50,7 +50,8 @@ class EventsController < ApplicationController
       datetime: datetime,
       description: params[:description],
       image: params[:image],
-      location: params[:location]
+      location: params[:location],
+      remove_image: params[:remove_image]
     )
     redirect_to "/events/#{event.id}"
   end
