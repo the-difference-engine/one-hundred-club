@@ -27,14 +27,14 @@
         <% @events.each do |event| %>
           <div class="col-sm-6">
             <div class="col-sm-6 well" id="well-news">
-              <img class="img-responsive wellImg" src="<%= asset_path 'police_luncheon.jpg' %>">
+              <%= image_tag event.image, class:"wellImg" %>
               <br>
               <p class="wellDate"><%= event.datetime.strftime("%b %d, %Y") %></p><br>
               <div class="event_info">
                 <p><a href="/events/<%= event.id %>" class="event-heading"><%= event.title %></a></p>
                 <p class="text-center"><%= image_tag("Locator.png", :size => "15x20") %> <%= event.location %></p>
               </div>
-              <p class="wellBody"><%=event.description.truncate(80)%> <a class="readMore" href="/events/<%=event.id%>">Read More</a></p>
+              <p class="wellBody"><%=event.description.truncate(99)%> <a class="readMore" href="/events/<%=event.id%>">Read More</a></p>
             </div>
           </div>
         <% end %>
