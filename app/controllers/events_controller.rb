@@ -53,6 +53,7 @@ class EventsController < ApplicationController
       location: params[:location],
       remove_image: params[:remove_image]
     )
+    flash[:success] = 'Your event has been updated!'
     redirect_to "/events/#{event.id}"
   end
 
