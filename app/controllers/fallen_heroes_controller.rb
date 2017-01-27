@@ -42,9 +42,9 @@ class FallenHeroesController < ApplicationController
   end
 
   def update
-    fallen_hero = FallenHero.find_by(id: params[:id])
+    @fallen_hero = FallenHero.find_by(id: params[:id])
 
-    fallen_hero.update(
+    @fallen_hero.update(
       rank: params[:rank],
       first_name: params[:first_name],
       middle_name: params[:middle_name],
@@ -54,8 +54,12 @@ class FallenHeroesController < ApplicationController
       description: params[:description],
       fallen_hero_image_id: params[:fallen_hero_image_id]
     )
-    flash[:success] = 'Hero has been updated'
-    redirect_to "/fallen_heroes/#{fallen_hero.id}"
+    if @fallen_hero.save
+      flash[:success] = 'Hero has been updated'
+      redirect_to "/fallen_heroes/#{@fallen_hero.id}"
+    else
+      render 'edit.html.erb'  
+    end  
   end
 
   def badge_uploader

@@ -20,6 +20,7 @@ class BlogPostsController < ApplicationController
       redirect_to "/blog_posts/#{@blog_post.id}"
     else
       render 'new.html.erb'
+
     end
   end
 
@@ -33,16 +34,20 @@ class BlogPostsController < ApplicationController
   end
 
   def update
-    blog_post = BlogPost.find_by(id: params[:id])
-    blog_post.update(
+    @blog_post = BlogPost.find_by(id: params[:id])
+    @blog_post.update(
       title: params[:title],
       content: params[:content],
       image: params[:image],
       link: params[:link],
       remove_image: params[:remove_image]
     )
-    flash[:success] = 'Your blog post has been updated!'
-    redirect_to "/blog_posts/#{blog_post.id}"
+    if @blog_post.save
+      flash[:success] = 'Your blog post has been updated!'
+      redirect_to "/blog_posts/#{@blog_post.id}"
+    else
+      render 'edit.html.erb'
+    end  
   end
 
   def destroy
