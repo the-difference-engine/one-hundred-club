@@ -54,6 +54,7 @@ class FallenHeroesController < ApplicationController
       description: params[:description],
       fallen_hero_image_id: params[:fallen_hero_image_id]
     )
+    flash[:success] = 'Hero has been updated'
     redirect_to "/fallen_heroes/#{fallen_hero.id}"
   end
 
@@ -81,6 +82,7 @@ class FallenHeroesController < ApplicationController
     fallen_hero_image.update(
       file: params[:file]
       ) 
+    flash[:success] = 'Badge has been updated!'
     redirect_to "/fallen_heroes"
   end  
 

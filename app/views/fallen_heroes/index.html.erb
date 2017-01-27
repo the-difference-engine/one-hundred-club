@@ -15,23 +15,21 @@
     </div>
 
     <% if user_signed_in? %>
-    <div class="container"> 
-      <div class="row">
-        <div class="col-xs-8 col-xs-offset-2">
-        <br>
-          <%= link_to "Add Fallen Hero", "/fallen_heroes/new", method: :get, class: 'btn btn-primary btn-block' %>
-        <br>
+      <div class="container"> 
+        <div class="row">
+          <div class="col-xs-8 col-xs-offset-2">
+          <br>
+            <%= link_to "Add Fallen Hero", "/fallen_heroes/new", method: :get, class: 'btn btn-primary btn-block' %>
+          <br>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-8 col-xs-offset-2">
+            <%= link_to "Add Badge to a Dept", "/fallen_heroes/badge_editor", method: :get, class: 'btn btn-primary btn-block' %>
+          <br>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="container"> 
-      <div class="row">
-        <div class="col-xs-8 col-xs-offset-2">
-          <%= link_to "Add Badge to a Dept", "/fallen_heroes/badge_editor", method: :get, class: 'btn btn-primary btn-block' %>
-        <br>
-        </div>
-      </div>
-    </div>
     <% end %>   
     <div class="container">
       <div class="row text-center">

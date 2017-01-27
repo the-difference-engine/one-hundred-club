@@ -1,79 +1,89 @@
-<div ng-app="app">
-  <div ng-controller="aboutCtrl">
-
 <div class="container">
+  <div ng-app="app">
+    <div ng-controller="aboutCtrl">
 
-  <div class="row"> 
+      <div class="row"> 
 
-    <h1 class="donations-headers">Donations</h1>
+        <h1 class="donations-headers">Donations</h1>
 
-    <br>
+        <br>
 
-    <p>Number of Donations: <%= @donations.length %></p>
-    <p>Total Amount Donated: <%= number_to_currency(@total) %></p>
+        <p>Number of Donations: <%= @donations.length %></p>
+        <p>Total Amount Donated: <%= number_to_currency(@total) %></p>
 
-    <br>
+        <div class="col-xs-4 col-xs-offset-2">
+          <%= search_form_for @q do |f| %>
+            <div class="input-group">
+              <%= f.search_field :first_name_or_last_name_or_address_or_state_or_city_or_zip_code_or_email_or_phone_number_or_amount_cont, class: 'form-control', placeholder: 'Search Donations' %>
+              <span class="input-group-btn">
+              <%= f.submit 'Search', class: 'btn btn-default' %>
+              </span>
+            </div>
+          <% end %>
+        </div>
 
-    <table id="donations">
-      <tr>
-        <th id="donation-date">Date</th>
-        <th id="donation-name">Name</th>
-        <th id="donation-address">Address</th>
-        <th id="donation-email">Email</th>
-        <th id="donation-phone">Phone</th>
-        <th id="donation-donation">Donation</th>
-        <th id="donation-donation"></th>
-      </tr>
+        <br><br>
 
-      <% @donations.each do |donation| %>
-        <tr>
-          <td>
-            <%= donation.created_at.strftime("%m/%d/%Y") %>
-          </td>
-          <td>
-            <%= donation.first_name %> <%=donation.last_name %>
-          </td>
-          <td>
-            <% if donation.address %>
-              <%= donation.address %> 
-            <% end %>
-            <% if donation.city %>
-              <%= donation.city %>, 
-            <% end %>
-            <% if donation.state %>
-              <%= donation.state %>
-            <% end %>
-            <% if donation.zip_code %>
-              <%= donation.zip_code %>
-            <% end %>
-          </td>
-          <td>
-            <% if donation.email != nil %>
-              <%= donation.email %>
-            <% end %>
-          </td>
-          <td>
-            <% if donation.phone_number != nil %>
-              <%= donation.phone_number %>
-            <% end %>
-          </td>
-          <td>
-            $<%= donation.amount %>
-          </td>
-          <td>
-            $<%= donation.amount %>
-          </td>
-          <td>
-            <% if user_signed_in? %>
-        <a href="/donations/<%= donation.id %>">View</a>
-      <% end %>
-          </td>
-        </tr>
-      <% end %>
-    </table>
-    <br>
-  </div>
-</div>  
+        <table id="donations">
+          <tr>
+            <th id="donation-date"><%= sort_link(@q, :created_at, 'Date') %></th>
+            <th id="donation-name"><%= sort_link(@q, :first_name, 'Name') %></th>
+            <th id="donation-address"><%= sort_link(@q, :address) %></th>
+            <th id="donation-email"><%= sort_link(@q, :email) %></th>
+            <th id="donation-phone"><%= sort_link(@q, :phone_number, 'Phone') %></th>
+            <th id="donation-donation"><%= sort_link(@q, :amount) %></th>
+            <th id="donation-donation"><%= sort_link(@q, :members_level, 'Level') %></th>
+            <th id="donation-donation"></th>
+          </tr>
 
+          <% @donations.each do |donation| %>
+            <tr>
+              <td>
+                <%= donation.created_at.strftime("%m/%d/%Y") %>
+              </td>
+              <td>
+                <%= donation.first_name %> <%=donation.last_name %>
+              </td>
+              <td>
+                <% if donation.address %>
+                  <%= donation.address %> 
+                <% end %>
+                <% if donation.city %>
+                  <%= donation.city %>, 
+                <% end %>
+                <% if donation.state %>
+                  <%= donation.state %>
+                <% end %>
+                <% if donation.zip_code %>
+                  <%= donation.zip_code %>
+                <% end %>
+              </td>
+              <td>
+                <% if donation.email != nil %>
+                  <%= donation.email %>
+                <% end %>
+              </td>
+              <td>
+                <% if donation.phone_number != nil %>
+                  <%= donation.phone_number %>
+                <% end %>
+              </td>
+              <td>
+                $<%= donation.amount %>
+              </td>
+              <td>
+                <%= donation.member_id %>
+              </td>
+              <td>
+                <a href="/donations/<%= donation.id %>">View</a>
+              </td>
+            </tr>
+          <% end %>
+        </table>
+        
+        <br>
+
+      </div>
+    </div>  
 	</div>
 </div>
