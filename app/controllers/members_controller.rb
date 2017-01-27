@@ -101,6 +101,15 @@ class MembersController < ApplicationController
     redirect_to '/members'
   end
 
+  def destroy
+    member = Member.find_by(id: params[:id])
+    if member.destroy
+      redirect_to '/members'
+    else
+      redirect_to "/members/#{member.id}"
+    end
+  end
+
   def admin_entered_member
     @manual_member = Member.create(
       level: params[:level],
