@@ -1,4 +1,16 @@
 <div class="container">
+  <% if @event.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@event.errors.count, "error") %> 
+          prohibited this event from being saved:</h2>
+
+        <ul>
+        <% @event.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
   <p class="page-head text-center">Edit Event</p>
   <div class="form-group">
     <%= form_tag "/events/#{params[:id]}", method: :patch, multipart: true do %>

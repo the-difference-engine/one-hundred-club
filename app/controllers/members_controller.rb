@@ -11,12 +11,13 @@ class MembersController < ApplicationController
   end
 
   def new
+    @member = Member.new
     @token = Braintree::ClientToken.generate
     render 'new.html.erb'
   end 
 
   def create
-    member = Member.new(
+    @member = Member.new(
       title: params[:title],
       first_name: params[:first_name],
       middle_name: params[:middle_name],
@@ -29,7 +30,7 @@ class MembersController < ApplicationController
       country: params[:country],
       email: params[:email],
       phone_number: params[:phone_number]
-     )
+    )
     @amount = params[:amount]
     nonce_from_the_client = params[:payment_method_nonce]
     result = Braintree::Transaction.sale(
@@ -40,7 +41,7 @@ class MembersController < ApplicationController
       }
     )
     if result.success? && member.check_amount(@amount)
-      member.save
+      @member.save
       puts 'success!: #{result.transaction.id}'
       @donation = Donation.create(
         title: params[:title],
@@ -58,8 +59,8 @@ class MembersController < ApplicationController
         amount: params[:amount],
         bt_transaction_id: result.transaction.id
       )
-      if @donation.save
-        redirect_to "/members/#{member.id}"
+      if @donation.save && @member.save 
+        redirect_to "/donations/#{@donation.id}"
       else
         render 'new.html.erb'
       end
@@ -108,6 +109,10 @@ class MembersController < ApplicationController
     else
       redirect_to "/members/#{member.id}"
     end
+  end
+
+  def manual_members
+    @manual_member = Member.new
   end
 
   def admin_entered_member

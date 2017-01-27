@@ -1,5 +1,17 @@
 <div class="container">
   <div class="row">
+    <% if @siren.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@siren.errors.count, "error") %> 
+          prohibited this siren from being submitted:</h2>
+
+        <ul>
+        <% @siren.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
     <h1 class="text-center">Edit Siren</h1>
     <div class="form-group">
       <%= form_tag "/sirens/#{@siren.id}", method: :patch, multipart: true do %>

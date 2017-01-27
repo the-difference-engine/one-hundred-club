@@ -43,9 +43,9 @@ class EventsController < ApplicationController
   end
 
   def update
-    event = Event.find_by(id: params[:id])
+    @event = Event.find_by(id: params[:id])
     datetime = format_datetime_updates(params[:datetime])
-    event.update(
+    @event.update(
       title: params[:title],
       datetime: datetime,
       description: params[:description],
@@ -53,8 +53,14 @@ class EventsController < ApplicationController
       location: params[:location],
       remove_image: params[:remove_image]
     )
-    flash[:success] = 'Your event has been updated!'
-    redirect_to "/events/#{event.id}"
+    if @event.save
+      flash[:success] = 'Your event has been updated!'
+      redirect_to "/events/#{@event.id}"
+    else 
+      render 'edit.html.erb'  
+      
+    end
+
   end
 
   def destroy

@@ -1,4 +1,16 @@
 <div class="container">
+  <% if @blog_post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@blog_post.errors.count, "error") %> 
+        prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @blog_post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
   <p class="page-head text-center">Create a News Story</p>
   <div class="form-group">
     <%= form_tag '/blog_posts', method: :post, multipart: true do %>
