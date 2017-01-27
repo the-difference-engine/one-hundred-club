@@ -32,7 +32,8 @@ Rails.application.routes.draw do
   post '/members/manual_members' => 'members#admin_entered_member'
   get '/members/:id' => 'members#show'
   get '/members/:id/edit' => 'members#edit'
-  patch 'members/:id' => 'members#update'
+  patch '/members/:id' => 'members#update'
+  delete '/members/:id' => 'members#destroy'
   ##########################################################
   get '/donations' => 'donations#index'
   get '/donations/match' => 'donations#match'
