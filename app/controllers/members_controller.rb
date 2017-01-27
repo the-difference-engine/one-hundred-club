@@ -59,7 +59,7 @@ class MembersController < ApplicationController
         bt_transaction_id: result.transaction.id
       )
       if @donation.save
-        redirect_to "/donations/#{@donation.id}"
+        redirect_to "/members/#{member.id}"
       else
         render 'new.html.erb'
       end

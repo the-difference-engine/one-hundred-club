@@ -477,13 +477,11 @@ Faq.create!([
   {question: "Can I join as an active duty police officer or firefighter?", answer: "Yes, we have many members who are active public safety professionals."},
   {question: "What’s the history of the 100 Club? Where did the name come from?", answer: "In 1950, a Detroit businessman asked 100 of his friends and associates to help the family of a slain police officer. Since then, 100 Clubs have developed in many cities and countries around the world – including the 100 Club of Chicago."}
 ])
-Member.create!([
-  {title: "", first_name: "Francesca", middle_name: "", last_name: "Crist", address: "123 Sesame St.", suffix: "", city: "Chicago", state: "IL", zip_code: "", country: "United States", phone_number: "911", email: "", level: "Gold"},
-  {title: "", first_name: "Alycia", middle_name: "", last_name: "Mills", address: "1 Mills Way", suffix: "", city: "Skokie", state: "IL", zip_code: "", country: "United States", phone_number: "111-111-1111", email: "", level: "Gold"},
-  {title: "", first_name: "Cristian", middle_name: nil, last_name: "Ruecker", address: "1 Main St.", suffix: "", city: "New York", state: "NY", zip_code: "", country: "United States", phone_number: "411", email: "", level: "Lifetime"},
-  {title: nil, first_name: "Alycia", middle_name: nil, last_name: "Mills", address: "2 Alicia St.", suffix: nil, city: "Niles", state: "IL", zip_code: nil, country: nil, phone_number: "222-222-2222", email: nil, level: "Bronze"},
-  {title: nil, first_name: "Ari", middle_name: nil, last_name: "Sendic", address: "123 road", suffix: nil, city: "New York", state: "NY", zip_code: "11375", country: "United States", phone_number: nil, email: "arimsendic@gmail.com", level: "Silver"}
+50.times do
+  Member.create!([
+    {title: ["Mr.","Miss.","Mrs.","Ms."].sample, first_name: Faker::Name.first_name, middle_name: Faker::Name.first_name, last_name: Faker::Name.last_name, address: Faker::Address.street_name, suffix: ["Jr.","Sr.",""].sample, city: "Chicago", state: "IL", zip_code: Faker::Address.zip, country: "United States", phone_number: Faker::PhoneNumber.cell_phone, email: Faker::Internet.email, level: ["Bronze","Silver","Gold","Lifetime"].sample}
 ])
+end
 Siren.create!([
   {title: "Fall 2013", pdf: "2013fall.pdf"},
   {title: "Spring 2014", pdf: "2014spring.pdf"},
