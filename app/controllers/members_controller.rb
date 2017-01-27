@@ -1,12 +1,12 @@
 class MembersController < ApplicationController
-  before_action :custom_authenticate_user!
+  before_action :custom_authenticate_user!, except: [:new, :create]
   def index
     @q = Member.ransack(params[:q])
     @members = @q.result(distinct: true).order(created_at: :desc).paginate(page: params[:page], per_page: 10)
   end
 
   def new
-  	@token = Braintree::ClientToken.generate
+    @token = Braintree::ClientToken.generate
     render 'new.html.erb'
   end 
 

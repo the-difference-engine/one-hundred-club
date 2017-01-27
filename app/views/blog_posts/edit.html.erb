@@ -29,6 +29,7 @@
       <br>
       <div class="row">
         <div class="col-xs-8 col-xs-offset-2">
+            <p>Current file: <%= @blog_post.image.to_s.split("/").last|| "none" %></p> 
           <div>
             <%= label_tag :image, "Choose An Image: " %>
             <%= file_field_tag :image %>

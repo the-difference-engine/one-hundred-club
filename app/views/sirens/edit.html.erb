@@ -12,6 +12,7 @@
         <br>
         <p class="col-xs-8 col-xs-offset-2">Current file: <%= @siren.pdf.to_s.split("/").last %> </p> 
         <div class="row">
+          <p>Current file: <%= @siren.pdf.to_s.split("/").last|| "none" %></p> 
           <div class="col-xs-8 col-xs-offset-2">
             <%= label_tag :pdf, "Edit Pdf:" %>
             <%= file_field_tag :pdf %>

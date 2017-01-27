@@ -7,6 +7,7 @@ BlogPost.delete_all
 FallenHero.delete_all
 Member.delete_all
 Staff.delete_all
+Siren.delete_all
 
 BlogPost.create!([
   {title: "100 Club Featured in Fox Interview", content: "CEO Joe Ahern spoke with Fox 32’s Sylvia Perez along with South Chicago Heights Chief of Police Bill Joyce. Watch the full interview here: http://www.fox32chicago.com/mornings/220251296-video.", image: nil},
