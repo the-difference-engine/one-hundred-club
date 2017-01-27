@@ -98,7 +98,7 @@ class MembersController < ApplicationController
       level: params[:level]
     )
     flash[:success] = 'Member has been updated!'
-    redirect_to '/members'
+    redirect_to "/members/#{member.id}"
   end
 
   def destroy
