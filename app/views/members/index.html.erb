@@ -1,8 +1,44 @@
 <div class="container">
 
+
   <div class="row">
 
     <h1 class="members-headers">Members</h1>
+
+    <br>
+
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+          <%= search_form_for @q, class: '' do |f| %>
+            <div class="input-group">
+              <%= f.search_field :last_name_or_first_name_or_address_or_state_or_country_or_phone_number_or_email_or_level_cont, class: 'form-control', placeholder: 'Search Members' %>
+              <span class="input-group-btn">
+              <%= f.submit 'Search', class: 'btn btn-default' %>
+              </span>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="row">
+      <h4 class="text-center">Total number of Members: <%= @all_members %></h4>
+      </div>
+
+      <div class="row">
+      <h4 class="text-center">Total number of Bronze: <%= @bronze_members %></h4>
+      </div>
+
+      <div class="row">
+      <h4 class="text-center">Total number of Silver: <%= @silver_members %></h4>
+      </div>
+
+      <div class="row">
+      <h4 class="text-center">Total number of Gold: <%= @gold_members %></h4>
+      </div>
+
+      <div class="row">
+      <h4 class="text-center">Total number of Lifetime: <%= @lifetime_members %></h4>
+      </div>
 
     <br>
 

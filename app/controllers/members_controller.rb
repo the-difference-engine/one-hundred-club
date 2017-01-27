@@ -2,7 +2,12 @@ class MembersController < ApplicationController
   before_action :custom_authenticate_user!
   def index
     @q = Member.ransack(params[:q])
-    @members = @q.result(distinct: true).order(created_at: :desc).paginate(page: params[:page], per_page: 10)
+    @members = @q.result(distinct: true).paginate(page: params[:page], per_page: 20)
+    @all_members = @members.count
+    @bronze_members = @members.where(level: 'Bronze').count
+    @silver_members = @members.where(level: 'Silver').count
+    @gold_members = @members.where(level: 'Gold').count
+    @lifetime_members = @members.where(level: 'Lifetime').count
   end
 
   def new
