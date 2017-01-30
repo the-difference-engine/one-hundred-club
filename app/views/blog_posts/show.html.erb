@@ -9,8 +9,9 @@
   <div class="row">
     <div class="col-xs-8 col-xs-offset-2 blog-content">
       <p><%= simple_format(@blog_post.content) %></p>
-      <p class="text-center"><a target="_blank" href="<%= @blog_post.link %>">Click here</a></p>
-
+      <% if @blog_post.link.present? %>
+        <p class="text-center"><a target="_blank" href="<%= @blog_post.link %>">Click here</a></p>
+      <% end %>
       <%= link_to "Back to News", "/blog_posts" %>
     </div>
   </div>
