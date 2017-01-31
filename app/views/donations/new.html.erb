@@ -17,6 +17,8 @@
       you empower families of fallen first responders.</p>
       <% if user_signed_in? %>
         <%= link_to "Donations Index", '/donations', class: 'btn btn-info center-block' %>
+        <br>
+        <%= link_to "Add Manual Donation", '/donations/manual_donations', class: 'btn btn-info center-block' %>
       <% end %>
     <hr>
   </div>
