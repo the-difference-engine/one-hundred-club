@@ -63,58 +63,11 @@ BlogPost.create!([
   {title: "Principal Response Executive", content: "Ullam debitis officiis praesentium numquam. Similique assumenda enim temporibus. Est consequatur in occaecati error hic. Beatae cupiditate vitae.", image: "https://placehold.it/100x100.png"},
   {title: "Central Research Orchestrator", content: "Architecto maxime consequuntur. Ut in sit velit. Rerum qui quia. Eos nisi architecto consequatur fugit placeat nihil enim. Perferendis molestiae rem omnis in ipsam.", image: "https://placehold.it/100x100.png"}
 ])
+75.times do
 Donation.create!([
-  {first_name: "Jettie", last_name: "Anderson", address: nil, title: nil, middle_name: nil, suffix: nil, country: nil, city: nil, state: nil, email: nil, phone_number: nil, zip_code: nil, amount: 8, bt_transaction_id: nil, member_id: nil},
-  {first_name: "Helga", last_name: "Rempel", address: nil, title: nil, middle_name: nil, suffix: nil, country: nil, city: nil, state: nil, email: nil, phone_number: nil, zip_code: nil, amount: 34, bt_transaction_id: nil, member_id: nil},
-  {first_name: "Cruz", last_name: "Franecki", address: nil, title: nil, middle_name: nil, suffix: nil, country: nil, city: nil, state: nil, email: nil, phone_number: nil, zip_code: nil, amount: 29, bt_transaction_id: nil, member_id: nil},
-  {first_name: "Maggie", last_name: "Friesen", address: nil, title: nil, middle_name: nil, suffix: nil, country: nil, city: nil, state: nil, email: nil, phone_number: nil, zip_code: nil, amount: 86, bt_transaction_id: nil, member_id: nil},
-  {first_name: "Aliza", last_name: "Russel", address: nil, title: nil, middle_name: nil, suffix: nil, country: nil, city: nil, state: nil, email: nil, phone_number: nil, zip_code: nil, amount: 85, bt_transaction_id: nil, member_id: nil},
-  {first_name: "Violet", last_name: "Borer", address: nil, title: nil, middle_name: nil, suffix: nil, country: nil, city: nil, state: nil, email: nil, phone_number: nil, zip_code: nil, amount: 34, bt_transaction_id: nil, member_id: nil},
-  {first_name: "Shanie", last_name: "Mueller", address: nil, title: nil, middle_name: nil, suffix: nil, country: nil, city: nil, state: nil, email: nil, phone_number: nil, zip_code: nil, amount: 25, bt_transaction_id: nil, member_id: nil},
-  {first_name: "Dean", last_name: "Moore", address: nil, title: nil, middle_name: nil, suffix: nil, country: nil, city: nil, state: nil, email: nil, phone_number: nil, zip_code: nil, amount: 68, bt_transaction_id: nil, member_id: nil},
-  {first_name: "Eleanora", last_name: "Auer", address: nil, title: nil, middle_name: nil, suffix: nil, country: nil, city: nil, state: nil, email: nil, phone_number: nil, zip_code: nil, amount: 76, bt_transaction_id: nil, member_id: nil},
-  {first_name: "Spencer", last_name: "Koelpin", address: nil, title: nil, middle_name: nil, suffix: nil, country: nil, city: nil, state: nil, email: nil, phone_number: nil, zip_code: nil, amount: 50, bt_transaction_id: nil, member_id: nil},
-  {first_name: "Darwin", last_name: "Haag", address: nil, title: nil, middle_name: nil, suffix: nil, country: nil, city: nil, state: nil, email: nil, phone_number: nil, zip_code: nil, amount: 75, bt_transaction_id: nil, member_id: nil},
-  {first_name: "Macy", last_name: "Gaylord", address: nil, title: nil, middle_name: nil, suffix: nil, country: nil, city: nil, state: nil, email: nil, phone_number: nil, zip_code: nil, amount: 58, bt_transaction_id: nil, member_id: nil},
-  {first_name: "Ryleigh", last_name: "Torp", address: nil, title: nil, middle_name: nil, suffix: nil, country: nil, city: nil, state: nil, email: nil, phone_number: nil, zip_code: nil, amount: 34, bt_transaction_id: nil, member_id: nil},
-  {first_name: "Jerad", last_name: "Wilderman", address: nil, title: nil, middle_name: nil, suffix: nil, country: nil, city: nil, state: nil, email: nil, phone_number: nil, zip_code: nil, amount: 44, bt_transaction_id: nil, member_id: nil},
-  {first_name: "Enola", last_name: "Satterfield", address: nil, title: nil, middle_name: nil, suffix: nil, country: nil, city: nil, state: nil, email: nil, phone_number: nil, zip_code: nil, amount: 76, bt_transaction_id: nil, member_id: nil},
-  {first_name: "Heidi", last_name: "Ondricka", address: nil, title: nil, middle_name: nil, suffix: nil, country: nil, city: nil, state: nil, email: nil, phone_number: nil, zip_code: nil, amount: 41, bt_transaction_id: nil, member_id: nil},
-  {first_name: "Hyman", last_name: "Gaylord", address: nil, title: nil, middle_name: nil, suffix: nil, country: nil, city: nil, state: nil, email: nil, phone_number: nil, zip_code: nil, amount: 49, bt_transaction_id: nil, member_id: nil},
-  {first_name: "Louie", last_name: "Jast", address: nil, title: nil, middle_name: nil, suffix: nil, country: nil, city: nil, state: nil, email: nil, phone_number: nil, zip_code: nil, amount: 33, bt_transaction_id: nil, member_id: nil},
-  {first_name: "Marta", last_name: "Medhurst", address: nil, title: nil, middle_name: nil, suffix: nil, country: nil, city: nil, state: nil, email: nil, phone_number: nil, zip_code: nil, amount: 25, bt_transaction_id: nil, member_id: nil},
-  {first_name: "Tierra", last_name: "Abbott", address: nil, title: nil, middle_name: nil, suffix: nil, country: nil, city: nil, state: nil, email: nil, phone_number: nil, zip_code: nil, amount: 61, bt_transaction_id: nil, member_id: nil},
-  {first_name: "Ada", last_name: "Dooley", address: nil, title: nil, middle_name: nil, suffix: nil, country: nil, city: nil, state: nil, email: nil, phone_number: nil, zip_code: nil, amount: 83, bt_transaction_id: nil, member_id: nil},
-  {first_name: "Lisette", last_name: "Vandervort", address: nil, title: nil, middle_name: nil, suffix: nil, country: nil, city: nil, state: nil, email: nil, phone_number: nil, zip_code: nil, amount: 69, bt_transaction_id: nil, member_id: nil},
-  {first_name: "Katherine", last_name: "Marks", address: nil, title: nil, middle_name: nil, suffix: nil, country: nil, city: nil, state: nil, email: nil, phone_number: nil, zip_code: nil, amount: 98, bt_transaction_id: nil, member_id: nil},
-  {first_name: "Crystal", last_name: "Lehner", address: nil, title: nil, middle_name: nil, suffix: nil, country: nil, city: nil, state: nil, email: nil, phone_number: nil, zip_code: nil, amount: 74, bt_transaction_id: nil, member_id: nil},
-  {first_name: "Keon", last_name: "Purdy", address: nil, title: nil, middle_name: nil, suffix: nil, country: nil, city: nil, state: nil, email: nil, phone_number: nil, zip_code: nil, amount: 6, bt_transaction_id: nil, member_id: nil},
-  {first_name: "Damien", last_name: "McGlynn", address: nil, title: nil, middle_name: nil, suffix: nil, country: nil, city: nil, state: nil, email: nil, phone_number: nil, zip_code: nil, amount: 98, bt_transaction_id: nil, member_id: nil},
-  {first_name: "Berry", last_name: "Lubowitz", address: nil, title: nil, middle_name: nil, suffix: nil, country: nil, city: nil, state: nil, email: nil, phone_number: nil, zip_code: nil, amount: 70, bt_transaction_id: nil, member_id: nil},
-  {first_name: "Berry", last_name: "Goodwin", address: nil, title: nil, middle_name: nil, suffix: nil, country: nil, city: nil, state: nil, email: nil, phone_number: nil, zip_code: nil, amount: 27, bt_transaction_id: nil, member_id: nil},
-  {first_name: "Ally", last_name: "Wunsch", address: nil, title: nil, middle_name: nil, suffix: nil, country: nil, city: nil, state: nil, email: nil, phone_number: nil, zip_code: nil, amount: 79, bt_transaction_id: nil, member_id: nil},
-  {first_name: "Brooks", last_name: "Kilback", address: nil, title: nil, middle_name: nil, suffix: nil, country: nil, city: nil, state: nil, email: nil, phone_number: nil, zip_code: nil, amount: 89, bt_transaction_id: nil, member_id: nil},
-  {first_name: "Alejandrin", last_name: "Ziemann", address: nil, title: nil, middle_name: nil, suffix: nil, country: nil, city: nil, state: nil, email: nil, phone_number: nil, zip_code: nil, amount: 56, bt_transaction_id: nil, member_id: nil},
-  {first_name: "Pablo", last_name: "Brekke", address: nil, title: nil, middle_name: nil, suffix: nil, country: nil, city: nil, state: nil, email: nil, phone_number: nil, zip_code: nil, amount: 40, bt_transaction_id: nil, member_id: nil},
-  {first_name: "Jacky", last_name: "Schoen", address: nil, title: nil, middle_name: nil, suffix: nil, country: nil, city: nil, state: nil, email: nil, phone_number: nil, zip_code: nil, amount: 16, bt_transaction_id: nil, member_id: nil},
-  {first_name: "Ramon", last_name: "Greenholt", address: nil, title: nil, middle_name: nil, suffix: nil, country: nil, city: nil, state: nil, email: nil, phone_number: nil, zip_code: nil, amount: 90, bt_transaction_id: nil, member_id: nil},
-  {first_name: "Mylene", last_name: "Becker", address: nil, title: nil, middle_name: nil, suffix: nil, country: nil, city: nil, state: nil, email: nil, phone_number: nil, zip_code: nil, amount: 35, bt_transaction_id: nil, member_id: nil},
-  {first_name: "Newell", last_name: "Paucek", address: nil, title: nil, middle_name: nil, suffix: nil, country: nil, city: nil, state: nil, email: nil, phone_number: nil, zip_code: nil, amount: 40, bt_transaction_id: nil, member_id: nil},
-  {first_name: "Mallory", last_name: "Labadie", address: nil, title: nil, middle_name: nil, suffix: nil, country: nil, city: nil, state: nil, email: nil, phone_number: nil, zip_code: nil, amount: 74, bt_transaction_id: nil, member_id: nil},
-  {first_name: "Yesenia", last_name: "Klocko", address: nil, title: nil, middle_name: nil, suffix: nil, country: nil, city: nil, state: nil, email: nil, phone_number: nil, zip_code: nil, amount: 7, bt_transaction_id: nil, member_id: nil},
-  {first_name: "Isabell", last_name: "Dietrich", address: nil, title: nil, middle_name: nil, suffix: nil, country: nil, city: nil, state: nil, email: nil, phone_number: nil, zip_code: nil, amount: 81, bt_transaction_id: nil, member_id: nil},
-  {first_name: "Aiden", last_name: "Pollich", address: nil, title: nil, middle_name: nil, suffix: nil, country: nil, city: nil, state: nil, email: nil, phone_number: nil, zip_code: nil, amount: 42, bt_transaction_id: nil, member_id: nil},
-  {first_name: "Alvera", last_name: "Shanahan", address: nil, title: nil, middle_name: nil, suffix: nil, country: nil, city: nil, state: nil, email: nil, phone_number: nil, zip_code: nil, amount: 89, bt_transaction_id: nil, member_id: nil},
-  {first_name: "Ruby", last_name: "Robel", address: nil, title: nil, middle_name: nil, suffix: nil, country: nil, city: nil, state: nil, email: nil, phone_number: nil, zip_code: nil, amount: 69, bt_transaction_id: nil, member_id: nil},
-  {first_name: "Gerard", last_name: "Murray", address: nil, title: nil, middle_name: nil, suffix: nil, country: nil, city: nil, state: nil, email: nil, phone_number: nil, zip_code: nil, amount: 24, bt_transaction_id: nil, member_id: nil},
-  {first_name: "Manley", last_name: "McKenzie", address: nil, title: nil, middle_name: nil, suffix: nil, country: nil, city: nil, state: nil, email: nil, phone_number: nil, zip_code: nil, amount: 2, bt_transaction_id: nil, member_id: nil},
-  {first_name: "Jenifer", last_name: "Heidenreich", address: nil, title: nil, middle_name: nil, suffix: nil, country: nil, city: nil, state: nil, email: nil, phone_number: nil, zip_code: nil, amount: 83, bt_transaction_id: nil, member_id: nil},
-  {first_name: "Rosemarie", last_name: "Koelpin", address: nil, title: nil, middle_name: nil, suffix: nil, country: nil, city: nil, state: nil, email: nil, phone_number: nil, zip_code: nil, amount: 26, bt_transaction_id: nil, member_id: nil},
-  {first_name: "Timmy", last_name: "Boyer", address: nil, title: nil, middle_name: nil, suffix: nil, country: nil, city: nil, state: nil, email: nil, phone_number: nil, zip_code: nil, amount: 56, bt_transaction_id: nil, member_id: nil},
-  {first_name: "Alycia", last_name: "Mills", address: "1 Mills way", title: nil, middle_name: nil, suffix: nil, country: nil, city: nil, state: "Skokie", email: "test3@test3.com", phone_number: "111-111-1111", zip_code: nil, amount: 2, bt_transaction_id: nil, member_id: nil},
-  {first_name: "Francesca", last_name: "Crist", address: "123 Sesame St.", title: nil, middle_name: nil, suffix: nil, country: nil, city: "Chicago", state: "IL", email: "test@test.com", phone_number: "911", zip_code: nil, amount: 26, bt_transaction_id: nil, member_id: nil},
-  {first_name: "Cristian", last_name: "Ruecker", address: "1 Main St.", title: nil, middle_name: nil, suffix: nil, country: nil, city: "New York", state: "NY", email: "test2@test@.com", phone_number: "411", zip_code: nil, amount: 6, bt_transaction_id: nil, member_id: nil}
+  {title: ["Mr.","Miss.","Mrs.","Ms."].sample, first_name: Faker::Name.first_name, middle_name: Faker::Name.first_name, last_name: Faker::Name.last_name, address: Faker::Address.street_name, suffix: ["Jr.","Sr.",""].sample, city: "Chicago", state: "IL", zip_code: Faker::Address.zip, country: "United States", phone_number: Faker::PhoneNumber.cell_phone, email: Faker::Internet.email, amount: rand(10..10000)}
 ])
+end
 Event.create!([
   {image: "https://placehold.it/100x100.png", title: "quod", description: "Iusto delectus non odit. Illo et in qui distinctio. Saepe necessitatibus unde rerum. Sit fugit voluptatem blanditiis mollitia aut eius quas.", datetime: "2016-11-15 23:25:16", location: "677 Dagmar Station"},
   {image: "https://placehold.it/100x100.png", title: "rem", description: "Tenetur ut numquam commodi. Porro consequatur facilis corrupti nostrum neque consequuntur qui. Ad iure fugiat optio nulla numquam et.", datetime: "2016-12-03 03:57:03", location: "12990 Schinner Drives"},
@@ -484,12 +437,12 @@ Faq.create!([
 ])
 end
 Siren.create!([
-  {title: "Fall 2013", pdf: "2013fall.pdf"},
-  {title: "Spring 2014", pdf: "2014spring.pdf"},
-  {title: "Summer 2014", pdf: "2014summer.pdf"},
-  {title: "Winter 2014", pdf: "2014winter.pdf"},
-  {title: "2016 Volume 1", pdf: "2016a.pdf"},
-  {title: "2016 Volume 2", pdf: "2016b.pdf"}
+  {title: "Fall 2013"},
+  {title: "Spring 2014"},
+  {title: "Summer 2014"},
+  {title: "Winter 2014"},
+  {title: "2016 Volume 1"},
+  {title: "2016 Volume 2"}
 ])
 Staff.create!([
   {first_name: "Joe", title: "Chief Executive Officer", category: "Staff", last_name: "Ahern"},
