@@ -3,10 +3,11 @@
     <p class="page-head text-center"><%= @event.title %></p>
   </div>
   <div class="text-center"><%= image_tag @event.image %></div>
+  <br>
   <div class="row">
     <div class="col-xs-8 col-xs-offset-2">
-      <p>Where: <%= @event.location %></p>
-      <p>When: <%= @event.datetime.strftime('%A %b %d, %l:%M %p') %></p> 
+      <p class="history">Where? <%= @event.location %></p>
+      <p class="history">When? <%= @event.datetime.strftime('%A %b %d, %l:%M %p') %></p> 
     </div>
   </div>
   <div class="row">

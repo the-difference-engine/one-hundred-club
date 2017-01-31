@@ -39,6 +39,7 @@ class DonationsController < ApplicationController
   end  
 
   def new
+    @donation = Donation.new
     @token = Braintree::ClientToken.generate
   end 
 
@@ -141,6 +142,7 @@ class DonationsController < ApplicationController
     if @manual_donation.save
       redirect_to "/donations"
     else
+      flash[:warning] = 'Not submitted correctly.  Check your fields'
       render 'manual_donations.html.erb'
     end
   end

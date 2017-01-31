@@ -230,8 +230,7 @@ body {  /* font for all static pages */
 /* ----------------  ---------------- */
 
 .summary-box {
-  padding: 11px 15px 0px 15px;
-  margin-bottom: 0px;
+
 }
 
 .block-quote {
@@ -365,7 +364,6 @@ body {  /* font for all static pages */
 
 .allprograms {
   text-align: center;
-  width: 100%;
   clear: both;
   margin-bottom: 59px;
 }
@@ -384,8 +382,7 @@ body {  /* font for all static pages */
   width: 290px;
   display: inline-block;
   background-color: rgba(237, 237, 237, 100);
-  margin: 10px 0px;
-  text-align: left;
+  text-align: center;
 }
 
 #first_response, #education {
@@ -579,17 +576,6 @@ footer p {
 .social-bottom{
   height: 26px;
   width: 26px; 
-}
-.member-levels {
-  font-size: 18px;
-  width: 97.02px;
-  margin-right: 11px;
-  margin-bottom: 10px;
-  background: #bc9b5d;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-}
-.member-levels:focus {
-  outline: none;
 }
 #border-line {
   height: 1px;

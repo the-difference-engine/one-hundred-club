@@ -3,10 +3,10 @@
 
   angular.module("app").controller("aboutCtrl", function($scope) {
 
-$scope.show = 1;
+    $scope.show = 1;
 
 // ABOUT
-$scope.showAbout = true;
+    $scope.showAbout = true;
 
 $scope.aboutButton = function() {
   hideEverything();
