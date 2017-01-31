@@ -16,6 +16,16 @@
  *= require font-awesome
  */
 
+html{
+    height: 100%;
+}
+
+body{
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+}
+
 .navbar .navbar-collapse {
   background: transparent;
   text-align: center;
