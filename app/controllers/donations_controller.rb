@@ -124,6 +124,7 @@ class DonationsController < ApplicationController
   end
 
   def admin_entered_donation
+    @manual_donation = Donation.new
     @manual_donation = Donation.create(
       title: params[:title],
       first_name: params[:first_name],
