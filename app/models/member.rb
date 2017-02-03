@@ -1,7 +1,7 @@
 class Member < ActiveRecord::Base
   has_many :donations
   validates_presence_of :first_name, :last_name, :address, :city, :state, :zip_code, :phone_number, :level
-  validates_format_of :email, :with => /.+@.+\..+/i 
+  validates_format_of :email, :with => /.+@.+\..+/i, :allow_blank => true 
 
   def check_amount(amount)
     amount = amount.to_i
