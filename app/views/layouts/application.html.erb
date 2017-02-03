@@ -12,7 +12,7 @@
   <!-- Banner -->
   <div class="container">
     <div class="row">
-      <div class="col-lg-12" id="bannerDiv">
+      <div class="col-lg-12">
       <br>
         <h4 id="logoText"> <img id="logo" src="<%= asset_path 'original_logo.png' %>">100 Club of Chicago
           <a target="_blank" href="https://www.instagram.com/100clubchicago/"><img class="img-responsive socialTop" src="<%= asset_path 'instagram_social.png' %>"></a>
@@ -22,7 +22,7 @@
       </div>
     </div>
   </div>
-  <hr>
+  
   <!-- End Banner -->
 
 <!-- Navigation -->
@@ -64,7 +64,7 @@
 
 <!-- End Navigation -->
 
-<br>
+
 
 <% flash.each do |name, message| %>
   <div class="alert alert-<%= name %> alert-dismissible fade in" role="alert">
