@@ -25,7 +25,7 @@ class SirensController < ApplicationController
 
   def show
     @siren = Siren.find_by(id: params[:id])
-    @sirens = Siren.all.reverse
+    @sirens = Siren.all.order(created_at: :desc)
     render 'show.html.erb'
   end
 

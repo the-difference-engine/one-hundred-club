@@ -18,7 +18,12 @@
     min-height: 350px;
     background: transparent;
 }
-
+#headerline {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    border: 0;
+    border-top: 1px solid #eeeeee;
+}
 /* ---------------- fonts ---------------- */
 
 body {  /* font for all static pages */
@@ -71,6 +76,7 @@ body {  /* font for all static pages */
   background-image: image-url("jumbotron.gif");
   background-size: cover;
   height: 55vh;
+  padding-bottom: 350px;
 }
 
 #homeJumbotronText {
