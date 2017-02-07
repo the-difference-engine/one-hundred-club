@@ -25,7 +25,7 @@ class SirensController < ApplicationController
 
   def show
     @siren = Siren.find_by(id: params[:id])
-    @sirens = Siren.all.reverse
+    @sirens = Siren.all.order(created_at: :desc)
     render 'show.html.erb'
   end
 
@@ -40,8 +40,12 @@ class SirensController < ApplicationController
       pdf: params[:pdf],
       remove_pdf: params[:remove_pdf]
     )
-    flash[:success] = 'Siren has been updated!'
-    redirect_to "/sirens/#{@siren.id}"
+    if @siren.save
+      flash[:success] = 'Siren has been updated!'
+      redirect_to "/sirens/#{@siren.id}"
+    else
+      render 'edit.html.erb' 
+    end   
   end
 
   def destroy

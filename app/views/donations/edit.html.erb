@@ -1,6 +1,17 @@
 <div class="container">
   <div class="row">
+    <% if @donation.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@donation.errors.count, "error") %> 
+          prohibited this donation from being submitted:</h2>
 
+        <ul>
+        <% @donation.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
     <h1 class="donation-headers">Donation</h1>
        
     <table id="donations">
@@ -81,9 +92,13 @@
         <%= hidden_field_tag(:amount, @donation.amount) %>
       </div>
 
+      <br>
+
       <div>
         <%= submit_tag "Match Profiles" %>
       </div>
+
+      <br>
 
     <% end %>
   </div>

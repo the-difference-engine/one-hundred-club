@@ -1,6 +1,8 @@
 class EventsController < ApplicationController
+
   include EventsHelper
   before_action :custom_authenticate_user!, except: [:index, :show]
+
   def index
     @events = Event.all
   end
@@ -41,16 +43,24 @@ class EventsController < ApplicationController
   end
 
   def update
-    event = Event.find_by(id: params[:id])
+    @event = Event.find_by(id: params[:id])
     datetime = format_datetime_updates(params[:datetime])
-    event.update(
+    @event.update(
       title: params[:title],
       datetime: datetime,
       description: params[:description],
       image: params[:image],
-      location: params[:location]
+      location: params[:location],
+      remove_image: params[:remove_image]
     )
-    redirect_to "/events/#{event.id}"
+    if @event.save
+      flash[:success] = 'Your event has been updated!'
+      redirect_to "/events/#{@event.id}"
+    else 
+      render 'edit.html.erb'  
+      
+    end
+
   end
 
   def destroy

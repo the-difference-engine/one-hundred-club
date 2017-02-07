@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'errors/not_found'
+
+  get 'errors/internal_server_error'
+
   devise_for :users
   get '/' => 'static_pages#home'
   get '/home' => 'static_pages#home'
@@ -32,9 +36,11 @@ Rails.application.routes.draw do
   post '/members/manual_members' => 'members#admin_entered_member'
   get '/members/:id' => 'members#show'
   get '/members/:id/edit' => 'members#edit'
-  patch 'members/:id' => 'members#update'
+  patch '/members/:id' => 'members#update'
+  delete '/members/:id' => 'members#destroy'
   ##########################################################
   get '/donations' => 'donations#index'
+  get '/donations/match' => 'donations#match'
   get '/donations/new' => 'donations#new'
   post '/donations' => 'donations#create'
   get '/donations/manual_donations' => 'donations#manual_donations'
@@ -43,7 +49,7 @@ Rails.application.routes.draw do
   get '/donations/:id/edit' => 'donations#edit'
   patch '/donations/:id' => 'donations#update'
   ##########################################################
-  get '/users' => 'users#index'
+  get '/users' => 'users#index', as: :user_root
   get '/users/new' => 'users#new'
   post '/users' => 'users#create'
   get '/users/:id' => 'users#show'
@@ -69,6 +75,9 @@ Rails.application.routes.draw do
   get '/about' => 'static_pages#about'
   ##########################################################
   get '/supporters' => 'supporters#index'
+  ##########################################################
+  match "/404", :to => "errors#not_found", :via => :all
+  match "/500", :to => "errors#internal_server_error", :via => :all
   ##########################################################
   namespace :api do
     get '/events' => 'events#index'

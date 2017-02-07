@@ -1,5 +1,16 @@
 <div class="container">
- 
+ <% if @manual_donation.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@manual_donation.errors.count, "error") %> 
+          prohibited this donation from being saved:</h2>
+
+        <ul>
+        <% @manual_donation.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
   <div class="row col-lg-12">
     <p class="text-center page-head">Add Donations Manually</p>
   </div>

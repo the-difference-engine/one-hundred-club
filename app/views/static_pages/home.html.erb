@@ -2,7 +2,7 @@
 <div class="jumbotron" id="jumbotronGif">
   <div class="container">
     <p id="homeJumbotronText">Give a Little. Change a Lot.</p>
-    <p id="jumbotronTextMini">Together providing for families of fallen heros since 1952</p>
+    <p id="jumbotronTextMini">Together providing for families of fallen heroes since 1952</p>
     <div class="text-center">
       <a href="/members/new"><button type="button" class="btn btn-lg joinDonate"> Join us </button></a>
       <a href="/donations/new"><button type="button" class="btn btn-lg joinDonate"> Donate </button></a>
@@ -20,21 +20,21 @@
       <div>
         <p class="miniheading">Events</p>
         <div id="events-line"></div>
-        <a href="/blog_posts" id="nounderline" class="inline"><button type="button" class="read-more center-block" id="news-button">Read more</button></a>
+        <a href="/events" id="nounderline" class="inline"><button type="button" class="read-more center-block" id="news-button">View all</button></a>
       </div>
 
       <div class="row">
         <% @events.each do |event| %>
           <div class="col-sm-6">
             <div class="col-sm-6 well" id="well-news">
-              <img class="img-responsive wellImg" src="<%= asset_path 'police_luncheon.jpg' %>">
+              <%= image_tag event.image, class:"wellImg" %>
               <br>
               <p class="wellDate"><%= event.datetime.strftime("%b %d, %Y") %></p><br>
               <div class="event_info">
                 <p><a href="/events/<%= event.id %>" class="event-heading"><%= event.title %></a></p>
                 <p class="text-center"><%= image_tag("Locator.png", :size => "15x20") %> <%= event.location %></p>
               </div>
-              <p class="wellBody"><%=event.description.truncate(80)%> <a class="readMore" href="/events/<%=event.id%>">Read More</a></p>
+              <p class="wellBody"><%=event.description.truncate(99)%> <a class="readMore" href="/events/<%=event.id%>">Read More</a></p>
             </div>
           </div>
         <% end %>
@@ -45,7 +45,7 @@
       <div>
         <p class="miniheading">News</p>
         <div id="news-line"></div>
-        <a href="/events" id="nounderline" class="inline"><button type="button" class="read-more center-block" id="news-button">View all</button></a>
+        <a href="/blog_posts" id="nounderline" class="inline"><button type="button" class="read-more center-block" id="news-button">View all</button></a>
       </div>
       
       <div class="row">
@@ -67,7 +67,7 @@
     <div class="col-lg-12">
       <p class="block-quote">The 100 Club of Chicago provides financial assistance, 
         access to resources and moral support for the families of first responders 
-        who have lost their lives in the line of duty in Cook and Lake Counties.</p>
+        who have lost their lives in the line of duty in and around the Chicagoland Area.</p>
     </div>
   </div>
 

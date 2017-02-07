@@ -62,44 +62,6 @@ module DropdownHelper
     ]
   end
 
-  def how_did_you_hear
-    [
-      ['(None Selected)', ''],
-      ['Advertising', 'Advertising'],
-      ['Event/Initiative', 'Event/Initiative'],
-      ['Newsletter/Print Media', 'Newsletter/Print Media'], 
-      ['Personal Referral', 'Personal Referral'],
-      ['Website', 'Website'],
-      ['Other', 'Other']
-    ]
-  end
-
-  def donation_frequency
-    [
-      ['(None Selected)', ''],
-      ['One Time', 'One Time'],
-      ['Annually', 'Annually'],
-      ['Semi-Annually', 'Semi-Annually'], 
-      ['Quarterly', 'Quarterly'],
-      ['Monthly', 'Monthly'],
-      ['Weekly', 'Weekly']
-    ]
-  end
-
-  def donation_category
-    [
-      ['(None Selected)', ''],
-      ['Bequest/Legacy', 'Bequest/Legacy'],
-      ['Event/Initiative', 'Event/Initiative'],
-      ['Fallen Hero', 'Fallen Hero'], 
-      ['General', 'General'],
-      ['General Scholarship Fund', 'General Scholarship Fund'],
-      ['Holiday/Birthday/Special Event', 'Holiday/Birthday/Special Event'],
-      ['Larry J. Vincent Scholarship', 'Larry J. Vincent Scholarship'],
-      ['Other', 'Other']
-    ]
-  end
-
   def title
     [
       ['(None Selected)', ''],
@@ -107,16 +69,6 @@ module DropdownHelper
       ['Miss', 'Miss'],
       ['Mrs.', 'Mrs.'], 
       ['Ms.', 'Ms.']
-    ]
-  end
-
-  def payment_type
-    [
-      ['(None Selected)', ''],
-      ['Visa', 'Visa'],
-      ['Mastercard', 'Mastercard'],
-      ['Discover', 'Discover'], 
-      ['American Express', 'American Express']
     ]
   end
 

@@ -1,4 +1,4 @@
-/*
+/*/*
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -15,3 +15,115 @@
  *= require_self
  *= require font-awesome
  */
+
+html{
+    height: 100%;
+}
+
+body{
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+}
+
+.navbar .navbar-collapse {
+  background: transparent;
+  text-align: center;
+}
+.navbar-category {
+  color: #000000 !important;
+  margin-left: 12px;
+  margin-right: 12px;
+}
+
+.white {
+  background-color: white;
+  border: none;
+}
+
+.navbar-category:hover {
+  background-color: transparent !important;
+  color:#BF0A30 !important;
+}
+
+.navbar-donate {
+  background-color: transparent !important;
+  color: #BF0A30 !important;
+}
+
+.navbar-donate:hover {
+  color: #002E5D !important;
+}
+
+#navbar-donate-active, #navbar-category-active  {
+  color:#C8B791 !important;
+}
+
+.section-heading {
+  color: #BC9B5D;
+  height: 30px;
+}
+
+#section-heading-text {
+  text-align: right;
+}
+
+.section-heading p {
+  font-size: 1.2em;
+  margin-top: 2px;
+}
+
+#section-heading-line {
+  height: 30px;
+}
+
+#bold-font {
+  font-weight: bold;
+}
+
+.block-quote-row {
+  height: 300px;
+  vertical-align: middle;
+}
+
+.block-quote {
+  font-family: 'Libre Baskerville', serif;
+  font-style: italic;
+  font-size: 30px;
+  text-align: center;
+  color: #605E5E;
+  line-height: 1.5;
+  font-weight: normal;
+  font-stretch: normal;
+}
+
+.btn-large {
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #BF0A30;
+  color: #ffffff;
+}
+
+.btn-large:hover {
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #002E5D;
+  color: #ffffff;
+}
+
+.btn-small {
+  font-family: "Open Sans", sans-serif;
+  font-size: 12px;
+  background-color: #002E5D;
+  color: #ffffff;
+  border-radius: 8px;
+}
+
+.btn-small:hover {
+  font-family: "Open Sans", sans-serif;
+  font-size: 12px;
+  background-color: #BC9B5D;
+  color: #000000;
+}

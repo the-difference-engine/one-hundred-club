@@ -1,4 +1,16 @@
 <div class="container">
+  <% if @fallen_hero.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@fallen_hero.errors.count, "error") %> 
+        prohibited this hero from being submitted:</h2>
+
+      <ul>
+      <% @fallen_hero.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
   <p class="page-head text-center">Edit Fallen Hero</p>
   <div class="form-group">
     <%= form_tag "/fallen_heroes/#{params[:id]}", method: :patch, multipart: true do %>

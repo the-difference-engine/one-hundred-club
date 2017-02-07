@@ -1,11 +1,24 @@
 <div class="container">
- 
+ <% if @donation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@donation.errors.count, "error") %> 
+        prohibited this donation from being submitted:</h2>
+
+      <ul>
+      <% @donation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
   <div class="row col-lg-12">
     <p class="text-center page-head">Donations Transform Lives Today</p>
     <p class="text-center">When you donate to 100 Club of Chicago, 
       you empower families of fallen first responders.</p>
       <% if user_signed_in? %>
         <%= link_to "Donations Index", '/donations', class: 'btn btn-info center-block' %>
+        <br>
+        <%= link_to "Add Manual Donation", '/donations/manual_donations', class: 'btn btn-info center-block' %>
       <% end %>
     <hr>
   </div>

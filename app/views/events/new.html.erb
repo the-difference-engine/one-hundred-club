@@ -1,7 +1,19 @@
 <div class="container">
+  <% if @event.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@event.errors.count, "error") %> 
+          prohibited this event from being saved:</h2>
+
+        <ul>
+        <% @event.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
   <p class="page-head text-center">Add a New Event</p>
   <div class="form-group">
-    <%= form_tag '/events', method: :post do %>
+    <%= form_tag '/events', method: :post, multipart: true do %>
       <div class="row">
         <div class="col-xs-8 col-xs-offset-2">
           <%= label_tag :title %>
@@ -27,6 +39,15 @@
         <div class="col-xs-8 col-xs-offset-2">
           <%= label_tag :location %>
           <%= text_field_tag :location, nil, class: 'form-control', placeholder: 'Location' %>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+          <div>
+            <%= label_tag :image, "Image: " %>
+            <%= file_field_tag :image %>
+          </div>
         </div>
       </div>
       <br>

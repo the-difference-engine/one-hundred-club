@@ -1,4 +1,16 @@
 <div class="container">
+  <% if @blog_post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@blog_post.errors.count, "error") %> 
+        prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @blog_post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
   <p class="page-head text-center">Create a News Story</p>
   <div class="form-group">
     <%= form_tag '/blog_posts', method: :post, multipart: true do %>
@@ -15,6 +27,13 @@
             <%= label_tag :content, "Content: " %>
             <%= text_area_tag :content, nil, rows: 10, class: 'form-control', placeholder: 'Content' %>
           </div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+          <%= label_tag :link, "Link: " %>
+          <%= text_field_tag :link, nil, class: 'form-control', placeholder: 'Link' %>
         </div>
       </div>
       <br>

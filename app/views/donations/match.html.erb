@@ -1,0 +1,69 @@
+ <div class="container">
+
+  <div class="row"> 
+
+    <h1 class="donations-headers">Donations</h1>
+
+    <br>
+
+    <table id="donations">
+      <tr>
+        <th id="donation-date">Date</th>
+        <th id="donation-name">Name</th>
+        <th id="donation-address">Address</th>
+        <th id="donation-email">Email</th>
+        <th id="donation-phone">Phone</th>
+        <th id="donation-donation">Donation</th>
+        <th id="donation-member">Member</th>
+      </tr>
+
+      <% @donations.each do |donation| %>
+        <tr>
+          <td>
+            <%= donation.created_at.strftime("%m/%d/%Y") %>
+          </td>
+          <td>
+            <%= donation.first_name %> <%=donation.last_name %>
+          </td>
+          <td>
+            <% if donation.address %>
+              <%= donation.address %> 
+            <% end %>
+            <% if donation.city %>
+              <%= donation.city %>, 
+            <% end %>
+            <% if donation.state %>
+              <%= donation.state %>
+            <% end %>
+            <% if donation.zip_code %>
+              <%= donation.zip_code %>
+            <% end %>
+          </td>
+          <td>
+            <% if donation.email != nil %>
+              <%= donation.email %>
+            <% end %>
+          </td>
+          <td>
+            <% if donation.phone_number != nil %>
+              <%= donation.phone_number %>
+            <% end %>
+          </td>
+          <td>
+            $<%= donation.amount %>
+          </td>
+          <td>
+            <!-- if donation has possible matches, display 'view matches' link -->
+            <% if @matching_names.include?(donation.last_name) || @matching_emails.include?(donation.email) || @matching_phone_numbers.include?(donation.phone_number)  %>  
+              <a href="/donations/<%= donation.id %>/edit">View Matches</a>
+            <!-- if donation has no possible matches, display 'no matches' -->
+            <% else %>
+              <p>No Matches</p>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+    <br>
+  </div>
+</div>  

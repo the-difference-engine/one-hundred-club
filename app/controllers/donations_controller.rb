@@ -1,6 +1,27 @@
 class DonationsController < ApplicationController
+
   before_action :custom_authenticate_user!, except: [:new, :create]
+
   def index
+    @q = Donation.ransack(params[:q])
+    @donations = @q.result(distinct: true).includes(:member)  
+   
+    total = []
+
+    @donations.each do |donation|
+      total << donation.amount
+    end
+
+    @total = total.sum
+
+  end
+
+  def show
+    @donation = Donation.find_by(id: params[:id])
+    render 'show.html.erb'
+  end
+
+  def match
     @donations = Donation.where(member_id: nil).order(created_at: :desc) 
 
     @matching_phone_numbers = []
@@ -14,10 +35,11 @@ class DonationsController < ApplicationController
         @matching_emails << member.email
       end
     end
-    render 'index.html.erb'
+    render 'match.html.erb'
   end  
 
   def new
+    @donation = Donation.new
     @token = Braintree::ClientToken.generate
   end 
 
@@ -102,6 +124,7 @@ class DonationsController < ApplicationController
   end
 
   def admin_entered_donation
+    @manual_donation = Donation.new
     @manual_donation = Donation.create(
       title: params[:title],
       first_name: params[:first_name],
@@ -120,6 +143,7 @@ class DonationsController < ApplicationController
     if @manual_donation.save
       redirect_to "/donations"
     else
+      flash[:warning] = 'Not submitted correctly.  Check your fields'
       render 'manual_donations.html.erb'
     end
   end

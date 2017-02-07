@@ -12,17 +12,17 @@
   <!-- Banner -->
   <div class="container">
     <div class="row">
-      <div class="col-lg-12" id="bannerDiv">
+      <div class="col-lg-12">
       <br>
         <h4 id="logoText"> <img id="logo" src="<%= asset_path 'original_logo.png' %>">100 Club of Chicago
-          <a target="_blank" href="https://www.instagram.com/100clubchicago/?ref=badge"><img class="img-responsive socialTop" src="<%= asset_path 'instagram_social.png' %>"></a>
+          <a target="_blank" href="https://www.instagram.com/100clubchicago/"><img class="img-responsive socialTop" src="<%= asset_path 'instagram_social.png' %>"></a>
           <a target="_blank" href="https://www.facebook.com/100clubofchicago"><img class="img-responsive socialTop" src="<%= asset_path 'facebook_social.png' %>"></a>
           <a target="_blank" href="https://www.youtube.com/user/100ClubChicago"><img class="img-responsive socialTop" src="<%= asset_path 'youtube_social.png' %>"></a>
         </h4>
       </div>
     </div>
   </div>
-  <hr>
+  <div id="headerline"></div>
   <!-- End Banner -->
 
 <!-- Navigation -->
@@ -41,7 +41,7 @@
 <!-- End Mobile NavBar -->  
 
 <!-- Regular NavBar -->
-    <div class="collapse navbar-collapse" id="full-menu">
+    <div class= "collapse navbar-collapse" id="full-menu">
       <div class="col-lg-12">
         <ul class="nav nav-justified">
           <li class="navLinks"><%= link_to "Home", '/', {class: "navbar-category", id: ("navbar-category-active" if current_page?('/'))} %></li>
@@ -49,7 +49,7 @@
           <li class="navLinks"><%= link_to "Heroes", '/fallen_heroes', {class: "navbar-category", id: ("navbar-category-active" if current_page?('/fallen_heroes'))} %></li>
           <li class="navLinks"><%= link_to "Programs", '/programs', {class: "navbar-category", id: ("navbar-category-active" if current_page?('/programs'))} %></li>
           <li class="navLinks"><%= link_to "Join", '/members/new', {class: "navbar-category", id: ("navbar-category-active" if current_page?('/members/new'))} %></li>
-          <li class="navLinks"><%= link_to "Supporters", '/supporters', {class: "navbar-category", id: ("navbar-category-active" if current_page?('/members'))} %></li>
+          <li class="navLinks"><%= link_to "Supporters", '/supporters', {class: "navbar-category", id: ("navbar-category-active" if current_page?('/supporters'))} %></li>
           <li class="navLinks"><%= link_to "Events", '/events', {class: "navbar-category", id: ("navbar-category-active" if current_page?('/events'))} %></li>
           <li class="navLinks"><%= link_to "News", '/blog_posts', {class: "navbar-category", id: ("navbar-category-active" if current_page?('/blog_posts'))} %></li>
           <li class="navLinks"><%= link_to "Shop", 'http://100club.bsmgecommerce.com', class: "navbar-category", :target =>"_blank" %></li>
@@ -64,8 +64,14 @@
 
 <!-- End Navigation -->
 
-<br>
 
+
+<% flash.each do |name, message| %>
+  <div class="alert alert-<%= name %> alert-dismissible fade in" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">&times;</span><span class="sr-only">Close</span></button>
+    <%= message.html_safe %>  
+  </div>
+<% end %>
 
   <%= yield %>
   
@@ -75,9 +81,9 @@
     <div class="row">
       <div class="text-center icon-margines">
         <ul class="list-inline" id="footer-icons">
-          <li><a target="_blank" href="https://www.facebook.com/100clubofchicago"><%= image_tag 'facebook_white_bubble.png', id:"socialBottom" %></a></li>
-          <li><a target="_blank" href="https://www.instagram.com/100clubchicago/?ref=badge"><%= image_tag 'Instagram_white_bubble.png', id:"socialBottom" %></a></li>
-          <li><a target="_blank" href="https://www.youtube.com/user/100ClubChicago"><%= image_tag 'youtube_white_bubble.png', id:"socialBottom" %></a></li>
+          <li><a target="_blank" href="https://www.facebook.com/100clubofchicago"><img height="26" width="26" src="<%= asset_path 'facebook_white_bubble.png' %>"</a></li>
+          <li><a target="_blank" href="https://www.instagram.com/100clubchicago/"><img height="26" width="26" src="<%= asset_path 'Instagram_white_bubble.png' %>"</a></li>
+          <li><a target="_blank" href="https://www.youtube.com/user/100ClubChicago"><img height="26" width="26" src="<%= asset_path 'youtube_white_bubble.png' %>"</a></li>
         </ul>  
       </div>
       <div class="text-center footer-links">

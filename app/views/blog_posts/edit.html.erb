@@ -1,4 +1,15 @@
 <div class="container">
+  <% if @blog_post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@blog_post.errors.count, "error") %> 
+        prohibited this post from being saved:</h2>
+      <ul>
+      <% @blog_post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
   <p class="page-head text-center">Edit News</p>
   <div class="form-group">
     <%= form_tag "/blog_posts/#{params[:id]}", method: :patch, multipart: true  do %>
@@ -20,6 +31,16 @@
       <br>
       <div class="row">
         <div class="col-xs-8 col-xs-offset-2">
+          <div>
+            <%= label_tag :link, "Link: " %>
+            <%= text_field_tag :link, @blog_post.link, class: 'form-control' %>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+            <p>Current file: <%= @blog_post.image.to_s.split("/").last|| "none" %></p> 
           <div>
             <%= label_tag :image, "Choose An Image: " %>
             <%= file_field_tag :image %>

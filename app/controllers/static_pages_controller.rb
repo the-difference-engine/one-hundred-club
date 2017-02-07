@@ -1,7 +1,7 @@
 class StaticPagesController < ApplicationController
   def home
     # news - last 3 by created date
-    @recent_news = BlogPost.first(3)
+    @recent_news = BlogPost.last(3).reverse
     
     # @future_events = Event.where('datetime >= ?', Date.today).first(4)
     @events = Event.last(2)
@@ -23,4 +23,7 @@ class StaticPagesController < ApplicationController
     render 'contact.html.erb'
   end
 
+  def srien
+    render 'siren.html.erb'
+  end  
 end
